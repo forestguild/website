@@ -105,6 +105,7 @@ body {
         background-repeat: no-repeat;
         height: 100%;
         background-size: cover;
+        background-position: center;
         /*left: 0;*/
         /*opacity: 1;*/
         /*position: fixed;*/
@@ -3353,10 +3354,10 @@ body.is-ie .wrapper.fullscreen {
     #logo {
         display: none;
     }
-    .wrapper.fullscreen {
-        padding: 2em 0;
-        min-height: 0;
-    }
+    /*.wrapper.fullscreen {*/
+        /*padding: 2em 0;*/
+        /*min-height: 0;*/
+    /*}*/
 
     body.is-ie .wrapper.fullscreen {
         height: auto;
