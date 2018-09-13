@@ -1,0 +1,24 @@
+---
+layout: page
+---
+
+<div class="row">
+    <div class="bg-transparent col-md-2 mt-4 ml-2 d-none d-md-block">
+        <p class="lead">&nbsp;</p>
+        <ul class="bg-dark-gradient p-4">
+            {% for item in site.pages %}
+            {% if item.layout == 'wiki' %}
+            <li>
+                {% if item.url == page.url %}<strong>{% endif %}
+                <a href='{{ item.url }}' class="text-white">{{ item.title }}</a>
+                {% if item.url == page.url %}</strong>{% endif %}
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="jumbotron bg-transparent col-md-6 col-sm-12">
+        {{ content }}
+    </div>
+</div>
