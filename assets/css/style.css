@@ -34,3 +34,31 @@ body {
 .jumbotron > .lead {
     font-weight: 400 !important;
 }
+
+/* Wiki text */
+.wiki p,
+.wiki li,
+.wiki td,
+.wiki a {
+    font-weight: 400 !important;
+    font-size: 1.25rem;
+}
+
+/* Wiki links in text */
+.wiki a {
+    color: #bd2130 !important;
+}
+
+.wiki table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid #dee2e6;
+    background-color: transparent;
+}
+
+.wiki th,
+.wiki td {
+    vertical-align: bottom;
+    border: 1px solid #dee2e6;
+    padding: .75rem;
+}

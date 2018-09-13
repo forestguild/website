@@ -2,11 +2,12 @@
 layout: page
 ---
 
-<div class="row">
+<div class="row mt-4">
     <div class="bg-transparent col-md-2 mt-4 ml-2 d-none d-md-block">
         <p class="lead">&nbsp;</p>
         <ul class="bg-dark-gradient p-4">
-            {% for item in site.pages %}
+            {% assign sorted_pages = site.pages | sort:"order" %}
+            {% for item in sorted_pages %}
             {% if item.layout == 'wiki' %}
             <li>
                 {% if item.url == page.url %}<strong>{% endif %}
@@ -18,7 +19,7 @@ layout: page
         </ul>
     </div>
 
-    <div class="jumbotron bg-transparent col-md-6 col-sm-12">
+    <div class="jumbotron wiki bg-dark-gradient text-white col-md-9">
         {{ content }}
     </div>
 </div>

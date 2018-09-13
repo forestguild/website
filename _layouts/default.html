@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{{ site.title }}</title>
+        <title>{% if page.title != site.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
         <meta property="og:title" content="{{ site.description }}" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ site.url }}" />
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark-gradient  d-none d-md-block">
             <div class="navbar-collapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active ">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/">Привет <span class="sr-only">(current)</span></a>
                     </li>
                     {% for item in site.links %}
@@ -32,10 +32,13 @@
                         <a class="nav-link {{ item.class }}" href="{{ item.url }}" target="_blank">{{ item.name }}</a>
                     </li>
                     {% endfor %}
+                    <li class="nav-item active">
+                        <a class="nav-link typeform-share text-success button" href="https://nikitachernyi.typeform.com/to/XRk6Ry" data-mode="popup" target="_blank">Форма для РТ</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav mt-2 mt-md-0">
                     <li class="nav-item active">
-                        <a class="nav-link text-danger" href="https://www.notion.so/forestguild/163fad1844494926934d1b02faa130bb" target="_blank">База знаний</a>
+                        <a class="nav-link text-danger" href="/wiki">База знаний</a>
                     </li>
                 </ul>
             </div>
@@ -58,7 +61,10 @@
                     </li>
                     {% endfor %}
                     <li class="nav-item active">
-                        <a class="nav-link text-danger" href="https://www.notion.so/forestguild/163fad1844494926934d1b02faa130bb" target="_blank">База знаний</a>
+                        <a class="nav-link typeform-share text-success button" href="https://nikitachernyi.typeform.com/to/XRk6Ry" data-mode="popup" target="_blank">Форма для РТ</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link text-danger" href="/wiki">База знаний</a>
                     </li>
                 </ul>
             </div>
@@ -69,5 +75,6 @@
         </main>
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
     </body>
 </html>
