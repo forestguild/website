@@ -21,6 +21,20 @@ links:
     url: https://raider.io/guilds/eu/galakrond/Ясный%20Лес
     class:
 
+rt:
+  date: "23 сентября 20:00"
+  setup: "2 / 3 / 9"
+  requirements:
+    ilvl: 345
+    flasks: 3
+  raid:
+    name: "Ульдир"
+    difficulty: "Героический"
+    bosses: 8
+    min: 3
+    max: 5
+  description: "Ну что, мы набрали достаточно народа. РТ назначен на такую дату, чтобы все могли приодеться (см. требуемый илвл). Время рейда, готовьтесь!"
+
 # Build settings
 markdown: kramdown
 plugins: []

@@ -38,6 +38,11 @@
                     <li class="nav-item active">
                         <a class="nav-link typeform-share text-success button" href="https://nikitachernyi.typeform.com/to/XRk6Ry" data-mode="popup" target="_blank">Форма для РТ</a>
                     </li>
+                    {% if site.rt.date %}
+                    <li class="nav-item active">
+                        <a class="nav-link text-info blink" data-toggle="modal" data-target="#rtModal" href="#">Время Рейда</a>
+                    </li>
+                    {% endif %}
                 </ul>
                 <ul class="navbar-nav mt-2 mt-md-0">
                     <li class="nav-item active">
@@ -55,6 +60,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
+                    {% if site.rt.date %}
+                    <li class="nav-item active">
+                        <a class="nav-link text-info blink" href="#" data-toggle="modal" data-target="#rtModal">Время Рейда</a>
+                    </li>
+                    {% endif %}
                     <li class="nav-item active ">
                         <a class="nav-link" href="/">Привет <span class="sr-only">(current)</span></a>
                     </li>
@@ -76,6 +86,44 @@
         <main class="container-fluid">
         {{ content }}
         </main>
+        {% if site.rt.date %}
+        <div class="modal fade" id="rtModal" tabindex="-1" role="dialog" aria-labelledby="rtTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rtTitle">{{ site.rt.raid.name }} ({{ site.rt.raid.difficulty }}) - {{ site.rt.date }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="lead text-muted">{{ site.rt.description }}</p>
+                        <div class="row lead">
+                        <div class="col-md-6 col-sm-12">
+                            <span class="text-muted">Куда идем?</span><br />
+                            Рейд: {{ site.rt.raid.name }} ({{ site.rt.raid.difficulty }})<br />
+                            Сетап: {{ site.rt.setup }}<br />
+                            План минимум: {{ site.rt.raid.min }}/{{ site.rt.raid.bosses }}<br />
+                            План максимум: {{ site.rt.raid.max }}/{{ site.rt.raid.bosses }}
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <span class="text-muted">Требования</span><br />
+                            Знание <a href="/wiki/raid/tactics" target="_blank" class="text-danger">тактики</a><br />
+                            Уровень вещей: {{ site.rt.requirements.ilvl }}+<br />
+                            Настоев с собой: {{ site.rt.requirements.flasks }}+<br />
+                            а так же чарки и камни.
+                        </div>
+                        </div>
+                        Проверь себя по <a href="/wiki/raid/checklist" target="_blank" class="text-danger">чек-листу</a> заранее, иначе в рейд не попадешь.<br />
+                        <span class="text-muted">Событие в календаре будет создано, подпишись на него</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Иду готовиться</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
         <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
