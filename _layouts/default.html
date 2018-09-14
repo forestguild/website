@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{% if page.title != site.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-        <meta property="og:title" content="{{ site.description }}" />
+        <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+        <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ site.url }}" />
         <meta property="og:image" content="{{ site.url }}/assets/img/logo.png" />
