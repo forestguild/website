@@ -98,6 +98,7 @@
                     </div>
                     <div class="modal-body">
                         <p class="lead text-muted">{{ site.rt.description }}</p>
+                        <hr>
                         <div class="row lead">
                         <div class="col-md-6 col-sm-12">
                             <span class="text-muted">Куда идем?</span><br />
@@ -114,10 +115,10 @@
                             а так же чарки и камни.
                         </div>
                         </div>
-                        Проверь себя по <a href="/wiki/raid/checklist" target="_blank" class="text-danger">чек-листу</a> заранее, иначе в рейд не попадешь.<br />
-                        <span class="text-muted">Событие в календаре будет создано, подпишись на него</span>
                     </div>
                     <div class="modal-footer">
+                        <span>Проверь себя по <a href="/wiki/raid/checklist" target="_blank" class="text-danger">чек-листу</a> заранее, иначе в рейд не попадешь.<br />
+                            <span class="text-muted"><b><a href="https://eu.battle.net/wow/ru/vault/guild/event" target="_blank" class="text-muted" id="armory-calendar"  data-toggle="tooltip" data-html="true" title="Для просмотра календаря в оружейной wow <b>нужно авторизоваться</b>, не забудь об этом">Событие в календаре</a></b> cоздано, подпишись на него</span></span>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Иду готовиться</button>
                     </div>
                 </div>
@@ -127,5 +128,6 @@
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
         <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+        <script>$(function () {$('#armory-calendar').tooltip()});</script>
     </body>
 </html>
