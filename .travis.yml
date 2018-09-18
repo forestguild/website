@@ -1,0 +1,17 @@
+language: php
+php:
+  - '7.1'
+
+before_install:
+  - bundle install
+  - php news.php
+
+script: bundler exec jekyll build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_API_KEY  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  on:
+    branch: master
