@@ -1,0 +1,25 @@
+---
+layout: page
+---
+
+<div class="row mt-4">
+    <div class="bg-transparent col-md-2 col-sm-12 mt-4 ml-2">
+        <p class="lead">&nbsp;</p>
+        <ul class="bg-dark-gradient p-4">
+            {% assign sorted_pages = site.pages | sort:"order" %}
+            {% for item in sorted_pages %}
+            {% if item.layout == 'wiki' %}
+            <li>
+                {% if item.url == page.url %}<strong>{% endif %}
+                <a href='{{ item.url }}' class="text-white">{{ item.title }}</a>
+                {% if item.url == page.url %}</strong>{% endif %}
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="jumbotron wiki bg-dark-gradient text-white col-md-9 col-sm-12">
+        {{ content }}
+    </div>
+</div>

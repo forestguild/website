@@ -1,0 +1,52 @@
+title: "Гильдия Ясный Лес @ EU Галакронд"
+description: >- # this means to ignore newlines until "baseurl:"
+  Гильдия Ясный Лес, World of Warcraft, EU Галакронд.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://forestguild.club" # the base hostname & protocol for your site, e.g. http://example.com
+repository: rakshazi/forestguild.club
+links:
+  - name: Discord
+    url: https://discord.gg/pjAp9gN
+    class: text-danger
+  - name: VK
+    url: https://vk.com/jasnijles
+    class:
+  - name: Оружейная
+    url: https://eu.battle.net/wow/ru/guild/galakrond/Ясный_Лес/
+    class:
+  - name: WoWProgress
+    url: https://www.wowprogress.com/guild/eu/галакронд/Ясный+Лес
+    class:
+  - name: Raider.IO
+    url: https://raider.io/guilds/eu/galakrond/Ясный%20Лес
+    class:
+
+rt:
+  date: "23 сентября 20:00-22:00 МСК"
+  setup: "2 / 3 / 9"
+  requirements:
+    ilvl: 345
+    flasks: 2
+  raid:
+    name: "Ульдир"
+    difficulty: "Героический"
+    bosses: 8
+    min: 3
+    max: 5
+  description: "Ну что, мы набрали достаточно народа. РТ назначен на такую дату, чтобы все могли приодеться (см. требуемый илвл). Время рейда, готовьтесь!"
+
+# Build settings
+markdown: kramdown
+plugins: []
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

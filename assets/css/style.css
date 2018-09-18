@@ -1,15 +1,16 @@
 /* Show it is fixed to the top */
 body {
-    min-height: 75rem;
+    /*min-height: 75rem;*/
     padding-top: 4.5rem;
     background:#000 url(../img/bg.jpg) top right;
     background-repeat:no-repeat;
-    height:100%;
-    background-size:cover;
-    background-position:center;
+    /*height:100%;*/
+    /*background-size:cover;*/
+    /*background-position:center;*/
     font-family:Arial,Helvetica,sans-serif !important;
     font-weight: 400 !important;
 }
+
 /* Header bg */
 .bg-dark-gradient {
     background-color: #343a4080 !important;
@@ -18,6 +19,23 @@ body {
 /* Header links */
 .nav-item {
     font-weight: 700;
+}
+
+/* Blinking text */
+@keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+
+.blink {
+  animation: blink 1s step-start 0s infinite;
+  -webkit-animation: blink 1s step-start 0s infinite;
 }
 
 /* General text color */
@@ -33,4 +51,37 @@ body {
 /* Guild description */
 .jumbotron > .lead {
     font-weight: 400 !important;
+}
+
+/** markdown > **/
+blockquote {
+    color: rgba(255, 255, 255, 0.55) !important;
+}
+
+/* Wiki text */
+.wiki p,
+.wiki li,
+.wiki td,
+.wiki a {
+    font-weight: 400 !important;
+    font-size: 1.25rem;
+}
+
+/* Wiki links in text */
+.wiki a {
+    color: #bd2130 !important;
+}
+
+.wiki table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid #dee2e6;
+    background-color: transparent;
+}
+
+.wiki th,
+.wiki td {
+    vertical-align: bottom;
+    border: 1px solid #dee2e6;
+    padding: .75rem;
 }
