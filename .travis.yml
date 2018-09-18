@@ -1,12 +1,16 @@
 language: php
+cache: bundler
 php:
   - '7.1'
 
-before_install:
+before_script:
   - bundle install
   - php news.php
 
 script: bundler exec jekyll build
+
+after_script:
+  - cat _data/news.csv
 
 deploy:
   provider: pages
