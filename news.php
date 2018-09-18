@@ -74,7 +74,7 @@ class News
             $this->data[] = [
                 'timestamp' => strtotime((string)$item->pubDate),
                 'type' => $type,
-                'title' => strtr(['joined' => 'вступил(-а) в', 'left' => 'покинул(-а)'], (string)$item->title),
+                'title' => strtr((string)$item->title, ['joined' => 'вступил(-а) в', 'left' => 'покинул(-а)']),
                 'description' => '',
             ];
         }
