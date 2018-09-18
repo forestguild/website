@@ -5,6 +5,7 @@ php:
 
 before_script:
   - bundle install
+  - mkdir _data
   - php news.php
 
 script: bundler exec jekyll build
