@@ -126,7 +126,7 @@ class News
  * Run it!
  */
 // 1. Download and parse news
-$news = new News('eu', 'Галакронд', 'Ясный Лес', env('BATTLENET_API_KEY'), 'ru_RU');
+$news = new News('eu', 'Галакронд', 'Ясный Лес', getenv('BATTLENET_API_KEY'), 'ru_RU');
 // 2. Create CSV file with headers
 $fp = fopen('./_data/news.csv', 'w');
 fputcsv($fp, ['timestamp', 'type', 'title', 'description']);
