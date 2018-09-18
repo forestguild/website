@@ -1,3 +1,4 @@
 _site
+_data/news.csv
 .sass-cache
 .jekyll-metadata
