@@ -6,9 +6,11 @@ php:
 before_script:
   - bundle install
   - mkdir _data
-  - php news.php
 
-script: bundler exec jekyll build
+script:
+  - php news.php
+  - bundler exec jekyll build
+  - echo "forestguild.club" > _site/CNAME
 
 after_script:
   - cat _data/news.csv
@@ -18,5 +20,6 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_API_KEY  # Set in the settings page of your repository, as a secure variable
   keep-history: false
+  local-dir: site
   on:
     branch: master
