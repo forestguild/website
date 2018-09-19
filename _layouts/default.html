@@ -74,7 +74,7 @@
                     </li>
                     {% endfor %}
                     <li class="nav-item active">
-                        <a class="nav-link typeform-share text-success button" href="https://nikitachernyi.typeform.com/to/XRk6Ry" data-mode="popup" target="_blank">Форма для РТ</a>
+                        <a id="raidform" class="nav-link typeform-share text-success button" href="https://nikitachernyi.typeform.com/to/XRk6Ry" data-mode="popup" target="_blank">Форма для РТ</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link text-danger" href="/wiki">База знаний</a>
@@ -100,20 +100,20 @@
                         <p class="lead text-muted">{{ site.rt.description }}</p>
                         <hr>
                         <div class="row lead">
-                        <div class="col-md-6 col-sm-12">
-                            <span class="text-muted">Куда идем?</span><br />
-                            Рейд: {{ site.rt.raid.name }} ({{ site.rt.raid.difficulty }})<br />
-                            Сетап: {{ site.rt.setup }}<br />
-                            План минимум: {{ site.rt.raid.min }}/{{ site.rt.raid.bosses }}<br />
-                            План максимум: {{ site.rt.raid.max }}/{{ site.rt.raid.bosses }}
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <span class="text-muted">Требования</span><br />
-                            Знание <a href="/wiki/raid/tactics" target="_blank" class="text-danger">тактики</a><br />
-                            Уровень вещей: {{ site.rt.requirements.ilvl }}+<br />
-                            Настоев с собой: {{ site.rt.requirements.flasks }}+<br />
-                            а так же чарки и камни.
-                        </div>
+                            <div class="col-md-6 col-sm-12">
+                                <span class="text-muted">Куда идем?</span><br />
+                                Рейд: {{ site.rt.raid.name }} ({{ site.rt.raid.difficulty }})<br />
+                                Сетап: {{ site.rt.setup }}<br />
+                                План минимум: {{ site.rt.raid.min }}/{{ site.rt.raid.bosses }}<br />
+                                План максимум: {{ site.rt.raid.max }}/{{ site.rt.raid.bosses }}
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <span class="text-muted">Требования</span><br />
+                                Знание <a href="/wiki/raid/tactics" target="_blank" class="text-danger">тактики</a><br />
+                                Уровень вещей: {{ site.rt.requirements.ilvl }}+<br />
+                                Настоев с собой: {{ site.rt.requirements.flasks }}+<br />
+                                а так же чарки и камни.
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -128,6 +128,11 @@
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
         <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
-        <script>$(function () {$('#armory-calendar').tooltip()});</script>
+        <script>$(function () {
+            $('#armory-calendar').tooltip();
+            $('#raidform').on('click', function(e){
+                $('#navbarCollapse').collapse('hide')
+            });
+        });</script>
     </body>
 </html>
