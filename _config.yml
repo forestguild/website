@@ -22,18 +22,18 @@ links:
     class:
 
 rt:
-  date: "23 сентября 20:00-22:00 МСК"
+  date: "24 сентября 19:00-22:00 МСК"
   setup: "2 / 3 / 9"
   requirements:
-    ilvl: 345
-    flasks: 2
+    ilvl: 340+
+    flasks: 1
   raid:
     name: "Ульдир"
-    difficulty: "Героический"
+    difficulty: "Нормал"
     bosses: 8
     min: 3
     max: 5
-  description: "Ну что, мы набрали достаточно народа. РТ назначен на такую дату, чтобы все могли приодеться (см. требуемый илвл). Время рейда, готовьтесь!"
+  description: "Идем одеваться."
 
 # Build settings
 markdown: kramdown
