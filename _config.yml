@@ -6,7 +6,7 @@ url: "https://forestguild.club" # the base hostname & protocol for your site, e.
 repository: rakshazi/forestguild.club
 links:
   - name: Discord
-    url: https://discord.gg/pjAp9gN
+    url: https://discord.gg/v9mNxAS
     class: text-danger
   - name: VK
     url: https://vk.com/jasnijles
