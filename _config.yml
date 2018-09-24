@@ -41,6 +41,7 @@ rt:
 markdown: kramdown
 plugins: []
 exclude:
+  - README.md
   - Gemfile
   - Gemfile.lock
   - news.php
