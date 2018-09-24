@@ -14,6 +14,21 @@ class news
      * @var array
      */
     protected $data = [];
+
+    /**
+     * WoW Region, eg: eu.
+     *
+     * @var string
+     */
+    protected $region;
+
+    /**
+     * WoW Realm, eg ['ru' => 'Галакронд', 'en' => 'Galakrond', 'id' => 607].
+     *
+     * @var array
+     */
+    protected $realm;
+
     /**
      * WoWProgress guild uri.
      *
@@ -36,6 +51,13 @@ class news
     protected $raiderioPayload;
 
     /**
+     * Characters' names to update.
+     *
+     * @var array
+     */
+    protected $chars = ['Этке', 'Воросмех', 'Вглазури', 'Купожка', 'Адскаяскубша', 'Резормон', 'Резорин', 'Цунли', 'Фуфия', 'Моябитьлицо', 'Япаника', 'Ятлен'];
+
+    /**
      * Init.
      *
      * @param string $region WoW region, default: eu
@@ -44,11 +66,13 @@ class news
      * @param string $apikey Battle.net API key
      * @param string $lang   Battle.net locale, default: en_GB
      */
-    public function __construct(string $region, array $realm, string $guild, string $apikey, string $lang = 'en_GB')
+    public function __construct(string $region, array $realm, string $guild, string $apikey = '', string $lang = 'en_GB')
     {
         if (!$apikey) {
             $this->log('Battle.net', 'warning. No API key');
         }
+        $this->region = $region;
+        $this->realm = $realm;
         $this->wowprogressUrl = 'guild/'.$region.'/'.\strtolower($realm['ru']).'/'.\str_replace(' ', '+', $guild);
         $this->battlenetUrl = 'https://'.$region.'.api.battle.net/wow/guild/'.\ucfirst($realm['ru']).'/'.\str_replace(' ', '%20', $guild).'?fields=news&locale='.$lang.'&apikey='.$apikey;
         $this->raiderioPayload = [
@@ -81,7 +105,9 @@ class news
     public function update(): self
     {
         return $this->updateWowprogress()
-                    ->updateRaiderio();
+                    ->updateRaiderio()
+                    ->updateCharsWowprogress()
+                    ->updateCharsRaiderio();
     }
 
     protected function log(string $task, string $message): void
@@ -197,6 +223,25 @@ class news
     }
 
     /**
+     * Update characters at WoWProgress.
+     *
+     * @return self
+     */
+    protected function updateCharsWowprogress(): self
+    {
+        foreach ($this->chars as $char) {
+            try {
+                $result = \json_decode($this->send('https://wowprogress.com/character/'.$this->region.'/'.$this->realm['ru'].'/'.$char, ['update' => 1]), true);
+                $this->log('UPDATE CHARS WoWProgress', $char.' - '.(($result['success'] ?? false) === true ? 'success' : 'fail'));
+            } catch (\Throwable $t) {
+                $this->log('UPDATE CHARS WoWProgress', $char.' - fail. '.$t->getMessage());
+            }
+        }
+
+        return $this;
+    }
+
+    /**
      * Update Raider.io guild profile.
      *
      * @return News
@@ -208,6 +253,29 @@ class news
             $this->log('UPDATE Raider.io', ($result['success'] ?? false) === true ? 'success' : 'fail');
         } catch (\Throwable $t) {
             $this->log('UPDATE Raider.io', 'fail. '.$t->getMessage());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Update Raider.io chars.
+     *
+     * @return self
+     */
+    protected function updateCharsRaiderio(): self
+    {
+        $payload = $this->raiderioPayload;
+        unset($payload['guild']);
+        unset($payload['numMembers']);
+
+        foreach ($this->chars as $char) {
+            try {
+                $result = \json_decode($this->send('https://raider.io/api/crawler/characters', \array_merge($payload, ['character' => $char])), true);
+                $this->log('UPDATE CHARS Raider.io', $char.' - '.(($result['success'] ?? false) === true ? 'success' : 'fail'));
+            } catch (\Throwable $t) {
+                $this->log('UPDATE Raider.io', $char.' - fail. '.$t->getMessage());
+            }
         }
 
         return $this;
