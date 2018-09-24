@@ -23,9 +23,11 @@ links:
 
 rt:
   date: "24 сентября 19:00-22:00 МСК"
-  setup: "2 / 3 / 9"
+  setup:
+    default: "2 / 3 / 9"
+    modifiable: true
   requirements:
-    ilvl: 340+
+    ilvl: 330
     flasks: 1
   raid:
     name: "Ульдир"
