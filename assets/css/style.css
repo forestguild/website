@@ -85,3 +85,15 @@ blockquote {
     border: 1px solid #dee2e6;
     padding: .75rem;
 }
+
+div.highlight {
+    /*background: rgba(255, 255, 255, 0.55);*/
+}
+
+pre code {
+    color: #fff;
+    word-break: break-word;
+}
+code .c {
+    color: rgba(255, 255, 255, 0.55) !important;
+}
