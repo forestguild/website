@@ -55,7 +55,7 @@ class news
      *
      * @var array
      */
-    protected $chars = ['Этке', 'Воросмех', 'Вглазури', 'Купожка', 'Адскаяскубша', 'Резормон', 'Резорин', 'Цунли', 'Фуфия', 'Моябитьлицо', 'Япаника', 'Ятлен'];
+    protected $chars = ['Этке', 'Воросмех', 'Вглазури', 'Купожка', 'Адскаяскубша', 'Резормон', 'Резорин', 'Резорез', 'Оркоркыч', 'Цунли', 'Фуфия', 'Моябитьлицо', 'Япаника', 'Ятлен'];
 
     /**
      * Init.
@@ -232,7 +232,7 @@ class news
         foreach ($this->chars as $char) {
             try {
                 $result = \json_decode($this->send('https://wowprogress.com/character/'.$this->region.'/'.$this->realm['ru'].'/'.$char, ['update' => 1]), true);
-                $this->log('UPDATE CHARS WoWProgress', $char.' - '.(($result['success'] ?? false) === true ? 'success' : 'fail'));
+                $this->log('UPDATE CHARS WoWProgress', $char.' - '.(($result['success'] ?? false) === true ? 'success' : 'fail.'));
             } catch (\Throwable $t) {
                 $this->log('UPDATE CHARS WoWProgress', $char.' - fail. '.$t->getMessage());
             }
@@ -250,7 +250,7 @@ class news
     {
         try {
             $result = \json_decode($this->send('https://raider.io/api/crawler/guilds', $this->raiderioPayload), true);
-            $this->log('UPDATE Raider.io', ($result['success'] ?? false) === true ? 'success' : 'fail');
+            $this->log('UPDATE Raider.io', ($result['success'] ?? false) === true ? 'success' : 'fail.');
         } catch (\Throwable $t) {
             $this->log('UPDATE Raider.io', 'fail. '.$t->getMessage());
         }
