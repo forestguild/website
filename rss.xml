@@ -1,0 +1,50 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:yandex="http://news.yandex.ru"
+    xmlns:media="http://search.yahoo.com/mrss/"
+    xmlns:turbo="http://turbo.yandex.ru"
+    >
+    <channel>
+        <title>{{ site.title | xml_escape }}</title>
+        <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
+        <sy:updatePeriod>{{ site.feed_update_period | default: "daily" | xml_escape }}</sy:updatePeriod>
+        <sy:updateFrequency>{{ site.feed_update_frequency | default: 1 | xml_escape }}</sy:updateFrequency>
+        <link>{{ site.url }}</link>
+        <atom:link href="{{ site.url }}/{{ page.path }}" rel="self" type="application/rss+xml" />
+        <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+        {% for post in site.posts %}
+        <item turbo="true">
+            <title><![CDATA[{{ post.title | strip_html | remove:"&nbsp;" }}]]></title>
+            {% if post.author.name %}
+            <dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
+            {% endif %}
+            {% if post.excerpt %}
+            <description><![CDATA[{{ post.excerpt | markdownify }}]]></description>
+            {% else %}
+            <description><![CDATA[{{ post.content | markdownify }}]]></description>
+            {% endif %}
+            <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+            <link>{{ site.url }}{{ post.url }}</link>
+            <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        </item>
+        {% endfor %}
+        {% for page in site.pages %}
+        {% if page.title %}
+        <item turbo="true">
+            <title><![CDATA[{{ page.title | strip_html | remove:"&nbsp;" }}]]></title>
+            <description><![CDATA[{{ page.content |  markdownify }}]]></description>
+            <turbo:content><![CDATA[{{ page.content |  markdownify }}]]></turbo:content>
+            <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+            <link>{{ site.url }}{{ page.url }}</link>
+            <guid isPermaLink="true">{{ site.url }}{{ page.url }}</guid>
+        </item>
+        {% endif %}
+        {% endfor %}
+    </channel>
+</rss>

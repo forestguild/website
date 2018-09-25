@@ -5,7 +5,7 @@ php:
 
 before_script:
   - bundle install
-  - mkdir _data
+  - mkdir -p _data
 
 script:
   - php news.php
