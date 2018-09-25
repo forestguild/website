@@ -12,9 +12,6 @@ script:
   - bundler exec jekyll build
   - echo "forestguild.club" > _site/CNAME
 
-after_script:
-  - cat _data/news.csv
-
 deploy:
   provider: pages
   skip-cleanup: true
@@ -25,4 +22,4 @@ deploy:
     branch: master
 
 after_deploy:
-  - "curl -sX POST 'https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/purge_cache' -H 'X-Auth-Email: $CF_API_EMAIL' -H 'X-Auth-Key: $CF_API_TOKEN' -H 'Content-Type: application/json' -d '{\"purge_everything\":true}'"
+  - php clean-cache.php
