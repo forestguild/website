@@ -22,7 +22,7 @@ links:
     class:
 
 rt:
-  date: "24 сентября 19:00-22:00 МСК"
+  date: "25 сентября 19:00-22:00 МСК"
   setup:
     default: "2 / 3 / 9"
     modifiable: true
@@ -33,9 +33,9 @@ rt:
     name: "Ульдир"
     difficulty: "Нормал"
     bosses: 8
-    min: 3
-    max: 5
-  description: "Идем одеваться."
+    min: 4
+    max: 6
+  description: "Идем одеваться. Продолжаем с жука"
 
 # Build settings
 markdown: kramdown
