@@ -44,6 +44,13 @@ class news
     protected $battlenetUrl;
 
     /**
+     * Battle.net API guild profile url.
+     *
+     * @var string
+     */
+    protected $battlenetGuildUrl;
+
+    /**
      * Raider.IO payload to update guild.
      *
      * @var string
@@ -51,11 +58,26 @@ class news
     protected $raiderioPayload;
 
     /**
-     * Characters' names to update.
+     * Characters' filters (for progress update).
      *
      * @var array
      */
-    protected $chars = ['Этке', 'Воросмех', 'Вглазури', 'Купожка', 'Адскаяскубша', 'Резормон', 'Резорин', 'Резорез', 'Оркоркыч', 'Цунли', 'Фуфия', 'Моябитьлицо', 'Япаника', 'Ятлен'];
+    protected $charFilters = [
+        'level' => 120, //Min level to scan
+        'ranks' => [
+            0, //GM
+            1, //GM-officer
+            2, //Discord
+        ],
+    ];
+    /**
+     * Characters' names to update.
+     *
+     * @see self::getChars()
+     *
+     * @var array
+     */
+    protected $chars;
 
     /**
      * Init.
@@ -75,6 +97,7 @@ class news
         $this->realm = $realm;
         $this->wowprogressUrl = 'guild/'.$region.'/'.\strtolower($realm['ru']).'/'.\str_replace(' ', '+', $guild);
         $this->battlenetUrl = 'https://'.$region.'.api.battle.net/wow/guild/'.\ucfirst($realm['ru']).'/'.\str_replace(' ', '%20', $guild).'?fields=news&locale='.$lang.'&apikey='.$apikey;
+        $this->battlenetGuildUrl = 'https://'.$region.'.api.battle.net/wow/guild/'.\ucfirst($realm['ru']).'/'.\str_replace(' ', '%20', $guild).'?fields=members&locale='.$lang.'&apikey='.$apikey;
         $this->raiderioPayload = [
             'realmId' => $realm['id'],
             'realm' => $realm['en'],
@@ -104,7 +127,8 @@ class news
      */
     public function update(): self
     {
-        return $this->updateWowprogress()
+        return $this->getChars()
+                    ->updateWowprogress()
                     ->updateRaiderio()
                     ->updateCharsWowprogress()
                     ->updateCharsRaiderio();
@@ -218,6 +242,34 @@ class news
         } catch (\Throwable $t) {
             $this->log('UPDATE WoWProgress', 'fail. '.$t->getMessage());
         }
+
+        return $this;
+    }
+
+    /**
+     * Get characters for update.
+     *
+     * @return self
+     */
+    protected function getChars(): self
+    {
+        $raw = \json_decode($this->fetch($this->battlenetGuildUrl), true);
+        if (!($raw['members'] ?? false)) {
+            $this->log('FETCH CHARS', 'fail. No members found (Check battle.net api key)');
+
+            return $this;
+        }
+        $this->chars = [];
+        foreach ($raw['members'] as $member) {
+            // filter mermbers by level and ranks
+            if (
+                \in_array($member['rank'], $this->charFilters['ranks'], true)
+                && $member['character']['level'] >= $this->charFilters['level']
+            ) {
+                $this->chars[] = $member['character']['name'];
+            }
+        }
+        $this->log('FETCH CHARS', 'success.');
 
         return $this;
     }
