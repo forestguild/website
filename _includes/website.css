@@ -76,10 +76,15 @@ blockquote {
 }
 
 .wiki table {
-    width: 100%;
-    margin-bottom: 1rem;
-    border: 1px solid #dee2e6;
     background-color: transparent;
+    border: 1px solid #dee2e6;
+    border-collapse: collapse;
+    display: block;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    width: 100%;
 }
 
 .wiki th,
