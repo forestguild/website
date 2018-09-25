@@ -1,5 +1,5 @@
 run:
-	bundler exec jekyll serve --incremental
+	bundler exec jekyll serve
 
 deploy:
 	commit

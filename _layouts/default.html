@@ -18,7 +18,6 @@
         <link rel="apple-touch-icon" type="image/png" href="/assets/img/logo.png" />
         <link rel="alternate" type="application/rss+xml" title="RSS + Yandex.Turbo" href="/rss.xml" />
         <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/assets/css/website.css" rel="stylesheet">
         <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter50342920 = new Ya.Metrika2({ id:50342920, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/50342920" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     </head>
 
@@ -36,9 +35,6 @@
                         <a class="nav-link {{ item.class }}" href="{{ item.url }}" target="_blank">{{ item.name }}</a>
                     </li>
                     {% endfor %}
-                    <li class="nav-item active">
-                        <a class="nav-link typeform-share text-success button" href="https://nikitachernyi.typeform.com/to/XRk6Ry" data-mode="popup" target="_blank">Форма для РТ</a>
-                    </li>
                     {% if site.rt.date %}
                     <li class="nav-item active">
                         <a class="nav-link text-info blink" data-toggle="modal" data-target="#rtModal" href="#">Время Рейда</a>
@@ -74,9 +70,6 @@
                         <a class="nav-link {{ item.class }}" href="{{ item.url }}" target="_blank">{{ item.name }}</a>
                     </li>
                     {% endfor %}
-                    <li class="nav-item active">
-                        <a id="raidform" class="nav-link typeform-share text-success button" href="https://nikitachernyi.typeform.com/to/XRk6Ry" data-mode="popup" target="_blank">Форма для РТ</a>
-                    </li>
                     <li class="nav-item active">
                         <a class="nav-link text-danger" href="/wiki">База знаний</a>
                     </li>
@@ -127,9 +120,9 @@
             </div>
         </div>
         {% endif %}
+        <style>{% include website.css %}</style>
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
-        <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
         <script>$(function () {
             $('#armory-calendar').tooltip();
             {% if site.rt.setup.modifiable %}$('#raid-setup').tooltip();{% endif %}
