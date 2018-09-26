@@ -8,7 +8,7 @@ before_script:
   - mkdir -p _data
 
 script:
-  - php news.php
+  - php updater.php news
   - bundler exec jekyll build
   - echo "forestguild.club" > _site/CNAME
 
@@ -22,4 +22,4 @@ deploy:
     branch: master
 
 after_deploy:
-  - php clean-cache.php
+  - php updater.php cache
