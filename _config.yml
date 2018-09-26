@@ -45,7 +45,7 @@ exclude:
   - Makefile
   - Gemfile
   - Gemfile.lock
-  - news.php
-  - clean-cache.php
+  - updater
+  - updater.php
   - .php_cs.dist
   - .travis.yml
