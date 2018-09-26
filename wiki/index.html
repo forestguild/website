@@ -1,0 +1,19 @@
+---
+layout: wiki
+order: 0
+title: База знаний
+---
+
+<h1>Привет</h1>
+<p>Эта база знаний нашей гильдии. Мы собираем ее для того, чтобы каждый мог найти тут ответы и подготовиться к важным событиям в игре.</p>
+<p>Надеюсь, эта информация будет тебе полезна :)</p>
+    {% assign sorted_pages = site.pages | sort:"order" %}
+    {% for item in sorted_pages %}
+    {% if item.layout == 'wiki' %}
+    <li>
+        {% if item.url == page.url %}<strong>{% endif %}
+            <a href='{{ item.url }}' class="text-white">{{ item.title }}</a>
+            {% if item.url == page.url %}</strong>{% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
