@@ -27,17 +27,24 @@ class Base
      * Send POST request to URL with DATA.
      *
      * @param string $url
-     * @param array  $data
+     * @param mixed  $data
+     * @param array  $headers HTTP headers
      *
      * @return string
      */
-    protected function send(string $url, array $data): string
+    protected function send(string $url, $data, array $headers = null): string
     {
         $ch = \curl_init();
+        if (\is_array($data)) {
+            $data = \http_build_query($data);
+        }
         \curl_setopt($ch, CURLOPT_URL, $url);
         \curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); //workaround for redirect bug (send post - redirect - send get)
         \curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        \curl_setopt($ch, CURLOPT_POSTFIELDS, \http_build_query($data));
+        \curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        if ($headers) {
+            \curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        }
         \curl_setopt($ch, CURLOPT_POSTREDIR, 3); //workarond for redirect bug
         \curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $data = \curl_exec($ch);

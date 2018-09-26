@@ -59,7 +59,7 @@ class Updater extends Updater\Base
             'region' => $region,
             'realm' => $realm,
             'guild' => $guild,
-            'apikey' => [
+            'api' => [
                 'battle.net' => $battlenet_apikey,
                 'cloudflare' => $cloudflare,
             ],
@@ -78,8 +78,7 @@ class Updater extends Updater\Base
      */
     public function getNews(): array
     {
-        $news = [];
-        \array_push($news, $this->bnet->getNews(), $this->wowprogress->getNews());
+        $news = \array_merge($this->bnet->getNews(), $this->wowprogress->getNews());
 
         return $this->sort($news);
     }
