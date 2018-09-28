@@ -20,9 +20,6 @@ links:
   - name: Raider.IO
     url: https://raider.io/guilds/eu/galakrond/Ясный%20Лес
     class:
-  - name: Зал Славы
-    url: /raid
-    class: text-danger
 
 rt:
   date: "30 сентября 19:00-22:00 МСК"

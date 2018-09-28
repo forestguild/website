@@ -92,7 +92,7 @@ class Base
      */
     protected function sort(array $data): array
     {
-        \uasort($data, function (array $a, array $b) {
+        \usort($data, function (array $a, array $b) {
             if ($a['timestamp'] === $b['timestamp']) {
                 return 0;
             }
