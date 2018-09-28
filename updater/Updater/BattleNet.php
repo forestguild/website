@@ -14,6 +14,7 @@ class BattleNet extends Base
     protected $filters = [
         'level' => 120, //min level
         'ranks' => [0, 1, 2], //required guild rank
+        'raids' => ['Ульдир'], //raid to check
     ];
 
     /**
@@ -40,9 +41,146 @@ class BattleNet extends Base
                 $chars[] = $member['character']['name'];
             }
         }
-        $this->log('Battlenet.getCharacters', 'success');
+        \sort($chars);
+        $this->log('BattleNet.getCharacters', 'success');
 
         return $chars;
+    }
+
+    /**
+     * Get all max level characters' names.
+     *
+     * @return array
+     */
+    public function getLeveledCharacters(): array
+    {
+        $chars = [];
+        $raw = \json_decode($this->fetch($this->getUrl('members')), true);
+        if (!($raw['members'] ?? false)) {
+            $this->log('BattleNet.getLeveledCharacters', 'fail. No members found (Check battle.net api key)');
+
+            return [];
+        }
+        foreach ($raw['members'] as $member) {
+            // filter mermbers by level and ranks
+            if ($member['character']['level'] >= $this->filters['level']) {
+                $chars[] = $member['character']['name'];
+            }
+        }
+        \sort($chars);
+        $this->log('BattleNet.getLeveledCharacters', 'success');
+
+        return $chars;
+    }
+
+    /**
+     * Get characters' data.
+     *
+     * @param array  $characters Character names to get
+     * @param string $fields     Battle.net API fields
+     *
+     * @return array
+     */
+    public function getCharactersData(array $characters, string $fields): array
+    {
+        $data = [];
+        foreach ($characters as $character) {
+            $raw = \json_decode($this->fetch($this->getUrl($fields, $character)), true);
+            if ($raw['name'] ?? false) {
+                $this->log('BattleNet.getCharactersData('.$character.')', 'success');
+                $data[] = $raw;
+            } else {
+                $this->log('BattleNet.getCharactersData('.$character.')', 'fail');
+            }
+        }
+
+        return $data;
+    }
+
+    /**
+     * Get current week raid progress.
+     * NOTE: Battle.net progression API is very complicated,
+     * that's why we need multi-level foreach and other shit.
+     *
+     * @return array
+     */
+    public function getRaidProgress(): array
+    {
+        $raiders = [];
+        $bosses = [];
+        $progress = [];
+        $chars = $this->getLeveledCharacters();
+        $data = $this->getCharactersData($chars, 'progression');
+        //Get list of bosses and kill timestamps with player names
+        foreach ($data as $char) {
+            foreach ($char['progression']['raids'] as $raid) {
+                if (\in_array($raid['name'], $this->filters['raids'], true)) {
+                    foreach ($raid['bosses'] as $boss) {
+                        if (!isset($bosses[$raid['name']][$boss['name']])) {
+                            $bosses[$raid['name']][$boss['name']] = 0;
+                        }
+                        foreach (['normal', 'heroic', 'mythic'] as $difficulty) {
+                            if ($boss[$difficulty.'Kills'] ?? null) {
+                                $progress[$raid['name']][$boss['name']][$difficulty][$boss[$difficulty.'Timestamp']][] = $char['name'];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //Calculate guild raiders
+        foreach ($progress as $raidName => $rawBosses) {
+            foreach ($rawBosses as $bossName => $difficulty) {
+                foreach ($difficulty as $diffName => $times) {
+                    foreach ($times as $timestamp => $players) {
+                        if (\count($players) >= 3) { //We check only guild groups with 3+ members.
+                            foreach ($players as $player) {
+                                if (!isset($raiders[$raidName][$bossName][$player])) {
+                                    $raiders[$player]['kills'][$bossName] = 0;
+                                }
+                                ++$raiders[$player]['kills'][$bossName];
+                                $bosses[$raidName][$bossName] = 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //Convert to more usable by Jekyll format
+        $processed = [];
+        foreach ($raiders as $name => $data) {
+            $data['name'] = $name;
+            foreach ($data['kills'] as $boss => $count) {
+                $data['kills'][] = ['name' => $boss, 'count' => $count];
+                unset($data['kills'][$boss]);
+            }
+            $processed['raiders'][] = $data;
+        }
+        foreach ($bosses as $raidName => $bossList) {
+            foreach ($bossList as $name => $killed) {
+                $processed['bosses'][] = ['name' => $name, 'killed' => (bool) $killed, 'raid' => $raidName];
+            }
+        }
+        // Sort by kills
+        \usort($processed['raiders'], function (array $a, array $b) {
+            $aKills = 0;
+            $bKills = 0;
+            foreach (['a', 'b'] as $i) { //count boss kills for $a and $b
+                if (!${$i}['kills']) {
+                    continue;
+                }
+                foreach (${$i}['kills'] as $kills) {
+                    ${$i.'Kills'} += $kills['count'];
+                }
+            }
+            if ($aKills === $bKills) {
+                return 0;
+            }
+
+            return ($aKills < $bKills) ? 1 : -1;
+        });
+
+        return $processed;
     }
 
     /**
@@ -77,14 +215,15 @@ class BattleNet extends Base
     /**
      * Get battle.net API url.
      *
-     * @param string $fields API fields to load, eg: news, members
+     * @param string $fields    API fields to load, eg: news, members
+     * @param string $character Character name. If set - char url will be returned
      *
      * @return string https://eu.api.battle.net/wow/guild/Галакронд/Ясный%20Лес?fields=news&locale=ru_RU&apikey=XXXXXXXX
      */
-    protected function getUrl(string $fields = ''): string
+    protected function getUrl(string $fields = '', string $character = null): string
     {
-        $url = 'https://'.$this->config['region'].'.api.battle.net/wow/guild/'; //https://eu.api.battle.net/wow/guild/
-        $url .= \ucfirst($this->config['realm']['ru']).'/'.\str_replace(' ', '%20', $this->config['guild']); //https://eu.api.battle.net/wow/guild/Галакронд/Ясный%20Лес
+        $url = 'https://'.$this->config['region'].'.api.battle.net/wow/'.($character ? 'character' : 'guild').'/'; //https://eu.api.battle.net/wow/guild/
+        $url .= \ucfirst($this->config['realm']['ru']).'/'.($character ? $character : \str_replace(' ', '%20', $this->config['guild'])); //https://eu.api.battle.net/wow/guild/Галакронд/Ясный%20Лес
         $url .= '?fields='.$fields.'&locale='.$this->config['lang'].'&apikey='.$this->config['api']['battle.net'];
 
         return $url; //https://eu.api.battle.net/wow/guild/Галакронд/Ясный%20Лес?fields=news&locale=ru_RU&apikey=XXXXXXXX

@@ -1,0 +1,52 @@
+---
+layout: default
+title: Зал Славы
+---
+
+<h1 class="text-white">Текущая неделя WoW</h1>
+<span class="text-gray">
+    Данные ежедневно собираются из Battle.net API и содержат информация о <b>последней неделе</b> WoW (со среды до среды).
+    Если тебе интересен суммарный прогресс - смотри WoWProgress и Raider.IO
+</span>
+<div class="row">
+    <div class="jumbotron col-md-6 col-sm-12 bg-dark-gradient pt-4 pb-4">
+        <h2 class="text-white">Рейдеры недели</h3>
+        <span class="text-white">Эти ребята - красавцы! Именно они продвигают гильдию вперед. Честь и хвала!</span>
+        {% for raider in site.data.raid.raiders %}
+        <p class="lead text-gray">
+        <span class="text-danger">Praise the <b>{{ raider.name }}</b></span>. Завалил
+        {% for kill in raider.kills %}
+        <span class="text-white">{{ kill.name }}</span>{% if kill.count > 1 %}<sub>x{{ kill.count }}</sub>{% endif %},
+        {% endfor %}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div class="jumbotron col-md-6 col-sm-12 bg-dark-gradient pt-4 pb-4">
+        {% comment %}
+        * Prepare raid progress, based on kills
+        {% endcomment %}
+        {% assign killed = 0 %}
+        {% for boss in site.data.raid.bosses %}
+        {% if boss.killed == true %}
+        {% assign killed = killed | plus:1 %}
+        {% endif %}
+        {% endfor %}
+        <h2 class="text-white">Прогресс рейда {{ killed }}/{{ site.data.raid.bosses|size }}</h3>
+        <p>
+        {% for boss in site.data.raid.bosses %}
+        <h3>
+            {% if boss.killed %}
+            <s class="text-gray">{{ boss.name }}</s>
+            {% else %}
+            <span class="text-white">{{ boss.name }}</span>
+            {% endif %}
+        </h3>
+        </p>
+        {% endfor %}
+        <p class="lead text-white">
+        <b class="text-gray">ProTip!</b> Жетрвы из этого списка вычекиваются автоматически раз в сутки.
+        </p>
+
+    </div>
+</div>

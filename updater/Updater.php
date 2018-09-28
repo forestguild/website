@@ -10,18 +10,11 @@ namespace Rakshazi\WoW;
 class Updater extends Updater\Base
 {
     /**
-     * Updater configuration.
-     *
-     * @var array
-     */
-    protected $config = [];
-
-    /**
      * Battle.net handler.
      *
      * @var Updater\BattleNet
      */
-    protected $bnet;
+    public $bnet;
 
     /**
      * WoWProgress handler.
@@ -34,14 +27,20 @@ class Updater extends Updater\Base
      *
      * @var Updater\RaiderIO
      */
-    protected $wowprogress;
+    public $wowprogress;
 
     /**
      * CloudFlare handler.
      *
      * @var Updater\CloudFlare
      */
-    protected $cloudflare;
+    public $cloudflare;
+    /**
+     * Updater configuration.
+     *
+     * @var array
+     */
+    protected $config = [];
 
     /**
      * Init.
@@ -107,18 +106,18 @@ class Updater extends Updater\Base
     }
 
     /**
-     * Get news and save them to csv.
+     * Get updates and save them to data dir.
      *
-     * @param string $file Path to file
+     * @param string $dir Path to dir with csv
      */
-    public function toCsv(string $file): void
+    public function toData(string $dir): void
     {
+        //News
         $data = $this->getNews();
-        $fp = \fopen($file, 'w');
-        \fputcsv($fp, ['timestamp', 'type', 'title', 'description']);
-        foreach ($data as $item) {
-            \fputcsv($fp, $item);
-        }
-        \fclose($fp);
+        \file_put_contents($dir.'/news.json', \json_encode($data));
+
+        //Raid progress
+        $data = $this->bnet->getRaidProgress();
+        \file_put_contents($dir.'/raid.json', \json_encode($data, JSON_NUMERIC_CHECK));
     }
 }

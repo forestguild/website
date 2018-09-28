@@ -34,7 +34,10 @@ $updater = new \Rakshazi\WoW\Updater(
 
 if (($argv[1] ?? false) === 'news') {
     $updater->updateProgress();
-    $updater->toCsv(\getcwd().'/_data/news.csv');
-} else {
+    $updater->toData(\getcwd().'/_data');
+} elseif (($argv[1] ?? false) === 'cache') {
     $updater->purgeCache();
+} elseif (($argv[1] ?? false) === 'test') {
+    $updater->toData(\getcwd().'/_data');
+    \var_dump(\json_decode(\file_get_contents(\getcwd().'/_data/raid.json'), true));
 }

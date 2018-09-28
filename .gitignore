@@ -1,5 +1,5 @@
 _site
-_data/news.csv
+_data/*
 .sass-cache
 .jekyll-metadata
 .php_cs.cache
