@@ -25,9 +25,9 @@ layout: null
             <dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
             {% endif %}
             {% if post.excerpt %}
-            <description><![CDATA[{{ post.excerpt | markdownify }}]]></description>
+            <description><![CDATA[{{ post.excerpt | markdownify | remove:"&nbsp;" }}]]></description>
             {% else %}
-            <description><![CDATA[{{ post.content | markdownify }}]]></description>
+            <description><![CDATA[{{ post.content | markdownify | remove:"&nbsp;" }}]]></description>
             {% endif %}
             <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
             <link>{{ site.url }}{{ post.url }}</link>
@@ -38,8 +38,8 @@ layout: null
         {% if page.title %}
         <item turbo="true">
             <title><![CDATA[{{ page.title | strip_html | remove:"&nbsp;" }}]]></title>
-            <description><![CDATA[{{ page.content |  markdownify }}]]></description>
-            <turbo:content><![CDATA[{{ page.content |  markdownify }}]]></turbo:content>
+            <description><![CDATA[{{ page.content |  markdownify | remove:"&nbsp;" }}]]></description>
+            <turbo:content><![CDATA[{{ page.content |  markdownify | remove:"&nbsp;" }}]]></turbo:content>
             <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
             <link>{{ site.url }}{{ page.url }}</link>
             <guid isPermaLink="true">{{ site.url }}{{ page.url }}</guid>
