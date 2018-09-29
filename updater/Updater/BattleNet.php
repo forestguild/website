@@ -102,6 +102,8 @@ class BattleNet extends Base
      * NOTE: Battle.net progression API is very complicated,
      * that's why we need multi-level foreach and other shit.
      *
+     * @todo refactor that shit
+     *
      * @return array
      */
     public function getRaidProgress(): array
@@ -128,12 +130,26 @@ class BattleNet extends Base
                 }
             }
         }
+
+        //Prepare date filter
+        switch (\date('w')) {
+        case 0: //sunday
+        case 1: //monday
+        case 2: //tueseday
+            $week = 'previous';
+            break;
+        default: //wednesday+
+            $week = 'this';
+            break;
+        }
+        $timeFilter = \strtotime(\date('y-m-d 00:00:00', \strtotime('Wednesday '.$week.' week'))); //workaround for 12am
         //Calculate guild raiders
         foreach ($progress as $raidName => $rawBosses) {
             foreach ($rawBosses as $bossName => $difficulty) {
                 foreach ($difficulty as $diffName => $times) {
                     foreach ($times as $timestamp => $players) {
-                        if (\count($players) >= 3) { //We check only guild groups with 3+ members.
+                        $timestamp = \substr((string) $timestamp, 0, -3); //workaround for "000" in bnet's timestamps
+                        if (\count($players) >= 3 && $timestamp >= $timeFilter) { //We check only guild groups with 3+ members for this wow Week (from wed to wed).
                             foreach ($players as $player) {
                                 if (!isset($raiders[$raidName][$bossName][$player])) {
                                     $raiders[$player]['kills'][$bossName] = 0;
