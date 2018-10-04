@@ -5,12 +5,14 @@ body {
     font-weight: 400 !important;
     background: url("/assets/img/bg.jpg") repeat-y bottom center #120d0a;
 }
+
+/** Background with art in top left corner **/
 .bg-img {
     background: url(/assets/img/bg.main.jpg) top center no-repeat #120d0a;
 }
 
 /* Header bg */
-.navbar {
+.navbar-desktop {
     background: url("/assets/img/bg.nav.png") no-repeat top center transparent;
     min-height:70px;
 }
@@ -34,6 +36,7 @@ body {
     background-image:-webkit-linear-gradient(top,#fff,#fff)
 }
 
+/** WoW-styled button **/
 .btn-wow {
     background: url(/assets/img/btn-wow.png) no-repeat 0 0 transparent;
     height: 108px;
@@ -57,6 +60,7 @@ body {
     line-height: 93px;
 }
 
+/** Sidebar menu **/
 .bg-menu {
     background: url(/assets/img/line.sm.png) no-repeat top center, url(/assets/img/line.lg.png) no-repeat bottom center;
     padding-bottom: 100px !important;
@@ -78,7 +82,11 @@ body {
     background-image:-webkit-linear-gradient(top,#fff,#fff)
 }
 
+.bg-menu li {
+    list-style: none;
+}
 
+/** Modal window styling **/
 .modal-content {
     background: url(/assets/img/line.lg.png) no-repeat top center, url(/assets/img/bg.jpg) no-repeat bottom center;
     background-position-y: -30px;
@@ -119,6 +127,7 @@ blockquote {
     color: rgba(255, 255, 255, 0.55) !important;
 }
 
+/** Wiki **/
 .wiki {
     background: url(/assets/img/line.sm.png) no-repeat top center, url(/assets/img/line.lg.png) no-repeat bottom center;
     padding-bottom: 100px !important;
