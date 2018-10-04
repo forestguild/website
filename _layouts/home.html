@@ -11,9 +11,8 @@ layout: default
     </div>
 
     <div class="jumbotron bg-transparent col-md-6 col-sm-12">
-        <h1 class="text-white">Ясный Лес</h1>
-        {% if site.rt.date %}<button class="btn btn-wow" data-toggle="modal" data-target="#rtModal">Время Рейда</button>{% endif %}
-        <p class="lead text-gray">Гильдия World of Warcraft &bull; Галакронд &bull; PvE</p>
+        <h1 class="text-white text-center">Ясный Лес</h1>
+        <p class="lead text-gray text-center">Гильдия World of Warcraft &bull; Галакронд &bull; PvE</p>
         <p class="lead text-white">
         <b>Да</b>, гильдия живая.<br>
         <b>Да</b>, мы набираем статик.<br>
@@ -22,13 +21,15 @@ layout: default
         <b>Да</b>, мы помогаем новичкам - подземелья, рейды, фронты, реагенты, шмот.<br>
         <span class="text-gray"><b>Да</b>, мы захватим Азерот. <i>Но это не точно</i></span>
         </p>
-        <h1 class="text-gray">Хочешь с нами?</h1>
+        <div class="bg-block">
+        <h1 class="text-gray text-center">Хочешь с нами?</h1>
         <p class="lead text-white">
         Читай <a href="/wiki" class="text-danger">вики</a>,
         заходи в <a href="https://discord.gg/v9mNxAS" target="_blank" class="text-warning">discord</a>.<br>
         <span class="text-gray">За постоянное нахождение в дискорде у нас <a class="text-danger" href="/wiki/discord#плюшки-за-дискорд" target"_blank">предусмотрены различные плюшки</a> (зашел в игру = зашел в дискорд)</span>
         </p>
-        <h3 class="text-white">Последние новости</h3>
+        </div>
+        <h3 class="text-white text-center">Последние новости</h3>
         {% for item in site.data.news %}
         <p class="lead">
                 <span class="text-gray">{{ item.timestamp|date: "%-d.%m" }}</span>
@@ -43,9 +44,9 @@ layout: default
         {% endfor %}
     </div>
 
-    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block">
-        <p class="lead">&nbsp;</p>
-        <p class="lead"><img alt='WoW Guild Rankings' src='https://wowprogress.com/guild_img/1665634/out/type.site/guild_rank.realm'/></p>
+    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block text-center">
+        {% if site.rt.date %}<button class="btn btn-wow" data-toggle="modal" data-target="#rtModal">Время Рейда</button>{% endif %}
+        <img alt='WoW Guild Rankings' src='https://wowprogress.com/guild_img/1665634/out/type.site/guild_rank.realm'/>
     </div>
 
 </div>
