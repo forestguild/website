@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="row">
+<div class="row bg-img">
 
     <div class="jumbotron col-md-3 bg-transparent d-none d-md-block">
         <p class="lead">&nbsp;</p>
@@ -11,7 +11,8 @@ layout: default
     </div>
 
     <div class="jumbotron bg-transparent col-md-6 col-sm-12">
-        <h1 class="text-white">Ясный Лес {% if site.rt.date %}<a href="#" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#rtModal">Время Рейда</a>{% endif %}</h1>
+        <h1 class="text-white">Ясный Лес</h1>
+        {% if site.rt.date %}<button class="btn btn-wow" data-toggle="modal" data-target="#rtModal">Время Рейда</button>{% endif %}
         <p class="lead text-gray">Гильдия World of Warcraft &bull; Галакронд &bull; PvE</p>
         <p class="lead text-white">
         <b>Да</b>, гильдия живая.<br>
