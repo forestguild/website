@@ -5,6 +5,24 @@ body {
     font-weight: 400 !important;
     background: url("/assets/img/bg.jpg") repeat-y bottom center #120d0a;
 }
+/** Global links style **/
+a {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(top,#ede0c9 20%,#8a7e66 100%);
+    background-size: 1.3em 1.3em;
+    background-position: top;
+    color: #ede0c9 !important;
+    font-weight: 700 !important;
+}
+a:hover {
+    color: #fff;
+    background-image:-webkit-linear-gradient(top,#fff,#fff)
+}
+
+i, em {
+    color: rgba(255, 255, 255, 0.55) !important;
+}
 
 /** Background with art in top left corner **/
 .bg-img {
@@ -26,8 +44,6 @@ body {
     background-position: top;
     color: #ede0c9;
     font-weight: 700;
-    /*font-size: 17px;*/
-    /*padding: 0 10px;*/
     text-transform: uppercase;
 }
 
@@ -69,23 +85,6 @@ body {
     background: url(/assets/img/line.lg.png) no-repeat top center, url(/assets/img/line.sm.png) no-repeat bottom center;
     padding-top: 100px !important;
     padding-bottom: 50px !important;
-}
-.bg-menu a,
-.bg-block a {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: -webkit-linear-gradient(top,#ede0c9 20%,#8a7e66 100%);
-    background-size: 1.3em 1.3em;
-    background-position: top;
-    color: #ede0c9;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding-left: 10px;
-}
-.bg-menu a:hover,
-.bg-block a:hover {
-    color: #fff;
-    background-image:-webkit-linear-gradient(top,#fff,#fff)
 }
 
 .bg-menu li,
@@ -143,15 +142,14 @@ blockquote {
 /* Wiki text */
 .wiki p,
 .wiki li,
-.wiki td,
-.wiki a {
+.wiki td {
     font-weight: 400 !important;
     font-size: 1.25rem;
 }
 
 /* Wiki links in text */
 .wiki a {
-    color: #bd2130 !important;
+    /*color: #bd2130 !important;*/
 }
 
 .wiki table {
