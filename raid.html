@@ -14,7 +14,7 @@ title: Зал Славы
         <span class="text-white">Эти ребята - красавцы! Именно они продвигают гильдию вперед. Честь и хвала!</span>
         {% for raider in site.data.raid.raiders %}
         <p class="lead text-gray">
-        <span class="text-danger">Praise the <b>{{ raider.name }}</b></span>. Завалил
+        <span class="text-danger">Praise the <b><a href="https://raider.io/characters/eu/galakrond/{{ raider.name }}" target="_blank">{{ raider.name }}</a></b></span>. Завалил
         {% for kill in raider.kills %}
         <span class="text-white">{{ kill.name }}</span>{% if kill.count > 1 %}<sub>x{{ kill.count }}</sub>{% endif %},
         {% endfor %}
