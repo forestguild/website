@@ -22,20 +22,15 @@ links:
     class:
 
 rt:
-  date: "Воскресенье-четверг 19:00-22:00 МСК"
+  date: "19:00-22:00 МСК"
+  description: "В 19:00 уже заходим в рейд, приходить в дискорд нужно за 20-30 минут до начала."
   setup:
     default: "2 / 4 / 14"
     modifiable: true
   requirements:
-    ilvl: 330
-    flasks: 1
-  raid:
-    name: "Ульдир"
-    difficulty: "Нормал"
-    bosses: 8
-    min: 7
-    max: 8
-  description: "Ежедневно (кроме пятницы-субботы). В 19:00 уже заходим в рейд, приходить в дискорд нцжно за 20-30 минут до начала."
+    ilvl: 340
+    flasks: 2
+  raid: "Ульдир"
 
 # Build settings
 markdown: kramdown
