@@ -91,28 +91,30 @@
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="rtTitle">{{ site.rt.raid.name }} ({{ site.rt.raid.difficulty }}) - {{ site.rt.date }}</h5>
+                        <h5 class="modal-title" id="rtTitle">{{ site.rt.raid }} - {{ site.rt.date }}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p class="lead text-muted">{{ site.rt.description }}</p>
+                        <p class="lead text-muted">
+                        {{ site.rt.description }}<br />
+                        <span style="color: #000;">Сложность сегодняшнего рейда можно увидеть в событии в календаре WoW</span>
+                        </p>
                         <hr>
                         <div class="row lead">
                             <div class="col-md-6 col-sm-12">
                                 <span class="text-muted">Куда идем?</span><br />
-                                Рейд: {{ site.rt.raid.name }} ({{ site.rt.raid.difficulty }})<br />
+                                Рейд: {{ site.rt.raid }}<br />
                                 Сетап: {{ site.rt.setup.default }} {% if site.rt.setup.modifiable %}<span id="raid-setup" class="text-warning" data-toggle="tooltip" data-html="true" title="Сетап может измениться, в зависимости от количества желающих. Возможные варианты:<br>2/3/9<br>2/4/14<br>2/5/20">(?)</span>{% endif %}<br />
-                                План минимум: {{ site.rt.raid.min }}/{{ site.rt.raid.bosses }}<br />
-                                План максимум: {{ site.rt.raid.max }}/{{ site.rt.raid.bosses }}
+                                <span class="text-danger">Дни РТ</span>: Понедельник, Вторник, Среда, Четверг, Воскресенье<br />
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <span class="text-muted">Требования</span><br />
                                 Знание <a href="/wiki/raid/tactics" target="_blank" class="text-danger">тактики</a><br />
                                 Наличие <a href="/wiki/addons" target="_blank" class="text-danger">аддонов</a><br />
                                 Уровень вещей: {{ site.rt.requirements.ilvl }}+<br />
-                                Настоев с собой: {{ site.rt.requirements.flasks }}+<br />
+                                Настоев с собой: {{ site.rt.requirements.flasks }}+ <sub class="text-muted">(алхимикам -1)</sub><br />
                                 <i class="text-muted">а так же чарки и камни.</i>
                             </div>
                         </div>
@@ -120,7 +122,7 @@
                     <div class="modal-footer">
                         <span>Проверь себя по <a href="/wiki/raid/checklist" target="_blank" class="text-danger">чек-листу</a> заранее, иначе в рейд не попадешь.<br />
                             <span class="text-muted"><b><a href="https://eu.battle.net/wow/ru/vault/guild/event" target="_blank" class="text-muted" id="armory-calendar"  data-toggle="tooltip" data-html="true" title="Для просмотра календаря в оружейной wow <b>нужно авторизоваться</b>, не забудь об этом">Событие в календаре</a></b> cоздано, подпишись на него</span></span>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Иду готовиться</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">За Орду!</button>
                     </div>
                 </div>
             </div>
