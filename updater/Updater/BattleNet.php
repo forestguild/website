@@ -14,7 +14,6 @@ class BattleNet extends Base
     protected $filters = [
         'level' => 120, //min level
         'ranks' => [0, 1, 2], //required guild rank
-        'raids' => ['Ульдир'], //raid to check
     ];
 
     /**
@@ -84,119 +83,21 @@ class BattleNet extends Base
     public function getCharactersData(array $characters, string $fields): array
     {
         $data = [];
+        $urls = [];
         foreach ($characters as $character) {
-            $raw = \json_decode($this->fetch($this->getUrl($fields, $character)), true);
+            $urls[] = $this->getUrl($fields, $character);
+        }
+        foreach ($this->fetchMulti($urls, 80) as $raw) {
+            $raw = \json_decode($raw, true);
             if ($raw['name'] ?? false) {
-                $this->log('BattleNet.getCharactersData('.$character.')', 'success');
+                $this->log('BattleNet.getCharactersData('.$raw['name'].')', 'success');
                 $data[] = $raw;
             } else {
-                $this->log('BattleNet.getCharactersData('.$character.')', 'fail');
+                $this->log('BattleNet.getCharactersData()', 'fail');
             }
         }
 
         return $data;
-    }
-
-    /**
-     * Get current week raid progress.
-     * NOTE: Battle.net progression API is very complicated,
-     * that's why we need multi-level foreach and other shit.
-     *
-     * @todo refactor that shit
-     *
-     * @return array
-     */
-    public function getRaidProgress(): array
-    {
-        $raiders = [];
-        $bosses = [];
-        $progress = [];
-        $chars = $this->getLeveledCharacters();
-        $data = $this->getCharactersData($chars, 'progression');
-        //Get list of bosses and kill timestamps with player names
-        foreach ($data as $char) {
-            foreach ($char['progression']['raids'] as $raid) {
-                if (\in_array($raid['name'], $this->filters['raids'], true)) {
-                    foreach ($raid['bosses'] as $boss) {
-                        if (!isset($bosses[$raid['name']][$boss['name']])) {
-                            $bosses[$raid['name']][$boss['name']] = 0;
-                        }
-                        foreach (['normal', 'heroic', 'mythic'] as $difficulty) {
-                            if ($boss[$difficulty.'Kills'] ?? null) {
-                                $progress[$raid['name']][$boss['name']][$difficulty][$boss[$difficulty.'Timestamp']][] = $char['name'];
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        //Prepare date filter
-        switch (\date('w')) {
-        case 0: //sunday
-        case 1: //monday
-        case 2: //tueseday
-            $week = 'previous';
-            break;
-        default: //wednesday+
-            $week = 'this';
-            break;
-        }
-        $timeFilter = \strtotime(\date('y-m-d 00:00:00', \strtotime('Wednesday '.$week.' week'))); //workaround for 12am
-        //Calculate guild raiders
-        foreach ($progress as $raidName => $rawBosses) {
-            foreach ($rawBosses as $bossName => $difficulty) {
-                foreach ($difficulty as $diffName => $times) {
-                    foreach ($times as $timestamp => $players) {
-                        $timestamp = \substr((string) $timestamp, 0, -3); //workaround for "000" in bnet's timestamps
-                        if (\count($players) >= 3 && $timestamp >= $timeFilter) { //We check only guild groups with 3+ members for this wow Week (from wed to wed).
-                            foreach ($players as $player) {
-                                if (!isset($raiders[$raidName][$bossName][$player])) {
-                                    $raiders[$player]['kills'][$bossName] = 0;
-                                }
-                                ++$raiders[$player]['kills'][$bossName];
-                                $bosses[$raidName][$bossName] = 1;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        //Convert to more usable by Jekyll format
-        $processed = [];
-        foreach ($raiders as $name => $data) {
-            $data['name'] = $name;
-            foreach ($data['kills'] as $boss => $count) {
-                $data['kills'][] = ['name' => $boss, 'count' => $count];
-                unset($data['kills'][$boss]);
-            }
-            $processed['raiders'][] = $data;
-        }
-        foreach ($bosses as $raidName => $bossList) {
-            foreach ($bossList as $name => $killed) {
-                $processed['bosses'][] = ['name' => $name, 'killed' => (bool) $killed, 'raid' => $raidName];
-            }
-        }
-        // Sort by kills
-        \usort($processed['raiders'], function (array $a, array $b) {
-            $aKills = 0;
-            $bKills = 0;
-            foreach (['a', 'b'] as $i) { //count boss kills for $a and $b
-                if (!${$i}['kills']) {
-                    continue;
-                }
-                foreach (${$i}['kills'] as $kills) {
-                    ${$i.'Kills'} += $kills['count'];
-                }
-            }
-            if ($aKills === $bKills) {
-                return 0;
-            }
-
-            return ($aKills < $bKills) ? 1 : -1;
-        });
-
-        return $processed;
     }
 
     /**

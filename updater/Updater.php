@@ -17,6 +17,13 @@ class Updater extends Updater\Base
     public $bnet;
 
     /**
+     * RaidProgress handler.
+     *
+     * @var Updater\RaidProgress
+     */
+    public $raid;
+
+    /**
      * WoWProgress handler.
      *
      * @var Updater\WowProgress
@@ -65,6 +72,7 @@ class Updater extends Updater\Base
             'lang' => $lang,
         ];
         $this->bnet = new Updater\BattleNet($this->config);
+        $this->raid = new Updater\RaidProgress($this->config, $this->bnet);
         $this->wowprogress = new Updater\WowProgress($this->config);
         $this->raiderio = new Updater\RaiderIO($this->config);
         $this->cloudflare = new Updater\CloudFlare($this->config);
@@ -117,7 +125,7 @@ class Updater extends Updater\Base
         \file_put_contents($dir.'/news.json', \json_encode($data));
 
         //Raid progress
-        $data = $this->bnet->getRaidProgress();
+        $data = $this->raid->get();
         \file_put_contents($dir.'/raid.json', \json_encode($data, JSON_NUMERIC_CHECK));
     }
 }
