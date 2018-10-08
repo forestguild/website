@@ -37,16 +37,22 @@ build website:
     - docker
 
 deploy:
-  image: ilyasemenov/gitlab-ci-git-push
+  image: alpine:latest
   stage: deploy
   before_script:
-    - rm -rf .git # to avoid git "bad ref" problem
+    - apk add --no-cache git openssh-client
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - echo -e "Host *\n\tStrictHostKeyChecking no" > ~/.ssh/config
+    - eval $(ssh-agent -s)
+    - ssh-add
+  script:
     - cd _site
     - git init
     - git remote add origin $REMOTE
     - git config user.email "me+github@rakshazi.cf"
     - git config user.name "Gitlab CI"
-  script:
     - git add --all
     - git commit -a -q -m "CI deploy"
     - git-push git@github.com:rakshazi/forestguild.club.git gh-pages
