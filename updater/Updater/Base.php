@@ -73,6 +73,115 @@ class Base
     }
 
     /**
+     * Fetch data from array of urls.
+     *
+     * @param array $urls           Array of urls
+     * @param int   $maxConnections amount of connections in the same time
+     *
+     * @return \Generator
+     */
+    protected function fetchMulti(array $urls, int $maxConnections = 200): \Generator
+    {
+        $multi = \curl_multi_init();
+        \curl_multi_setopt($multi, CURLMOPT_PIPELINING, 3);
+        \curl_multi_setopt($multi, CURLMOPT_MAX_TOTAL_CONNECTIONS, $maxConnections);
+        $channels = [];
+
+        foreach ($urls as $url) {
+            $ch = \curl_init();
+            \curl_setopt($ch, CURLOPT_URL, $url);
+            \curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+            \curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            \curl_multi_add_handle($multi, $ch);
+
+            $channels[$url] = $ch;
+        }
+
+        $active = null;
+        do {
+            $mrc = \curl_multi_exec($multi, $active);
+        } while (CURLM_CALL_MULTI_PERFORM === $mrc);
+
+        while ($active && CURLM_OK === $mrc) {
+            if (\curl_multi_select($multi) === -1) {
+                continue;
+            }
+
+            do {
+                $mrc = \curl_multi_exec($multi, $active);
+            } while (CURLM_CALL_MULTI_PERFORM === $mrc);
+        }
+
+        foreach ($channels as $channel) {
+            yield \curl_multi_getcontent($channel);
+            \curl_multi_remove_handle($multi, $channel);
+        }
+
+        \curl_multi_close($multi);
+    }
+
+    /**
+     * Send POST request to URL with DATA.
+     *
+     * @param array $urls
+     * @param mixed $data
+     * @param array $headers        HTTP headers
+     * @param int   $maxConnections Max curl connections in-time
+     *
+     * @return \Generator
+     */
+    protected function sendMulti(array $urls, $data, array $headers = null, int $maxConnections = 200): \Generator
+    {
+        if (\is_array($data)) {
+            $data = \http_build_query($data);
+        }
+        $multi = \curl_multi_init();
+        \curl_multi_setopt($multi, CURLMOPT_PIPELINING, 3);
+        \curl_multi_setopt($multi, CURLMOPT_MAX_TOTAL_CONNECTIONS, $maxConnections);
+        $channels = [];
+
+        foreach ($urls as $url) {
+            $ch = \curl_init();
+            \curl_setopt($ch, CURLOPT_URL, $url);
+            \curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); //workaround for redirect bug (send post - redirect - send get)
+            \curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+            \curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            if ($headers) {
+                \curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            }
+            \curl_setopt($ch, CURLOPT_POSTREDIR, 3); //workarond for redirect bug
+            \curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            \curl_multi_add_handle($multi, $ch);
+
+            $channels[$url] = $ch;
+        }
+
+        $active = null;
+        do {
+            $mrc = \curl_multi_exec($multi, $active);
+        } while (CURLM_CALL_MULTI_PERFORM === $mrc);
+
+        while ($active && CURLM_OK === $mrc) {
+            if (\curl_multi_select($multi) === -1) {
+                continue;
+            }
+
+            do {
+                $mrc = \curl_multi_exec($multi, $active);
+            } while (CURLM_CALL_MULTI_PERFORM === $mrc);
+        }
+
+        foreach ($channels as $channel) {
+            yield \curl_multi_getcontent($channel);
+            \curl_multi_remove_handle($multi, $channel);
+        }
+
+        \curl_multi_close($multi);
+    }
+
+    /**
      * Write log message.
      *
      * @param string $task    Updater and task name

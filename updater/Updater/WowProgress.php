@@ -26,12 +26,16 @@ class WowProgress extends Base
      */
     public function updateCharacters(array $characters = []): void
     {
+        $urls = [];
         foreach ($characters as $name) {
+            $urls[] = $this->getUrl($name);
+        }
+        foreach ($this->sendMulti($urls, ['update' => 1]) as $result) {
             try {
-                $result = \json_decode($this->send($this->getUrl($name), ['update' => 1]), true);
-                $this->log('WowProgress.updateCharacters('.$name.')', ($result['success'] ?? false) === true ? 'success' : 'fail');
+                $result = \json_decode($result, true);
+                $this->log('WowProgress.updateCharacters', ($result['success'] ?? false) === true ? 'success' : 'fail');
             } catch (\Throwable $t) {
-                $this->log('WowProgress.updateCharacters('.$name.')', 'fail. '.$t->getMessage());
+                $this->log('WowProgress.updateCharacters', 'fail. '.$t->getMessage());
             }
         }
     }

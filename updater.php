@@ -38,20 +38,5 @@ if (($argv[1] ?? false) === 'news') {
 } elseif (($argv[1] ?? false) === 'cache') {
     $updater->purgeCache();
 } elseif (($argv[1] ?? false) === 'test') {
-    switch (\date('w')) {
-    case 0: //sunday
-    case 1: //monday
-    case 2: //tueseday
-        $word = 'previous';
-        break;
-    default: //wednesday+
-        $word = 'this';
-        break;
-    }
-
-    $ts = \strtotime('Wednesday '.$word.' week 00:00');
-    \var_dump([$ts => \date('y-m-d h:i:s', $ts)]);
-    die;
-    $updater->toData(\getcwd().'/_data');
-    \var_dump(\json_decode(\file_get_contents(\getcwd().'/_data/raid.json'), true));
+    $updater->raid->get();
 }
