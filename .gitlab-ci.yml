@@ -1,6 +1,10 @@
-update:
+stages:
+  - data
+  - build
+
+collect data:
   image: php:alpine
-  stage: build
+  stage: data
   before_script:
     - mkdir -p _data
   script:
@@ -12,11 +16,11 @@ update:
   tags:
     - docker
 
-build:
+build website:
   image: jekyll/minimal
   stage: build
-  before_script:
-    - bundle update
+  #before_script:
+    #- bundle update
   script:
     - jekyll build
   after_script:
