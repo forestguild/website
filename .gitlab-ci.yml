@@ -17,10 +17,10 @@ collect data:
     - docker
 
 build website:
-  image: jekyll/minimal
+  image: jekyll/jekyll
   stage: build
-  #before_script:
-    #- bundle update
+  before_script:
+    - bundle update
   script:
     - jekyll build
   after_script:
