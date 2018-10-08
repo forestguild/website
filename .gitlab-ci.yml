@@ -55,7 +55,7 @@ deploy:
     - git config user.name "Gitlab CI"
     - git add --all
     - git commit -a -q -m "CI deploy"
-    - git-push git@github.com:rakshazi/forestguild.club.git gh-pages
+    - git push origin ${CI_COMMIT_SHA:-HEAD}:gh-pages --force
   tags:
     - docker
 
