@@ -1,6 +1,10 @@
+variables:
+  REMOTE: git@github.com:rakshazi/forestguild.club.git
 stages:
   - data
   - build
+  - deploy
+  - cleanup
 
 collect data:
   image: php:alpine
@@ -29,5 +33,26 @@ build website:
     name: pages
     paths:
       - _site/
+  tags:
+    - docker
+
+deploy:
+  image: ilyasemenov/gitlab-ci-git-push
+  stage: deploy
+  before_script:
+    - cd _site
+    - git init
+    - git remote add $REMOTE
+  script:
+    - cd _site
+    - git-push git@github.com:rakshazi/forestguild.club.git gh-pages
+  tags:
+    - docker
+
+cleanup:
+  stage: cleanup
+  image: php:alpine
+  script:
+    - php updater.php cache
   tags:
     - docker
