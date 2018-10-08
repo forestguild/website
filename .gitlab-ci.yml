@@ -45,6 +45,8 @@ deploy:
     - git init
     - git remote add origin $REMOTE
   script:
+    - git add --all
+    - git commit -a -q -m "CI deploy"
     - git-push git@github.com:rakshazi/forestguild.club.git gh-pages
   tags:
     - docker
