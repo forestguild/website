@@ -44,6 +44,8 @@ deploy:
     - cd _site
     - git init
     - git remote add origin $REMOTE
+    - git config user.email "me+github@rakshazi.cf"
+    - git config user.name "Gitlab CI"
   script:
     - git add --all
     - git commit -a -q -m "CI deploy"
