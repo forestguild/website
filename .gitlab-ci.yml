@@ -1,0 +1,29 @@
+update:
+  image: php:alpine
+  stage: build
+  before_script:
+    - mkdir -p _data
+  script:
+    - php updater.php news
+  artifacts:
+    name: _data
+    paths:
+      - _data/
+  tags:
+    - docker
+
+build:
+  image: jekyll/minimal
+  stage: build
+  before_script:
+    - bundle update
+  script:
+    - jekyll build
+  after_script:
+    - echo "forestguild.club" > _site/CNAME
+  artifacts:
+    name: pages
+    paths:
+      - _site/
+  tags:
+    - docker
