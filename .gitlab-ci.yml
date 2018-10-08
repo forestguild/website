@@ -57,10 +57,12 @@ deploy:
     - git init
     - git remote add origin $REMOTE
     - git config user.email "me+github@rakshazi.cf"
-    - git config user.name "Gitlab CI"
+    - git config user.name GitlabCI
     - git add --all
-    - git commit -a -q -m "CI deploy"
-    - git push origin ${CI_COMMIT_SHA:-HEAD}:gh-pages --force
+    - git commit -a -q -m Update
+    - git fsck --full
+    - git gc
+    - git push --no-thin --force origin ${CI_COMMIT_SHA:-HEAD}:gh-pages
   tags:
     - docker
 
