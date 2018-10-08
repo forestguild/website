@@ -42,7 +42,7 @@ deploy:
   before_script:
     - cd _site
     - git init
-    - git remote add $REMOTE
+    - git remote add origin $REMOTE
   script:
     - cd _site
     - git-push git@github.com:rakshazi/forestguild.club.git gh-pages
