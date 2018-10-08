@@ -44,7 +44,6 @@ deploy:
     - git init
     - git remote add origin $REMOTE
   script:
-    - cd _site
     - git-push git@github.com:rakshazi/forestguild.club.git gh-pages
   tags:
     - docker
