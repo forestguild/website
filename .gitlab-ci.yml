@@ -40,6 +40,7 @@ deploy:
   image: ilyasemenov/gitlab-ci-git-push
   stage: deploy
   before_script:
+    - rm -rf .git # to avoid git "bad ref" problem
     - cd _site
     - git init
     - git remote add origin $REMOTE
