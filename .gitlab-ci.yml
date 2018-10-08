@@ -33,6 +33,10 @@ build website:
     name: pages
     paths:
       - _site/
+  cache:
+    paths:
+      - /usr/local/bundle
+      - /usr/gem
   tags:
     - docker
 
@@ -47,6 +51,7 @@ deploy:
     - echo -e "Host *\n\tStrictHostKeyChecking no" > ~/.ssh/config
     - eval $(ssh-agent -s)
     - ssh-add
+    - rm -rf .git
   script:
     - cd _site
     - git init
