@@ -184,12 +184,16 @@ class Base
     /**
      * Write log message.
      *
-     * @param string $task    Updater and task name
-     * @param string $message Message
+     * @param null|string $task    Updater and task name
+     * @param string      $message Message
      */
-    protected function log(string $task, string $message): void
+    protected function log(string $task = null, string $message): void
     {
-        echo '['.\date('Y-m-d H:i:s')."] $task - $message\n";
+        if ($task) {
+            echo '['.\date('Y-m-d H:i:s')."] $task - $message\n";
+        } else {
+            echo "\n$message\n\n";
+        }
     }
 
     /**

@@ -6,13 +6,26 @@ stages:
   - deploy
   - cleanup
 
+
+update progess:
+  image: php:alpine
+  stage: data
+  only:
+    - master
+  script:
+    - php updater.php update
+  tags:
+    - docker
+
 collect data:
   image: php:alpine
   stage: data
+  only:
+    - master
   before_script:
     - mkdir -p _data
   script:
-    - php updater.php news
+    - php updater.php collect
   artifacts:
     name: _data
     paths:
@@ -23,6 +36,8 @@ collect data:
 build website:
   image: jekyll/jekyll
   stage: build
+  only:
+    - master
   before_script:
     - bundle update
   script:
@@ -33,16 +48,14 @@ build website:
     name: pages
     paths:
       - _site/
-  cache:
-    paths:
-      - /usr/local/bundle
-      - /usr/gem
   tags:
     - docker
 
 deploy:
   image: alpine:latest
   stage: deploy
+  only:
+    - master
   before_script:
     - apk add --no-cache git openssh-client
     - mkdir -p ~/.ssh
@@ -60,8 +73,6 @@ deploy:
     - git config user.name GitlabCI
     - git add --all
     - git commit -a -q -m Update
-    - git fsck --full
-    - git gc
     - git push --no-thin --force origin HEAD:gh-pages
   tags:
     - docker
@@ -69,6 +80,8 @@ deploy:
 cleanup:
   stage: cleanup
   image: php:alpine
+  only:
+    - master
   script:
     - php updater.php cache
   tags:

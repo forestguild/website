@@ -32,8 +32,9 @@ $updater = new \Rakshazi\WoW\Updater(
     ],
     'ru_RU');
 
-if (($argv[1] ?? false) === 'news') {
+if (($argv[1] ?? false) === 'update') {
     $updater->updateProgress();
+} elseif (($argv[1] ?? false) === 'collect') {
     $updater->toData(\getcwd().'/_data');
 } elseif (($argv[1] ?? false) === 'cache') {
     $updater->purgeCache();
