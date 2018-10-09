@@ -96,13 +96,17 @@ class Updater extends Updater\Base
     public function updateProgress(): void
     {
         // Update guild progress
+        $this->log('Updater', '===================== Guild Progress =====================');
         $this->wowprogress->updateGuild();
         $this->raiderio->updateGuild();
+        $this->log('Updater', '=================== End Guild Progress =====================');
 
         // Update characters progress
+        $this->log('Updater', '===================== Characters Progress =====================');
         $chars = $this->bnet->getCharacters();
         $this->wowprogress->updateCharacters($chars);
         $this->raiderio->updateCharacters($chars);
+        $this->log('Updater', '=================== End Characters Progress =====================');
     }
 
     /**
@@ -121,11 +125,15 @@ class Updater extends Updater\Base
     public function toData(string $dir): void
     {
         //News
+        $this->log(null, '===================== News =====================');
         $data = $this->getNews();
         \file_put_contents($dir.'/news.json', \json_encode($data));
+        $this->log(null, '=================== End News =====================');
 
         //Raid progress
+        $this->log(null, '===================== Raid Progress =====================');
         $data = $this->raid->get();
         \file_put_contents($dir.'/raid.json', \json_encode($data, JSON_NUMERIC_CHECK));
+        $this->log(null, '=================== End Raid Progress =====================');
     }
 }

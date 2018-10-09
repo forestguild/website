@@ -1,0 +1,88 @@
+variables:
+  REMOTE: git@github.com:rakshazi/forestguild.club.git
+stages:
+  - data
+  - build
+  - deploy
+  - cleanup
+
+
+update progess:
+  image: php:alpine
+  stage: data
+  only:
+    - master
+  script:
+    - php updater.php update
+  tags:
+    - docker
+
+collect data:
+  image: php:alpine
+  stage: data
+  only:
+    - master
+  before_script:
+    - mkdir -p _data
+  script:
+    - php updater.php collect
+  artifacts:
+    name: _data
+    paths:
+      - _data/
+  tags:
+    - docker
+
+build website:
+  image: jekyll/jekyll
+  stage: build
+  only:
+    - master
+  before_script:
+    - bundle update
+  script:
+    - jekyll build
+  after_script:
+    - echo "forestguild.club" > _site/CNAME
+  artifacts:
+    name: pages
+    paths:
+      - _site/
+  tags:
+    - docker
+
+deploy:
+  image: alpine:latest
+  stage: deploy
+  only:
+    - master
+  before_script:
+    - apk add --no-cache git openssh-client
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - echo -e "Host *\n\tStrictHostKeyChecking no" > ~/.ssh/config
+    - eval $(ssh-agent -s)
+    - ssh-add
+    - rm -rf .git
+  script:
+    - cd _site
+    - git init
+    - git remote add origin $REMOTE
+    - git config user.email "me+github@rakshazi.cf"
+    - git config user.name GitlabCI
+    - git add --all
+    - git commit -a -q -m Update
+    - git push --no-thin --force origin HEAD:gh-pages
+  tags:
+    - docker
+
+cleanup:
+  stage: cleanup
+  image: php:alpine
+  only:
+    - master
+  script:
+    - php updater.php cache
+  tags:
+    - docker

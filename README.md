@@ -1,6 +1,6 @@
-# [Сайт гильдии "Ясный Лес"](https://forestguild.club) [![Build Status](https://travis-ci.org/rakshazi/forestguild.club.svg?branch=master)](https://forestguild.club)
+# Сайт гильдии "Ясный Лес" [![Build Status](https://gitlab.com/rakshazi/forestguild/badges/master/build.svg)](https://forestguild.club)
 
-Написан на [Jekyll](https://jekyllrb.com) и [Travis CI](https://travis-ci.org).
+Написан на [Jekyll](https://jekyllrb.com), [PHP](https://php.net) и [Gitlab CI](https://gitlab.com/rakshazi/forestguild).
 
 Внутри:
 
@@ -8,3 +8,4 @@
 * Новости
 * Информация о событиях (РТ)
 * Автоапдрейтер прогресса гильдии и персонажей на [Raider.IO](https://raider.io) и [WoWProgress](https://wowprogress.com)
+* Зал славы (текущий рейдовый прогресс гильдии)
