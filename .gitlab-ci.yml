@@ -62,6 +62,7 @@ deploy:
     - git commit -a -q -m Update
     - git fsck --full
     - git gc
+    - ls -lah
     - git push --no-thin --force origin ${CI_COMMIT_SHA:-HEAD}:gh-pages
   tags:
     - docker
