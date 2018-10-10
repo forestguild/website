@@ -178,7 +178,7 @@ class RaidProgress extends Base
             }
         }
         // Sort by kills
-        \usort($processed['raiders'], function (array $a, array $b) {
+        \usort($processed['raiders'] ?? [], function (array $a, array $b) {
             $aKills = 0;
             $bKills = 0;
             foreach (['a', 'b'] as $i) { //count boss kills for $a and $b
