@@ -87,7 +87,7 @@ class BattleNet extends Base
         foreach ($characters as $character) {
             $urls[] = $this->getUrl($fields, $character);
         }
-        foreach ($this->fetchMulti($urls, 80) as $raw) {
+        foreach ($this->fetchMulti($urls, 50) as $raw) {
             $raw = \json_decode($raw, true);
             if ($raw['name'] ?? false) {
                 $this->log('BattleNet.getCharactersData('.$raw['name'].')', 'success');

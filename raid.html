@@ -8,6 +8,7 @@ title: Зал Славы
     Данные ежедневно собираются из Battle.net API и содержат информация о <b>последней неделе</b> WoW (со среды до среды).
     Если тебе интересен суммарный прогресс - смотри WoWProgress и Raider.IO
 </span>
+{% if site.data.raid %}
 <div class="row">
     <div class="jumbotron col-md-6 col-sm-12 bg-menu pt-4 pb-4">
         <h2 class="text-white">Рейдеры недели</h3>
@@ -50,3 +51,11 @@ title: Зал Славы
 
     </div>
 </div>
+{% else %}
+<div class="row">
+    <div class="jumbotron col-md-12 bg-menu pt-4 pb-4">
+        <h1 class="text-white">Т-с-с!</h1>
+        <p class="lead text-white">Все еще спят! Зайди через пару дней</p>
+    </div>
+</div>
+{% endif %}

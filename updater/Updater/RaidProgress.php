@@ -163,7 +163,10 @@ class RaidProgress extends Base
      */
     protected function preprocess(array $raiders): array
     {
-        $processed = [];
+        $processed = [
+            'raiders' => [],
+            'bosses' => [],
+        ];
         foreach ($raiders as $name => $data) {
             $data['name'] = $name;
             foreach ($data['kills'] as $boss => $count) {
