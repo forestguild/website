@@ -2,6 +2,7 @@
 layout: wiki
 order: 4
 title: Мифик+
+author: Этке
 ---
 
 # Мифик+

@@ -2,6 +2,7 @@
 layout: wiki
 order: 7
 title: Discord
+author: Этке
 ---
 
 # Что это? Зачем? Почему именно discord?

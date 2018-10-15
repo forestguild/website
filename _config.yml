@@ -5,7 +5,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://forestguild.club" # the base hostname & protocol for your site, e.g. http://example.com
 repository: rakshazi/forestguild.club
 realm: galakrond
-#ream: https://worldofwarcraft.com/ru-ru/character/galakrond/
 links:
   - name: Discord
     url: https://discord.gg/v9mNxAS
