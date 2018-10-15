@@ -22,6 +22,9 @@ layout: page
     <div class="jumbotron wiki text-white col-md-9 col-sm-12">
         <a href="https://github.com/{{ site.repository }}/tree/master/{{ page.path }}" class="float-right">Изменить</a>
         {{ content }}
-        <a href="https://github.com/{{ site.repository }}/tree/master/{{ page.path }}" class="float-right">Изменить</a>
+        {% if page.author %}
+        <span class="float-left">Автор: <a href="https://worldofwarcraft.com/ru-ru/character/{{ site.realm }}/{{ page.author }}" target="_blank">{{ page.author }}</a></span>
+        {% endif %}
+        <a href="https://github.com/{{ site.repository }}/tree/master/{{ page.path }}" class="float-right" target="_blank">Изменить</a>
     </div>
 </div>
