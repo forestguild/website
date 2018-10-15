@@ -2,6 +2,7 @@
 layout: wiki
 order: 6
 title: Аддоны
+author: Этке
 ---
 
 # Что это и зачем?

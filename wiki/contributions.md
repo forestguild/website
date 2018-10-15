@@ -2,6 +2,7 @@
 layout: wiki
 order: 100
 title: Помощь сайту
+author: Этке
 ---
 
 # Денег не надо

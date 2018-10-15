@@ -2,6 +2,7 @@
 layout: wiki
 order: 1
 title: Рейд
+author: Этке
 ---
 # Рейд
 

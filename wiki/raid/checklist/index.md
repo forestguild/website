@@ -2,6 +2,7 @@
 layout: wiki
 title: "&nbsp;&nbsp;&nbsp; Чек-лист"
 order: 3
+author: Этке
 ---
 # Чек-лист
 
