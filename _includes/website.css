@@ -160,6 +160,14 @@ blockquote {
     /*color: #bd2130 !important;*/
 }
 
+.wiki img {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    display: block!important;
+}
+
 .wiki table {
     background-color: transparent;
     /*border: 1px solid #dee2e6;*/
