@@ -1,6 +1,6 @@
 ---
 layout: wiki
-order: 8
+order: 100
 title: Помощь сайту
 ---
 
