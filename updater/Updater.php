@@ -96,17 +96,17 @@ class Updater extends Updater\Base
     public function updateProgress(): void
     {
         // Update guild progress
-        $this->log('Updater', '===================== Guild Progress =====================');
+        $this->log(null, '===================== Guild Progress =====================');
         $this->wowprogress->updateGuild();
         $this->raiderio->updateGuild();
-        $this->log('Updater', '=================== End Guild Progress =====================');
+        $this->log(null, '=================== End Guild Progress =====================');
 
         // Update characters progress
-        $this->log('Updater', '===================== Characters Progress =====================');
+        $this->log(null, '===================== Characters Progress =====================');
         $chars = $this->bnet->getCharacters();
         $this->wowprogress->updateCharacters($chars);
         $this->raiderio->updateCharacters($chars);
-        $this->log('Updater', '=================== End Characters Progress =====================');
+        $this->log(null, '=================== End Characters Progress =====================');
     }
 
     /**
