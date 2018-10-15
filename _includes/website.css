@@ -113,6 +113,14 @@ i, em {
     padding-bottom: 50px;
 }
 
+/* <hr> */
+hr {
+    background: url("/assets/img/line.sm.png") no-repeat top center;
+    min-height: 50px;
+    padding: 0;
+    margin: 0;
+}
+
 /* General text color */
 .text-gray {
     color: rgba(255, 255, 255, 0.55) !important;

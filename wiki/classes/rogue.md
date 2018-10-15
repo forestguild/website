@@ -1,6 +1,6 @@
 ---
 layout: wiki
-order: 10
+order: 11
 title: "&nbsp;&nbsp;&nbsp; Разбойник"
 author: Гурноут
 ---
