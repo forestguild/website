@@ -41,8 +41,8 @@ layout: null
             <description><![CDATA[{{ page.content |  markdownify | remove:"&nbsp;" }}]]></description>
             <turbo:content><![CDATA[{{ page.content |  markdownify | remove:"&nbsp;" }}]]></turbo:content>
             <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-            <link>{{ site.url }}{{ page.url }}</link>
-            <guid isPermaLink="true">{{ site.url }}{{ page.url }}</guid>
+            <link>{{ site.url }}{{ page.url | replace:'index.html','' | replace:'.html','' }}</link>
+            <guid isPermaLink="true">{{ site.url }}{{ page.url | replace:'index.html','' | replace:'.html','' }}</guid>
         </item>
         {% endif %}
         {% endfor %}
