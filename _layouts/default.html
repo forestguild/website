@@ -11,7 +11,8 @@
         <meta property="og:image:type" content="image/png" />
         <meta property="og:locale" content="ru_RU" />
         <meta property="og:site_name" content="{{ site.title }}" />
-        <meta property="og:description" content="{{ site.description }}" />
+        <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+        <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
         <meta name="yandex-verification" content="0e76a0023e630508" />
         <meta name="google-site-verification" content="HyXyjl__ZWM8pD-mJqSaPIR2wVBFXVr25u0zwJkENfY" />
         <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}">

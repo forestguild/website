@@ -3,6 +3,7 @@ layout: wiki
 order: 7
 title: Discord
 author: Этке
+description: Почему именно Discord, плюсы и минусы по сравнению с другими войс чатами и гильдейские плюшки за дискорд
 ---
 
 # Что это? Зачем? Почему именно discord?
