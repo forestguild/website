@@ -5,6 +5,16 @@ body {
     font-weight: 400 !important;
     background: url("/assets/img/bg.jpg") repeat-y bottom center #120d0a;
 }
+
+h1, h2, h3, h4, h5, h6, b, strong {
+    font-family: 'Cuprum', sans-serif;
+    font-weight: 700 !important;
+    color: #fff !important;
+}
+h5, h6, b, strong {
+    font-size: 1.3rem;
+}
+
 /** Global links style **/
 a {
     -webkit-background-clip: text;
@@ -146,6 +156,7 @@ blockquote {
     background: url(/assets/img/line.sm.png) no-repeat top center, url(/assets/img/line.lg.png) no-repeat bottom center;
     padding-bottom: 100px !important;
     padding-top: 50px !important;
+    color: #c6c6c6 !important;
 }
 /* Wiki text */
 .wiki p,

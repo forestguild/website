@@ -30,6 +30,7 @@ layout: default
         </p>
         </div>
         <h3 class="text-white text-center">Последние новости</h3>
+        <div class="bg-menu">
         {% for item in site.data.news %}
         <p class="lead">
                 <span class="text-gray">{{ item.timestamp|date: "%-d.%m" }}</span>
@@ -42,6 +43,7 @@ layout: default
                 {% endif %}
         </p>
         {% endfor %}
+        </div>
     </div>
 
     <div class="jumbotron col-md-3 bg-transparent d-none d-md-block text-center">
