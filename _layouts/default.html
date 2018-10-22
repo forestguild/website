@@ -40,7 +40,7 @@
                         <a class="nav-link {{ item.class }}" href="{{ item.url }}" target="_blank">{{ item.name }}</a>
                     </li>
                     {% endfor %}
-                    {% if site.rt.date %}
+                    {% if site.rt.active %}
                     <li class="nav-item active">
                         <a class="nav-link" data-toggle="modal" data-target="#rtModal" href="#">Время Рейда</a>
                     </li>
@@ -62,7 +62,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    {% if site.rt.date %}
+                    {% if site.rt.active %}
                     <li class="nav-item active">
                         <a class="nav-link text-info blink" href="#" data-toggle="modal" data-target="#rtModal">Время Рейда</a>
                     </li>
@@ -88,7 +88,7 @@
         <main class="container-fluid">
         {{ content }}
         </main>
-        {% if site.rt.date %}
+        {% if site.rt.active %}
         <div class="modal fade" id="rtModal" tabindex="-1" role="dialog" aria-labelledby="rtTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
@@ -109,7 +109,7 @@
                                 <span class="text-muted">Куда идем?</span><br />
                                 Рейд: {{ site.rt.raid }}<br />
                                 Сетап: {{ site.rt.setup.default }} {% if site.rt.setup.modifiable %}<span id="raid-setup" class="text-warning" data-toggle="tooltip" data-html="true" title="Сетап может измениться, в зависимости от количества желающих. Возможные варианты:<br>2/3/9<br>2/4/14<br>2/5/20">(?)</span>{% endif %}<br />
-                                <span class="text-danger">Дни РТ</span>: Понедельник, Вторник, Среда, Четверг, Воскресенье<br />
+                                <!--<span class="text-danger">Дни РТ</span>: Понедельник, Вторник, Среда, Четверг, Воскресенье<br />-->
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <span class="text-muted">Требования</span><br />
