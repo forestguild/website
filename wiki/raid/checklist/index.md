@@ -1,6 +1,7 @@
 ---
 layout: wiki
-title: "&nbsp;&nbsp;&nbsp; Чек-лист"
+menu: "&nbsp;&nbsp;&nbsp; Чек-лист"
+title: "Рейдерский чеклист для рейдов WoW BfA"
 order: 3
 author: Этке
 ---
