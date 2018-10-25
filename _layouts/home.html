@@ -46,9 +46,21 @@ layout: default
         </div>
     </div>
 
-    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block text-center">
+    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block">
         {% if site.rt.active %}<button class="btn btn-wow" data-toggle="modal" data-target="#rtModal">Время Рейда</button>{% endif %}
-        <img alt='WoW Guild Rankings' src='https://wowprogress.com/guild_img/1665634/out/type.site/guild_rank.realm'/>
+        <!--<img alt='WoW Guild Rankings' src='https://wowprogress.com/guild_img/1665634/out/type.site/guild_rank.realm'/>-->
+        <ul class="bg-menu p-4" style="width: 295px">
+            {% assign sorted_pages = site.pages | sort:"order" %}
+            {% for item in sorted_pages %}
+            {% if item.layout == 'wiki' %}
+            <li>
+                {% if item.url == page.url %}<strong>{% endif %}
+                <a href='{{ item.url | replace:'index.html','' | replace:'.html','' }}' class="text-white">{{ item.menu }}</a>
+                {% if item.url == page.url %}</strong>{% endif %}
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
     </div>
 
 </div>
