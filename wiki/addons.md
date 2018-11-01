@@ -21,7 +21,7 @@ CurseForge + Twitch = one love.
 
 <hr>
 
-## Требуемые аддоны
+## Требуемые аддоны для рейда и мифик+
 
 > Без них могут не взять в [рейд](/wiki/raid) и [ключи](/wiki/keystones).
 
@@ -62,3 +62,4 @@ CurseForge + Twitch = one love.
 * [Pawn](https://www.curseforge.com/wow/addons/pawn) - аддон, который показывает в инвентаре лучшие вещи исходя из того что уже надето, вашей специализации (капы разных специализаций различаются), так же можно в него загрузить результаты симуляций. В самом аддоне можно сравнить две вещи между собой, посмотреть какие ячейки какими камнями нужно заполнить.
 * [mik scrolling text](https://wow.curseforge.com/projects/mik-scrolling-battle-text) - аддон, который меняет отображение урона, лечения, полученных эффектов, проков.
 * [nicedamage](https://wow.curseforge.com/projects/project-7401/files) - аддон, который меняет отображение цифр урона и делает их более приятными.
+* [HandyNotes](http://www.curse.com/addons/wow/handynotes) - полезные иконки на карте. Для работы этого аддона нужны плагины, например [HandyNotes DungeonLocations](https://wow.curseforge.com/projects/handynotes_dungeonlocations) отображает входы во все инсты и рейды на карте, плюс их статус (зачищен или нет, сколько боссов убито)
