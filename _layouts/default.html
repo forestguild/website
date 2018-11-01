@@ -138,7 +138,18 @@
         <style>{% include website.css %}</style>
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        {% if page.layout == 'wiki' %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/css/theme.blackice.min.css" integrity="sha256-gJADOPVrhQLECNkPq4IKJNH9g9TnCj3RzfhL/ToOn/E=" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.min.js" integrity="sha256-Ae7jmRrbL3hf1J/y22SYMPtx0wMVbG4g3HtpjioYuyk=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/widgets/widget-filter.min.js" integrity="sha256-PjucxS9eB9yoBEuahfglpLB5RQz+cEqMnAQQRVQqIUU=" crossorigin="anonymous"></script>
+        <script>$(function () { $('table').tablesorter({
+            theme : "blackice",
+            widthFixed: true,
+            widgets: ["filter"],
+        }) });</script>
+        {% endif %}
         <script>$(function () {
+            $('table').tablesorter();
             $('#armory-calendar').tooltip();
             {% if site.rt.setup.modifiable %}$('#raid-setup').tooltip();{% endif %}
             $('#raidform').on('click', function(e){
