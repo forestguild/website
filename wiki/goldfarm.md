@@ -62,7 +62,7 @@ description: Гайд по фарму голды в WoW, только прове
 {%- else -%}
 {%- assign time = 1 | plus: 0 -%}
 {%- endif -%}
-| **{{ raid.name }}** | {{ raid.addon }} | {{ raid.trash }} | **{{ raid.gold }}** | {{ raid.time }} | {{ raid.gold | divided_by: time | round }} | {% if gold > 0 %}{{ raid.runner |default: 'Друид 120lvl' }}{% endif %} |
+| **{{ raid.name }}** | {{ raid.addon }} | {{ raid.trash }} | **{{ raid.gold }}** | {{ raid.time }} | {{ raid.gold | divided_by: time | round }} | {% if gold > 0 %}{{ raid.runner |default: 'Этке Друид 120lvl' }}{% endif %} |
 {% endfor %}
 
 <hr>
