@@ -1,4 +1,4 @@
-name,addon,trash,gold,time
+name,addon,trash,gold,time,runner
 Ан'Кираж 40N,Classic,-,0,0
 Руины Ан'Киража 10N,Classic,-,0,0
 Огненные Недра 40N,Classic,-,0,0
@@ -30,7 +30,7 @@ name,addon,trash,gold,time
 Сердце Страха 25H,Mists of Pandaria,-,0,0
 Подземелья Могу'шан 25H,Mists of Pandaria,-,0,0
 Осада Оргриммара 20M,Mists of Pandaria,-,0,0
-Престол Гроз 25H,Mists of Pandaria,-,0,0
+Престол Гроз 25H,Mists of Pandaria,да,2954,36,Шаман 115lvl
 Литейная клана Черной Горы 20M,Warlords of Draenor,-,0,0
 Цитадель Адского Пламени 20M,Warlords of Draenor,-,0,0
 Верховный Молот 20M,Warlords of Draenor,-,0,0

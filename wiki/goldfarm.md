@@ -54,16 +54,17 @@ _**Внимание**: все перечисленные ниже данные �
 
 **В разработке**. _Статистика по каждому рейду будет добавляться по мере прохождения._
 
-| Рейд | Аддон | Треш зачищен | Золото | Время, мин | GpM |
-|-|-|-|-|
+| Рейд | Аддон | Треш зачищен | Золото | Время, мин | GpM | Персонаж |
+|-|-|-|-|-|
 {% for raid in site.data.goldfarm_raid -%}
 {%- assign time = raid.time | plus: 0 -%}
+{%- assign gold = raid.gold | plus: 0 -%}
 {%- if time > 0 -%}
 {%- assign time = raid.time -%}
 {%- else -%}
-{%- assign time = 1 -%}
+{%- assign time = 1 | plus: 0 -%}
 {%- endif -%}
-| **{{ raid.name }}** | {{ raid.addon }} | {{ raid.trash }} | **{{ raid.gold }}** | {{ raid.time }} | {{ raid.gold | divided_by: time }} |
+| **{{ raid.name }}** | {{ raid.addon }} | {{ raid.trash }} | **{{ raid.gold }}** | {{ raid.time }} | {{ raid.gold | divided_by: time }} | {% if gold > 0 %}{{ raid.runner |default: 'Друид 120lvl' }}{% endif %} |
 {% endfor %}
 
 <hr>
