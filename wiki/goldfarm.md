@@ -80,12 +80,12 @@ description: Гайд по фарму голды в WoW, только прове
 {%- endfor -%}
 {%- if addon_time == 0 -%}{%- assign addon_time = 1 | plus: 0 -%}{%- endif -%}
 {%- assign addon_gpm = addon_gold | divided_by: addon_time | round -%}
-| **{{ addon }}** | {{ addon_gold }} | {% if addon_time == 1 %}0{% else %}{{ addon_time }}{% endif %} | {{ addon_gpm }} |
+| {% if addon_gold > 0 %}**{{ addon }}**{% else %}{{ addon }}{% endif %} | {% if addon_gold > 0 %}{{ addon_gold }}{% else %}0 _нет данных_{% endif %} | {% if addon_time == 1 %}0 _нет данных_{% else %}{{ addon_time }}{% endif %} | {% if addon_gold > 0 %}{{ addon_gpm }}{% else %}0 _нет данных_{% endif %} |
 {% endfor %}
 
 ### Статистика по рейдам
 
-{:#goldfarm-raids data-sortlist="[[5,1]]"}
+{:#goldfarm-raids data-sortlist="[[3,1]]"}
 | Рейд | Аддон | Треш зачищен | Золото | Время, мин | GpM | Персонаж |
 |-|-|-|-|-|
 {% for raid in site.data.goldfarm_raid -%}
@@ -96,7 +96,7 @@ description: Гайд по фарму голды в WoW, только прове
 {%- else -%}
 {%- assign time = 1 | plus: 0 -%}
 {%- endif -%}
-| **{{ raid.name }}** | {{ raid.addon }} | {{ raid.trash }} | **{{ raid.gold }}** | {{ raid.time }} | {{ raid.gold | divided_by: time | round }} | {% if gold > 0 %}{{ raid.runner |default: 'Этке Друид 120lvl' }}{% endif %} |
+| {% if gold > 0 %}**{{ raid.name }}**{% else %}{{ raid.name }}{% endif %} | {{ raid.addon }} | {% if raid.trash != '-' %}{{ raid.trash }}{% else %}_нет данных_{% endif %} | {% if gold > 0 %}**{{ raid.gold }}**{% else %}0 _нет данных_{% endif %}| {% if gold > 0 %}{{ raid.time }}{% else %}0 _нет данных_{% endif %} | {% if gold > 0 %}{{ raid.gold | divided_by: time | round }}{% else %}0 _нет данных_{% endif %} | {% if gold > 0 %}{{ raid.runner |default: 'Этке' }}{% else %}_нет данных_{% endif %} |
 {% endfor %}
 
 <hr>
@@ -135,3 +135,4 @@ description: Гайд по фарму голды в WoW, только прове
 
 *[GpM]: Gold per Minute - золото в минуту
 *[нет лута]: В некоторых рейдах с треша нет добычи вообще, либо ее слишком мало. Нет смысла тут чистить треш
+*[нет данных]: Никто еще не замерил результаты. Хочешь помочь? Пронеси этот рейд, записав время (старта и финиша), количество голды (включая продажу всех шмоток из рейда) и зачищен ли треш. А потом зайди в дискорд и скинь эти результаты.
