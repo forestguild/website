@@ -24,6 +24,8 @@ description: Гайд по фарму голды в WoW, только прове
 
 + [Способы](#способы)
     * [Старые рейды](#старые-рейды)
+        - [Статистика по дополнениям](#статистика-по-дополнениям)
+        - [Статистика по рейдам](#статистика-по-рейдам)
     * [Профессии](#профессии)
     * [БоЕшки](#боешки)
     * [Фарм-споты](#фарм-споты)
@@ -50,8 +52,40 @@ description: Гайд по фарму голды в WoW, только прове
 4. Поставить аддоны [HandyNotes](http://www.curse.com/addons/wow/handynotes) и [HandyNotes DungeonLocations](https://wow.curseforge.com/projects/handynotes_dungeonlocations), _чтобы прямо на карте видеть входы во все рейды и их статус (зачищен или нет)_
 5. Поставить аддон [Scrap (Junk Seller)](https://www.curseforge.com/wow/addons/scrap), _чтобы автоматически продавать низкоуровневые предметы, реагенты и хлам торговцу_
 
+<hr>
+
 **В разработке**. _Статистика по каждому рейду будет добавляться по мере прохождения._
 
+### Статистика по дополнениям
+
+> Суммарное количество золота и времени на все рейды аддона, информацию по каждому рейду в отдельности можно посмотреть ниже
+{% assign addons = site.data.goldfarm_raid | map: 'addon' | uniq %}
+{:#goldfarm-addons data-sortlist="[[1,1]]"}
+| Аддон | Золото | Время, мин | GpM |
+|-|-|-|-|
+{% for addon in addons -%}
+
+{%- assign addon_gold = 0 | plus: 0 -%}
+{%- assign addon_time = 0 | plus: 0 -%}
+{%- assign addon_gpm = 0 | plus: 0 -%}
+{%- assign addon_raids = site.data.goldfarm_raid | where: 'addon', addon -%}
+
+{%- for raid in addon_raids -%}
+
+{%- assign gold = raid.gold | plus: 0 -%}
+{%- assign time = raid.time | plus: 0 -%}
+{%- assign addon_gold = addon_gold | plus: gold -%}
+{%- assign addon_time = addon_time | plus: time -%}
+
+{%- endfor -%}
+{%- if addon_time == 0 -%}{%- assign addon_time = 1 | plus: 0 -%}{%- endif -%}
+{%- assign addon_gpm = addon_gold | divided_by: addon_time | round -%}
+| **{{ addon }}** | {{ addon_gold }} | {% if addon_time == 1 %}0{% else %}{{ addon_time }}{% endif %} | {{ addon_gpm }} |
+{% endfor %}
+
+### Статистика по рейдам
+
+{:#goldfarm-raids data-sortlist="[[5,1]]"}
 | Рейд | Аддон | Треш зачищен | Золото | Время, мин | GpM | Персонаж |
 |-|-|-|-|-|
 {% for raid in site.data.goldfarm_raid -%}
