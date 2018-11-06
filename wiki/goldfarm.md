@@ -69,6 +69,8 @@ description: Гайд по фарму голды в WoW, только прове
 {%- assign addon_time = 0 | plus: 0 -%}
 {%- assign addon_gpm = 0 | plus: 0 -%}
 {%- assign addon_raids = site.data.goldfarm_raid | where: 'addon', addon -%}
+{%- assign addon_raids_count = addon_raids | size -%}
+{%- assign addon_raids_data = 0 | plus: 0 -%}
 
 {%- for raid in addon_raids -%}
 
@@ -76,11 +78,12 @@ description: Гайд по фарму голды в WoW, только прове
 {%- assign time = raid.time | plus: 0 -%}
 {%- assign addon_gold = addon_gold | plus: gold -%}
 {%- assign addon_time = addon_time | plus: time -%}
+{%- if gold > 0 -%}{%- assign addon_raids_data = addon_raids_data | plus: 1 -%}{%- endif -%}
 
 {%- endfor -%}
 {%- if addon_time == 0 -%}{%- assign addon_time = 1 | plus: 0 -%}{%- endif -%}
 {%- assign addon_gpm = addon_gold | divided_by: addon_time | round -%}
-| {% if addon_gold > 0 %}**{{ addon }}**{% else %}{{ addon }}{% endif %} | {% if addon_gold > 0 %}{{ addon_gold }}{% else %}0 _нет данных_{% endif %} | {% if addon_time == 1 %}0 _нет данных_{% else %}{{ addon_time }}{% endif %} | {% if addon_gold > 0 %}{{ addon_gpm }}{% else %}0 _нет данных_{% endif %} |
+| {% if addon_raids_count == addon_raids_data %}**{{ addon }}** _{{ addon_raids_data}}/{{ addon_raids_count }} рейдов_{:.float-right .text-muted}{% else %}{{ addon }} _мало данных {{ addon_raids_data}}/{{ addon_raids_count }} рейдов_{:.float-right .text-muted}{% endif %} | {% if addon_gold > 0 %}{{ addon_gold }}{% endif %} | {% if addon_time != 1 %}{{ addon_time }}{% endif %} | {% if addon_gold > 0 %}{{ addon_gpm }}{% endif %} |
 {% endfor %}
 
 ### Статистика по рейдам
@@ -96,7 +99,7 @@ description: Гайд по фарму голды в WoW, только прове
 {%- else -%}
 {%- assign time = 1 | plus: 0 -%}
 {%- endif -%}
-| {% if gold > 0 %}**{{ raid.name }}**{% else %}{{ raid.name }}{% endif %} | {{ raid.addon }} | {% if raid.trash != '-' %}{{ raid.trash }}{% else %}_нет данных_{% endif %} | {% if gold > 0 %}**{{ raid.gold }}**{% else %}0 _нет данных_{% endif %}| {% if gold > 0 %}{{ raid.time }}{% else %}0 _нет данных_{% endif %} | {% if gold > 0 %}{{ raid.gold | divided_by: time | round }}{% else %}0 _нет данных_{% endif %} | {% if gold > 0 %}{{ raid.runner |default: 'Этке' }}{% else %}_нет данных_{% endif %} |
+| {% if gold > 0 %}**{{ raid.name }}**{% else %}{{ raid.name }} _нет данных_{:.float-right .text-muted}{% endif %} | {{ raid.addon }} | {% if raid.trash != '-' %}{{ raid.trash }}{% endif %} | {% if gold > 0 %}{{ raid.gold }}{% endif %}| {% if gold > 0 %}{{ raid.time }}{% endif %} | {% if gold > 0 %}{{ raid.gold | divided_by: time | round }}{% endif %} | {% if gold > 0 %}{{ raid.runner |default: 'Этке' }}{% endif %} |
 {% endfor %}
 
 <hr>
@@ -136,3 +139,5 @@ description: Гайд по фарму голды в WoW, только прове
 *[GpM]: Gold per Minute - золото в минуту
 *[нет лута]: В некоторых рейдах с треша нет добычи вообще, либо ее слишком мало. Нет смысла тут чистить треш
 *[нет данных]: Никто еще не замерил результаты. Хочешь помочь? Пронеси этот рейд, записав время (старта и финиша), количество голды (включая продажу всех шмоток из рейда) и зачищен ли треш. А потом зайди в дискорд и скинь эти результаты.
+*[мало данных]: Не все рейды этого дополнения были пройдены, результаты не полные. Хочешь помочь? Пронеси эти рейды (см. таблицу ниже), записав время (старта и финиша), количество голды (включая продажу всех шмоток из рейда) и зачищен ли треш. А потом зайди в дискорд и скинь эти результаты.
+
