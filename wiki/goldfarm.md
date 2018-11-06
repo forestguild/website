@@ -86,7 +86,18 @@ description: Гайд по фарму голды в WoW, только прове
 | {% if addon_raids_count == addon_raids_data %}**{{ addon }}** _{{ addon_raids_data}}/{{ addon_raids_count }} рейдов_{:.float-right .text-muted}{% else %}{{ addon }} _мало данных {{ addon_raids_data}}/{{ addon_raids_count }} рейдов_{:.float-right .text-muted}{% endif %} | {% if addon_gold > 0 %}{{ addon_gold }}{% endif %} | {% if addon_time != 1 %}{{ addon_time }}{% endif %} | {% if addon_gold > 0 %}{{ addon_gpm }}{% endif %} |
 {% endfor %}
 
+{% assign raids_count = site.data.goldfarm_raid | size %}
+{% assign raids_data = 0 | plus: 0 %}
+{% for raid in site.data.goldfarm_raid %}
+{% assign gold = raid.gold | plus: 0 %}
+{% if gold > 0 %}
+{% assign raids_data = raids_data | plus: 1 %}
+{% endif %}
+{% endfor %}
+
 ### Статистика по рейдам
+
+> На текущий момент собраны данные по **{{ raids_data }}** старым рейдам из **{{ raids_count }}**.
 
 {:#goldfarm-raids data-sortlist="[[3,1]]"}
 | Рейд | Аддон | Треш зачищен | Золото | Время, мин | GpM | Персонаж |
@@ -99,7 +110,7 @@ description: Гайд по фарму голды в WoW, только прове
 {%- else -%}
 {%- assign time = 1 | plus: 0 -%}
 {%- endif -%}
-| {% if gold > 0 %}**{{ raid.name }}**{% else %}{{ raid.name }} _нет данных_{:.float-right .text-muted}{% endif %} | {{ raid.addon }} | {% if raid.trash != '-' %}{{ raid.trash }}{% endif %} | {% if gold > 0 %}{{ raid.gold }}{% endif %}| {% if gold > 0 %}{{ raid.time }}{% endif %} | {% if gold > 0 %}{{ raid.gold | divided_by: time | round }}{% endif %} | {% if gold > 0 %}{{ raid.runner |default: 'Этке' }}{% endif %} |
+| {% if gold > 0 %}**{{ raid.name }}**{% else %}{{ raid.name }} _нет данных_{:.float-right .text-muted}{% endif %} | {{ raid.addon }} | {% if raid.trash != '-' %}{{ raid.trash }}{% endif %} | {% if gold > 0 %}{{ raid.gold }}{% endif %}| {% if gold > 0 %}{{ raid.time }}{% endif %} | {% if gold > 0 %}{{ raid.gold | divided_by: time | round }}{% endif %} | {% if gold > 0 %}[{{ raid.runner |default: 'Этке' }}](https://worldofwarcraft.com/ru-ru/character/{% if raid.runner == 'Гадюшница' %}thermaplugg{% else %}galakrond{% endif %}/{{ raid.runner | default: 'Этке' }}){% endif %} |
 {% endfor %}
 
 <hr>
