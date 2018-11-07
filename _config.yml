@@ -36,7 +36,8 @@ rt:
 
 # Build settings
 markdown: kramdown
-plugins: []
+#plugins:
+  #- amp-jekyll
 exclude:
   - README.md
   - Makefile
