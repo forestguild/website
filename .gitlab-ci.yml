@@ -42,6 +42,7 @@ build website:
     - bundle update
   script:
     - jekyll build
+    - jekyll build #to avoid amp images bug
   after_script:
     - echo "forestguild.club" > _site/CNAME
   artifacts:
