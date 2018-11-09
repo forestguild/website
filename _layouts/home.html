@@ -1,18 +1,41 @@
 ---
 layout: default
 ---
-<div class="row bg-img">
 
+<div class="row" style="overflow-y: visible; max-height: 140px">
     <div class="jumbotron col-md-3 bg-transparent d-none d-md-block">
         <p class="lead">&nbsp;</p>
-        <p class="lead">
-        <img alt="Ясный Лес" src="assets/img/logo.png" class="rounded float-right"/>
-        </p>
+        <h3 class="text-white text-center">Новости</h3>
     </div>
-
     <div class="jumbotron bg-transparent col-md-6 col-sm-12">
         <h1 class="text-white text-center">Ясный Лес</h1>
         <p class="lead text-gray text-center">Гильдия World of Warcraft &bull; Галакронд &bull; PvE</p>
+    </div>
+    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block">
+        {% if site.rt.active %}<button class="btn btn-wow" data-toggle="modal" data-target="#rtModal">Время Рейда</button>{% endif %}
+        <p class="lead">&nbsp;</p>
+        <h3 class="text-white text-center">Гайды и секреты</h3>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block" style="padding-top:0">
+        {% for item in site.data.news %}
+        <p class="lead">
+        <span class="text-gray">{{ item.timestamp|date: "%-d.%m" }}</span>
+        <span class="text-white">
+            {% if item.type == 'achievement' %}
+            Получено достижение <strong class="text-danger">{{ item.title }}</strong>
+            {% else %}
+            {{ item.title }}
+        </span>
+        {% endif %}
+        </p>
+        {% endfor %}
+    </div>
+    <div class="jumbotron bg-transparent col-md-6 col-sm-12" style="padding-top:0; background: url(/assets/img/logo.png) no-repeat top right;">
         <p class="lead text-white">
         <b>Да</b>, гильдия живая.<br>
         <b>Да</b>, мы набираем статик.<br>
@@ -21,46 +44,36 @@ layout: default
         <b>Да</b>, мы помогаем новичкам - подземелья, рейды, фронты, реагенты, шмот.<br>
         <span class="text-gray"><b>Да</b>, мы захватим Азерот. <i>Но это не точно</i></span>
         </p>
-        <div class="bg-block">
         <h1 class="text-gray text-center">Хочешь с нами?</h1>
         <p class="lead text-white">
         Читай <a href="/wiki" class="text-danger">вики</a>,
         заходи в <a href="https://discord.gg/v9mNxAS" target="_blank" class="text-warning">discord</a>.<br>
         <span class="text-gray">За постоянное нахождение в дискорде у нас <a class="text-danger" href="/wiki/discord#плюшки-за-дискорд" target"_blank">предусмотрены различные плюшки</a> (зашел в игру = зашел в дискорд)</span>
         </p>
-        </div>
-        <h3 class="text-white text-center">Последние новости</h3>
-        <div class="bg-menu">
-        {% for item in site.data.news %}
-        <p class="lead">
-                <span class="text-gray">{{ item.timestamp|date: "%-d.%m" }}</span>
-                <span class="text-white">
-                {% if item.type == 'achievement' %}
-                Получено достижение <strong class="text-danger">{{ item.title }}</strong>
-                {% else %}
-                {{ item.title }}
-                </span>
-                {% endif %}
-        </p>
-        {% endfor %}
-        </div>
     </div>
-
-    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block">
-        {% if site.rt.active %}<button class="btn btn-wow" data-toggle="modal" data-target="#rtModal">Время Рейда</button>{% endif %}
-        <!--<img alt='WoW Guild Rankings' src='https://wowprogress.com/guild_img/1665634/out/type.site/guild_rank.realm'/>-->
-        <ul class="bg-menu p-4" style="width: 295px">
-            {% assign sorted_pages = site.pages | sort:"order" %}
-            {% for item in sorted_pages %}
-            {% if item.layout == 'wiki' %}
-            <li>
-                {% if item.url == page.url %}<strong>{% endif %}
+    <ul class="jumbotron col-md-3 bg-transparent d-none d-md-block" style="padding-top:0;">
+        {% assign sorted_pages = site.pages | sort:"order" %}
+        {% for item in sorted_pages %}
+        {% if item.layout == 'wiki' %}
+        <li>
+            {% if item.url == page.url %}<strong>{% endif %}
                 <a href='{{ item.url | replace:'index.html','' | replace:'.html','' }}' class="text-white">{{ item.menu }}</a>
                 {% if item.url == page.url %}</strong>{% endif %}
-            </li>
-            {% endif %}
-            {% endfor %}
-        </ul>
-    </div>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
 
+<hr class="lg">
+
+<div class="row bg-img-map">
+    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block" style="padding-top:0"></div>
+    <div class="jumbotron bg-transparent col-md-6 col-sm-12" style="padding-top:0">
+        <h1 class="text-gray text-center">Стримы</h1>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://player.twitch.tv/?channel=akulenokwow" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+        </div>
+    </div>
+    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block" style="padding-top:0"></div>
 </div>

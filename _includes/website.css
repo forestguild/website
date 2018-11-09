@@ -36,12 +36,16 @@ i, em {
 
 /** Background with art in top left corner **/
 .bg-img {
-    background: url(/assets/img/bg.main.jpg) top center no-repeat #120d0a;
+    background: url(/assets/img/bg.main.jpg) top left no-repeat #120d0a;
+}
+
+.bg-img-map {
+    background: url("/assets/img/bg.jpg") repeat-y bottom center #120d0a;
 }
 
 /* Header bg */
 .navbar-desktop {
-    background: url("/assets/img/bg.nav.png") no-repeat top center transparent;
+    background: url("/assets/img/bg.nav.png") repeat-x top center transparent;
     min-height:70px;
 }
 
@@ -129,6 +133,11 @@ hr {
     min-height: 50px;
     padding: 0;
     margin: 0;
+}
+
+hr.lg {
+    background: url("/assets/img/line.lg.png") no-repeat top center;
+    min-height: 100px;
 }
 
 /* General text color */
