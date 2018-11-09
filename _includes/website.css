@@ -43,6 +43,17 @@ i, em {
     background: url("/assets/img/bg.jpg") repeat-y bottom center #120d0a;
 }
 
+.bg-img-red {
+    background: url("/assets/img/bg.red.jpg") repeat-y bottom center #120d0a;
+}
+
+.bg-img-bloom {
+    background: url("/assets/img/bg.bloom.jpg") no-repeat top transparent;
+    position: relative;
+    padding-top: 50px;
+    top: -50px;
+}
+
 /* Header bg */
 .navbar-desktop {
     background: url("/assets/img/bg.nav.png") repeat-x top center transparent;
@@ -137,7 +148,9 @@ hr {
 
 hr.lg {
     background: url("/assets/img/line.lg.png") no-repeat top center;
+    position: relative;
     min-height: 100px;
+    z-index: 50;
 }
 
 /* General text color */
