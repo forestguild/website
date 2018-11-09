@@ -1,0 +1,37 @@
+wiki:
+  - title: Рейд и мифик+
+    items:
+      - title: Рейд
+        url: /wiki/raid
+        items:
+          - title: Чек-лист
+            url: /wiki/raid/checklist
+          - title: Тактика
+            url: /wiki/raid/tactics
+      - title: Мифик+
+        url: /wiki/keystones
+  - title: Фермер Юн
+    items:
+      - title: Добыча золота
+        url: /wiki/goldfarm
+      - title: Реагенты
+        url: /wiki/reagents
+      - title: Рыбалка
+        url: /wiki/fishing
+  - title: Классные классы
+    items:
+      - title: Друид
+        url: /wiki/classes/druid
+        items:
+          - title: Танк
+            url: /wiki/classes/druid/guardian
+      - title: Разбойник
+        url: /wiki/classes/rogue
+  - title: Инструментарий
+    items:
+      - title: Аддоны
+        url: /wiki/addons
+      - title: Discord
+        url: /wiki/discord
+      - title: Помощь сайту
+        url: /wiki/contributions

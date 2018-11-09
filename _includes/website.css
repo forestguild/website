@@ -44,7 +44,7 @@ i, em {
 }
 
 .bg-img-red {
-    background: url("/assets/img/bg.red.jpg") repeat-y bottom center #120d0a;
+    background: url("/assets/img/bg.red.jpg") no-repeat top left #120d0a;
 }
 
 .bg-img-bloom {
@@ -175,7 +175,8 @@ blockquote {
 
 /** Wiki **/
 .wiki {
-    background: url(/assets/img/line.sm.png) no-repeat top center, url(/assets/img/line.lg.png) no-repeat bottom center;
+    /*background: url(/assets/img/line.sm.png) no-repeat top center, url(/assets/img/line.lg.png) no-repeat bottom center;*/
+    background: transparent;
     padding-bottom: 100px !important;
     padding-top: 50px !important;
     color: #c6c6c6 !important;
@@ -186,6 +187,15 @@ blockquote {
 .wiki td {
     font-weight: 400 !important;
     font-size: 1.25rem;
+}
+
+a.wiki-header-link {
+    background: none;
+    color: #fff !important;
+    -webkit-text-fill-color: inherit;
+}
+a.wiki-header-link:hover {
+    background: none;
 }
 
 /* Wiki links in text */

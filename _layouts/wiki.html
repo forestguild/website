@@ -1,25 +1,51 @@
 ---
 layout: page
 ---
+<nav class="bg-img-red d-none d-md-block">
+<hr class="lg" style="top:-40px">
+    <div class="row container-fluid">
+        {% for item in site.data.nav.wiki %}
+        <div class="col-md-3">
+            <h3>{{ item.title }}</h3>
+        {% if item.items[0] %}
+        <ul>
+            {% for entry in item.items %}
+            <li><a class="wiki-header-link" href='{{ entry.url | replace:'index.html','' | replace:'.html','' }}'>{{ entry.title }}</a></li>
+                {% if entry.items[0] %}
+                    {% for subentry in entry.items %}
+                    <li><a class="wiki-header-link" href='{{ subentry.url | replace:'index.html','' | replace:'.html','' }}'>&raquo; {{ subentry.title }}</a></li>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+<hr class="lg" style="transform: scaleY(-1);bottom:-40px">
+</nav>
 
+<main class="container-fluid">
 <div class="row">
-    <div class="col-md-2 col-sm-12 mt-4 ml-2">
-        <p class="lead">&nbsp;</p>
-        <ul class="bg-menu p-4">
+    <div class="col-sm-12 mt-4 ml-2  d-md-none">
+        <hr class="lg" style="bottom:-35px">
+        <!--<p class="lead">&nbsp;</p>-->
+        <ul class="p-4">
             {% assign sorted_pages = site.pages | sort:"order" %}
             {% for item in sorted_pages %}
             {% if item.layout == 'wiki' %}
             <li>
                 {% if item.url == page.url %}<strong>{% endif %}
-                <a href='{{ item.url | replace:'index.html','' | replace:'.html','' }}' class="text-white">{{ item.menu }}</a>
-                {% if item.url == page.url %}</strong>{% endif %}
+                    <a href='{{ item.url | replace:'index.html','' | replace:'.html','' }}' class="text-white">{{ item.menu }}</a>
+                    {% if item.url == page.url %}</strong>{% endif %}
             </li>
             {% endif %}
             {% endfor %}
         </ul>
+        <hr class="lg" style="transform: scaleY(-1);top:-50px">
     </div>
 
-    <div class="jumbotron wiki text-white col-md-9 col-sm-12">
+    <div class="jumbotron wiki text-white col-md-12">
         <a href="https://github.com/{{ site.repository }}/tree/master/{{ page.path }}" class="float-right">Изменить</a>
         {{ content }}
         {% if page.author %}
