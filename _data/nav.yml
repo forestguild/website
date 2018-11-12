@@ -25,6 +25,8 @@ wiki:
         items:
           - title: Танк
             url: /wiki/classes/druid/guardian
+          - title: РДД
+            url: /wiki/classes/druid/balance
       - title: Разбойник
         url: /wiki/classes/rogue
   - title: Инструментарий
