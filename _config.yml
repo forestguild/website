@@ -36,8 +36,13 @@ rt:
 
 # Build settings
 markdown: kramdown
-#plugins:
-  #- amp-jekyll
+compress_html:
+  clippings: all
+  comments: all
+  startings: all
+  endings: all
+  blanklines: false
+  profile: false
 exclude:
   - README.md
   - Makefile

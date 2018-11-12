@@ -14,6 +14,6 @@ author: Этке
 
 > # Исцеление (restoration, хил)
 
-> # Баланс (balance, рдд)
+# [Баланс (balance, рдд)](/wiki/classes/druid/balance)
 
 > # Сила зверя (feral, мдд)

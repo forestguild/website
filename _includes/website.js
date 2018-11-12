@@ -1,4 +1,3 @@
-//Table sort
 $(function () {
     $('table').tablesorter({
         theme: "blackice",
