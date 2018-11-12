@@ -15,19 +15,32 @@ h5, h6, b, strong {
     font-size: 1.3rem;
 }
 
-/** Global links style **/
-a {
+a.nav-link {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-image: -webkit-linear-gradient(top,#ede0c9 20%,#8a7e66 100%);
     background-size: 1.3em 1.3em;
     background-position: top;
-    color: #ede0c9 !important;
     font-weight: 700 !important;
+}
+
+a.nav-link:hover {
+    background-image:-webkit-linear-gradient(top,#fff,#fff)
+}
+
+/** Global links style **/
+a {
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+    /*background-image: -webkit-linear-gradient(top,#ede0c9 20%,#8a7e66 100%);*/
+    /*background-size: 1.3em 1.3em;*/
+    /*background-position: top;*/
+    color: #ede0c9 !important;
+    /*font-weight: 700 !important;*/
 }
 a:hover {
     color: #fff;
-    background-image:-webkit-linear-gradient(top,#fff,#fff)
+    /*background-image:-webkit-linear-gradient(top,#fff,#fff)*/
 }
 
 i, em {
