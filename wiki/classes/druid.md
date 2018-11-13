@@ -10,7 +10,7 @@ author: Этке
 
 # [Страж (guardian, танк)](/wiki/classes/druid/guardian)
 
-> # Исцеление (restoration, хил)
+# [Исцеление (restoration, хил)](/wiki/classes/druid/restoration)
 
 # [Баланс (balance, рдд)](/wiki/classes/druid/balance)
 
