@@ -33,7 +33,7 @@ layout: amp
             <div class="flex justify-start items-center ampstart-sidebar-header">
                 <div role="button" aria-label="close sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
             </div>
-            <nav class="ampstart-sidebar-nav ampstart-nav">{% include menu.html amp=true %}</nav>
+            <nav class="ampstart-sidebar-nav ampstart-nav">{% include menu.html view="amp" %}</nav>
             <ul class="ampstart-sidebar-faq list-reset m0">
                 <li class="ampstart-faq-item"><a href="{{ site.url }}{{ site.baseurl }}/{{ page.url | replace:'index.html','' | replace:'.html','' | replace: 'amp/','' }}" class="text-decoration-none">Полная версия</a></li>
             </ul>

@@ -3,7 +3,7 @@ layout: page
 ---
 <nav class="bg-img-red d-none d-md-block">
     <hr class="lg" style="top:-40px">
-    {% include menu.html horizontal=true %}
+    {% include menu.html view="horizontal" %}
     <hr class="lg" style="transform: scaleY(-1);bottom:-20px">
 </nav>
 
@@ -12,7 +12,7 @@ layout: page
     <button class="btn btn-wow d-md-none mx-auto" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="menu">меню</button>
     <div class="col-sm-12 mt-4 ml-2  d-md-none collapse" id="menu">
         <hr class="lg" style="bottom:-35px">
-        {% include menu.html %}
+        {% include menu.html view="vertical" %}
         <hr class="lg" style="transform: scaleY(-1)">
     </div>
 

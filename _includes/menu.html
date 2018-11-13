@@ -4,7 +4,9 @@
 {% assign blocks = site.data.nav.wiki | size %}
 {% endif %}
 
-{% if include.horizontal %}
+{% case include.view %}
+
+{% when 'horizontal' %}
 <div class="row container-fluid">
     {% for item in site.data.nav.wiki | limit: blocks %}
     <div class="col-md-3">
@@ -24,41 +26,43 @@
     </div>
     {% endfor %}
 </div>
-{% else if include.amp %}
-    {% for item in site.data.nav.wiki | limit: blocks %}
-        <h4>{{ item.title }}</h4>
-        {% if item.items[0] %}
-        <ul class="list-reset m1 mb2 p0 ampstart-label">
-            {% for entry in item.items %}
-            <li class="ampstart-nav-item ml1 mt1">
-                <a href='/amp{{ entry.url | replace:'index.html','' | replace:'.html','' }}' class="ampstart-nav-link">{{ entry.title }}</a>
-            </li>
-            {% if entry.items[0] %}
-            {% for subentry in entry.items %}
-            <li class="ampstart-nav-item ml2">
-                <a href='/amp{{ subentry.url | replace:'index.html','' | replace:'.html','' }}' class="ampstart-nav-link">&raquo; {{ subentry.title }}</a>
-            </li>
-            {% endfor %}
-            {% endif %}
-            {% endfor %}
-        </ul>
-        {% endif %}
+
+{% when 'vertical' %}
+{% for item in site.data.nav.wiki | limit: blocks %}
+<h3 class="pt-4 text-center">{{ item.title }}</h3>
+{% if item.items[0] %}
+<ul>
+    {% for entry in item.items %}
+    <li><a class="wiki-header-link" href='{{ entry.url | replace:'index.html','' | replace:'.html','' }}'>{{ entry.title }}</a></li>
+    {% if entry.items[0] %}
+    {% for subentry in entry.items %}
+    <li><a class="wiki-header-link" href='{{ subentry.url | replace:'index.html','' | replace:'.html','' }}'>&raquo; {{ subentry.title }}</a></li>
     {% endfor %}
-{% else %}
-    {% for item in site.data.nav.wiki | limit: blocks %}
-        <h3 class="pt-4 text-center">{{ item.title }}</h3>
-        {% if item.items[0] %}
-        <ul>
-            {% for entry in item.items %}
-            <li><a class="wiki-header-link" href='{{ entry.url | replace:'index.html','' | replace:'.html','' }}'>{{ entry.title }}</a></li>
-            {% if entry.items[0] %}
-            {% for subentry in entry.items %}
-            <li><a class="wiki-header-link" href='{{ subentry.url | replace:'index.html','' | replace:'.html','' }}'>&raquo; {{ subentry.title }}</a></li>
-            {% endfor %}
-            {% endif %}
-            {% endfor %}
-        </ul>
-        {% endif %}
+    {% endif %}
     {% endfor %}
-    <a href="/wiki" class="text-muted float-right">Больше в Базе Знаний</a>
+</ul>
 {% endif %}
+{% endfor %}
+<a href="/wiki" class="text-muted float-right">Больше в Базе Знаний</a>
+
+{% when 'amp' %}
+{% for item in site.data.nav.wiki | limit: blocks %}
+<h4>{{ item.title }}</h4>
+{% if item.items[0] %}
+<ul class="list-reset m1 mb2 p0 ampstart-label">
+    {% for entry in item.items %}
+    <li class="ampstart-nav-item ml1 mt1">
+        <a href='/amp{{ entry.url | replace:'index.html','' | replace:'.html','' }}' class="ampstart-nav-link">{{ entry.title }}</a>
+    </li>
+    {% if entry.items[0] %}
+    {% for subentry in entry.items %}
+    <li class="ampstart-nav-item ml2">
+        <a href='/amp{{ subentry.url | replace:'index.html','' | replace:'.html','' }}' class="ampstart-nav-link">&raquo; {{ subentry.title }}</a>
+    </li>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endif %}
+{% endfor %}
+{% endcase %}
