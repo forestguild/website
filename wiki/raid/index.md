@@ -1,7 +1,5 @@
 ---
 layout: wiki
-order: 1
-menu: Рейд
 title: "Гайд по рейдам (ульдир) в WoW BfA"
 author: Этке
 ---

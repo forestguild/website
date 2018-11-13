@@ -1,8 +1,6 @@
 ---
 layout: wiki
-order: 100
 title: Помощь сайту
-menu: Помощь сайту
 author: Этке
 ---
 

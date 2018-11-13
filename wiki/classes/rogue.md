@@ -1,7 +1,5 @@
 ---
 layout: wiki
-order: 11
-menu: "&nbsp;&nbsp;&nbsp; Разбойник"
 title: "Разбойник (рога, rogue) PvE гайд WoW BfA"
 author: Гурноут
 ---

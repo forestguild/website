@@ -1,7 +1,5 @@
 ---
 layout: wiki
-order: 9
-menu: "&nbsp;&nbsp;&nbsp; Друид"
 title: "Друид PvE гайды WoW BfA"
 author: Этке
 ---
