@@ -21,7 +21,7 @@ layout: page
 <hr>
 
 <div class="row">
-    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block" style="padding-top:0">
+    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block mb-0 pb-0" style="padding-top:0">
         {% for item in site.data.news %}
         <p class="lead">
         <span class="text-gray">{{ item.timestamp|date: "%-d.%m" }}</span>
@@ -35,7 +35,7 @@ layout: page
         </p>
         {% endfor %}
     </div>
-    <div class="jumbotron bg-transparent col-md-6 col-sm-12" style="padding-top:0; background: url(/assets/img/logo.png) no-repeat top right;">
+    <div class="jumbotron bg-transparent col-md-6 col-sm-12 mb-0 pb-0" style="padding-top:0; background: url(/assets/img/logo.png) no-repeat top right;">
         <p class="lead text-white">
         <b>Да</b>, гильдия живая.<br>
         <b>Да</b>, мы набираем статик.<br>
@@ -51,18 +51,9 @@ layout: page
         <span class="text-gray">За постоянное нахождение в дискорде у нас <a class="text-danger" href="/wiki/discord#плюшки-за-дискорд" target"_blank">предусмотрены различные плюшки</a> (зашел в игру = зашел в дискорд)</span>
         </p>
     </div>
-    <ul class="jumbotron col-md-3 bg-transparent d-none d-md-block" style="padding-top:0;">
-        {% assign sorted_pages = site.pages | sort:"order" %}
-        {% for item in sorted_pages %}
-        {% if item.layout == 'wiki' %}
-        <li>
-            {% if item.url == page.url %}<strong>{% endif %}
-                <a href='{{ item.url | replace:'index.html','' | replace:'.html','' }}' class="text-white">{{ item.menu }}</a>
-                {% if item.url == page.url %}</strong>{% endif %}
-        </li>
-        {% endif %}
-        {% endfor %}
-    </ul>
+    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block mb-0 pb-0" style="padding-top:0;">
+    {% include menu.html blocks=2 %}
+    </div>
 </div>
 
 <hr class="lg">

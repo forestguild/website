@@ -3,46 +3,17 @@ layout: page
 ---
 <nav class="bg-img-red d-none d-md-block">
     <hr class="lg" style="top:-40px">
-    <div class="row container-fluid">
-        {% for item in site.data.nav.wiki %}
-        <div class="col-md-3">
-            <h3>{{ item.title }}</h3>
-            {% if item.items[0] %}
-            <ul>
-                {% for entry in item.items %}
-                <li><a class="wiki-header-link" href='{{ entry.url | replace:'index.html','' | replace:'.html','' }}'>{{ entry.title }}</a></li>
-                {% if entry.items[0] %}
-                {% for subentry in entry.items %}
-                <li><a class="wiki-header-link" href='{{ subentry.url | replace:'index.html','' | replace:'.html','' }}'>&raquo; {{ subentry.title }}</a></li>
-                {% endfor %}
-                {% endif %}
-                {% endfor %}
-            </ul>
-            {% endif %}
-        </div>
-        {% endfor %}
-    </div>
-    <hr class="lg" style="transform: scaleY(-1);bottom:-40px">
+    {% include menu.html horizontal=true %}
+    <hr class="lg" style="transform: scaleY(-1);bottom:-20px">
 </nav>
 
 <main class="container-fluid">
 <div class="row">
-    <div class="col-sm-12 mt-4 ml-2  d-md-none">
+    <button class="btn btn-wow d-md-none mx-auto" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="menu">меню</button>
+    <div class="col-sm-12 mt-4 ml-2  d-md-none collapse" id="menu">
         <hr class="lg" style="bottom:-35px">
-        <!--<p class="lead">&nbsp;</p>-->
-        <ul class="p-4">
-            {% assign sorted_pages = site.pages | sort:"order" %}
-            {% for item in sorted_pages %}
-            {% if item.layout == 'wiki' %}
-            <li>
-                {% if item.url == page.url %}<strong>{% endif %}
-                    <a href='{{ item.url | replace:'index.html','' | replace:'.html','' }}' class="text-white">{{ item.menu }}</a>
-                    {% if item.url == page.url %}</strong>{% endif %}
-            </li>
-            {% endif %}
-            {% endfor %}
-        </ul>
-        <hr class="lg" style="transform: scaleY(-1);top:-50px">
+        {% include menu.html %}
+        <hr class="lg" style="transform: scaleY(-1)">
     </div>
 
     <div class="jumbotron wiki text-white col-md-12 mb-0">
