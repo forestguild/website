@@ -66,6 +66,9 @@ exclude:
   - .php_cs.dist
   - .travis.yml
 
+plugins:
+  - jekyll-admin
+
 # Raid time
 rt:
   active: false
