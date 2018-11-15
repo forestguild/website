@@ -1,24 +1,49 @@
-title: "Гильдия Ясный Лес @ EU Галакронд"
-description: >- # this means to ignore newlines until "baseurl:"
-  Гильдия Ясный Лес, World of Warcraft, EU Галакронд.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://forestguild.club" # the base hostname & protocol for your site, e.g. http://example.com
-repository: rakshazi/forestguild.club
+title: "Гильдия Ясный Лес @ EU Галакронд" #meta title
+name: "Ясный Лес" #brand name, for menu
+description: Гильдия Ясный Лес, World of Warcraft, EU Галакронд.
+baseurl: ""
+url: "https://forestguild.club"
+
+# Integrations
+github: rakshazi/forestguild.club
 realm: galakrond
 disqus: forestguild
-links:
-  - name: Discord
-    url: https://discord.gg/v9mNxAS
-    class: text-danger
-  - name: Оружейная
-    url: https://eu.battle.net/wow/ru/guild/galakrond/Ясный_Лес/
-    class:
-  - name: WoWProgress
-    url: https://www.wowprogress.com/guild/eu/галакронд/Ясный+Лес
-    class:
-  - name: Raider.IO
-    url: https://raider.io/guilds/eu/galakrond/Ясный%20Лес
-    class:
+verification:
+  yandex: 0e76a0023e630508
+  google: HyXyjl__ZWM8pD-mJqSaPIR2wVBFXVr25u0zwJkENfY
+analytics:
+  yandex: 50342920
+  google: UA-113486799-3
+
+# Assets
+assets:
+  head:
+    - url: /assets/css/bootstrap.min.css
+      type: css
+  footer:
+    - url: https://fonts.googleapis.com/css?family=Cuprum:700&amp;subset=cyrillic
+      type: css
+    - url: https://www.googletagmanager.com/gtag/js?id=UA-113486799-3
+      async: true
+      type: js
+    - url: /assets/js/jquery.min.js
+      type: js
+    - url: /assets/js/bootstrap.bundle.min.js
+      async: true
+      type: js
+    - url: https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/css/theme.blackice.min.css
+      integrity: sha256-gJADOPVrhQLECNkPq4IKJNH9g9TnCj3RzfhL/ToOn/E=
+      type: css
+    - url: https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.min.js
+      integrity: sha256-Ae7jmRrbL3hf1J/y22SYMPtx0wMVbG4g3HtpjioYuyk=
+      type: js
+    - url: https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/widgets/widget-filter.min.js
+      integrity: sha256-PjucxS9eB9yoBEuahfglpLB5RQz+cEqMnAQQRVQqIUU=
+      async: true
+      type: js
+    - url: http://wow.zamimg.com/widgets/power.js
+      async: true
+      type: js
 
 rt:
   active: false

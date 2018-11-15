@@ -17,7 +17,7 @@ layout: null
   {% endfor %}
   {% for page in site.pages %}
       <url>
-        <loc>{{ site.url }}{{ page.url | replace:'index.html','' | replace:'.html','' }}</loc>
+        <loc>{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}</loc>
         <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>

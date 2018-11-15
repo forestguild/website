@@ -17,14 +17,14 @@ layout: page
     </div>
 
     <div class="jumbotron wiki text-white col-md-12 mb-0">
-        <a href="https://github.com/{{ site.repository }}/tree/master/{{ page.path }}" class="float-right">Изменить</a>
+        <a href="https://github.com/{{ site.github }}/tree/master/{{ page.path }}" class="float-right">Изменить</a>
         {{ content }}
         {% if page.author %}
         <span class="float-left">Автор: <a href="https://worldofwarcraft.com/ru-ru/character/{{ site.realm }}/{{ page.author }}" target="_blank">{{ page.author }}</a></span>
         {% endif %}
-        <a href="https://github.com/{{ site.repository }}/tree/master/{{ page.path }}" class="float-right" target="_blank">Изменить</a>
+        <a href="https://github.com/{{ site.github }}/tree/master/{{ page.path }}" class="float-right" target="_blank">Изменить</a>
     </div>
-        <hr class="lg" style="width: 100%;">
+    <hr class="lg" style="width: 100%;">
     <div class="col-md-10 offset-md-1" id="disqus_thread"></div>
-        <hr class="lg" style="width: 100%; transform: scaleY(-1)">
+    <hr class="lg" style="width: 100%; transform: scaleY(-1)">
 </div>
