@@ -45,6 +45,28 @@ assets:
       async: true
       type: js
 
+# Build settings
+markdown: kramdown
+
+compress_html:
+  clippings: all
+  comments: all
+  startings: all
+  endings: all
+  blanklines: false
+  profile: false
+
+exclude:
+  - README.md
+  - Makefile
+  - Gemfile
+  - Gemfile.lock
+  - updater
+  - updater.php
+  - .php_cs.dist
+  - .travis.yml
+
+# Raid time
 rt:
   active: false
   date: "Среда и четверг 19:00-21:00 МСК "
@@ -56,22 +78,3 @@ rt:
     ilvl: 340
     flasks: 2
   raid: "Ульдир"
-
-# Build settings
-markdown: kramdown
-compress_html:
-  clippings: all
-  comments: all
-  startings: all
-  endings: all
-  blanklines: false
-  profile: false
-exclude:
-  - README.md
-  - Makefile
-  - Gemfile
-  - Gemfile.lock
-  - updater
-  - updater.php
-  - .php_cs.dist
-  - .travis.yml
