@@ -5,6 +5,8 @@ layout: default
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    {% include assets.html block="head" %}
+    <style>{% include website.css %}</style>
 
     {% comment %}SEO and verification stuff{% endcomment %}
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
@@ -16,23 +18,15 @@ layout: default
     <meta property="og:site_name" content="{{ site.title }}" />
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
-    <meta name="yandex-verification" content="0e76a0023e630508" />
-    <meta name="google-site-verification" content="HyXyjl__ZWM8pD-mJqSaPIR2wVBFXVr25u0zwJkENfY" />
+    <meta name="yandex-verification" content="{{ site.verification.yandex }}" />
+    <meta name="google-site-verification" content="{{ site.verification.google }}" />
     <link rel="alternate" type="application/rss+xml" title="RSS + Yandex.Turbo" href="/rss.xml" />
     {% if page.layout == 'wiki' %}<link rel="amphtml" href="{{ page.url | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}">{% endif %}
-
-    {% comment %}styles{% endcomment %}
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <style>{% include website.css %}</style>
-    <link href="https://fonts.googleapis.com/css?family=Cuprum:700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}">
     <link rel="icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
     <link rel="apple-touch-icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
-
-    {% comment %}metrics{% endcomment %}
-    <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter50342920 = new Ya.Metrika2({ id:50342920, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/50342920" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113486799-3"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113486799-3');</script>
+    <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter{{ site.analytics.yandex }} = new Ya.Metrika2({ id:{{ site.analytics.yandex }}, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/50342920" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '{{ site.analytics.google }}');</script>
 </head>
 <body class="{% if page.layout == 'home' %}bg-img{% endif %}">
 
@@ -40,15 +34,9 @@ layout: default
     <nav class="navbar navbar-desktop navbar-expand-md navbar-dark fixed-top d-none d-md-block">
         <div class="navbar-collapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Привет <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/raid">Зал Славы</a>
-                </li>
-                {% for item in site.links %}
-                <li class="nav-item active">
-                    <a class="nav-link {{ item.class }}" href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+                {% for item in site.data.nav.top %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ item.url }}" {% if item.external %}rel="nofollow" target="_blank"{% endif %}>{{ item.title }}</a>
                 </li>
                 {% endfor %}
                 {% if site.rt.active %}
@@ -59,7 +47,7 @@ layout: default
             </ul>
             <ul class="navbar-nav mt-2 mt-md-0">
                 <li class="nav-item active">
-                    <a class="nav-link text-danger" href="/wiki">База знаний</a>
+                    <a class="nav-link" href="/wiki">База знаний</a>
                 </li>
             </ul>
         </div>
@@ -67,7 +55,7 @@ layout: default
 
     <!--MOBILE menu-->
     <nav class="navbar navbar-mobile navbar-expand-md navbar-dark fixed-top bg-dark d-md-none">
-        <a class="navbar-brand" href="/">Ясный Лес</a>
+        <a class="navbar-brand" href="/">{{ site.name }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -78,15 +66,9 @@ layout: default
                     <a class="nav-link text-info blink" href="#" data-toggle="modal" data-target="#rtModal">Время Рейда</a>
                 </li>
                 {% endif %}
-                <li class="nav-item active ">
-                    <a class="nav-link" href="/">Привет <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/raid">Зал Славы</a>
-                </li>
-                {% for item in site.links %}
-                <li class="nav-item active">
-                    <a class="nav-link {{ item.class }}" href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+                {% for item in site.data.nav.top %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ item.url }}" {% if item.external %}target="_blank"{% endif %}>{{ item.title }}</a>
                 </li>
                 {% endfor %}
                 <li class="nav-item active">
@@ -101,9 +83,9 @@ layout: default
     {{ content }}
     <div class="text-center">
         <noindex>
-        <a href="https://facebook.com/forestguildclub" target="_blank" rel="nofollow" class="btn btn-wow">Facebook</a>
-        <a href="https://twitter.com/forestguildclub" target="_blank" rel="nofollow" class="btn btn-wow">twitter</a>
-        <a href="https://vk.com/forestguildclub" target="_blank" rel="nofollow" class="btn btn-wow">vk</a>
+        {% for item in site.data.nav.footer %}
+            <a href="{{ item.url }}" {% if item.external %}target="_blank" rel="nofollow"{% endif %} class="btn btn-wow">{{ item.title }}</a>
+        {% endfor %}
         </noindex>
     </div>
     </main>
@@ -153,11 +135,6 @@ layout: default
         </div>
     </div>
     {% endif %}
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/css/theme.blackice.min.css" integrity="sha256-gJADOPVrhQLECNkPq4IKJNH9g9TnCj3RzfhL/ToOn/E=" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.min.js" integrity="sha256-Ae7jmRrbL3hf1J/y22SYMPtx0wMVbG4g3HtpjioYuyk=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/widgets/widget-filter.min.js" integrity="sha256-PjucxS9eB9yoBEuahfglpLB5RQz+cEqMnAQQRVQqIUU=" crossorigin="anonymous"></script>
+    {% include assets.html block="footer" %}
     <script>{% include website.js %}</script>
-<script src="http://wow.zamimg.com/widgets/power.js"></script>
 </body>

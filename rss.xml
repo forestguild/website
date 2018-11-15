@@ -38,11 +38,14 @@ layout: null
         {% if page.title %}
         <item turbo="true">
             <title><![CDATA[{{ page.title | strip_html | remove:"&nbsp;" }}]]></title>
+            {% if page.author %}
+            <dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
+            {% endif %}
             <description><![CDATA[{{ page.content |  markdownify | remove:"&nbsp;" }}]]></description>
             <turbo:content><![CDATA[{{ page.content |  markdownify | remove:"&nbsp;" }}]]></turbo:content>
             <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-            <link>{{ site.url }}{{ page.url | replace:'index.html','' | replace:'.html','' }}</link>
-            <guid isPermaLink="true">{{ site.url }}{{ page.url | replace:'index.html','' | replace:'.html','' }}</guid>
+            <link>{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}</link>
+            <guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}</guid>
         </item>
         {% endif %}
         {% endfor %}

@@ -1,0 +1,11 @@
+{% for item in site.assets[include.block] %}
+{% case item.type %}
+
+{% when 'css' %}
+<link rel="stylesheet" href="{{ item.url }}" {% if item.integrity %}integrity="{{ item.integrity }}" crossorigin="anonymous"{% endif %}/>
+
+{% when 'js' %}
+<script {% if item.async %}async{% endif %} src="{{ item.url }}" {% if item.integrity %}integrity="{{ item.integrity }}" crossorigin="anonymous"{% endif %}></script>
+
+{% endcase %}
+{% endfor %}
