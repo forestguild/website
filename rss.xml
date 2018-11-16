@@ -35,7 +35,7 @@ layout: null
         </item>
         {% endfor %}
         {% for page in site.pages %}
-        {% if page.title %}
+        {% if page.title and page.layout != "amp" %}
         <item turbo="true">
             <title><![CDATA[{{ page.title | strip_html | remove:"&nbsp;" }}]]></title>
             {% if page.author %}
