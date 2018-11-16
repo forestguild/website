@@ -45,7 +45,7 @@ assets:
       integrity: sha256-PjucxS9eB9yoBEuahfglpLB5RQz+cEqMnAQQRVQqIUU=
       async: true
       type: js
-    - url: http://wow.zamimg.com/widgets/power.js
+    - url: https://wow.zamimg.com/widgets/power.js
       async: true
       type: js
 

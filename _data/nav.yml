@@ -40,11 +40,35 @@ wiki:
         url: /wiki/raid
         items:
           - title: Чек-лист
+            class: text-uppercase badge badge-dark
             url: /wiki/raid/checklist
           - title: Тактика
+            class: text-uppercase badge badge-dark
             url: /wiki/raid/tactics
       - title: Мифик+
         url: /wiki/keystones
+  - title: Классные классы
+    items:
+      - title: Друид
+        url: /wiki/classes/druid
+        items:
+          - title: Танк
+            class: text-uppercase badge badge-dark
+            url: /wiki/classes/druid/guardian
+          - title: Хил
+            class: text-uppercase badge badge-success
+            url: /wiki/classes/druid/restoration
+          - title: РДД
+            class: text-uppercase badge badge-danger
+            url: /wiki/classes/druid/balance
+      - title: Шаман
+        url: "#"
+        items:
+          - title: РДД
+            class: text-uppercase badge badge-danger
+            url: /wiki/classes/shaman/elemental
+      - title: Разбойник
+        url: /wiki/classes/rogue
   - title: Фермер Юн
     items:
       - title: Добыча золота
@@ -53,24 +77,6 @@ wiki:
         url: /wiki/reagents
       - title: Рыбалка
         url: /wiki/goldfarm#рыбалка
-  - title: Классные классы
-    items:
-      - title: Друид
-        url: /wiki/classes/druid
-        items:
-          - title: Танк
-            url: /wiki/classes/druid/guardian
-          - title: Хил
-            url: /wiki/classes/druid/restoration
-          - title: РДД
-            url: /wiki/classes/druid/balance
-      - title: Шаман
-        url: "#"
-        items:
-          - title: РДД
-            url: /wiki/classes/shaman/elemental
-      - title: Разбойник
-        url: /wiki/classes/rogue
   - title: Инструментарий
     items:
       - title: Аддоны

@@ -16,14 +16,7 @@ $(function () {
 });
 {% endif %}
 
-
-var whTooltips = {
-    colorLinks: true,
-    iconizeLinks: true,
-    renameLinks: true,
-    iconSize: 'small'
-};
-
+{% if page.layout == 'wiki' %}
 var disqus_config = function () {
     this.page.url = "{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}";
     this.page.identifier = "{{ page.url | replace:'index.html','' | replace:'.html','' }}";
@@ -34,4 +27,14 @@ var disqus_config = function () {
     s.src = 'https://{{ site.disqus }}.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);
 })();
+
+{% endif %}
+
+
+var whTooltips = {
+    colorLinks: true,
+    iconizeLinks: true,
+    renameLinks: true,
+    iconSize: 'small'
+};
 

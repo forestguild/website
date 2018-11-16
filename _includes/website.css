@@ -35,7 +35,7 @@ a {
     /*background-image: -webkit-linear-gradient(top,#ede0c9 20%,#8a7e66 100%);*/
     /*background-size: 1.3em 1.3em;*/
     /*background-position: top;*/
-    color: #ede0c9 !important;
+    color: #ede0c9;
     /*font-weight: 700 !important;*/
 }
 a:hover {

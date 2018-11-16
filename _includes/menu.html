@@ -10,14 +10,14 @@
 <div class="row container-fluid">
     {% for item in site.data.nav.wiki | limit: blocks %}
     <div class="col-md-3">
-        <h3>{{ item.title }}</h3>
+        <h3 class="{% if item.class %}{{ item.class }}{% endif %}">{{ item.title }}</h3>
         {% if item.items[0] %}
         <ul>
             {% for entry in item.items %}
-            <li><b><a class="wiki-header-link" href='{{ entry.url | replace:'index.html','' | replace:'.html','' }}'>{{ entry.title }}</a></b>
+            <li><b><a class="{% if entry.class %}{{ entry.class }}{% endif %}" href='{{ entry.url | replace:'index.html','' | replace:'.html','' }}'>{{ entry.title }}</a></b>
             {% if entry.items[0] %}
             {% for subentry in entry.items %}
-            <a class="wiki-header-link" href='{{ subentry.url | replace:'index.html','' | replace:'.html','' }}'>[{{ subentry.title }}]</a>
+            <a class="{% if subentry.class %}{{ subentry.class }}{% endif %}" href='{{ subentry.url | replace:'index.html','' | replace:'.html','' }}'>{{ subentry.title }}</a>
             {% endfor %}
             {% endif %}
             </li>
@@ -30,17 +30,18 @@
 
 {% when 'vertical' %}
 {% for item in site.data.nav.wiki | limit: blocks %}
-<h3 class="pt-4 text-center">{{ item.title }}</h3>
+<h3 class="pt-4 text-center {% if item.class %}{{ item.class }}{% endif %}">{{ item.title }}</h3>
 {% if item.items[0] %}
 <ul>
-    {% for entry in item.items %}
-    <li><a class="wiki-header-link" href='{{ entry.url | replace:'index.html','' | replace:'.html','' }}'>{{ entry.title }}</a></li>
-    {% if entry.items[0] %}
-    {% for subentry in entry.items %}
-    <li><a class="wiki-header-link" href='{{ subentry.url | replace:'index.html','' | replace:'.html','' }}'>&raquo; {{ subentry.title }}</a></li>
-    {% endfor %}
-    {% endif %}
-    {% endfor %}
+            {% for entry in item.items %}
+            <li><b><a class="{% if entry.class %}{{ entry.class }}{% endif %}" href='{{ entry.url | replace:'index.html','' | replace:'.html','' }}'>{{ entry.title }}</a></b>
+            {% if entry.items[0] %}
+            {% for subentry in entry.items %}
+            <a class="{% if subentry.class %}{{ subentry.class }}{% endif %}" href='{{ subentry.url | replace:'index.html','' | replace:'.html','' }}'>{{ subentry.title }}</a>
+            {% endfor %}
+            {% endif %}
+            </li>
+            {% endfor %}
 </ul>
 {% endif %}
 {% endfor %}
