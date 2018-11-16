@@ -30,7 +30,7 @@ var disqus_config = function () {
 
 {% endif %}
 
-
+/* Wowhead tooltips config */
 var whTooltips = {
     colorLinks: true,
     iconizeLinks: true,
@@ -38,3 +38,5 @@ var whTooltips = {
     iconSize: 'small'
 };
 
+/* Yandex.Metrics goals */
+setTimeout('yaCounter{{ site.analytics.yandex }}.reachGoal("1min_pageview");', 60000); //Stay on page for 1 min
