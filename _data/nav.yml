@@ -67,6 +67,9 @@ wiki:
           - title: РДД
             class: text-uppercase badge badge-danger
             url: /wiki/classes/shaman/elemental
+          - title: МДД
+            class: text-uppercase badge badge-danger
+            url: /wiki/classes/shaman/enhancement
       - title: Разбойник
         url: /wiki/classes/rogue
   - title: Фермер Юн
