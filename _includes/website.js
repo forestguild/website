@@ -6,7 +6,7 @@ $(function () {
     })
 });
 
-{% if page.layout == 'home' %}
+{% if page.path == 'index.html' %}
 $(function () {
     $('#armory-calendar').tooltip();
     {% if site.rt.setup.modifiable %}$('#raid-setup').tooltip();{% endif %}
@@ -15,6 +15,7 @@ $(function () {
     });
 });
 {% endif %}
+
 
 var whTooltips = {
     colorLinks: true,
@@ -33,3 +34,4 @@ var disqus_config = function () {
     s.src = 'https://{{ site.disqus }}.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);
 })();
+

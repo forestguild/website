@@ -14,6 +14,10 @@ verification:
 analytics:
   yandex: 50342920
   google: UA-113486799-3
+video:
+  today: 24 # WoW News playlist's last video index.
+  streams: #twitch users
+    - akulenokwow
 
 # Assets
 assets:
