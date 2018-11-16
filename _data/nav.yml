@@ -64,6 +64,10 @@ wiki:
             url: /wiki/classes/druid/restoration
           - title: РДД
             url: /wiki/classes/druid/balance
+      - title: Шаман
+        url: "#"
+        items:
+          - title: РДД
       - title: Разбойник
         url: /wiki/classes/rogue
   - title: Инструментарий
