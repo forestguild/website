@@ -62,7 +62,7 @@ wiki:
             class: text-uppercase badge badge-danger
             url: /wiki/classes/druid/balance
       - title: Шаман
-        url: "#"
+        url: /wiki/classes/shaman
         items:
           - title: РДД
             class: text-uppercase badge badge-danger
