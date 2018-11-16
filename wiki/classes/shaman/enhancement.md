@@ -138,7 +138,7 @@ description: Гайд для шамана энха (совершенствова
 
 ### Улучшения
 
-* Оружие - [Быстрая навигация](https://ru.wowhead.com/item=159786/), [Искусная навигация]https://ru.wowhead.com/item=159787
+* Оружие - [Быстрая навигация](https://ru.wowhead.com/item=159786/), [Искусная навигация](https://ru.wowhead.com/item=159787)
 * Кольца - [Печать ускорения](https://ru.wowhead.com/item=153443/)
 
 ### Камни
