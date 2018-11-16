@@ -68,6 +68,7 @@ wiki:
         url: "#"
         items:
           - title: РДД
+            url: /wiki/classes/shaman/elemental
       - title: Разбойник
         url: /wiki/classes/rogue
   - title: Инструментарий
