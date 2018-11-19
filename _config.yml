@@ -22,6 +22,9 @@ video:
 # Assets
 assets:
   head:
+    - url: /assets/js/simple-webp.min.js
+      async: true
+      type: js
     - url: /assets/css/bootstrap.min.css
       type: css
   footer:

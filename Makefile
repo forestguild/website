@@ -3,7 +3,6 @@ REMOTE=git@github.com:rakshazi/forestguild.club.git
 deploy: build push clean
 
 run:
-	#find ./assets/img/ -name "*.jpg" -type f -exec jpegtran -copy none -optimize -progressive -outfile {} {} \;
 	bundler exec jekyll serve
 
 build:

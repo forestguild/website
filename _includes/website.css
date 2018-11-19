@@ -6,6 +6,14 @@ body {
     background: url("/assets/img/bg.jpg") repeat-y bottom center #120d0a;
 }
 
+.no-webp body {
+    background: url("/assets/img/bg.jpg") repeat-y bottom center #120d0a;
+}
+
+.webp body {
+    background: url("/assets/img/bg.webp") repeat-y bottom center #120d0a;
+}
+
 h1, h2, h3, h4, h5, h6, b, strong {
     font-family: 'Cuprum', sans-serif;
     font-weight: 700 !important;
@@ -48,20 +56,39 @@ i, em {
 }
 
 /** Background with art in top left corner **/
-.bg-img {
+.no-webp .bg-img {
     background: url(/assets/img/bg.main.jpg) top left no-repeat #120d0a;
 }
 
-.bg-img-map {
+.webp .bg-img {
+    background: url(/assets/img/bg.main.webp) top left no-repeat #120d0a;
+}
+
+.no-webp .bg-img-map {
     background: url("/assets/img/bg.jpg") repeat-y bottom center #120d0a;
 }
 
-.bg-img-red {
+.webp .bg-img-map {
+    background: url("/assets/img/bg.webp") repeat-y bottom center #120d0a;
+}
+
+.no-webp .bg-img-red {
     background: url("/assets/img/bg.red.jpg") no-repeat top left #120d0a;
 }
 
-.bg-img-bloom {
+.webp .bg-img-red {
+    background: url("/assets/img/bg.red.webp") no-repeat top left #120d0a;
+}
+
+.no-webp .bg-img-bloom {
     background: url("/assets/img/bg.bloom.jpg") no-repeat top transparent;
+}
+
+.webp .bg-img-bloom {
+    background: url("/assets/img/bg.bloom.webp") no-repeat top transparent;
+}
+
+.bg-img-bloom {
     position: relative;
     padding-top: 50px;
     top: -50px;
@@ -69,8 +96,15 @@ i, em {
 
 /* Header bg */
 .navbar-desktop {
-    background: url("/assets/img/bg.nav.jpg") repeat-x top center transparent;
     min-height:70px;
+}
+
+.no-webp .navbar-desktop {
+    background: url("/assets/img/bg.nav.jpg") repeat-x top center transparent;
+}
+
+.webp .navbar-desktop {
+    background: url("/assets/img/bg.nav.webp") repeat-x top center transparent;
 }
 
 /* Header links */
@@ -92,7 +126,6 @@ i, em {
 
 /** WoW-styled button **/
 .btn-wow {
-    background: url(/assets/img/btn-wow.png) no-repeat 0 0 transparent;
     height: 108px;
     width: 295px;
     line-height: 90px;
@@ -101,6 +134,12 @@ i, em {
     text-transform: uppercase;
     font-size: 20px;
     text-shadow: 1px 1px #fff;
+}
+.no-webp .btn-wow {
+    background: url(/assets/img/btn-wow.png) no-repeat 0 0 transparent;
+}
+.webp .btn-wow {
+    background: url(/assets/img/btn-wow.webp) no-repeat 0 0 transparent;
 }
 .btn-wow:hover {
     background-position: 0 -109px;
@@ -115,14 +154,24 @@ i, em {
 
 /** Sidebar menu **/
 .bg-menu, .bg-block {
-    background: url(/assets/img/line.sm.png) no-repeat top center, url(/assets/img/line.lg.png) no-repeat bottom center;
     padding-bottom: 100px !important;
     padding-top: 50px !important;
 }
+.no-webp .bg-menu,.no-webp .bg-block {
+    background: url(/assets/img/line.sm.png) no-repeat top center, url(/assets/img/line.lg.png) no-repeat bottom center;
+}
+.webp .bg-menu,.webp .bg-block {
+    background: url(/assets/img/line.sm.webp) no-repeat top center, url(/assets/img/line.lg.webp) no-repeat bottom center;
+}
 .bg-block-reverse {
-    background: url(/assets/img/line.lg.png) no-repeat top center, url(/assets/img/line.sm.png) no-repeat bottom center;
     padding-top: 100px !important;
     padding-bottom: 50px !important;
+}
+.no-webp .bg-block-reverse {
+    background: url(/assets/img/line.lg.png) no-repeat top center, url(/assets/img/line.sm.png) no-repeat bottom center;
+}
+.webp .bg-block-reverse {
+    background: url(/assets/img/line.lg.webp) no-repeat top center, url(/assets/img/line.sm.webp) no-repeat bottom center;
 }
 
 .bg-menu li,
@@ -153,17 +202,29 @@ i, em {
 
 /* <hr> */
 hr {
-    background: url("/assets/img/line.sm.png") no-repeat top center;
     min-height: 50px;
     padding: 0;
     margin: 0;
 }
+.no-webp hr {
+    background: url("/assets/img/line.sm.png") no-repeat top center;
+}
+.webp hr {
+    background: url("/assets/img/line.sm.webp") no-repeat top center;
+}
 
 hr.lg {
-    background: url("/assets/img/line.lg.png") no-repeat top center;
     position: relative;
     min-height: 100px;
     z-index: 50;
+}
+
+.no-webp hr.lg {
+    background: url("/assets/img/line.lg.png") no-repeat top center;
+}
+
+.webp hr.lg {
+    background: url("/assets/img/line.lg.webp") no-repeat top center;
 }
 
 /* General text color */
