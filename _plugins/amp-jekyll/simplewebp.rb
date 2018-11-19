@@ -4,16 +4,21 @@ module Jekyll
   module WebpFilter
     def webp_images(input)
       doc = Nokogiri::HTML.fragment(input);
-      # Find <img>
-      # Create new element <noscript data-webp></noscript>
-      # Copy <img> inside <noscript>
-      # Replace <img> in DOM with <noscript data-webp><img/></noscript>
       doc.css('img').each do |img|
-        noscript = Nokogiri::XML::Node.new "noscript", doc
-        noscript['data-webp'] =""
-        noscript_img = img.dup
-        noscript.add_child(noscript_img)
-        img.replace noscript
+        picture = Nokogiri::XML::Node.new "picture", doc
+
+        # Generate new <source srcset="img path" type="image/webp"/> and add it to <picture>
+        picture_webp = Nokogiri::XML::Node.new "source", doc
+        picture_webp['type'] = 'image/webp'
+        picture_webp['srcset'] = img['src'][0...-3] + "webp"
+        picture.add_child(picture_webp)
+
+        # Copy and add <img> to <picture>
+        picture_img = img.dup
+        picture.add_child(picture_img)
+
+        # Replace <img> with <picture><source/><img/></picture>
+        img.replace picture
       end
 
       # Return the html as plaintext string

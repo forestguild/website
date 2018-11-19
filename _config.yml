@@ -22,7 +22,7 @@ video:
 # Assets
 assets:
   head:
-    - url: /assets/js/simple-webp.min.js
+    - url: /assets/js/webp-check.min.js
       async: true
       type: js
     - url: /assets/css/bootstrap.min.css
