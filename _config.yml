@@ -13,7 +13,6 @@ verification:
   google: HyXyjl__ZWM8pD-mJqSaPIR2wVBFXVr25u0zwJkENfY
 analytics:
   yandex: 50342920
-  google: UA-113486799-3
 video:
   today: 24 # WoW News playlist's last video index.
   streams: #twitch users
@@ -30,9 +29,6 @@ assets:
   footer:
     - url: https://fonts.googleapis.com/css?family=Cuprum:700&amp;subset=cyrillic
       type: css
-    - url: https://www.googletagmanager.com/gtag/js?id=UA-113486799-3
-      async: true
-      type: js
     - url: /assets/js/jquery.min.js
       type: js
     - url: /assets/js/bootstrap.bundle.min.js
