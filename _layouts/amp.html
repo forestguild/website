@@ -12,12 +12,26 @@ layout: amp
         <link rel="apple-touch-icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
         <link rel="alternate" type="application/rss+xml" title="RSS + Yandex.Turbo" href="/rss.xml" />
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+        <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+        <meta property="og:type" content="{% if page.layout == 'wiki' %}article{% else %}website{% endif %}" />
+        <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}" />
+        <meta property="og:image" content="{{ site.url }}/assets/img/logo.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:site_name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+        <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+        <meta property="article:author" content="{% if page.author %}{{ page.author }}{% else %}{{ site.name }}{% endif %}" />
+        <meta property="article:section" content="Гайд" />
+        <meta property="article:tag" content="Гайд" />
+        <meta property="article:tag" content="WoW" />
+        <meta property="article:tag" content="World of Warcraft" />
+
 
         <script async="" src="https://cdn.ampproject.org/v0.js"></script>
         <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
         <style amp-boilerplate>{% include amp/boilerplate.css %}</style>
-        <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
         <style amp-custom>{% include amp/custom.css %}</style>
+        <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     </head>
     <body>
 
@@ -52,8 +66,8 @@ layout: amp
                 </address>
                 <!-- End byline -->
             </header>
-                {{ content | markdownify | amp_images | amp_tables }}
-            </article>
+            {{ content | markdownify | amp_images | amp_tables }}
+        </article>
         </main>
     </body>
 </html>

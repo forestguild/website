@@ -1,7 +1,7 @@
 ---
 layout: core/default
 ---
-<head>
+<head prefix="og: http://ogp.me/ns# {% if page.layout =='wiki' %}article: http://ogp.me/ns/article#{% endif %}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
@@ -10,25 +10,32 @@ layout: core/default
 
     {% comment %}SEO and verification stuff{% endcomment %}
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="{% if page.layout == 'wiki' %}article{% else %}website{% endif %}" />
     <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}" />
     <meta property="og:image" content="{{ site.url }}/assets/img/logo.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+    {% if page.layout == 'wiki' %}
+    <meta property="article:author" content="{% if page.author %}{{ page.author }}{% else %}{{ site.name }}{% endif %}" />
+    <meta property="article:section" content="Гайд" />
+    <meta property="article:tag" content="Гайд" />
+    <meta property="article:tag" content="WoW" />
+    <meta property="article:tag" content="World of Warcraft" />
+    <link rel="amphtml" href="{{ page.url | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="yandex-verification" content="{{ site.verification.yandex }}" />
     <meta name="google-site-verification" content="{{ site.verification.google }}" />
     <link rel="alternate" type="application/rss+xml" title="RSS + Yandex.Turbo" href="/rss.xml" />
-    {% if page.layout == 'wiki' %}<link rel="amphtml" href="{{ page.url | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}">{% endif %}
     <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}">
     <link rel="icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
     <link rel="apple-touch-icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
     <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter{{ site.analytics.yandex }} = new Ya.Metrika2({ id:{{ site.analytics.yandex }}, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/50342920" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '{{ site.analytics.google }}');</script>
 </head>
-<body class="{% if page.layout == 'home' %}bg-img{% endif %}">
+<body class="{% if page.url == '/' %}bg-img{% endif %}">
 
     <!--DESKTOP menu-->
     <nav class="navbar navbar-desktop navbar-expand-md navbar-dark fixed-top d-none d-md-block">
