@@ -38,14 +38,12 @@ assets:
     - url: /assets/js/bootstrap.bundle.min.js
       async: true
       type: js
-    - url: https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/css/theme.blackice.min.css
-      integrity: sha256-gJADOPVrhQLECNkPq4IKJNH9g9TnCj3RzfhL/ToOn/E=
+    - url: /assets/css/tablesorter.min.css
       type: css
-    - url: https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.min.js
-      integrity: sha256-Ae7jmRrbL3hf1J/y22SYMPtx0wMVbG4g3HtpjioYuyk=
+    - url: /assets/js/tablesorter.min.js
+      async: true
       type: js
-    - url: https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/widgets/widget-filter.min.js
-      integrity: sha256-PjucxS9eB9yoBEuahfglpLB5RQz+cEqMnAQQRVQqIUU=
+    - url: /assets/js/tablesorter.filter.min.js
       async: true
       type: js
     - url: https://wow.zamimg.com/widgets/power.js
