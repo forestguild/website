@@ -59,19 +59,13 @@ layout: core/page
 <hr class="lg">
 
 <div class="row bg-img-bloom">
-    <div class="jumbotron bg-transparent col-md-6 col-sm-12" style="padding-top:0">
+    <div class="jumbotron bg-transparent col-md-6 col-sm-12 text-center" style="padding-top:0">
         <h1 class="text-gray text-center">Стримы</h1>
         {% for stream in site.video.streams %}
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://player.twitch.tv/?channel={{ stream }}" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+            <iframe class="embed-responsive-item" data-src="https://player.twitch.tv/?channel={{ stream }}" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
         </div>
         {% endfor %}
-    </div>
-    <div class="jumbotron bg-transparent col-md-6 col-sm-12" style="padding-top:0">
-        <h1 class="text-gray text-center">Текущая неделя WoW</h1>
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/videoseries?list=PLP9XZwNagv5gYpE3K_Fd-xRbB_Dc-Acs-&index={{ site.video.today }}" allowfullscreen></iframe>
-        </div>
     </div>
 </div>
 <hr class="lg" style="transform: scaleY(-1);top:-100px">

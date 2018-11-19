@@ -24,9 +24,10 @@ verification:
 analytics:
   yandex: 50342920
 video:
-  today: 24
-  streams:
-  - akulenokwow
+  streams: #twitch users
+    - akulenokwow
+
+# Assets
 assets:
   head:
   - url: "/assets/js/webp-check.min.js"
