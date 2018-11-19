@@ -1893,7 +1893,7 @@ _:-ms-lang(x) {
   overflow-x: auto;
   max-width: 100%;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
-    background: url("/assets/img/bg.nav.png") no-repeat top center transparent;
+    background: url("/assets/img/bg.nav.jpg") no-repeat top center transparent;
     /*background-color: #fff;*/
     color: #000;
     z-index: 999;

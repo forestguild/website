@@ -69,7 +69,7 @@ i, em {
 
 /* Header bg */
 .navbar-desktop {
-    background: url("/assets/img/bg.nav.png") repeat-x top center transparent;
+    background: url("/assets/img/bg.nav.jpg") repeat-x top center transparent;
     min-height:70px;
 }
 
@@ -132,7 +132,7 @@ i, em {
 
 /** Modal window styling **/
 .modal-content {
-    background: url(/assets/img/line.lg.png) no-repeat top center, url(/assets/img/bg.jpg) no-repeat bottom center;
+    background: url(/assets/img/line.lg.png) no-repeat top center, url(/assets/img/bg.png) no-repeat bottom center;
     background-position-y: -30px;
     border:0;
     color: white !important;
