@@ -1,10 +1,17 @@
-title: "Гильдия Ясный Лес @ EU Галакронд" #meta title
-name: "Ясный Лес" #brand name, for menu
+---
+title: Гильдия Ясный Лес @ EU Галакронд
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+name: Ясный Лес
 description: Гильдия Ясный Лес, World of Warcraft, EU Галакронд.
-baseurl: ""
-url: "https://forestguild.club"
-
-# Integrations
+baseurl: ''
+url: https://forestguild.club
 github: rakshazi/forestguild.club
 realm: galakrond
 disqus: forestguild
@@ -14,41 +21,36 @@ verification:
 analytics:
   yandex: 50342920
 video:
-  today: 24 # WoW News playlist's last video index.
-  streams: #twitch users
-    - akulenokwow
-
-# Assets
+  today: 24
+  streams:
+  - akulenokwow
 assets:
   head:
-    - url: /assets/js/webp-check.min.js
-      async: true
-      type: js
-    - url: /assets/css/bootstrap.min.css
-      type: css
+  - url: "/assets/js/webp-check.min.js"
+    async: true
+    type: js
+  - url: "/assets/css/bootstrap.min.css"
+    type: css
   footer:
-    - url: https://fonts.googleapis.com/css?family=Cuprum:700&amp;subset=cyrillic
-      type: css
-    - url: /assets/js/jquery.min.js
-      type: js
-    - url: /assets/js/bootstrap.bundle.min.js
-      async: true
-      type: js
-    - url: /assets/css/tablesorter.min.css
-      type: css
-    - url: /assets/js/tablesorter.min.js
-      async: true
-      type: js
-    - url: /assets/js/tablesorter.filter.min.js
-      async: true
-      type: js
-    - url: https://wow.zamimg.com/widgets/power.js
-      async: true
-      type: js
-
-# Build settings
+  - url: https://fonts.googleapis.com/css?family=Cuprum:700&amp;subset=cyrillic
+    type: css
+  - url: "/assets/js/jquery.min.js"
+    type: js
+  - url: "/assets/js/bootstrap.bundle.min.js"
+    async: true
+    type: js
+  - url: "/assets/css/tablesorter.min.css"
+    type: css
+  - url: "/assets/js/tablesorter.min.js"
+    async: true
+    type: js
+  - url: "/assets/js/tablesorter.filter.min.js"
+    async: true
+    type: js
+  - url: https://wow.zamimg.com/widgets/power.js
+    async: true
+    type: js
 markdown: kramdown
-
 compress_html:
   clippings: all
   comments: all
@@ -56,29 +58,24 @@ compress_html:
   endings: all
   blanklines: false
   profile: false
-
 exclude:
-  - README.md
-  - Makefile
-  - Gemfile
-  - Gemfile.lock
-  - updater
-  - updater.php
-  - .php_cs.dist
-  - .travis.yml
-
-#plugins:
-#  - jekyll-admin
-
-# Raid time
+- README.md
+- Makefile
+- Gemfile
+- Gemfile.lock
+- updater
+- updater.php
+- ".php_cs.dist"
+- ".travis.yml"
 rt:
   active: false
-  date: "Среда и четверг 19:00-21:00 МСК "
-  description: "В 19:00 уже заходим в рейд, приходить в дискорд нужно за 20-30 минут до начала."
+  date: 'Среда и четверг 19:00-21:00 МСК '
+  description: В 19:00 уже заходим в рейд, приходить в дискорд нужно за 20-30 минут
+    до начала.
   setup:
-    default: "2 / 4 / 14"
+    default: 2 / 4 / 14
     modifiable: true
   requirements:
     ilvl: 340
     flasks: 2
-  raid: "Ульдир"
+  raid: Ульдир

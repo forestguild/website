@@ -1,6 +1,6 @@
 ---
-layout: wiki
 title: Помощь сайту
+layout: wiki
 author: Этке
 ---
 

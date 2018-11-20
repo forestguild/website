@@ -1,8 +1,9 @@
 ---
-layout: wiki
 title: Реагенты
+layout: wiki
 author: Этке
-description: Реагенты в WoW BfA для рейдов и мифик+, список с примерами, пояснениями и ссылками на WoWHead.
+description: Реагенты в WoW BfA для рейдов и мифик+, список с примерами, пояснениями
+  и ссылками на WoWHead.
 ---
 
 # Реагенты

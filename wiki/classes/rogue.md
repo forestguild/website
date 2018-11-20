@@ -1,6 +1,6 @@
 ---
+title: Разбойник (рога, rogue) PvE гайд WoW BfA
 layout: wiki
-title: "Разбойник (рога, rogue) PvE гайд WoW BfA"
 author: Гурноут
 ---
 

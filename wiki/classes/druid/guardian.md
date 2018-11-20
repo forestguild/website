@@ -1,9 +1,11 @@
 ---
+title: Друид медведь (танк, сраж) PvE гайд WoW BfA
 layout: wiki
-title: "Друид медведь (танк, сраж) PvE гайд WoW BfA"
 author: Этке
-description: Полный гайд для Друида Стража (танка) в WoW BfA с ротацией, талантами для рейдов/мифик+, характеристиками и советами.
+description: Полный гайд для Друида Стража (танка) в WoW BfA с ротацией, талантами
+  для рейдов/мифик+, характеристиками и советами.
 ---
+
 # Страж
 
 > За основу взята часть гайда с [WoWHead](https://ru.wowhead.com/guardian-druid-guide) для WoW BfA 8.0.1 от [faide](https://ru.wowhead.com/user=faide).
