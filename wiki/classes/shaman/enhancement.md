@@ -1,5 +1,6 @@
 ---
-title: Шаман энх (мдд, совершенствование) PvE гайд WoW BfA
+metatitle: Шаман энх (мдд, совершенствование) PvE гайд WoW BfA
+title: Совершенствование
 layout: wiki
 author: Джойказинно
 description: Гайд для шамана энха (совершенствование, мдд) в WoW BfA с ротацией, талантами
@@ -94,6 +95,10 @@ description: Гайд для шамана энха (совершенствова
 * [Очищение духа](https://ru.wowhead.com/spell=51886)
 * [Развеивание магии](https://ru.wowhead.com/spell=370)
 * [Жажда крови](https://ru.wowhead.com/spell=2825)
+
+{% include related.html type="specs" %}
+
+<hr>
 
 # Таланты
 

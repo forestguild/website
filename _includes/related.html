@@ -1,0 +1,17 @@
+{%- assign pagepath = page.path | replace: "index.html","" | replace: "index.md", "" | replace: ".html","" | replace: ".md","" | replace: ".markdown","" -%}
+{% case include.type %}
+
+{% when "specs" %}
+{%- assign path_elements = pagepath | split: "/" -%}
+{%- assign path_count = path_elements | size | minus: 1 -%}
+{%- assign path = path_elements | slice: 0,path_count | join: "/" -%}
+
+<h3>Не впечатляет?</h3>
+Есть еще и следующие специализации:
+{% for item in site.pages -%}
+{%- if item.layout == 'wiki' and item.path != page.path and item.path contains path and item.title -%}
+<a href="{{ site.url }}{{ site.baseurl }}{{ item.url | replace:'index.html','' | replace:'.html','' }}">{{ item.title }}</a>
+{% endif -%}
+{%- endfor %}
+
+{% endcase %}

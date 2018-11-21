@@ -17,6 +17,14 @@ video:
   streams: #twitch users
     - akulenokwow
 
+# Front matter
+defaults:
+  - scope: 
+      path: wiki/classes
+    values:
+      category: class
+      layout: wiki
+
 # Assets
 assets:
   head:

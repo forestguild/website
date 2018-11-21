@@ -1,5 +1,6 @@
 ---
-title: Шаман элем (рдд, стихии) PvE гайд WoW BfA
+metatitle: Шаман элем (рдд, стихии) PvE гайд WoW BfA
+title: Стихии
 layout: wiki
 author: Джойказинно
 description: Гайд для шамана элема (стихии, рдд) в WoW BfA с ротацией, талантами для
@@ -105,6 +106,11 @@ Achtung!!! Этот гайд **НЕ ПРЕДНАЗНАЧЕН** для прожж
 * [Пронизывающий ветер](https://ru.wowhead.com/spell=57994)
 * [Астральное возвращение](https://ru.wowhead.com/spell=556)
 * [Очищение духа](https://ru.wowhead.com/spell=51886)
+
+
+{% include related.html type="specs" %}
+
+<hr >
 
 # Таланты
 

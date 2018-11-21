@@ -1,5 +1,5 @@
 ---
-title: Шаман PvE гайды WoW BfA
+metatitle: Шаман PvE гайды WoW BfA
 layout: wiki
 author: Джойказинно
 description: Гайды для шамана (все спеки) в WoW BfA с ротацией, талантами для рейдов/мифик+,

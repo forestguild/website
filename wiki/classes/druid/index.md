@@ -1,5 +1,5 @@
 ---
-title: Друид PvE гайды WoW BfA
+metatitle: Друид PvE гайды WoW BfA
 layout: wiki
 author: Этке
 ---

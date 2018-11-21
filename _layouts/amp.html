@@ -6,20 +6,20 @@ layout: amp
 <html ⚡="">
     <head>
         <meta charset="utf-8">
-        <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+        <title>{% if page.metatitle %}{{ page.metatitle }} - {% endif %}{{ site.title }}</title>
         <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
         <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/{{ page.url | replace:'index.html','' | replace:'.html','' | replace: 'amp/','' }}">
         <link rel="icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
         <link rel="apple-touch-icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
         <link rel="alternate" type="application/rss+xml" title="RSS + Yandex.Turbo" href="/rss.xml" />
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-        <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+        <meta property="og:title" content="{% if page.metatitle %}{{ page.metatitle }}{% else %}{{ site.title }}{% endif %}" />
         <meta property="og:type" content="{% if page.layout == 'wiki' %}article{% else %}website{% endif %}" />
         <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}" />
         <meta property="og:image" content="{{ site.url }}/assets/img/logo.png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:locale" content="ru_RU" />
-        <meta property="og:site_name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+        <meta property="og:site_name" content="{% if page.metatitle %}{{ page.metatitle }}{% else %}{{ site.title }}{% endif %}" />
         <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
         <meta property="article:author" content="{% if page.author %}{{ page.author }}{% else %}{{ site.name }}{% endif %}" />
         <meta property="article:section" content="Гайд" />
@@ -63,7 +63,7 @@ layout: amp
 
                 <!-- Start byline -->
                 <address class="ampstart-byline clearfix mb4 px3 h5">
-                    <time class="ampstart-byline-pubdate block bold my1" datetime="2016-12-13">{{ page.title }}</time>
+                    <time class="ampstart-byline-pubdate block bold my1" datetime="2016-12-13">{{ page.metatitle }}</time>
                 </address>
                 <!-- End byline -->
             </header>

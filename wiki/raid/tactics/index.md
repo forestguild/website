@@ -1,5 +1,5 @@
 ---
-title: Тактика Ульдир (гер, нормал) WoW BfA
+metatitle: Тактика Ульдир (гер, нормал) WoW BfA
 layout: wiki
 menu: "&nbsp;&nbsp;&nbsp; Тактика"
 order: 2

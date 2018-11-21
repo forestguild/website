@@ -1,5 +1,5 @@
 ---
-title: Рейдерский чеклист для рейдов WoW BfA
+metatitle: Рейдерский чеклист для рейдов WoW BfA
 layout: wiki
 author: Этке
 ---

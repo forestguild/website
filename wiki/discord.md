@@ -1,5 +1,5 @@
 ---
-title: Зачем нужен дискорд в WoW BfA
+metatitle: Зачем нужен дискорд в WoW BfA
 layout: wiki
 author: Этке
 description: Почему именно Discord, плюсы и минусы по сравнению с другими войс чатами

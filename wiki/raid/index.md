@@ -1,5 +1,5 @@
 ---
-title: Гайд по рейдам (ульдир) в WoW BfA
+metatitle: Гайд по рейдам (ульдир) в WoW BfA
 layout: wiki
 author: Этке
 ---

@@ -36,9 +36,9 @@ layout:
         </item>
         {% endfor %}
         {% for page in site.pages %}
-        {% if page.title and page.layout != "amp" %}
+        {% if page.metatitle and page.layout != "amp" %}
         <item turbo="true">
-            <title><![CDATA[{{ page.title | strip_html | remove:"&nbsp;" }}]]></title>
+            <title><![CDATA[{{ page.metatitle | strip_html | remove:"&nbsp;" }}]]></title>
             {% if page.author %}
             <dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
             {% endif %}
