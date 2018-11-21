@@ -1,16 +1,5 @@
 ---
 title: Гильдия Ясный Лес @ EU Галакронд
-timezone: UTC
-collections:
-  authors:
-    title: Authors
-    output: false
-  posts:
-    title: Posts
-    output: true
-  uploads:
-    title: Uploads
-    output: true
 name: Ясный Лес
 description: Гильдия Ясный Лес, World of Warcraft, EU Галакронд.
 baseurl: ''
