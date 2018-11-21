@@ -14,16 +14,16 @@ body {
     background: url("/assets/img/bg.webp") repeat-y bottom center #120d0a;
 }
 
-h1, h2, h3, h4, h5, h6, b, strong {
+h1, h2, h3, h4, h5, h6, b, strong, .b-serp-item__number {
     font-family: 'Cuprum', sans-serif;
     font-weight: 700 !important;
     color: #fff !important;
 }
-h5, h6, b, strong {
-    font-size: 1.3rem;
+h5, h6, b, strong, .b-serp-item__number {
+    font-size: 1.3rem !important;
 }
 
-a.nav-link {
+yass-span, a.nav-link {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-image: -webkit-linear-gradient(top,#ede0c9 20%,#8a7e66 100%);
@@ -32,7 +32,7 @@ a.nav-link {
     font-weight: 700 !important;
 }
 
-a.nav-link:hover {
+yass-span:hover, a.nav-link:hover {
     background-image:-webkit-linear-gradient(top,#fff,#fff)
 }
 
@@ -152,17 +152,42 @@ i, em {
     line-height: 93px;
 }
 
-/** Sidebar menu **/
-.bg-menu, .bg-block {
+/** Sidebar menu  and search **/
+.bg-menu, .bg-block, .b-serp-list {
     padding-bottom: 100px !important;
     padding-top: 50px !important;
 }
-.no-webp .bg-menu,.no-webp .bg-block {
+.no-webp .bg-menu,.no-webp .bg-block, .no-webp .b-serp-list {
     background: url(/assets/img/line.sm.png) no-repeat top center, url(/assets/img/line.lg.png) no-repeat bottom center;
 }
-.webp .bg-menu,.webp .bg-block {
+.webp .bg-menu,.webp .bg-block, .webp .b-serp-list {
     background: url(/assets/img/line.sm.webp) no-repeat top center, url(/assets/img/line.lg.webp) no-repeat bottom center;
 }
+
+.b-serp-item {
+    padding-bottom: 50px !important;
+}
+.no-webp .b-serp-item {
+    background: url(/assets/img/line.sm.png) no-repeat bottom center;
+}
+.webp .b-serp-item {
+    background: url(/assets/img/line.sm.webp) no-repeat bottom center;
+}
+#ya-site-results .b-serp-item__title-link:link, #ya-site-results .b-serp-item__title-link {
+    font-size: 1.3em !important;
+}
+
+@media (min-width: 768px) {
+    .b-wrapper {
+        margin-left: 16.666667%;
+    }
+}
+@media (min-width: 992px) {
+    .b-wrapper {
+        margin-left: 25%;
+    }
+}
+
 .bg-block-reverse {
     padding-top: 100px !important;
     padding-bottom: 50px !important;

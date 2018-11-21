@@ -52,6 +52,12 @@ layout: core/default
                 </li>
                 {% endif %}
             </ul>
+            <form action="/search" method="get" accept-charset="utf-8" class="form-inline my-2 my-lg-0">
+                <input type="hidden" name="searchid" value="{{ site.search }}" />
+                <input type="hidden" name="l10n" value="ru"/>
+                <input type="hidden" name="reqenc" value="utf-8"/>
+                <input class="form-control mr-sm-2" type="search" name="text" placeholder="Поиск" aria-label="Поиск">
+            </form>
             <ul class="navbar-nav mt-2 mt-md-0">
                 <li class="nav-item active">
                     <a class="nav-link" href="/wiki">База знаний</a>
@@ -82,6 +88,12 @@ layout: core/default
                     <a class="nav-link text-danger" href="/wiki">База знаний</a>
                 </li>
             </ul>
+            <form action="/search" method="get" accept-charset="utf-8" class="form-inline my-2 my-lg-0">
+                <input type="hidden" name="searchid" value="{{ site.search }}" />
+                <input type="hidden" name="l10n" value="ru"/>
+                <input type="hidden" name="reqenc" value="utf-8"/>
+                <input class="form-control mr-sm-2" type="search" name="text" placeholder="Поиск" aria-label="Поиск">
+            </form>
         </div>
     </nav>
     {% if page.layout != 'wiki' %}
@@ -91,7 +103,7 @@ layout: core/default
     <div class="text-center">
         <noindex>
         {% for item in site.data.nav.footer %}
-            <a href="{{ item.url }}" {% if item.external %}target="_blank" rel="nofollow"{% endif %} class="btn btn-wow">{{ item.title }}</a>
+        <a href="{{ item.url }}" {% if item.external %}target="_blank" rel="nofollow"{% endif %} class="btn btn-wow">{{ item.title }}</a>
         {% endfor %}
         </noindex>
     </div>
