@@ -100,13 +100,6 @@ layout: core/default
     <main class="container-fluid">
     {% endif %}
     {{ content }}
-    <div class="text-center">
-        <noindex>
-        {% for item in site.data.nav.footer %}
-        <a href="{{ item.url }}" {% if item.external %}target="_blank" rel="nofollow"{% endif %} class="btn btn-wow">{{ item.title }}</a>
-        {% endfor %}
-        </noindex>
-    </div>
     </main>
     {% if site.rt.active %}
     <div class="modal fade" id="rtModal" tabindex="-1" role="dialog" aria-labelledby="rtTitle" aria-hidden="true">
@@ -129,7 +122,6 @@ layout: core/default
                             <span class="text-muted">Куда идем?</span><br />
                             Рейд: {{ site.rt.raid }}<br />
                             Сетап: {{ site.rt.setup.default }} {% if site.rt.setup.modifiable %}<span id="raid-setup" class="text-warning" data-toggle="tooltip" data-html="true" title="Сетап может измениться, в зависимости от количества желающих. Возможные варианты:<br>2/3/9<br>2/4/14<br>2/5/20">(?)</span>{% endif %}<br />
-                            <!--<span class="text-danger">Дни РТ</span>: Понедельник, Вторник, Среда, Четверг, Воскресенье<br />-->
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <span class="text-muted">Требования</span><br />
@@ -148,7 +140,7 @@ layout: core/default
                             <b><a href="https://eu.battle.net/wow/ru/vault/guild/event" target="_blank" class="text-muted" id="armory-calendar"  data-toggle="tooltip" data-html="true" title="Для просмотра календаря в оружейной wow <b>нужно авторизоваться</b>, не забудь об этом">Событие в календаре</a></b> cоздано, подпишись на него
                         </span>
                     </span>
-                    <button type="button" class="btn btn-wow" data-dismiss="modal" style="padding-left: 30px">За Орду!</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" style="padding-left: 30px">За Орду!</button>
                 </div>
             </div>
         </div>

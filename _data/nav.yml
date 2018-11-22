@@ -15,18 +15,6 @@ top:
     url: https://raider.io/guilds/eu/galakrond/Ясный%20Лес
     external: true
 
-# Footer menu
-footer:
-  - title: Facebook
-    url: https://facebook.com/forestguildclub
-    external: true
-  - title: Twitter
-    url: https://twitter.com/forestguildclub
-    external: true
-  - title: VK
-    url: https://vk.com/forestguildclub
-    external: true
-
 # Wiki menu
 wiki:
   - title: Рейд и мифик+

@@ -30,7 +30,7 @@
 
 {% when 'vertical' %}
 {% for item in site.data.nav.wiki | limit: blocks %}
-<h3 class="pt-4 text-center {% if item.class %}{{ item.class }}{% endif %}">{{ item.title }}</h3>
+<h3 class="{% unless forloop.first %}pt-4{% endunless %} text-center {% if item.class %}{{ item.class }}{% endif %}">{{ item.title }}</h3>
 {% if item.items[0] %}
 <ul>
             {% for entry in item.items %}

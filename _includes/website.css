@@ -116,43 +116,15 @@ i, em {
     background-image:-webkit-linear-gradient(top,#fff,#fff)
 }
 
-/** WoW-styled button **/
-.btn-wow {
-    height: 108px;
-    width: 295px;
-    line-height: 90px;
-    color: #000 !important;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 20px;
-    text-shadow: 1px 1px #fff;
-}
-.no-webp .btn-wow {
-    background: url(/assets/img/btn-wow.png) no-repeat 0 0 transparent;
-}
-.webp .btn-wow {
-    background: url(/assets/img/btn-wow.webp) no-repeat 0 0 transparent;
-}
-.btn-wow:hover {
-    background-position: 0 -109px;
-    line-height: 91px;
-    color: #000;
-}
-.btn-wow:active,
-.btn-wow:focus {
-    background-position: 0 -219px;
-    line-height: 93px;
-}
-
-/** Sidebar menu  and search **/
-.bg-menu, .bg-block, .b-serp-list {
+/** Search **/
+.b-serp-list {
     padding-bottom: 100px !important;
     padding-top: 50px !important;
 }
-.no-webp .bg-menu,.no-webp .bg-block, .no-webp .b-serp-list {
+.no-webp .b-serp-list {
     background: url(/assets/img/line.sm.png) no-repeat top center, url(/assets/img/line.lg.png) no-repeat bottom center;
 }
-.webp .bg-menu,.webp .bg-block, .webp .b-serp-list {
+.webp .b-serp-list {
     background: url(/assets/img/line.sm.webp) no-repeat top center, url(/assets/img/line.lg.webp) no-repeat bottom center;
 }
 
@@ -189,11 +161,6 @@ i, em {
 }
 .webp .bg-block-reverse {
     background: url(/assets/img/line.lg.webp) no-repeat top center, url(/assets/img/line.sm.webp) no-repeat bottom center;
-}
-
-.bg-menu li,
-.bg-block li{
-    list-style: none;
 }
 
 /** Modal window styling **/
@@ -286,11 +253,6 @@ a.wiki-header-link {
 }
 a.wiki-header-link:hover {
     background: none;
-}
-
-/* Wiki links in text */
-.wiki a {
-    /*color: #bd2130 !important;*/
 }
 
 .wiki img {
