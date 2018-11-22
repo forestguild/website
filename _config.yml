@@ -36,7 +36,7 @@ assets:
   - url: "/assets/js/tablesorter.filter.min.js"
     defer: true
     type: js
-  - url: https://wow.zamimg.com/widgets/power.js
+  - url: /assets/js/wowheadtooltips.js
     async: true
     type: js
 markdown: kramdown
