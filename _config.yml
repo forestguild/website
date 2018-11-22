@@ -17,14 +17,6 @@ video:
   streams: #twitch users
     - akulenokwow
 
-# Front matter
-defaults:
-  - scope: 
-      path: wiki/classes
-    values:
-      category: class
-      layout: wiki
-
 # Assets
 assets:
   head:
@@ -34,8 +26,6 @@ assets:
   - url: "/assets/css/bootstrap.min.css"
     type: css
   footer:
-  - url: https://fonts.googleapis.com/css?family=Cuprum:700&amp;subset=cyrillic
-    type: css
   - url: "/assets/js/jquery.min.js"
     type: js
   - url: "/assets/js/bootstrap.bundle.min.js"

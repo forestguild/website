@@ -1,35 +1,17 @@
 variables:
   REMOTE: git@github.com:rakshazi/forestguild.club.git
 stages:
-  - data
   - build
   - deploy
   - cleanup
 
-
 update progess:
   image: php:alpine
-  stage: data
+  stage: build
   only:
     - master
   script:
     - php updater.php update
-  tags:
-    - docker
-
-collect data:
-  image: php:alpine
-  stage: data
-  only:
-    - master
-  before_script:
-    - mkdir -p _data
-  script:
-    - php updater.php collect
-  artifacts:
-    name: _data
-    paths:
-      - _data/
   tags:
     - docker
 

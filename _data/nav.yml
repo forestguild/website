@@ -2,8 +2,6 @@
 top:
   - title: Ясный Лес
     url: /
-  - title: Зал Славы
-    url: /raid
   - title: Discord
     url: https://discord.gg/v9mNxAS
     external: true
@@ -27,9 +25,6 @@ footer:
     external: true
   - title: VK
     url: https://vk.com/forestguildclub
-    external: true
-  - title: Telegram
-    url: https://t.me/forestguildclub
     external: true
 
 # Wiki menu

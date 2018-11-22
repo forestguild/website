@@ -8,7 +8,7 @@ layout: amp
         <meta charset="utf-8">
         <title>{% if page.metatitle %}{{ page.metatitle }} - {% endif %}{{ site.title }}</title>
         <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
-        <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/{{ page.url | replace:'index.html','' | replace:'.html','' | replace: 'amp/','' }}">
+        <link rel="canonical" href="{{ page.url | canonical }}">
         <link rel="icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
         <link rel="apple-touch-icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
         <link rel="alternate" type="application/rss+xml" title="RSS + Yandex.Turbo" href="/rss.xml" />

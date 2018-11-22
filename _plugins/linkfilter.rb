@@ -13,6 +13,11 @@ module Jekyll
             end
             content.to_s
         end
+
+        def canonical(input)
+            url = input.gsub('index.html','').gsub('.html','').gsub('amp/','/')
+            @context.registers[:site].config['url'] + @context.registers[:site].config['baseurl'] + url
+        end
     end
 end
 

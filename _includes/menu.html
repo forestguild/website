@@ -14,10 +14,10 @@
         {% if item.items[0] %}
         <ul>
             {% for entry in item.items %}
-            <li><b><a class="{% if entry.class %}{{ entry.class }}{% endif %}" href='{{ entry.url | replace:'index.html','' | replace:'.html','' }}'>{{ entry.title }}</a></b>
+            <li><b><a class="{% if entry.class %}{{ entry.class }}{% endif %}" href='{{ entry.url | canonical }}'>{{ entry.title }}</a></b>
             {% if entry.items[0] %}
             {% for subentry in entry.items %}
-            <a class="{% if subentry.class %}{{ subentry.class }}{% endif %}" href='{{ subentry.url | replace:'index.html','' | replace:'.html','' }}'>{{ subentry.title }}</a>
+            <a class="{% if subentry.class %}{{ subentry.class }}{% endif %}" href='{{ subentry.url | canonical }}'>{{ subentry.title }}</a>
             {% endfor %}
             {% endif %}
             </li>
@@ -34,10 +34,10 @@
 {% if item.items[0] %}
 <ul>
             {% for entry in item.items %}
-            <li><b><a class="{% if entry.class %}{{ entry.class }}{% endif %}" href='{{ entry.url | replace:'index.html','' | replace:'.html','' }}'>{{ entry.title }}</a></b>
+            <li><b><a class="{% if entry.class %}{{ entry.class }}{% endif %}" href='{{ entry.url | canonical }}'>{{ entry.title }}</a></b>
             {% if entry.items[0] %}
             {% for subentry in entry.items %}
-            <a class="{% if subentry.class %}{{ subentry.class }}{% endif %}" href='{{ subentry.url | replace:'index.html','' | replace:'.html','' }}'>{{ subentry.title }}</a>
+            <a class="{% if subentry.class %}{{ subentry.class }}{% endif %}" href='{{ subentry.url | canonical }}'>{{ subentry.title }}</a>
             {% endfor %}
             {% endif %}
             </li>

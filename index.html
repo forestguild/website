@@ -3,11 +3,7 @@ layout: core/page
 ---
 
 <div class="row" style="overflow-y: visible; max-height: 140px">
-    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block">
-        <p class="lead">&nbsp;</p>
-        <h3 class="text-white text-center">Новости</h3>
-    </div>
-    <div class="jumbotron bg-transparent col-md-6 col-sm-12">
+    <div class="jumbotron bg-transparent col-md-6 col-sm-12 offset-md-3">
         <h1 class="text-white text-center">{{ site.name }}</h1>
         <p class="lead text-gray text-center">Гильдия World of Warcraft &bull; Галакронд &bull; PvE</p>
     </div>
@@ -21,19 +17,8 @@ layout: core/page
 <hr>
 
 <div class="row">
-    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block mb-0 pb-0" style="padding-top:0">
-        {% for item in site.data.news %}
-        <p class="lead">
-        <span class="text-gray">{{ item.timestamp|date: "%-d.%m" }}</span>
-        <span class="text-white">
-            {% if item.type == 'achievement' %}
-            Получено достижение <strong class="text-danger">{{ item.title }}</strong>
-            {% else %}
-            {{ item.title }}
-        </span>
-        {% endif %}
-        </p>
-        {% endfor %}
+    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block mb-0 pb-0 text-center" style="padding-top:0">
+        <img src="https://wowprogress.com/guild_img/1665634/out/type.site" class="rounded mx-auto d-block">
     </div>
     <div class="jumbotron bg-transparent col-md-6 col-sm-12 mb-0 pb-0" style="padding-top:0; background: url(/assets/img/logo.png) no-repeat top right;">
         <p class="lead text-white">
