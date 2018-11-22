@@ -39,22 +39,21 @@ layout: core/default
     <link rel="apple-touch-icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
     <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter{{ site.analytics.yandex }} = new Ya.Metrika2({ id:{{ site.analytics.yandex }}, clickmap:false, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/50342920" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </head>
-<body class="{% if page.url == '/' %}bg-img{% endif %}">
+<body>
 
     <!--DESKTOP menu-->
-    <nav class="navbar navbar-desktop navbar-expand-md navbar-dark fixed-top d-none d-md-block">
-        <div class="navbar-collapse">
+    <nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top">
+        <a class="navbar-brand d-md-none" href="/">{{ site.name }}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 {% for item in site.data.nav.top %}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ item.url }}" {% if item.external %}rel="nofollow" target="_blank"{% endif %}>{{ item.title }}</a>
                 </li>
                 {% endfor %}
-                {% if site.rt.active %}
-                <li class="nav-item active">
-                    <a class="nav-link" data-toggle="modal" data-target="#rtModal" href="#">Время Рейда</a>
-                </li>
-                {% endif %}
             </ul>
             <form action="/search" method="get" accept-charset="utf-8" onsubmit="yaCounter{{ site.analytics.yandex }}.reachGoal('site_search');return true;" class="form-inline my-2 my-lg-0">
                 <input type="hidden" name="searchid" value="{{ site.search }}" />
@@ -69,87 +68,11 @@ layout: core/default
             </ul>
         </div>
     </nav>
-
-    <!--MOBILE menu-->
-    <nav class="navbar navbar-mobile navbar-expand-md navbar-dark fixed-top bg-dark d-md-none">
-        <a class="navbar-brand" href="/">{{ site.name }}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                {% if site.rt.active %}
-                <li class="nav-item active">
-                    <a class="nav-link text-info blink" href="#" data-toggle="modal" data-target="#rtModal">Время Рейда</a>
-                </li>
-                {% endif %}
-                {% for item in site.data.nav.top %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ item.url }}" {% if item.external %}target="_blank"{% endif %}>{{ item.title }}</a>
-                </li>
-                {% endfor %}
-                <li class="nav-item active">
-                    <a class="nav-link text-danger" href="/wiki">База знаний</a>
-                </li>
-            </ul>
-            <form action="/search" method="get" accept-charset="utf-8" class="form-inline my-2 my-lg-0">
-                <input type="hidden" name="searchid" value="{{ site.search }}" />
-                <input type="hidden" name="l10n" value="ru"/>
-                <input type="hidden" name="reqenc" value="utf-8"/>
-                <input class="form-control mr-sm-2" type="search" name="text" placeholder="Поиск" aria-label="Поиск">
-            </form>
-        </div>
-    </nav>
     {% if page.layout != 'wiki' %}
     <main class="container-fluid">
     {% endif %}
     {{ content }}
     </main>
-    {% if site.rt.active %}
-    <div class="modal fade" id="rtModal" tabindex="-1" role="dialog" aria-labelledby="rtTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="rtTitle">{{ site.rt.raid }} - {{ site.rt.date }}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p class="lead">
-                    {{ site.rt.description }}<br />
-                    Сложность сегодняшнего рейда можно увидеть в событии в календаре WoW
-                    </p>
-                    <hr>
-                    <div class="row lead">
-                        <div class="col-md-6 col-sm-12">
-                            <span class="text-muted">Куда идем?</span><br />
-                            Рейд: {{ site.rt.raid }}<br />
-                            Сетап: {{ site.rt.setup.default }} {% if site.rt.setup.modifiable %}<span id="raid-setup" class="text-warning" data-toggle="tooltip" data-html="true" title="Сетап может измениться, в зависимости от количества желающих. Возможные варианты:<br>2/3/9<br>2/4/14<br>2/5/20">(?)</span>{% endif %}<br />
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <span class="text-muted">Требования</span><br />
-                            Знание <a href="/wiki/raid/tactics" target="_blank" class="text-danger">тактики</a><br />
-                            Наличие <a href="/wiki/addons" target="_blank" class="text-danger">аддонов</a><br />
-                            Уровень вещей: {{ site.rt.requirements.ilvl }}+<br />
-                            Настоев с собой: {{ site.rt.requirements.flasks }}+ <sub class="text-muted">(алхимикам -1)</sub><br />
-                            <i class="text-muted">а так же чарки и камни.</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <span class="mr-auto">
-                        Проверь себя по <a href="/wiki/raid/checklist" target="_blank" class="text-danger">чек-листу</a> заранее, иначе в рейд не попадешь.<br />
-                        <span class="text-muted">
-                            <b><a href="https://eu.battle.net/wow/ru/vault/guild/event" target="_blank" class="text-muted" id="armory-calendar"  data-toggle="tooltip" data-html="true" title="Для просмотра календаря в оружейной wow <b>нужно авторизоваться</b>, не забудь об этом">Событие в календаре</a></b> cоздано, подпишись на него
-                        </span>
-                    </span>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" style="padding-left: 30px">За Орду!</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endif %}
     {% include assets.html block="footer" %}
     <script>{% include website.js %}</script>
 </body>

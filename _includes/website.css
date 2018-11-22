@@ -14,6 +14,17 @@ body {
     background: url("/assets/img/bg.webp") repeat-y bottom center #120d0a;
 }
 
+.bg-black {
+    background-color: #120e0b;
+}
+
+.no-webp .home-central {
+    background: url(/assets/img/logo.png) no-repeat top right;
+}
+.webp .home-central {
+    background: url(/assets/img/logo.webp) no-repeat top right;
+}
+
 h1, h2, h3, h4, h5, h6, b, strong, .b-serp-item__number {
     font-family: Arial, sans-serif;
     color: #fff !important;
@@ -47,56 +58,12 @@ i, em {
     color: rgba(255, 255, 255, 0.55) !important;
 }
 
-/** Background with art in top left corner **/
-.no-webp .bg-img {
-    background: url(/assets/img/bg.main.jpg) top left no-repeat #120d0a;
-}
-
-.webp .bg-img {
-    background: url(/assets/img/bg.main.webp) top left no-repeat #120d0a;
-}
-
-.no-webp .bg-img-map {
-    background: url("/assets/img/bg.jpg") repeat-y bottom center #120d0a;
-}
-
-.webp .bg-img-map {
-    background: url("/assets/img/bg.webp") repeat-y bottom center #120d0a;
-}
-
 .no-webp .bg-img-red {
     background: url("/assets/img/bg.red.jpg") no-repeat top left #120d0a;
 }
 
 .webp .bg-img-red {
     background: url("/assets/img/bg.red.webp") no-repeat top left #120d0a;
-}
-
-.no-webp .bg-img-bloom {
-    background: url("/assets/img/bg.bloom.jpg") no-repeat top transparent;
-}
-
-.webp .bg-img-bloom {
-    background: url("/assets/img/bg.bloom.webp") no-repeat top transparent;
-}
-
-.bg-img-bloom {
-    position: relative;
-    padding-top: 50px;
-    top: -50px;
-}
-
-/* Header bg */
-.navbar-desktop {
-    min-height:70px;
-}
-
-.no-webp .navbar-desktop {
-    background: url("/assets/img/bg.nav.jpg") repeat-x top center transparent;
-}
-
-.webp .navbar-desktop {
-    background: url("/assets/img/bg.nav.webp") repeat-x top center transparent;
 }
 
 /* Header links */
@@ -150,38 +117,6 @@ i, em {
     .b-wrapper {
         margin-left: 25%;
     }
-}
-
-.bg-block-reverse {
-    padding-top: 100px !important;
-    padding-bottom: 50px !important;
-}
-.no-webp .bg-block-reverse {
-    background: url(/assets/img/line.lg.png) no-repeat top center, url(/assets/img/line.sm.png) no-repeat bottom center;
-}
-.webp .bg-block-reverse {
-    background: url(/assets/img/line.lg.webp) no-repeat top center, url(/assets/img/line.sm.webp) no-repeat bottom center;
-}
-
-/** Modal window styling **/
-.modal-content {
-    background: url(/assets/img/line.lg.png) no-repeat top center, url(/assets/img/bg.png) no-repeat bottom center;
-    background-position-y: -30px;
-    border:0;
-    color: white !important;
-    padding: 0;
-}
-.modal-header {
-    background: url("/assets/img/line.sm.png") no-repeat bottom center;
-    border-bottom: 0;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-.modal-footer {
-    background: url("/assets/img/line.sm.png") no-repeat top left, url("/assets/img/line.sm.png") no-repeat bottom left;
-    border-top: 0;
-    padding-top: 50px;
-    padding-bottom: 50px;
 }
 
 /* <hr> */
@@ -265,7 +200,6 @@ a.wiki-header-link:hover {
 
 .wiki table {
     background-color: transparent;
-    /*border: 1px solid #dee2e6;*/
     border-collapse: collapse;
     display: block;
     margin-bottom: 1rem;

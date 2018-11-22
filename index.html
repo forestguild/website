@@ -3,24 +3,32 @@ layout: core/page
 ---
 
 <div class="row" style="overflow-y: visible; max-height: 140px">
-    <div class="jumbotron bg-transparent col-md-6 col-sm-12 offset-md-3">
+    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block">
+        <p class="lead">&nbsp;</p>
+        <h3 class="text-white text-center text-gray">Стримы</h3>
+    </div>
+    <div class="jumbotron bg-transparent col-md-6 col-sm-12">
         <h1 class="text-white text-center">{{ site.name }}</h1>
         <p class="lead text-gray text-center">Гильдия World of Warcraft &bull; Галакронд &bull; PvE</p>
     </div>
     <div class="jumbotron col-md-3 bg-transparent d-none d-md-block">
         {% if site.rt.active %}<button class="btn btn-wow" data-toggle="modal" data-target="#rtModal">Время Рейда</button>{% endif %}
         <p class="lead">&nbsp;</p>
-        <h3 class="text-white text-center">Гайды и секреты</h3>
+        <h3 class="text-gray text-center">Гайды и секреты</h3>
     </div>
 </div>
 
-<hr>
+<hr class="lg">
 
 <div class="row">
-    <div class="jumbotron col-md-3 bg-transparent d-none d-md-block mb-0 pb-0 text-center" style="padding-top:0">
-        <img src="https://wowprogress.com/guild_img/1665634/out/type.site" class="rounded mx-auto d-block">
+    <div class="jumbotron col-md-4 bg-transparent d-none d-md-block mb-0 pt-0 pr-0 pb-0 text-center">
+        {% for stream in site.video.streams %}
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" data-src="https://player.twitch.tv/?channel={{ stream }}" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+        </div>
+        {% endfor %}
     </div>
-    <div class="jumbotron bg-transparent col-md-6 col-sm-12 mb-0 pb-0" style="padding-top:0; background: url(/assets/img/logo.png) no-repeat top right;">
+    <div class="home-central jumbotron bg-transparent col-md-5 col-sm-12 mb-0 pb-0 pt-0">
         <p class="lead text-white">
         <b>Да</b>, гильдия живая.<br>
         <b>Да</b>, мы набираем статик.<br>
@@ -41,16 +49,4 @@ layout: core/page
     </div>
 </div>
 
-<hr class="lg">
-
-<div class="row bg-img-bloom">
-    <div class="jumbotron bg-transparent col-md-6 col-sm-12 text-center" style="padding-top:0">
-        <h1 class="text-gray text-center">Стримы</h1>
-        {% for stream in site.video.streams %}
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" data-src="https://player.twitch.tv/?channel={{ stream }}" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-<hr class="lg" style="transform: scaleY(-1);top:-100px">
+<hr class="lg" style="transform: scaleY(-1)">
