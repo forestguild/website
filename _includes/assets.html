@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ item.url }}" {% if item.integrity %}integrity="{{ item.integrity }}" crossorigin="anonymous"{% endif %}/>
 
 {% when 'js' %}
-<script {% if item.async %}async{% endif %} src="{{ item.url }}" {% if item.integrity %}integrity="{{ item.integrity }}" crossorigin="anonymous"{% endif %}></script>
+<script {% if item.async %}async{% endif %} {% if item.defer %}defer{% endif %} src="{{ item.url }}" {% if item.integrity %}integrity="{{ item.integrity }}" crossorigin="anonymous"{% endif %}></script>
 
 {% endcase %}
 {% endfor %}

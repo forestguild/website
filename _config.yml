@@ -20,24 +20,21 @@ video:
 # Assets
 assets:
   head:
-  - url: "/assets/js/webp-check.min.js"
-    async: true
-    type: js
   - url: "/assets/css/bootstrap.min.css"
     type: css
   footer:
   - url: "/assets/js/jquery.min.js"
     type: js
   - url: "/assets/js/bootstrap.bundle.min.js"
-    async: true
+    defer: true
     type: js
   - url: "/assets/css/tablesorter.min.css"
     type: css
   - url: "/assets/js/tablesorter.min.js"
-    async: true
+    defer: true
     type: js
   - url: "/assets/js/tablesorter.filter.min.js"
-    async: true
+    defer: true
     type: js
   - url: https://wow.zamimg.com/widgets/power.js
     async: true

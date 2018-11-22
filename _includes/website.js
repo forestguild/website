@@ -1,3 +1,6 @@
+/* WebP check */
+(function(window){var html=document.documentElement,isSupported=null;function checkSupport(fn){var WebP=new Image;WebP.onload=WebP.onerror=function(){isSupported=WebP.height===2;if(isSupported){if(html.className.indexOf("no-webp")>=0)html.className=html.className.replace(/\bno-webp\b/,"webp");else html.className+=" webp"}};WebP.src="data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA"}checkSupport()})(window);
+
 $(function () {
     $('table').tablesorter({
         theme: "blackice",
@@ -27,6 +30,7 @@ var disqus_config = function () {
 
 (function() {
     var d = document, s = d.createElement('script');
+    s.setAttribute('async', true);
     s.src = 'https://{{ site.disqus }}.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);
 })();
