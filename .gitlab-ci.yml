@@ -9,7 +9,7 @@ update progess:
   image: php:alpine
   stage: build
   only:
-    - master
+    - schedules
   script:
     - php updater.php update
   tags:
@@ -20,6 +20,8 @@ build website:
   stage: build
   only:
     - master
+  except:
+    - schedules
   before_script:
     - bundle update
   script:
@@ -39,6 +41,8 @@ deploy:
   stage: deploy
   only:
     - master
+  except:
+    - schedules
   before_script:
     - apk add --no-cache git openssh-client
     - mkdir -p ~/.ssh
@@ -65,6 +69,8 @@ cleanup:
   image: php:alpine
   only:
     - master
+  except:
+    - schedules
   script:
     - php updater.php cache
   tags:

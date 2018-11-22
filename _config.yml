@@ -51,14 +51,18 @@ compress_html:
   blanklines: false
   profile: false
 exclude:
-- README.md
-- Makefile
+- .git
+- .gitignore
+- .gitlab-ci.yml
+- .php_cs.cache
+- .php_cs.dist
 - Gemfile
 - Gemfile.lock
+- Makefile
+- README.md
 - updater
 - updater.php
-- ".php_cs.dist"
-- ".travis.yml"
+
 rt:
   active: false
   date: 'Среда и четверг 19:00-21:00 МСК '
