@@ -1,5 +1,5 @@
 ---
-layout: 
+layout:
 ---
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -7,9 +7,7 @@ layout:
     xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-    xmlns:yandex="http://news.yandex.ru"
     xmlns:media="http://search.yahoo.com/mrss/"
-    xmlns:turbo="http://turbo.yandex.ru"
     >
     <channel>
         <title>{{ site.title | xml_escape }}</title>
@@ -20,7 +18,7 @@ layout:
         <atom:link href="{{ site.url }}/{{ page.path }}" rel="self" type="application/rss+xml" />
         <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
         {% for post in site.posts %}
-        <item turbo="true">
+        <item>
             <title><![CDATA[{{ post.title | strip_html | remove:"&nbsp;" }}]]></title>
             {% if post.author.name %}
             <dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
@@ -31,22 +29,21 @@ layout:
             <description><![CDATA[{{ post.content | markdownify | remove:"&nbsp;" }}]]></description>
             {% endif %}
             <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-            <link>{{ site.url }}{{ post.url }}</link>
-            <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+            <link>{{ post.url | canonical }}</link>
+            <guid isPermaLink="true">{{ post.url | canonical }}</guid>
         </item>
         {% endfor %}
         {% for page in site.pages %}
         {% if page.metatitle and page.layout != "amp" and page.layout != "core/redirect" %}
-        <item turbo="true">
+        <item>
             <title><![CDATA[{{ page.metatitle | strip_html | remove:"&nbsp;" }}]]></title>
             {% if page.author %}
-            <dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
+            <dc:creator>{{ page.author | xml_escape }}</dc:creator>
             {% endif %}
             <description><![CDATA[{{ page.content |  markdownify | remove:"&nbsp;" }}]]></description>
-            <turbo:content><![CDATA[{{ page.content |  markdownify | remove:"&nbsp;" }}]]></turbo:content>
             <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-            <link>{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}</link>
-            <guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}</guid>
+            <link>{{ page.url | canonical }}</link>
+            <guid isPermaLink="true">{{ page.url | canonical }}</guid>
         </item>
         {% endif %}
         {% endfor %}

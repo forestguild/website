@@ -3,4 +3,4 @@ layout:
 ---
 
 User-agent: *
-Sitemap: {{ site.url }}/sitemap.xml
+Sitemap: {{ site.url }}/export/sitemap.xml
