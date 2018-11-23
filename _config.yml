@@ -47,8 +47,13 @@ compress_html:
   endings: all
   blanklines: false
   profile: false
+keep_files:
+- CNAME
+- assets
+- favicon.ico
 exclude:
 - .git
+- .github
 - .gitignore
 - .gitlab-ci.yml
 - .php_cs.cache

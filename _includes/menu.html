@@ -54,12 +54,12 @@
 <ul class="list-reset m1 mb2 p0 ampstart-label">
     {% for entry in item.items %}
     <li class="ampstart-nav-item ml1 mt1">
-        <a href='/amp{{ entry.url | replace:'index.html','' | replace:'.html','' }}' class="ampstart-nav-link">{{ entry.title }}</a>
+        <a href='{{ entry.url | canonical: 'amp' }}' class="ampstart-nav-link">{{ entry.title }}</a>
     </li>
     {% if entry.items[0] %}
     {% for subentry in entry.items %}
     <li class="ampstart-nav-item ml2">
-        <a href='/amp{{ subentry.url | replace:'index.html','' | replace:'.html','' }}' class="ampstart-nav-link">&raquo; {{ subentry.title }}</a>
+        <a href='{{ subentry.url | canonical: 'amp' }}' class="ampstart-nav-link">&raquo; {{ subentry.title }}</a>
     </li>
     {% endfor %}
     {% endif %}

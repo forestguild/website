@@ -14,9 +14,18 @@ module Jekyll
             content.to_s
         end
 
-        def canonical(input)
-            url = input.gsub('index.html','').gsub('.html','').gsub('amp/','/')
-            @context.registers[:site].config['url'] + @context.registers[:site].config['baseurl'] + url
+        def tocAbsoluteUrls(input, page_url)
+            content = Nokogiri::HTML.fragment(input)
+            content.css("a").each do |a|
+                next unless a.get_attribute('href').start_with?('#')
+                a['href'] = canonical(page_url) + a['href']
+            end
+            content.to_s
+        end
+
+        def canonical(input, prefix = '')
+            url = input.gsub('index.html','').gsub('amp/','/').gsub('.html','')
+            @context.registers[:site].config['url'] + @context.registers[:site].config['baseurl'] + (prefix ? '/' + prefix : '') + url
         end
     end
 end

@@ -28,7 +28,7 @@ layout: core/default
     <meta property="article:tag" content="Гайд" />
     <meta property="article:tag" content="WoW" />
     <meta property="article:tag" content="World of Warcraft" />
-    <link rel="amphtml" href="{{ page.url | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="amphtml" href="{{ page.url | canonical: 'amp' }}">
     {% endif %}
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="yandex-verification" content="{{ site.verification.yandex }}" />
