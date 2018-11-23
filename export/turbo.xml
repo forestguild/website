@@ -31,7 +31,7 @@ layout:
             <description><![CDATA[{{ post.content | markdownify | remove:"&nbsp;" }}]]></description>
             {% endif %}
             <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-            <link>{{ post.url | | canonical }}</link>
+            <link>{{ post.url | canonical }}</link>
             <guid isPermaLink="true">{{ post.url | canonical }}</guid>
         </item>
         {% endfor %}
