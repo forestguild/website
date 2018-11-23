@@ -36,7 +36,7 @@ layout:
         </item>
         {% endfor %}
         {% for page in site.pages %}
-        {% if page.metatitle and page.layout != "amp" and page.layout != "redirect" %}
+        {% if page.metatitle and page.layout != "amp" and page.layout != "core/redirect" %}
         <item turbo="true">
             <title><![CDATA[{{ page.metatitle | strip_html | remove:"&nbsp;" }}]]></title>
             {% if page.author %}
