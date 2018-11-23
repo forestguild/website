@@ -24,8 +24,14 @@ layout: core/compress
             <title><![CDATA[{{ page.metatitle | strip_html | remove:"&nbsp;" }}]]></title>
             {% if page.author %}
             <dc:creator>{{ page.author | xml_escape }}</dc:creator>
+            <author>{{ page.author | xml_escape }}</author>
             {% endif %}
-            <turbo:content><![CDATA[{{ page.content |  markdownify | remove:"&nbsp;" | tocAbsoluteUrls: page.url }}]]></turbo:content>
+            <turbo:source>{{ page.url | canonical }}</turbo:source>
+            <turbo:topic><![CDATA[{{ page.metatitle | strip_html | remove:"&nbsp;" }}]]></turbo:topic>
+            <turbo:content><![CDATA[
+                {{ page.content |  markdownify | remove:"&nbsp;" | tocAbsoluteUrls: page.url }}
+                <div data-block="share"></div>
+                ]]></turbo:content>
             <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
             <link>{{ page.url | canonical }}</link>
             <guid isPermaLink="true">{{ page.url | canonical }}</guid>
