@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 gem "jekyll"
 
+gem "chronic"
+
 # amp-jekyll deps
 gem "fastimage"
 gem "nokogiri"

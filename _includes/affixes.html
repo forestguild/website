@@ -1,0 +1,14 @@
+{% if include.when %}
+{% assign affixes = include.when | mythicAffixes %}
+{% else %}
+{% assign affixes = "now | mythicAffixes %}
+{% endif %}
+
+<div class="row text-center">
+    {% for affix in affixes %}
+    <div class="col-md-3">
+        <a href="https://ru.wowhead.com/affix={{ affix }}" data-wh-rename-link="false"><img src="/assets/img/affixes/{{ affix }}.jpg" class="rounded {% if forloop.last %}img-thumbnail{% endif %}"/></a><br />
+        <a href="https://ru.wowhead.com/affix={{ affix }}">{{ affix }}</a>
+    </div>
+    {% endfor %}
+</div>

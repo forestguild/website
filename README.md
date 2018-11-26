@@ -16,7 +16,7 @@
 
 imagemagick, jpegtran
 
-1. `mogrify -format jpg -alpha copy *.*` - конвертировать все изображения в формат jpeg (исходный не-jpeg) можно удалять)
+1. `mogrify -format jpg *.*` - конвертировать все изображения в формат jpeg (исходный не-jpeg) можно удалять)
 2. `find ./assets/img/ -name "*.jpg" -type f -exec jpegtran -copy none -optimize -progressive -outfile {} {} \;` - оптимизировать jpeg изображения
 3. `mogrify -format webp *.*` - конвертировать все изображения в формат webp
 

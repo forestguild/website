@@ -33,6 +33,15 @@ h5, h6, b, strong, .b-serp-item__number {
     font-size: 1.3rem !important;
 }
 
+picture {
+    display: inline-block
+}
+
+.img-thumbnail {
+    background-color: #f00;
+    border: 1px solid #ffc107;
+}
+
 yass-span, a.nav-link {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

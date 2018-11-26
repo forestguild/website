@@ -8,6 +8,7 @@ description: Гайд по мифик+ (эпохальным+) в WoW 8.0.1 и 8
 
 # Мифик+
 
+
 Названий много: мифик+, ключи, эпохалки, м+...
 
 Суть одна: бьют - больно, мата - много, проходить - быстро, без дискорда - никак.
@@ -30,6 +31,7 @@ description: Гайд по мифик+ (эпохальным+) в WoW 8.0.1 и 8
     - [Добыча](#добыча)
     - [Сложность](#сложность)
     - [Модификаторы (аффиксы)](#модификаторы-аффиксы)
+        + [Аффиксы на текущей и следующей неделе](#аффиксы-на-текущей-и-следующей-неделе)
         + [2+](#2)
         + [4+](#4)
         + [7+](#7)
@@ -212,6 +214,28 @@ description: Гайд по мифик+ (эпохальным+) в WoW 8.0.1 и 8
 | 4-6 | 2 |
 | 7-9 | 3 |
 | 10+ | 4 |
+
+#### Аффиксы на текущей и следующей неделе
+
+<div class="row">
+<div class="col-md-6">
+<div class="card text-white text-center bg-dark">
+<h4 class="card-header">Текущая неделя</h4>
+<div class="card-body">
+<p class="card-text">{% include affixes.html when="now" %}</p>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card text-white text-center bg-dark">
+<h4 class="card-header">Следующая неделя</h4>
+<div class="card-body">
+<p class="card-text">{% include affixes.html when="next" %}</p>
+</div>
+</div>
+</div>
+</div>
+
 
 <hr>
 
