@@ -13,6 +13,11 @@ verification:
 analytics:
   yandex: 50342920
 search: 2334078
+ads:
+  amp: R-A-332491-2
+  search:
+    premium: P-A-332492-1
+    direct: D-A-332492-2
 video:
   streams: #twitch users
     - akulenokwow

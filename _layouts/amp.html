@@ -29,6 +29,7 @@ layout: amp
 
         <script async="" src="https://cdn.ampproject.org/v0.js"></script>
         <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
+        <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
         <style amp-boilerplate>{% include amp/boilerplate.css %}</style>
         <style amp-custom>{% include amp/custom.css %}</style>
         <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -47,7 +48,9 @@ layout: amp
             <div class="flex justify-start items-center ampstart-sidebar-header">
                 <div role="button" aria-label="close sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
             </div>
-            <nav class="ampstart-sidebar-nav ampstart-nav">{% include menu.html view="amp" %}</nav>
+            <nav class="ampstart-sidebar-nav ampstart-nav">
+                {% include menu.html view="amp" %}
+            </nav>
             <ul class="ampstart-sidebar-faq list-reset m0">
                 <li class="ampstart-faq-item"><a href="{{ site.url }}{{ site.baseurl }}/{{ page.url | replace:'index.html','' | replace:'.html','' | replace: 'amp/','' }}" class="text-decoration-none">Полная версия</a></li>
             </ul>
@@ -66,7 +69,8 @@ layout: amp
                 </address>
                 <!-- End byline -->
             </header>
-            {{ content | markdownify | amp_images | amp_tables | autonofollow }}
+            {% if site.ads.amp %}<amp-ad width="300" height="250" type="yandex" data-block-id="{{ site.ads.amp }}" data-html-access-allowed="true"></amp-ad>{% endif %}
+                {{ content | markdownify | amp_images | amp_tables | autonofollow }}
         </article>
         </main>
     </body>

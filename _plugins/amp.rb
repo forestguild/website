@@ -39,7 +39,7 @@ module Jekyll
       # Change 'img' elements to 'amp-img', add responsive attribute when needed
       doc.css('img').each do |image|
         image.name = "amp-img"
-        image['class'] = "mb4 mx3"
+        #image['class'] = "mb4 mx3"
 
         image['layout'] = "responsive" if responsive
       end
