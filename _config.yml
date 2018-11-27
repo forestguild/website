@@ -44,6 +44,8 @@ assets:
   - url: /assets/js/wowheadtooltips.js
     async: true
     type: js
+collections:
+  - authors
 markdown: kramdown
 compress_html:
   clippings: all
