@@ -65,6 +65,8 @@ cleanup:
   image: php:alpine
   only:
     - master
+  except:
+    - schedules
   script:
     - php updater.php cache
   tags:
