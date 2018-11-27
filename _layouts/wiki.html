@@ -36,7 +36,8 @@ layout: core/page
         <!--end schema.org-->
         {{ content }}
         {% if page.author %}
-        <span class="float-left">Автор: <a href="https://worldofwarcraft.com/ru-ru/character/{{ site.realm }}/{{ page.author }}" class="badge badge-secondary" target="_blank">{{ page.author }}</a></span>
+        {% assign author = site.authors | where: "char", page.author | first %}
+        <span class="float-left">Автор: <a href="https://worldofwarcraft.com/ru-ru/character/{{ author.realm | default: site.realm }}/{{ author.char }}" class="badge badge-secondary" target="_blank" rel="nofollow" title="{{ author.description }}">{{ author.name | default: author.char }}</a></span>
         {% endif %}
         <a href="https://github.com/{{ site.github }}/tree/master/{{ page.path }}" class="float-right badge badge-dark" target="_blank">Изменить</a>
     </div>
