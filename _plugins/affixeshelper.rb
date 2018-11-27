@@ -5,19 +5,23 @@ module Jekyll
     module MythicHelper
         def mythicCurrentWeekNumber(input)
             initWeek = @context.registers[:site].data['affixes']['time']['init'] #First week when mythic+ epoch started
+            weekOffset = 0
             nowString = Time.now
             now = nowString.to_i
             startWeek = ((Chronic.parse("this Tuesday", :now => nowString).to_date - 6).to_time + (9 * 60 * 60)).to_i #M+ week start (eg: 2018-11-21 09:00:00)
             endWeek = (Chronic.parse("this Tuesday", :now => nowString).to_time + 20 * 60 * 60 + 59 * 60 + 59).to_i #M+ week end (eg: 2018-11-28 08:59:59)
-            unless (now >= startWeek && now <= endWeek) #If current week already ended but new week not started - sleep some time and calculate again
-                puts "AGAIN"
-                sleep(10)
-                mythicCurrentWeekNumber(input)
+            puts "now: " + nowString.to_s
+            puts "start: " + ((Chronic.parse("this Tuesday", :now => nowString).to_date - 6).to_time + (9 * 60 * 60)).to_s
+            puts "end: "  + (Chronic.parse("this Tuesday", :now => nowString).to_time + 20 * 60 * 60 + 59 * 60 + 59).to_s
+            unless (now >= startWeek && now <= endWeek)
+                weekOffset -= 1
             end
             initWeek = Time.at(initWeek).to_datetime
             thisWeek = Time.at(startWeek).to_datetime
 
-            ((thisWeek - initWeek).to_i / 7).floor
+            puts "m+ week number: " + ((thisWeek - initWeek).to_i / 7 + weekOffset).floor.to_s
+            puts "---"
+            ((thisWeek - initWeek).to_i / 7 + weekOffset).floor
         end
 
         # Get array of m+ affixes
