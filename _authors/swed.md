@@ -1,6 +1,7 @@
 ---
-name: Swed
+avatar: /assets/img/avatars/swed.jpg
 char: Джоиказинно
-realm: galakrond
 description: Шаман-затейник
+name: Swed
+realm: galakrond
 ---
