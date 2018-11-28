@@ -2,7 +2,6 @@
 metatitle: Зачем нужен дискорд в WoW BfA
 title: Discord
 layout: wiki
-author: Этке
 description: Почему именно Discord, плюсы и минусы по сравнению с другими войс чатами и гильдейские плюшки за дискорд
 related: false
 actual:

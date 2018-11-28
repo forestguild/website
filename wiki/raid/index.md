@@ -1,7 +1,7 @@
 ---
 metatitle: Гайд по рейдам (ульдир) в WoW BfA
 layout: wiki
-author: Этке
+author: Rakshazi
 actual:
  - 8.0.1
  - 8.1

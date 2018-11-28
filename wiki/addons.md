@@ -2,7 +2,7 @@
 metatitle: Аддоны для рейдов, мифик+, РЛов и обычных игроков в WoW BfA
 title: Аддоны
 layout: wiki
-author: Этке
+author: Rakshazi
 description: WoW аддоны для рейдов и эпохальных+ подземелий, аддоны для РЛов (чек фласок и еды), аддоны для обычной игры. Все в одном месте со ссылками на Curse
 related: false
 actual:

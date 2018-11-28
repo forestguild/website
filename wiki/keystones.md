@@ -2,7 +2,7 @@
 metatitle: Мифик+ - полный гайд с таблицей лута, различиями и подробностями для WoW BfA
 title: Мифик+
 layout: wiki
-author: Этке
+author: Rakshazi
 description: Гайд по мифик+ (эпохальным+) в WoW 8.0.1 и 8.1. Таблицы лута, различия, уровни наград и другие нюансы простым языком.
 related: false
 actual:

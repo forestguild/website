@@ -2,7 +2,7 @@
 metatitle: Друид хил (рестор, исцеление) PvE гайд WoW BfA
 title: Исцеление
 layout: wiki
-author: Этке
+author: Rakshazi
 description: Базовый гайд для Друида Исцеления (хил) в WoW BfA с ротацией, талантами для рейдов/мифик+, характеристиками и советами.
 actual:
   - 8.0.1

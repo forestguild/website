@@ -2,7 +2,7 @@
 metatitle: Шаман элем (рдд, стихии) PvE гайд WoW BfA
 title: Стихии
 layout: wiki
-author: Джойказинно
+author: Swed
 description: Гайд для шамана элема (стихии, рдд) в WoW BfA с ротацией, талантами для рейдов/мифик+, характеристиками и советами.
 actual:
   - 8.0.1

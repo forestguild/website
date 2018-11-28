@@ -34,7 +34,8 @@ h5, h6, b, strong, .b-serp-item__number {
 }
 
 picture {
-    display: inline-block
+    vertical-align: middle;
+    display: inline-block;
 }
 
 .img-thumbnail {

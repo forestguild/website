@@ -1,7 +1,6 @@
 ---
 metatitle: Помощь сайту
 layout: wiki
-author: Этке
 related: false
 actual:
  - ВСЕГДА

@@ -2,7 +2,7 @@
 metatitle: Фарм золота в WoW BfA. С указанием времени и полученой голды.
 title: Добыча золота
 layout: wiki
-author: Этке
+author: Rakshazi
 related: false
 description: Гайд по фарму голды в WoW, только проверенные временем способы, никаких фарм-спотов.
 ---

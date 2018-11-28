@@ -2,7 +2,7 @@
 metatitle: Друид сова (рдд, баланс) PvE гайд WoW BfA
 title: Баланс
 layout: wiki
-author: Этке
+author: Rakshazi
 description: Базовый гайд для Друида Баланс (сова, рдд) в WoW BfA с ротацией, талантами для рейдов/мифик+, характеристиками и советами.
 actual:
  - 8.0.1
