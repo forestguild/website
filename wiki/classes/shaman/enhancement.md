@@ -3,8 +3,9 @@ metatitle: Шаман энх (мдд, совершенствование) PvE г
 title: Совершенствование
 layout: wiki
 author: Джойказинно
-description: Гайд для шамана энха (совершенствование, мдд) в WoW BfA с ротацией, талантами
-  для рейдов/мифик+, характеристиками и советами.
+description: Гайд для шамана энха (совершенствование, мдд) в WoW BfA с ротацией, талантами для рейдов/мифик+, характеристиками и советами.
+actual:
+  - 8.0.1
 ---
 
 Некоторый материал был взят с сайта [icy-veins](http://www.icy-veins.com) и [Wowhead](https://ru.wowhead.com)
@@ -125,10 +126,10 @@ description: Гайд для шамана энха (совершенствова
 5. Используем  [Удар бури](https://ru.wowhead.com/spell=17364) до отката [Сокрушающа молния](https://ru.wowhead.com/spell=187874) , [Сокрушающа молния](https://ru.wowhead.com/spell=187874) использовать по кд.
 6. если не хватает  _Энегрия водоворота_ снова используем [Камнедробитель](https://ru.wowhead.com/spell=193786)
 7. После окончания [Жажда крови](https://ru.wowhead.com/spell=2825) начиная тонельный урон
-[Камнедробитель](https://ru.wowhead.com/spell=193786) &rarr; 
-[Сокрушающа молния](https://ru.wowhead.com/spell=187874) &rarr; 
-[Удар бури](https://ru.wowhead.com/spell=17364) &rarr; 
-[Вкипание лавы](https://ru.wowhead.com/spell=60103) и так по кругу; 
+[Камнедробитель](https://ru.wowhead.com/spell=193786) &rarr;
+[Сокрушающа молния](https://ru.wowhead.com/spell=187874) &rarr;
+[Удар бури](https://ru.wowhead.com/spell=17364) &rarr;
+[Вкипание лавы](https://ru.wowhead.com/spell=60103) и так по кругу;
 по откату используем [Раскол](https://ru.wowhead.com/spell=197214) (_только с талантом_), использовать по кд [Дух дикого зверя](https://ru.wowhead.com/spell=51533)
 
 <hr>

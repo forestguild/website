@@ -2,6 +2,7 @@
 metatitle: Разбойник (рога, rogue) PvE гайд WoW BfA
 title: Разбойник
 layout: wiki
+related: false
 author: Гурноут
 ---
 

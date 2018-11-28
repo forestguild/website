@@ -2,6 +2,9 @@
 metatitle: Рейдерский чеклист для рейдов WoW BfA
 layout: wiki
 author: Этке
+actual:
+  - 8.0.1
+  - 8.1
 ---
 
 # Чек-лист

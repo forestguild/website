@@ -25,7 +25,7 @@ module Jekyll
 
         def canonical(input, prefix = '')
             url = input.gsub('index.html','').gsub('amp/','/').gsub('.html','')
-            @context.registers[:site].config['url'] + @context.registers[:site].config['baseurl'] + (prefix ? '/' + prefix : '') + url
+            @context.registers[:site].config['url'] + (@context.registers[:site].config['baseurl'] + (prefix ? '/' + prefix : '') + url).gsub('//','/')
         end
     end
 end
