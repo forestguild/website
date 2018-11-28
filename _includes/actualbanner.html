@@ -1,6 +1,3 @@
-{% if page.author %}
-{% assign author = site.authors | where: "name", page.author | first %}
-{% endif %}
 {% assign actual = page.actual | default: site.defaultActualAddon %}
 {% assign related = page.related | default: "specs-only" %}
 <div class="alert text-white bg-dark" role="alert">
@@ -18,9 +15,9 @@
             {% endunless %}
             <a href="https://github.com/{{ site.github }}/tree/master/{{ page.path }}" class="alert-link d-none" rel="nofollow" target="_blank">Предложить изменение</a>
         </div>
-        {% if author %}
+        {% if page.author %}
         <div class="col text-right">
-            <span class="d-none d-md-inline">Автор:</span> <a href="https://worldofwarcraft.com/ru-ru/character/{{ author.realm | default: site.realm }}/{{ author.char }}" class="alert-link" target="_blank" rel="nofollow" title="{{ author.description }}"><img src="{{ author.avatar | default: '/assets/img/logo.jpg' }}" width="32px">{{ author.name | default: author.char }}</a>
+            {% include author.html %}
         </div>
         {% endif %}
     </div>

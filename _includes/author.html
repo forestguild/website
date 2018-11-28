@@ -1,0 +1,14 @@
+{% if include.name %}
+{% assign authorName = include.name %}
+{% else %}
+{% assign authorName = page.author %}
+{% endif %}
+
+{% if authorName %}
+{% assign author = site.authors | where: "name", authorName | first %}
+<span class="d-none d-md-inline">Автор:</span>
+<a href="https://worldofwarcraft.com/ru-ru/character/{{ author.realm | default: site.realm }}/{{ author.char }}" class="alert-link" target="_blank" rel="nofollow" title="{{ author.description }}">
+    <img src="{{ author.avatar | default: '/assets/img/logo.jpg' }}" width="32px">
+    {{ author.name | default: author.char }}
+</a>
+{% endif %}

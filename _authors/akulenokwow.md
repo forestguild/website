@@ -1,5 +1,6 @@
 ---
+avatar: /assets/img/avatars/akulenokwow.jpg
 char: Яжматьепт
-name: Akulenokwow
 description: Ачиватрон
+name: Akulenokwow
 ---

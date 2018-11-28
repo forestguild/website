@@ -174,7 +174,7 @@ description: Гайд по фарму голды в WoW, только прове
 
 Всем удачи в ловле правильной рыбы и не заскучайте.
 
-_Яжматьепт (Андрей) для гильдии Ясный Лес @ EU Галакронд_{:.float-right}
+<div class="float-right">{% include author.html name="Akulenokwow" %}</div>
 
 <hr>
 

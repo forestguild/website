@@ -1,5 +1,5 @@
 ---
 char: Гурноут
-name: Гурноут
 description: рога
+name: Гурноут
 ---
