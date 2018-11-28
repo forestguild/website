@@ -4,6 +4,7 @@ name: Ясный Лес
 description: Гильдия Ясный Лес, World of Warcraft, EU Галакронд.
 baseurl: ''
 url: https://forestguild.club
+timezone: Europe/Paris
 github: rakshazi/forestguild.club
 realm: galakrond
 disqus: forestguild
