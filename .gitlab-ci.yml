@@ -23,6 +23,7 @@ build website:
   before_script:
     - bundle update
   script:
+    - jekyll wowdaily
     - jekyll build
     - jekyll build #to avoid amp images bug
   after_script:
