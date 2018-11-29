@@ -69,8 +69,9 @@ layout: amp
                 </address>
                 <!-- End byline -->
             </header>
-            {% if site.ads.amp %}<amp-ad width="300" height="250" type="yandex" data-block-id="{{ site.ads.amp }}" data-html-access-allowed="true"></amp-ad>{% endif %}
+            {% if site.ads.amp.top %}<amp-ad width="300" height="250" type="yandex" data-block-id="{{ site.ads.amp.top }}" data-html-access-allowed="true"></amp-ad>{% endif %}
                 {{ content | markdownify | amp_images | amp_tables | autonofollow }}
+            {% if site.ads.amp.bottom %}<amp-ad width="300" height="250" type="yandex" data-block-id="{{ site.ads.amp.bottom }}" data-html-access-allowed="true"></amp-ad>{% endif %}
         </article>
         </main>
     </body>
