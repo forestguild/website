@@ -2,7 +2,7 @@
 body {
     padding-top: 4.5rem;
     font-family:Arial,Helvetica,sans-serif !important;
-    font-weight: 400 !important;
+    /*font-weight: 400 !important;*/
     background: url("/assets/img/bg.jpg") repeat-y bottom center #120d0a;
 }
 
@@ -24,13 +24,39 @@ body {
 .webp .home-central {
     background: url(/assets/img/logo.webp) no-repeat top right;
 }
+h1 {
+    font-size: 2em;
+}
 
 h1, h2, h3, h4, h5, h6, b, strong, .b-serp-item__number {
     font-family: Arial, sans-serif;
+    font-weight: lighter;
     color: #fff !important;
 }
 h5, h6, b, strong, .b-serp-item__number {
     font-size: 1.3rem !important;
+}
+
+small {
+    font-weight: lighter;
+}
+
+.live-icon {
+    color: #dc3545;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 0.5rem;
+    vertical-align: middle;
+    animation: liveblinker 0.75s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+}
+
+@keyframes liveblinker {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.card-title {
+    font-weight: lighter;
 }
 
 picture {

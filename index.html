@@ -8,10 +8,10 @@ layout: core/page
             <div class="card text-white bg-dark mr-lg-5">
                 <div class="card-body">
                     <h3 class="card-title">Аффиксы <small class="text-muted">недельные и сезонные</small></h3>
-                    <span class="card-title text-muted" style="font-size: 1.3rem !important">текущая неделя</span>
+                    <span class="card-title text-muted" style="font-size: 1.2rem !important">текущая неделя</span>
                     {% include affixes.html %}
                     <div class="d-none d-lg-block">
-                    <span class="text-muted"style="font-size: 1.3rem !important">следующая неделя</span>
+                    <span class="card-title text-muted"style="font-size: 1.2rem !important">следующая неделя</span>
                     {% include affixes.html when="next" %}
                     </div>
                     <h3 class="text-muted">не знаешь, что это?</h3>
@@ -21,28 +21,37 @@ layout: core/page
             </div>
             <div class="card text-white bg-dark mr-lg-5" style="border: 1px solid #ffc107">
                 <div class="card-body">
-                    <h3 class="card-title">Прямо сейчас <small class="text-muted">горячие новости с места событий</small></h3>
+                    <h3 class="card-title">
+                        <span class="live-icon">&bull;</span>Прямо сейчас
+                        <small class="text-danger">горячие новости с места событий</small>
+                    </h3>
                     {% assign data = site.data.wowdaily %}
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-md-6">
                             <span class="text-danger">Мировой босс</span><br />
-                            <a href="{{ data.worldboss.url }}" style="font-size: 1.3rem !important" target="_blank" rel="nofollow">{{ data.worldboss.name }}</a><br>
+                            <a href="{{ data.worldboss.url }}" style="font-size: 1.2rem !important" target="_blank" rel="nofollow">{{ data.worldboss.name }}</a><br>
                             <span class="text-danger">События</span><br />
+                            {% assign holidaysCount = data.holidays|size %}
+                            {% if holidaysCount > 0 %}
                             {% for item in data.holidays %}
-                            <a href="{{ item.url }}" target="_blank" style="font-size: 1.3rem !important" rel="nofollow">{{ item.name }}</a><br />
+                            <a href="{{ item.url }}" target="_blank" style="font-size: 1.2rem !important" rel="nofollow">{{ item.name }}</a><br />
                             {% endfor %}
+                            {% else %}
+                            Пока все тихо<br />
+                            {% endif %}
+                            <span class="text-danger">Жетон WoW</span><br />
+                            <b>{{ data.wowtoken }}</b><img src="/assets/img/gold.jpg"><br />
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-md-6">
                             <span class="text-danger">Эмиссары фракций</span><br />
-                            {% for item in data.emissares %}
-                            <a href="{{ item.url }}" target="_blank" style="font-size: 1.3rem !important" rel="nofollow">{{ item.name }}</a><br />
+                            {% assign emissares = data.emissares | sort: "fraction" | reverse %}
+                            {% for item in emissares %}
+                            <img src="/assets/img/{{ item.fraction }}.png" style="width: 1.2rem"><a href="{{ item.url }}" target="_blank" style="font-size: 1.2rem !important" rel="nofollow">{{ item.name }}</a><br />
                             {% endfor %}
                             <span class="text-danger">Островные экспедиции</span><br />
                             {% for item in data.islandexpeditions %}
-                            <a href="{{ item.url }}" target="_blank" style="font-size: 1.3rem !important" rel="nofollow">{{ item.name }}</a><br />
+                            <a href="{{ item.url }}" target="_blank" style="font-size: 1.2rem !important" rel="nofollow">{{ item.name }}</a><br />
                             {% endfor %}
-                            <span class="text-danger">Жетон WoW</span><br />
-                            <b>{{ data.wowtoken }}</b><img src="/assets/img/gold.jpg"><br />
                         </div>
                     </div>
                     <div class="row">

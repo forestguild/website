@@ -4,6 +4,16 @@ require "yaml"
 
 class Wowdaily < Jekyll::Command
     class << self
+        def getFractionByCss(css_class)
+            case css_class
+            when "icon-horde"
+                return "horde"
+            when "icon-alliance"
+                return "alliance"
+            else
+                return "horde-alliance"
+            end
+        end
         def init_with_program(prog)
             prog.command(:wowdaily) do |c|
                 c.syntax "wowdaily [options]"
@@ -28,20 +38,16 @@ class Wowdaily < Jekyll::Command
                     doc.css(".tiw-group-wowtoken").css(".moneygold").each do |gold|
                         wowtoken = gold.text.gsub(",","").to_i
                     end
-                    doc.css(".tiw-group-holiday").css("td.icon-both").css("a").each do |a|
-                        holiday = {"name" => a.text, "url" => "https://ru.wowhead.com" + a.get_attribute("href")}
+                    doc.css(".tiw-group-holiday").css("td").css("a").each do |a|
+                        holiday = {"name" => a.text, "url" => "https://ru.wowhead.com" + a.get_attribute("href"), "fraction" => getFractionByCss(a.parent.get_attribute("class"))}
                         holidays.push(holiday)
                     end
                     doc.css(".tiw-group-islandexpeditions").css("td.icon-both").css("a").each do |a|
                         expedition = {"name" => a.text, "url" => "https://ru.wowhead.com" + a.get_attribute("href")}
                         islandexpeditions.push(expedition)
                     end
-                    doc.css(".tiw-group-emissary7").css("td.icon-horde").css("a").each do |a|
-                        emissar = {"name" => a.text, "url" => "https://ru.wowhead.com" + a.get_attribute("href")}
-                        emissares.push(emissar)
-                    end
-                    doc.css(".tiw-group-emissary7").css("td.icon-both").css("a").each do |a|
-                        emissar = {"name" => a.text, "url" => "https://ru.wowhead.com" + a.get_attribute("href")}
+                    doc.css(".tiw-group-emissary7").css("td").css("a").each do |a|
+                        emissar = {"name" => a.text, "url" => "https://ru.wowhead.com" + a.get_attribute("href"), "fraction" => getFractionByCss(a.parent.get_attribute("class"))}
                         emissares.push(emissar)
                     end
                     data = {"worldboss": worldboss, "wowtoken": wowtoken,"holidays": holidays,"islandexpeditions":islandexpeditions,"emissares":emissares}
