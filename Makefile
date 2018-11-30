@@ -3,7 +3,7 @@ REMOTE=git@github.com:rakshazi/forestguild.club.git
 deploy: build push clean
 
 run:
-	bundler exec jekyll serve
+	bundler exec jekyll serve -i
 
 build:
 	mkdir -p _data

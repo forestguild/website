@@ -4,27 +4,27 @@ layout: core/page
 <div class="container-fluid">
     <h1>Сегодня в WoW</h1>
     <div class="row">
-        <div class="col-md-4">
-            <div class="card text-white bg-dark mb-3" style="height:420px">
+        <div class="col-lg-12 d-lg-flex d-md-block align-items-stretch">
+            <div class="card text-white bg-dark mr-lg-5">
                 <div class="card-body">
                     <h3 class="card-title">Аффиксы <small class="text-muted">недельные и сезонные</small></h3>
                     <span class="card-title text-muted" style="font-size: 1.3rem !important">текущая неделя</span>
                     {% include affixes.html %}
+                    <div class="d-none d-lg-block">
                     <span class="text-muted"style="font-size: 1.3rem !important">следующая неделя</span>
                     {% include affixes.html when="next" %}
+                    </div>
                     <h3 class="text-muted">не знаешь, что это?</h3>
 
                     <a href="/wiki/keystones" class="btn btn-lg btn-block btn-danger">Гайд</a>
                 </div>
             </div>
-        </div>
-        <div class="col-md-5">
-            <div class="card text-white bg-dark mb-3" style="border: 1px solid #ffc107;height:420px">
+            <div class="card text-white bg-dark mr-lg-5" style="border: 1px solid #ffc107">
                 <div class="card-body">
                     <h3 class="card-title">Прямо сейчас <small class="text-muted">горячие новости с места событий</small></h3>
                     {% assign data = site.data.wowdaily %}
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-lg-6">
                             <span class="text-danger">Мировой босс</span><br />
                             <a href="{{ data.worldboss.url }}" style="font-size: 1.3rem !important" target="_blank" rel="nofollow">{{ data.worldboss.name }}</a><br>
                             <span class="text-danger">События</span><br />
@@ -32,7 +32,7 @@ layout: core/page
                             <a href="{{ item.url }}" target="_blank" style="font-size: 1.3rem !important" rel="nofollow">{{ item.name }}</a><br />
                             {% endfor %}
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-lg-6">
                             <span class="text-danger">Эмиссары фракций</span><br />
                             {% for item in data.emissares %}
                             <a href="{{ item.url }}" target="_blank" style="font-size: 1.3rem !important" rel="nofollow">{{ item.name }}</a><br />
@@ -46,29 +46,27 @@ layout: core/page
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 text-right">
+                        <div class="col-lg-12 text-right">
                             <i class="text-muted">Информация взята с <a href="https://ru.wowhead.com" target="_blank" rel="nofollow">Wowhead</a></i>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-2 text-center">
-            <iframe src="https://discordapp.com/widget?id=252328604443082753&theme=dark" width="350" height="420px" allowtransparency="true" frameborder="0"></iframe>
+            <iframe class="col-lg-3 col-md-12" style="min-height: 400px" src="https://discordapp.com/widget?id=252328604443082753&theme=dark" allowtransparency="true" frameborder="0"></iframe>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-lg-9">
             <h1 class="float-right">Гайды, стратегии и секреты</h1>
         </div>
     </div>
     <div class="row">
-        <div class="card text-white bg-dark mb-3 col-md-9">
+        <div class="card text-white bg-dark mb-3 col-lg-9">
             <div class="card-body">
                 {% include menu.html view="horizontal" %}
             </div>
         </div>
-        <div class="col-md-3 text-center">
+        <div class="col-lg-3 text-center">
             <img src="/assets/img/logo.png" title="{{ site.title }}" alt="{{ site.title }}" class="img-responsive">
         </div>
     </div>

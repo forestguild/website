@@ -9,7 +9,7 @@
 {% when 'horizontal' %}
 <div class="row container-fluid">
     {% for item in site.data.nav.wiki | limit: blocks %}
-    <div class="col-md-3">
+    <div class="col-lg-3">
         <h3 class="{% if item.class %}{{ item.class }}{% endif %}">{{ item.title }}</h3>
         {% if item.items[0] %}
         <ul>

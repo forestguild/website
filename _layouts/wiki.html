@@ -1,7 +1,7 @@
 ---
 layout: core/page
 ---
-<nav class="bg-img-red d-none d-md-block">
+<nav class="bg-img-red d-none d-lg-block">
     <hr class="lg" style="top:-40px">
     {% include menu.html view="horizontal" %}
     <hr class="lg" style="transform: scaleY(-1);bottom:-20px">
@@ -9,12 +9,12 @@ layout: core/page
 
 <main class="container-fluid">
 <div class="row">
-    <button class="btn btn-danger btn-lg btn-block d-md-none mx-auto" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="menu">МЕНЮ</button>
-    <div class="col-sm-12 mt-4 ml-2  d-md-none collapse pt-0" id="menu">
+    <button class="btn btn-danger btn-lg btn-block d-lg-none mx-auto" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="menu">МЕНЮ</button>
+    <div class="col-md-12 mt-4 ml-2  d-lg-none collapse pt-0" id="menu">
         {% include menu.html view="vertical" %}
     </div>
 
-    <div itemscope itemtype="http://schema.org/Article" class="jumbotron wiki text-white col-md-12 mb-0">
+    <div itemscope itemtype="http://schema.org/Article" class="jumbotron wiki text-white col-lg-12 mb-0">
         <!--schema.org article tags-->
         <span itemprop="name" class="d-none">{{ page.title }}</span>
         <span itemprop="headline" class="d-none">{{ page.title }}</span>
@@ -40,7 +40,7 @@ layout: core/page
         {% include actualbanner.html %}
     </div>
     <hr class="lg" style="width: 100%;">
-    <div class="col-md-10 offset-md-1" id="disqus_thread"></div>
+    <div class="col-lg-10 offset-lg-1" id="disqus_thread"></div>
 </div>
 <script type="text/javascript">
 (function(w, d, n, s, t) {
