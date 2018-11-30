@@ -1,6 +1,5 @@
 _site
-_data/raid.json
-_data/news.json
+_data/*.json
 .sass-cache
 .jekyll-metadata
 .php_cs.cache
