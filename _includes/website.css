@@ -28,17 +28,17 @@ h1 {
     font-size: 2em;
 }
 
+.index h1, .index h2, .index h3, .index h4, .index h5{
+    font-weight: lighter !important;
+}
+
 h1, h2, h3, h4, h5, h6, b, strong, .b-serp-item__number {
     font-family: Arial, sans-serif;
-    font-weight: lighter;
+    font-weight: 400;
     color: #fff !important;
 }
 h5, h6, b, strong, .b-serp-item__number {
     font-size: 1.3rem !important;
-}
-
-small {
-    font-weight: lighter;
 }
 
 .live-icon {

@@ -1,7 +1,7 @@
 ---
 layout: core/page
 ---
-<div class="container-fluid">
+<div class="container-fluid index">
     <h1>Сегодня в WoW</h1>
     <div class="row">
         <div class="col-lg-12 d-lg-flex d-md-block align-items-stretch">
@@ -39,8 +39,10 @@ layout: core/page
                             {% else %}
                             Пока все тихо<br />
                             {% endif %}
-                            <span class="text-danger">Жетон WoW</span><br />
-                            <b>{{ data.wowtoken }}</b><img src="/assets/img/gold.jpg"><br />
+                            <span class="text-danger">Островные экспедиции</span><br />
+                            {% for item in data.islandexpeditions %}
+                            <a href="{{ item.url }}" target="_blank" style="font-size: 1.2rem !important" rel="nofollow">{{ item.name }}</a><br />
+                            {% endfor %}
                         </div>
                         <div class="col-md-6">
                             <span class="text-danger">Эмиссары фракций</span><br />
@@ -48,10 +50,11 @@ layout: core/page
                             {% for item in emissares %}
                             <img src="/assets/img/{{ item.fraction }}.png" style="width: 1.2rem"><a href="{{ item.url }}" target="_blank" style="font-size: 1.2rem !important" rel="nofollow">{{ item.name }}</a><br />
                             {% endfor %}
-                            <span class="text-danger">Островные экспедиции</span><br />
-                            {% for item in data.islandexpeditions %}
-                            <a href="{{ item.url }}" target="_blank" style="font-size: 1.2rem !important" rel="nofollow">{{ item.name }}</a><br />
-                            {% endfor %}
+                            <div class="col-lg-12 text-right">
+                            <i>Нужна помощь? Смотри <a href="/wiki/reputation/bfa">гайд</a></i>
+                            </div>
+                            <span class="text-danger">Жетон WoW</span><br />
+                            <b>{{ data.wowtoken }}</b><img src="/assets/img/gold.jpg"><br />
                         </div>
                     </div>
                     <div class="row">
