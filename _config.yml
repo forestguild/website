@@ -77,3 +77,4 @@ exclude:
 - README.md
 - updater
 - updater.php
+- orphans.txt

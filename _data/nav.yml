@@ -59,10 +59,10 @@ wiki:
     items:
       - title: Добыча золота
         url: /wiki/goldfarm
-      - title: Реагенты
-        url: /wiki/reagents
       - title: Репутация BfA
         url: /wiki/reputation/bfa
+      - title: Репутация Legion
+        url: /wiki/reputation/legion
   - title: Инструментарий
     items:
       - title: Аддоны
