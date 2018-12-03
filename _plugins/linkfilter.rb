@@ -23,6 +23,11 @@ module Jekyll
             content.to_s
         end
 
+        # Special for Yandex.Turbo, because their parsers raise warnings
+        def removeToc(input)
+            input.gsub(/(<!-- vim-markdown-toc.*<!-- vim-markdown-toc -->\n)/m, '')
+        end
+
         def canonical(input, prefix = '')
             url = input.gsub('index.html','').gsub('amp/','/').gsub('.html','')
             @context.registers[:site].config['url'] + (@context.registers[:site].config['baseurl'] + (prefix ? '/' + prefix : '') + url).gsub('//','/')
