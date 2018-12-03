@@ -53,8 +53,6 @@ wiki:
           - title: МДД
             class: text-uppercase badge badge-danger
             url: /wiki/classes/shaman/enhancement
-      #- title: Разбойник
-        #url: /wiki/classes/rogue
   - title: Фермер Юн
     items:
       - title: Добыча золота
