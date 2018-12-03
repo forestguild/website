@@ -25,4 +25,11 @@
 {% endif -%}
 {%- endfor %}
 
+{% when "children" %}
+{% for item in site.pages -%}
+{%- if item.layout == 'wiki' and item.path != page.path and item.path contains pagepath and item.title -%}
+<a href="{{ item.url | canonical }}">{{ item.title }}</a>
+{% endif -%}
+{%- endfor %}
+
 {% endcase %}

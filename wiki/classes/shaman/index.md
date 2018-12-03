@@ -4,7 +4,7 @@ title: Шаман
 layout: wiki
 author: Swed
 description: Гайды для шамана (все спеки) в WoW BfA с ротацией, талантами для рейдов/мифик+, характеристиками и советами.
-related: false
+related: children
 actual:
   - 8.0.1
 ---

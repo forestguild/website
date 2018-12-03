@@ -3,7 +3,7 @@ metatitle: Друид PvE гайды WoW BfA
 title: Друид
 layout: wiki
 author: Rakshazi
-related: false
+related: children
 actual:
   - 8.0.1
   - 8.1
