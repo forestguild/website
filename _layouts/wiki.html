@@ -22,7 +22,8 @@ layout: core/page
         <p itemscope itemprop="author" class="d-none" itemtype="http://schema.org/Person">
         <span itemprop="name">{% if page.author %}{{ page.author }}{% else %}{{ site.name }}{% endif %}</span>
         {% if page.author %}
-        <a href="https://worldofwarcraft.com/ru-ru/character/{{ site.realm }}/{{ page.author }}" itemprop="url">{{ page.author }}</a>
+        {% assign author = site.authors | where: "name", page.author | first %}
+        <a href="https://worldofwarcraft.com/ru-ru/character/{{ author.realm | default: site.realm }}/{{ author.char }}" target="_blank" rel="nofollow" itemprop="url">{{ author.name | default: author.char }}</a>
         {% endif %}
         </p>
         <span itemprop="publisher" itemtype="http://schema.org/Organization" class="d-none">
