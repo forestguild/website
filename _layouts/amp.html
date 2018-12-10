@@ -8,7 +8,8 @@ layout: amp
         <title>{% if page.metatitle %}{{ page.metatitle }} - {% endif %}{{ site.title }}</title>
         <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
         <link rel="canonical" href="{{ page.url | canonical }}">
-        <link rel="icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <link rel="apple-touch-icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="/export/rss.xml" />
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -70,7 +71,7 @@ layout: amp
                 <!-- End byline -->
             </header>
             {% if site.ads.amp.top %}<amp-ad width="300" height="250" type="yandex" data-block-id="{{ site.ads.amp.top }}" data-html-access-allowed="true"></amp-ad>{% endif %}
-                {{ content | markdownify | amp_images | amp_tables | autonofollow }}
+            {{ content | markdownify | amp_images | amp_tables | autonofollow }}
             {% if site.ads.amp.bottom %}<amp-ad width="300" height="250" type="yandex" data-block-id="{{ site.ads.amp.bottom }}" data-html-access-allowed="true"></amp-ad>{% endif %}
         </article>
         </main>

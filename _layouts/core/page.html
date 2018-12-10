@@ -35,7 +35,8 @@ layout: core/default
     <meta name="google-site-verification" content="{{ site.verification.google }}" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/export/rss.xml" />
     <link rel="canonical" href="{{ page.url | canonical }}">
-    <link rel="icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
     <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter{{ site.analytics.yandex }} = new Ya.Metrika2({ id:{{ site.analytics.yandex }}, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/50342920" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </head>
@@ -73,6 +74,8 @@ layout: core/default
     {% endif %}
     {{ content }}
     </main>
+    <div class="fixed-bottom"><noindex class="text-gray float-right">Logo made by <a href="http://www.freepik.com/" target="_blank" rel="nofollow">Freepik</a> from <a href="http://www.flaticon.com/" target="_blank" rel="nofollow">www.flaticon.com</a></noindex></div>
+    {% include logo.svg %}
     {% include assets.html block="footer" %}
     <script>{% include website.js %}</script>
 </body>
