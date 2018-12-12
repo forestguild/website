@@ -6,7 +6,7 @@ baseurl: ''
 url: https://forestguild.club
 timezone: Europe/Paris
 github: rakshazi/forestguild.club
-defaultActualAddon: 8.0.1
+defaultActualAddon: 8.1
 realm: galakrond
 disqus: forestguild
 verification:
