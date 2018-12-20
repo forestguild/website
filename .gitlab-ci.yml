@@ -23,9 +23,9 @@ build website:
   before_script:
     - /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.2/exe/bundle || bundle update #workaround for bugged bundler
   script:
-    - /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.2/exe/bundle jekyll wowdaily
-    - /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.2/exe/bundle jekyll build
-    - /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.2/exe/bundle jekyll build #to avoid amp images bug
+    - /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.2/exe/bundle exec jekyll wowdaily
+    - /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.2/exe/bundle exec jekyll build
+    - /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.2/exe/bundle exec jekyll build #to avoid amp images bug
   after_script:
     - echo "forestguild.club" > _site/CNAME
   artifacts:
