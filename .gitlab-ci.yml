@@ -21,8 +21,7 @@ build website:
   only:
     - master
   before_script:
-    - gem install bundler
-    - bundle update
+    - /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.2/exe/bundle || bundle update #workaround for bugged bundler
   script:
     - jekyll wowdaily
     - jekyll build
