@@ -21,11 +21,11 @@ build website:
   only:
     - master
   before_script:
-    - /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.2/exe/bundle || bundle update #workaround for bugged bundler
+    - bundle update
   script:
-    - /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.2/exe/bundle exec jekyll wowdaily
-    - /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.2/exe/bundle exec jekyll build
-    - /usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.2/exe/bundle exec jekyll build #to avoid amp images bug
+    - bundle exec jekyll wowdaily
+    - bundle exec jekyll build
+    - bundle exec jekyll build #to avoid amp images bug
   after_script:
     - echo "forestguild.club" > _site/CNAME
   artifacts:
