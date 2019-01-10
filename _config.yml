@@ -75,6 +75,5 @@ exclude:
 - Gemfile.lock
 - Makefile
 - README.md
-- updater
 - updater.php
 - orphans.txt
