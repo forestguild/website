@@ -102,11 +102,11 @@ class Updater extends Updater\Base
         $this->log(null, '=================== End Guild Progress =====================');
 
         // Update characters progress
-        $this->log(null, '===================== Characters Progress =====================');
-        $chars = $this->bnet->getCharacters();
-        $this->wowprogress->updateCharacters($chars);
-        $this->raiderio->updateCharacters($chars);
-        $this->log(null, '=================== End Characters Progress =====================');
+        //$this->log(null, '===================== Characters Progress =====================');
+        //$chars = $this->bnet->getCharacters();
+        //$this->wowprogress->updateCharacters($chars);
+        //$this->raiderio->updateCharacters($chars);
+        //$this->log(null, '=================== End Characters Progress =====================');
     }
 
     /**
