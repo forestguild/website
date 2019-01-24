@@ -1,3 +1,0 @@
-# List of urls that should be deleted after some time
-/raid
-/wiki/reagents
