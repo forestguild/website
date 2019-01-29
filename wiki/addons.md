@@ -73,5 +73,6 @@ CurseForge + Twitch = one love.
 * [mik scrolling text](https://wow.curseforge.com/projects/mik-scrolling-battle-text) - аддон, который меняет отображение урона, лечения, полученных эффектов, проков.
 * [nicedamage](https://wow.curseforge.com/projects/project-7401/files) - аддон, который меняет отображение цифр урона и делает их более приятными.
 * [HandyNotes](http://www.curse.com/addons/wow/handynotes) - полезные иконки на карте. Для работы этого аддона нужны плагины, например [HandyNotes DungeonLocations](https://wow.curseforge.com/projects/handynotes_dungeonlocations) отображает входы во все инсты и рейды на карте, плюс их статус (зачищен или нет, сколько боссов убито)
+* [WIM](https://www.curseforge.com/wow/addons/wim-3) - отдельная вкладка для каждого диалога (ЛС)
 
 *[только ручная установка]: Последняя версия аддона на CurseForge забагована и чинить ее не собираются, поэтому указана прямая ссылка на рабочую версию.

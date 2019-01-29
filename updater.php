@@ -5,16 +5,16 @@ declare(strict_types=1);
 /**
  * Guild info updater.
  */
-class Updater
+class updater
 {
     /**
      * Init.
      *
-     * @param string $region           WoW region, default: eu
-     * @param string $realm WoW Realm (server) name (english, lowercase
-     * @param int $realm_id Raider.IO Realm ID
-     * @param string $guild            Guild name
-     * @param array  $cloudflare       CloudFlare config ['zone_id' => '', 'email' => '', 'key' => '']. Default: null
+     * @param string $region     WoW region, default: eu
+     * @param string $realm      WoW Realm (server) name (english, lowercase
+     * @param int    $realm_id   Raider.IO Realm ID
+     * @param string $guild      Guild name
+     * @param array  $cloudflare CloudFlare config ['zone_id' => '', 'email' => '', 'key' => '']. Default: null
      */
     public function __construct(string $region, string $realm, int $realm_id, string $guild, array $cloudflare = null)
     {
@@ -26,7 +26,7 @@ class Updater
             'guild' => $guild,
             'numMembers' => 0, //amout of members to update. 0 = all
         ];
-        if($cloudflare) {
+        if ($cloudflare) {
             $this->cloudflare = [
                 'url' => 'https://api.cloudflare.com/client/v4/zones/'.$cloudflare['zone_id'].'/purge_cache',
                 'headers' => [
@@ -43,7 +43,7 @@ class Updater
      */
     public function purgeCache(): void
     {
-        if($this->cloudflare) {
+        if ($this->cloudflare) {
             $data = \json_decode($this->send($this->cloudflare['url'], \json_encode(['purge_everything' => true]), $this->cloudflare['headers']), true);
             $this->log('CloudFlare.purgeCache', ($data['success'] ?? false) ? 'success' : 'fail');
         } else {
@@ -52,8 +52,7 @@ class Updater
     }
 
     /**
-     * Update guild progress on WowProgress.com
-     * @return void
+     * Update guild progress on WowProgress.com.
      */
     public function runWowProgress(): void
     {
@@ -77,8 +76,7 @@ class Updater
     }
 
     /**
-     * Update guild progress on Raider.io
-     * @return void
+     * Update guild progress on Raider.io.
      */
     public function runRaiderIO(): void
     {
@@ -155,7 +153,7 @@ class Updater
     }
 }
 
-$updater = new Updater('eu', 'galakrond', 607, 'Ясный Лес',[
+$updater = new Updater('eu', 'galakrond', 607, 'Ясный Лес', [
     'zone_id' => \getenv('CF_ZONE_ID'),
     'email' => \getenv('CF_API_EMAIL'),
     'key' => \getenv('CF_API_KEY'),
