@@ -32,13 +32,13 @@ class Wowdaily < Jekyll::Command
 
                     # Parse it
                     puts "Parsing..."
-                    doc.css(".tiw-group-epiceliteworldbfa").css(".icon-both").css("a").each do |a|
+                    doc.css(".tiw-group-epiceliteworldbfa").css("span").css("a").each do |a|
                         worldboss = {"name": a.text,"url": "https://ru.wowhead.com" + a.get_attribute("href")}
                     end
                     doc.css(".tiw-group-wowtoken").css(".moneygold").each do |gold|
                         wowtoken = gold.text.gsub(",","").to_i
                     end
-                    doc.css(".tiw-group-holiday").css("td").css("a").each do |a|
+                    doc.css(".tiw-group-holiday").css("span").css("a").each do |a|
                         holiday = {"name" => a.text, "url" => "https://ru.wowhead.com" + a.get_attribute("href"), "fraction" => getFractionByCss(a.parent.get_attribute("class"))}
                         holidays.push(holiday)
                     end
