@@ -9,10 +9,10 @@
 {% when 'horizontal' %}
 <div class="row container-fluid">
     {% for item in site.data.nav.wiki | limit: blocks %}
-    <div class="col-lg-3">
+    <div class="col">
         <h3 class="{% if item.class %}{{ item.class }}{% endif %}">{{ item.title }}</h3>
         {% if item.items[0] %}
-        <ul>
+        <ul class="wiki-menu">
             {% for entry in item.items %}
             <li><b><a class="{% if entry.class %}{{ entry.class }}{% endif %}" href='{{ entry.url | canonical }}'>{{ entry.title }}</a></b>
             {% if entry.items[0] %}

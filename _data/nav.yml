@@ -22,20 +22,7 @@ top:
 
 # Wiki menu
 wiki:
-  - title: Рейд и мифик+
-    items:
-      - title: Рейд
-        url: /wiki/raid
-        items:
-          - title: Чек-лист
-            class: text-uppercase badge badge-dark
-            url: /wiki/raid/checklist
-          - title: Тактика
-            class: text-uppercase badge badge-dark
-            url: /wiki/raid/tactics
-      - title: Мифик+
-        url: /wiki/keystones
-  - title: Классные классы
+  - title: Классы
     items:
       - title: Друид
         url: /wiki/classes/druid
@@ -58,14 +45,35 @@ wiki:
           - title: МДД
             class: text-uppercase badge badge-danger
             url: /wiki/classes/shaman/enhancement
-  - title: Фермер Юн
+  - title: Быстрый старт
     items:
-      - title: Добыча золота
+      - title: Как одеться
+        url: /wiki/start/gear
+  - title: Фарм
+    items:
+      - title: Золото
         url: /wiki/goldfarm
-      - title: Репутация BfA
-        url: /wiki/reputation/bfa
-      - title: Репутация Legion
-        url: /wiki/reputation/legion
+      - title: Репутация
+        items:
+        - title: BfA
+          url: /wiki/reputation/bfa
+          class: badge color-wow
+        - title: Legion
+          url: /wiki/reputation/legion
+          class: badge badge-success
+  - title: EndGame
+    items:
+      - title: Рейд
+        url: /wiki/raid
+        items:
+          - title: Чек-лист
+            class: text-uppercase badge badge-dark
+            url: /wiki/raid/checklist
+          - title: Тактика
+            class: text-uppercase badge badge-dark
+            url: /wiki/raid/tactics
+      - title: Мифик+
+        url: /wiki/keystones
   - title: Инструментарий
     items:
       - title: Аддоны

@@ -1,12 +1,15 @@
-{% assign actual = page.actual | default: site.defaultActualAddon %}
 {% assign related = page.related | default: "specs-only" %}
 <div class="alert text-white bg-dark" role="alert">
     <div class="row">
         <div class="col text-left">
             <span class="d-none d-lg-inline">Актуально для:</span>
-            {% for item in actual %}
+            {% if page.actual %}
+            {% for item in page.actual %}
             <span class="badge badge-light badge-lg">{{ item }}</span>
             {% endfor %}
+            {% else %}
+            <span class="badge badge-light badge-lg">{{ site.defaultActualAddon }}</span>
+            {% endif %}
         </div>
         <div class="col text-center">
             &raquo;{{ page.title }}&laquo;

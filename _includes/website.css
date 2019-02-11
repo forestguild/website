@@ -41,6 +41,23 @@ h5, h6, b, strong, .b-serp-item__number {
     font-size: 1.3rem !important;
 }
 
+.color-wow {
+    background-color: #2b374c;
+    color: #f4bf2a;
+}
+
+.color-wow:hover, .color-wow:focus {
+    text-decoration: none;
+    background-color: #002650;
+    color: #f4bf2a;
+}
+
+.wiki-menu {
+    list-style: none;
+    padding-left: 0;
+}
+
+
 .live-icon {
     color: #dc3545;
     font-size: 3rem;
