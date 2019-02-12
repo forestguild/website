@@ -8,9 +8,6 @@ top:
   - title: Оружейная
     url: https://eu.battle.net/wow/ru/guild/galakrond/Ясный_Лес/
     external: true
-  - title: WoWProgress
-    url: https://www.wowprogress.com/guild/eu/галакронд/Ясный+Лес
-    external: true
   - title: Raider.IO
     url: https://raider.io/guilds/eu/galakrond/Ясный%20Лес
     external: true
@@ -46,6 +43,7 @@ wiki:
             class: text-uppercase badge badge-danger
             url: /wiki/classes/shaman/enhancement
       - title: Воин
+        url: /wiki/classes/warrior/fury
         items:
           - title: Неистовство
             url: /wiki/classes/warrior/fury
