@@ -45,6 +45,11 @@ wiki:
           - title: МДД
             class: text-uppercase badge badge-danger
             url: /wiki/classes/shaman/enhancement
+      - title: Воин
+        items:
+          - title: Неистовство
+            url: /wiki/classes/warrior/fury
+            class: badge badge-danger
   - title: Быстрый старт
     items:
       - title: Как одеться
