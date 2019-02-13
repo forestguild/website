@@ -26,7 +26,6 @@ layout: core/compress
         <loc>{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}</loc>
         <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
         {% if page.layout == 'wiki' %}
-        <xhtml:link rel="amphtml" href="{{ page.url | canonical: 'amp' }}"/>
         {% endif %}
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>

@@ -26,6 +26,12 @@ module Jekyll
         # Special for Yandex.Turbo, because their parsers raise warnings
         def removeToc(input)
             input.gsub(/(<!-- vim-markdown-toc.*<!-- vim-markdown-toc -->\n)/m, '')
+            content = Nokogiri::HTML.fragment(input)
+            content.css("a").each do |a|
+                next unless a.get_attribute("href").start_with?('#')
+                a.replace(a.content)
+            end
+            content.to_s
         end
 
         def canonical(input, prefix = '')
