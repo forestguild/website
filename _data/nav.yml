@@ -1,7 +1,5 @@
 # Navbar top menu
 top:
-  - title: Ясный Лес
-    url: /
   - title: Discord
     url: https://discord.gg/v9mNxAS
     external: true
@@ -22,6 +20,7 @@ wiki:
   - title: Классы
     items:
       - title: Друид
+        class: text-wow
         url: /wiki/classes/druid
         items:
           - title: Танк
@@ -34,6 +33,7 @@ wiki:
             class: text-uppercase badge badge-danger
             url: /wiki/classes/druid/balance
       - title: Шаман
+        class: text-wow
         url: /wiki/classes/shaman
         items:
           - title: РДД
@@ -43,6 +43,7 @@ wiki:
             class: text-uppercase badge badge-danger
             url: /wiki/classes/shaman/enhancement
       - title: Воин
+        class: text-wow
         url: /wiki/classes/warrior/fury
         items:
           - title: Неистовство
@@ -51,12 +52,15 @@ wiki:
   - title: Быстрый старт
     items:
       - title: Как одеться
+        class: text-wow
         url: /wiki/start/gear
   - title: Фарм
     items:
       - title: Золото
+        class: text-wow
         url: /wiki/goldfarm
       - title: Репутация
+        class: text-wow
         items:
         - title: BfA
           url: /wiki/reputation/bfa
@@ -67,6 +71,7 @@ wiki:
   - title: EndGame
     items:
       - title: Рейд
+        class: text-wow
         url: /wiki/raid
         items:
           - title: Чек-лист
@@ -76,12 +81,16 @@ wiki:
             class: text-uppercase badge badge-dark
             url: /wiki/raid/tactics
       - title: Мифик+
+        class: text-wow
         url: /wiki/keystones
   - title: Инструментарий
     items:
       - title: Аддоны
+        class: text-wow
         url: /wiki/addons
       - title: Discord
+        class: text-wow
         url: /wiki/discord
       - title: Помощь сайту
+        class: text-wow
         url: /wiki/contributions
