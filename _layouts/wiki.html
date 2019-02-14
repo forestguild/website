@@ -2,19 +2,17 @@
 layout: core/page
 ---
 <nav class="bg-img-red d-none d-lg-block">
-    <hr class="lg" style="top:-40px">
     {% include menu.html view="horizontal" %}
-    <hr class="lg" style="transform: scaleY(-1);bottom:-20px">
 </nav>
-
+<div class="divider"></div>
 <main class="container-fluid">
 <div class="row">
-    <button class="btn btn-danger btn-lg btn-block d-lg-none mx-auto" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="menu">МЕНЮ</button>
+    <button class="btn btn-outline-warning btn-lg btn-block d-lg-none mx-auto" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="menu">МЕНЮ</button>
     <div class="col-md-12 mt-4 ml-2  d-lg-none collapse pt-0" id="menu">
         {% include menu.html view="vertical" %}
     </div>
 
-    <div itemscope itemtype="http://schema.org/Article" class="jumbotron wiki text-white col-lg-12 mb-0">
+    <div itemscope itemtype="http://schema.org/Article" class="jumbotron wiki col-lg-12 mb-0 pt-2">
         <!--schema.org article tags-->
         <span itemprop="name" class="d-none">{{ page.title }}</span>
         <span itemprop="headline" class="d-none">{{ page.title }}</span>
@@ -33,8 +31,7 @@ layout: core/page
         <span itemprop="datePublished" class="d-none">{{ site.time }}</span>
         <span itemprop="description" class="d-none">{{ page.description }}</span>
         <!--end schema.org-->
-        <h1>{{ page.title }} <small class="text-muted" style="font-size: 50%">{{ page.metatitle }}</small></h1>
-        {% include actualbanner.html %}
+        <h1 class="header">{{ page.title }} <small class="text-muted" style="font-size: 50%">{{ page.metatitle }}</small></h1>
         {{ content }}
         <!-- Yandex.RTB {{ site.ads.page.bottom }} -->
         <div id="yandex_rtb_{{ site.ads.page.bottom }}"></div>

@@ -8,6 +8,31 @@ body {
     background: #120d0a;
 }
 
+h1, h2, h3, h4, h5, h6, b {
+    font-weight: 700;
+    line-height: 1.5em;
+    color: #fff;
+    text-shadow: 0 0 1px transparent, 0 0 5px rgba(0,0,0,.8);
+}
+
+a {
+    color: #f4bf2a;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bg-dark {
+    border: 1px solid #c77e19;
+    border-radius: 3px;
+    background: rgba(0,0,0,.4);
+    color: #f7b10a;
+    -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+}
+
 .btn-outline-warning {
     border: 1px solid #c77e19;
     background: rgba(0,0,0,.4);
@@ -178,7 +203,7 @@ body {
 }
 
 div.home-affixes {
-    background-image:url(/assets/img/design/bg.affixes.jpg);
+    background: url(/assets/img/design/bg.affixes.jpg) no-repeat;
     color: #ebdec2;
     text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
 }
@@ -229,7 +254,7 @@ div.home-affixes .footer {
 
 div.home-today {
     height: 480px;
-    background-image:url(/assets/img/design/bg.today.jpg);
+    background: url(/assets/img/design/bg.today.jpg) no-repeat;
     color: #ebdec2;
     text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
     font-size: 1.1rem;
@@ -237,9 +262,23 @@ div.home-today {
 
 div.home-connect {
     height: 480px;
-    background-image:url(/assets/img/design/bg.connect.jpg);
+    background: url(/assets/img/design/bg.connect.jpg) no-repeat;
     color: #ebdec2;
     text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
     font-size: 1.2rem;
 }
 /*********** END HOME ************/
+
+
+/*********** WIKI ************/
+div.jumbotron.wiki {
+    background-color: #211510;
+    background-image: url(/assets/img/design/bg.dark.jpg);
+    background-position: top;
+    background-repeat: repeat;
+    color: #ebdec2;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+    font-size: 1.1rem;
+}
+
+/*********** END WIKI ************/
