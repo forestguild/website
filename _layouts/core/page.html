@@ -11,7 +11,7 @@ layout: core/default
 (function(window){var html=document.documentElement,isSupported=null;function checkSupport(fn){var WebP=new Image;WebP.onload=WebP.onerror=function(){isSupported=WebP.height===2;if(isSupported){if(html.className.indexOf("no-webp")>=0)html.className=html.className.replace(/\bno-webp\b/,"webp");else html.className+=" webp"}};WebP.src="data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA"}checkSupport()})(window);
     </script>
     {% include assets.html block="head" %}
-    <style>{% include website.css %}</style>
+    <style>{% include design/website.css %}</style>
 
     {% comment %}SEO and verification stuff{% endcomment %}
     <meta property="og:title" content="{% if page.metatitle %}{{ page.metatitle }}{% else %}{{ site.title }}{% endif %}" />
@@ -41,30 +41,23 @@ layout: core/default
     <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter{{ site.analytics.yandex }} = new Ya.Metrika2({ id:{{ site.analytics.yandex }}, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/50342920" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </head>
 <body>
-
-    <!--DESKTOP menu-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
         <a class="navbar-brand d-lg-none" href="/">{{ site.name }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
+            <a class="navbar-brand" href="/"><img src="/assets/img/logo.png" style="width:50px"/></a>
             <ul class="navbar-nav mr-auto">
                 {% for item in site.data.nav.top %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ item.url }}" {% if item.external %}rel="nofollow" target="_blank"{% endif %}>{{ item.title }}</a>
+                    <a class="nav-link" href="{{ item.url }}" {% if item.external %}rel="nofollow" target="_blank"{% endif %}><span>{{ item.title }}</span></a>
                 </li>
                 {% endfor %}
             </ul>
-            <form action="/search" method="get" accept-charset="utf-8" onsubmit="yaCounter{{ site.analytics.yandex }}.reachGoal('site_search');return true;" class="form-inline my-2 my-lg-0">
-                <input type="hidden" name="searchid" value="{{ site.search }}" />
-                <input type="hidden" name="l10n" value="ru"/>
-                <input type="hidden" name="reqenc" value="utf-8"/>
-                <input class="form-control mr-md-2" type="search" name="text" placeholder="Поиск" aria-label="Поиск">
-            </form>
             <ul class="navbar-nav mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/wiki">База знаний</a>
+                    <a class="nav-link" href="/wiki"><span>База знаний</span></a>
                 </li>
             </ul>
         </div>
@@ -74,7 +67,7 @@ layout: core/default
     {% endif %}
     {{ content }}
     </main>
-    <div class="fixed-bottom"><noindex class="text-gray float-right">Logo made by <a href="http://www.freepik.com/" target="_blank" rel="nofollow">Freepik</a> from <a href="http://www.flaticon.com/" target="_blank" rel="nofollow">www.flaticon.com</a></noindex></div>
+    <div class="fixed-bottom"><noindex class="text-gray float-right">Logo made by <a href="http://www.freepik.com/" target="_blank" rel="nofollow">Freepik</a> from <a href="http://www.flaticon.com/" target="_blank" rel="nofollow">www.flaticon.com</a>. Images by <a href="http://worldofwarcraft.com" target="_blank" rel="nofollow">Blizzard</a></noindex></div>
     {% include logo.svg %}
     {% include assets.html block="footer" %}
     <script>{% include website.js %}</script>

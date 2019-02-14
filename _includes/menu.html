@@ -7,10 +7,10 @@
 {% case include.view %}
 
 {% when 'horizontal' %}
-<div class="row container-fluid">
+<div class="row container-fluid" style="padding-top: 100px;">
     {% for item in site.data.nav.wiki | limit: blocks %}
     <div class="col">
-        <h3 class="{% if item.class %}{{ item.class }}{% endif %}">{{ item.title }}</h3>
+        <h3 class="header">{{ item.title }}</h3>
         {% if item.items[0] %}
         <ul class="wiki-menu">
             {% for entry in item.items %}

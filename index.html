@@ -1,85 +1,91 @@
 ---
 layout: core/page
 ---
-<div class="container-fluid index">
-    <h1>Сегодня в WoW</h1>
+<div class="home-affixes mt-2">
     <div class="row">
-        <div class="col-lg-12 d-lg-flex d-md-block align-items-stretch">
-            <div class="card text-white bg-dark mr-lg-5">
-                <div class="card-body">
-                    <h3 class="card-title">Аффиксы <small class="text-muted">недельные и сезонные</small></h3>
-                    <span class="card-title text-muted" style="font-size: 1.2rem !important">текущая неделя</span>
-                    {% include affixes.html %}
-                    <div class="d-none d-lg-block">
-                    <span class="card-title text-muted"style="font-size: 1.2rem !important">следующая неделя</span>
-                    {% include affixes.html when="next" %}
-                    </div>
-                    <h3 class="text-muted">не знаешь, что это?</h3>
-
-                    <a href="/wiki/keystones" class="btn btn-lg btn-block btn-danger">Гайд</a>
-                </div>
-            </div>
-            <div class="card text-white bg-dark mr-lg-5" style="border: 1px solid #ffc107">
-                <div class="card-body">
-                    <h3 class="card-title">
-                        <span class="live-icon">&bull;</span>Прямо сейчас
-                        <small class="text-danger">горячие новости с места событий</small>
-                    </h3>
-                    {% assign data = site.data.wowdaily %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <span class="text-danger">Мировой босс</span><br />
-                            <a href="{{ data.worldboss.url }}" style="font-size: 1.2rem !important" target="_blank" rel="nofollow">{{ data.worldboss.name }}</a><br>
-                            <span class="text-danger">События</span><br />
-                            {% assign holidaysCount = data.holidays|size %}
-                            {% if holidaysCount > 0 %}
-                            {% for item in data.holidays %}
-                            <a href="{{ item.url }}" target="_blank" style="font-size: 1.2rem !important" rel="nofollow">{{ item.name }}</a><br />
-                            {% endfor %}
-                            {% else %}
-                            Пока все тихо<br />
-                            {% endif %}
-                            <span class="text-danger">Островные экспедиции</span><br />
-                            {% for item in data.islandexpeditions %}
-                            <a href="{{ item.url }}" target="_blank" style="font-size: 1.2rem !important" rel="nofollow">{{ item.name }}</a><br />
-                            {% endfor %}
-                        </div>
-                        <div class="col-md-6">
-                            <span class="text-danger">Эмиссары фракций</span><br />
-                            {% assign emissares = data.emissares | sort: "fraction" | reverse %}
-                            {% for item in emissares %}
-                            <img src="/assets/img/{{ item.fraction }}.png" style="width: 1.2rem"><a href="{{ item.url }}" target="_blank" style="font-size: 1.2rem !important" rel="nofollow">{{ item.name }}</a><br />
-                            {% endfor %}
-                            <div class="col-lg-12 text-right">
-                            <i>Нужна помощь? Смотри <a href="/wiki/reputation/bfa">гайд</a></i>
-                            </div>
-                            <span class="text-danger">Жетон WoW</span><br />
-                            <b>{{ data.wowtoken }}</b><img src="/assets/img/gold.jpg"><br />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 text-right">
-                            <i class="text-muted">Информация взята с <a href="https://ru.wowhead.com" target="_blank" rel="nofollow">Wowhead</a></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <iframe class="col-lg-3 col-md-12" style="min-height: 400px" src="https://discordapp.com/widget?id=252328604443082753&theme=dark" allowtransparency="true" frameborder="0"></iframe>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-9">
-            <h1 class="float-right">Гайды, стратегии и секреты</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="card text-white bg-dark mb-3 col-lg-9">
+        <div class="card bg-transparent col-lg-5 offset-lg-7">
             <div class="card-body">
-                {% include menu.html view="horizontal" %}
+                <h1 class="header text-right">Мифик+ аффиксы</h1>
+                <div class="home-affixes-line">
+                    {% include affixes.html %}
+                </div>
+                <div class="d-none d-lg-block">
+                    <span class="card-title"style="font-size: 1.2rem !important">следующая неделя</span>
+                    <div class="home-affixes-line">
+                        {% include affixes.html when="next" %}
+                    </div>
+                </div>
+                <div class="footer">
+                    Не знаешь что это? Прочти <a href="/wiki/keystones" class="btn btn-lg btn-outline-warning">Гайд</a>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-3 text-center">
-            <svg height="200px" title="{{ site.title }}" alt="{{ site.title }}"><use xlink:href="#logo" /></svg>
         </div>
     </div>
 </div>
+<div class="home-divider"></div>
+<div class="home-today">
+    <div class="row">
+        <div class="card bg-transparent col-lg-6">
+            <div class="card-body">
+                {% assign data = site.data.wowdaily %}
+                {% assign emissares = data.emissares | sort: "fraction" | reverse %}
+                {% assign holidaysCount = data.holidays|size %}
+                <h1 class="header text-left">Прямо сейчас</h1>
+                Наши корреспонденты верхом на новогодних свиньях круглосуточно рассекают по всему Азероту в поисках самых горячих событий.
+                Ежечасно самые свежие новости доставляются прямо сюда.<br />
+
+                <ul>
+                    <li>
+                        Мировой босс <a href="{{ data.worldboss.url }}" style="font-size: 1.2rem !important" target="_blank" rel="nofollow">{{ data.worldboss.name }}</a>
+                        разоряет дома простых жителей Кул-Тираса и Зандалара.
+                    </li>
+                    {% if holidaysCount > 0 %}
+                    <li>
+                        По всему Азероту гремит
+                        {% for item in data.holidays %}<a href="{{ item.url }}" target="_blank" style="font-size: 1.2rem !important" rel="nofollow">{{ item.name }}</a>, {% endfor %}
+                    </li>
+                    {% endif %}
+                    <li>
+                        Для экскурсий доступны следующие острова:
+                        {% for item in data.islandexpeditions %}<a href="{{ item.url }}" target="_blank" style="font-size: 1.2rem !important" rel="nofollow">{{ item.name }}</a>,{% endfor %}
+                    </li>
+                    <li>
+                        {% for item in emissares %}
+                        <img src="/assets/img/{{ item.fraction }}.png" style="width: 1.2rem">
+                        <a href="{{ item.url }}" target="_blank" style="font-size: 1.2rem !important" rel="nofollow">{{ item.name }}</a>,
+                        {% endfor %} взывают о помощи! Естественно, не бесплатно. <a href="/wiki/reputation/bfa" class="text-danger">Подробности &rarr;</a>
+                    </li>
+                    <li>
+                        По последним данным, самый спекулятивный товар на рынке - <a href="https://ru.wowhead.com/item=122284/" target="_blank" rel="nofollow"  style="font-size: 1.2rem !important">Жетон WoW</a> - оценивается в безумные <b>{{ data.wowtoken }}</b><img src="/assets/img/gold.jpg">. Стоит ли брать его?
+                </ul>
+
+                Информация подготовлена при помощи <a href="https://ru.wowhead.com" target="_blank" rel="nofollow">Wowhead</a> и сотне отборнейших троллей верхом на свиньях, колесящим по просторам всего Азерота.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-divider"></div>
+<div class="home-connect">
+    <div class="row">
+        <div class="card bg-transparent col-lg-3">
+            <div class="card-body text-right">
+                <iframe src="https://discordapp.com/widget?id=252328604443082753&theme=dark" allowtransparency="true" frameborder="0" height="400px" class="col-lg-12"></iframe>
+            </div>
+        </div>
+
+        <div class="card bg-transparent col-lg-5 offset-lg-4">
+            <div class="card-body text-center">
+                <h1 class="header">Ты нужен Ясному Лесу</h1>
+                <p>Один в поле не воин, даже Старый Солдат это подтвердил. Присоединяйся к Ясному Лесу и воткни горящий Тельдрассил Андуину в зад.
+                <i class="text-muted">Ну или Джайне. Не в зад</i></p>
+                <svg height="250px" title="{{ site.title }}" alt="{{ site.title }}"><use xlink:href="#logo" /></svg>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-divider"></div>
+<nav class="bg-img-red d-none d-lg-block">
+    <!--<hr class="lg" style="top:-40px">-->
+    {% include menu.html view="horizontal" %}
+    <!--<hr class="lg" style="transform: scaleY(-1);bottom:-20px">-->
+</nav>
