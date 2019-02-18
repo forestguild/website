@@ -247,7 +247,7 @@ actual:
 
 ### Модификаторы (аффиксы)
 
-<div class="row" mardown="1">
+<div class="row" markdown="1">
 <div class="col-lg-6 col-md-12" markdown="1">
 
 Это различные усиления, которые делают прохождение подземелий сложнее.
@@ -292,7 +292,7 @@ actual:
 
 <hr>
 
-<div class="row" mardown="1">
+<div class="row" markdown="1">
 <div class="col-lg-6 col-md-12" markdown="1">
 #### 2+
 
@@ -313,7 +313,7 @@ actual:
 </div>
 </div>
 
-<div class="row" mardown="1">
+<div class="row" markdown="1">
 <div class="col-lg-6 col-md-12" markdown="1">
 #### 7+
 
