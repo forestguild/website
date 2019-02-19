@@ -313,4 +313,36 @@ div.jumbotron.wiki {
     background-image: url(/assets/img/design/bg.dark.webp);
 }
 
+div.jumbotron.wiki table {
+    border: 1px solid #c77e19;
+    border-radius: 3px;
+    -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+}
+.no-webp div.jumbotron.wiki table {
+    background: #211510 url(/assets/img/design/navbar.jpg) repeat-x 80px 0 !important;
+}
+.webp div.jumbotron.wiki table {
+    background: #211510 url(/assets/img/design/navbar.webp) repeat-x 80px 0 !important;
+}
+
+div.jumbotron.wiki table tr:hover {
+    background: #495057 !important;
+}
+
+div.jumbotron.wiki .tablesorter-filter {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
 /*********** END WIKI ************/

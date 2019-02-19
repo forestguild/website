@@ -221,6 +221,14 @@ actual:
 Чем выше ключ, тем больше награда, тем сложнее. А еще есть аффиксы, _смотри ниже_
 
 Таблица увеличения здоровья и урона противников, в зависимости от ключа:
+
+### Модификаторы (аффиксы)
+
+Это различные усиления, которые делают прохождение подземелий сложнее.
+Они меняются каждую неделю и разделены на 4 группы, каждая из которых открывается на определенном уровне эпохального+ подземелья - 2, 4, 7 и 10.
+То есть, при прохождении подземелья с ключом 3 уровня вы столкнетесь лишь с одним модификатором, а при прохождении подземелья с ключом 11 уровня - с четыремя.
+Каждую неделю добавляется несколько модификаторов, в зависимости от уровня ключа.
+
 </div>
 <div class="col-lg-3">
 <table>
@@ -228,6 +236,7 @@ actual:
     <tr>
         <th>Уровень ключа</th>
         <th>Увелиечение здоровья И урона</th>
+        <th>Количество аффиксов</th>
     </tr>
     </thead>
     <tbody>
@@ -235,6 +244,7 @@ actual:
     <tr>
         <td>{{ diff.key }}</td>
         <td>+{{ diff.mod }}%</td>
+        <td>{{ diff.affixes }}</td>
     </tr>
     {% endfor %}
     </tbody>
@@ -242,58 +252,28 @@ actual:
 </div>
 </div>
 
-
 <hr>
-
-### Модификаторы (аффиксы)
 
 <div class="row" markdown="1">
 <div class="col-lg-6 col-md-12" markdown="1">
-
-Это различные усиления, которые делают прохождение подземелий сложнее.
-Они меняются каждую неделю и разделены на 4 группы, каждая из которых открывается на определенном уровне эпохального+ подземелья - 2, 4, 7 и 10.
-То есть, при прохождении подземелья с ключом 3 уровня вы столкнетесь лишь с одним модификатором, а при прохождении подземелья с ключом 11 уровня - с четыремя.
-Каждую неделю добавляется несколько модификаторов, в зависимости от уровня ключа.
-</div>
-
-<div class="col-lg-6 col-md-12" markdown="1">
-
-| Уровни ключа | Количество аффиксов |
-|-|-|
-| 2-3 | 1 |
-| 4-6 | 2 |
-| 7-9 | 3 |
-| 10+ | 4 |
-
-</div>
-</div>
 
 #### Аффиксы на текущей и следующей неделе
 
-<div class="row">
-<div class="col-md-6">
-<div class="card text-white text-center bg-dark">
-<h4 class="card-header">Текущая неделя</h4>
-<div class="card-body">
-<p class="card-text">{% include affixes.html when="now" %}</p>
+<div class="col-lg-12">
+<span class="card-title" style="font-size: 1.2rem !important">сейчас</span>
+<div class="home-affixes-line bg-dark">
+{% include affixes.html when="now" %}
 </div>
 </div>
-</div>
-<div class="col-md-6">
-<div class="card text-white text-center bg-dark">
-<h4 class="card-header">Следующая неделя</h4>
-<div class="card-body">
-<p class="card-text">{% include affixes.html when="next" %}</p>
+<div class="col-lg-12">
+<span class="card-title" style="font-size: 1.2rem !important">следующая неделя</span>
+<div class="home-affixes-line bg-dark">
+{% include affixes.html when="next" %}
 </div>
 </div>
-</div>
-</div>
-
 
 <hr>
 
-<div class="row" markdown="1">
-<div class="col-lg-6 col-md-12" markdown="1">
 #### 2+
 
 {% assign items = site.data.affixes.list | where: 'level', 2 %}
@@ -301,7 +281,6 @@ actual:
 * **[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
 {% endfor %}
 
-> **ProTip!** Первый модификатор просто укрепляет либо босса, либо треш. Он не особо чувтсвуется в низкоуровневых ключах, но становится большой проблемай на ключах высокого уровня
 </div>
 
 <div class="col-lg-6 col-md-12" markdown="1">

@@ -1,6 +1,6 @@
 $(function () {
     $('table').tablesorter({
-        theme: "blackice",
+        theme: "dark",
         widthFixed: true,
         widgets: ["filter"],
     })

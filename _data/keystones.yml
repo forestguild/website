@@ -90,32 +90,46 @@ timers:
 keydiff:
   - key: 2
     mod: 10
+    affixes: 1
   - key: 3
     mod: 21
+    affixes: 1
   - key: 4
     mod: 33
+    affixes: 2
   - key: 5
     mod: 46
+    affixes: 2
   - key: 6
     mod: 61
+    affixes: 2
   - key: 7
     mod: 77
+    affixes: 3
   - key: 8
     mod: 95
+    affixes: 3
   - key: 9
     mod: 114
+    affixes: 3
   - key: 10
     mod: 136
+    affixes: 4
   - key: 11
     mod: 159
+    affixes: 4
   - key: 12
     mod: 185
+    affixes: 4
   - key: 13
     mod: 214
+    affixes: 4
   - key: 14
     mod: 245
+    affixes: 4
   - key: 15
     mod: 280
+    affixes: 4
 loot:
   key:
     - key: 2
