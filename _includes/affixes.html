@@ -5,10 +5,11 @@
 {% endif %}
 
 <div class="row text-center">
-    {% for affix in affixes %}
+    {% for id in affixes %}
+    {% assign affix = site.data.affixes.list | where: 'id', id %}
     <div class="col">
-        <a href="https://ru.wowhead.com/affix={{ affix }}" data-wh-rename-link="false"><img src="/assets/img/affixes/{{ affix }}.jpg" class="rounded"/></a><br />
-        <a href="https://ru.wowhead.com/affix={{ affix }}">{{ affix }}</a>
+        <a href="https://ru.wowhead.com/affix={{ id }}" data-wh-rename-link="false"><img src="/assets/img/affixes/{{ id }}.jpg" class="rounded" width="36px"/></a><br />
+        <a href="https://ru.wowhead.com/affix={{ id }}">{{ affix[0].name }}</a>
     </div>
     {% endfor %}
 </div>
