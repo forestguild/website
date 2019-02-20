@@ -9,6 +9,9 @@
     {% assign affix = site.data.affixes.list | where: 'id', id %}
     <div class="col">
         <a href="https://ru.wowhead.com/affix={{ id }}" data-wh-rename-link="false">
+            {% if affix[0].note %}
+            <img src="/assets/img/roles/{{ affix[0].note.role }}.jpg" title="{{ affix[0].note.text }}" class="note" />
+            {% endif %}
             <img src="/assets/img/affixes/{{ id }}.jpg" class="rounded-circle" width="36px"/><br />
             {{ affix[0].name }}
         </a>

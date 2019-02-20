@@ -278,7 +278,7 @@ actual:
 
 {% assign items = site.data.affixes.list | where: 'level', 2 %}
 {% for item in items -%}
-* **[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
+* {% if item.note.role %}![{{ item.note.text }}](/assets/img/roles/{{ item.note.role }}.jpg "{{ item.note.text }}"){% endif %}**[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
 {% endfor %}
 
 </div>
@@ -288,7 +288,7 @@ actual:
 
 {% assign items = site.data.affixes.list | where: 'level', 4 %}
 {% for item in items -%}
-* **[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
+* {% if item.note.role %}![{{ item.note.text }}](/assets/img/roles/{{ item.note.role }}.jpg "{{ item.note.text }}"){% endif %}**[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
 {% endfor %}
 
 </div>
@@ -300,7 +300,7 @@ actual:
 
 {% assign items = site.data.affixes.list | where: 'level', 7 %}
 {% for item in items -%}
-* **[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
+* {% if item.note.role %}![{{ item.note.text }}](/assets/img/roles/{{ item.note.role }}.jpg "{{ item.note.text }}"){% endif %}**[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
 {% endfor %}
 
 </div>
@@ -310,7 +310,7 @@ actual:
 
 {% assign items = site.data.affixes.list | where: 'level', 10 %}
 {% for item in items -%}
-* **[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
+* {% if item.note.role %}![{{ item.note.text }}](/assets/img/roles/{{ item.note.role }}.jpg "{{ item.note.text }}"){% endif %}**[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
 {% endfor %}
 
 Почаще смотрите на шкалу "Войска противника", ведь на 20%, 40%, 60%, 80% и 100% _весь_ убитый в этот промежуток треш восстанет из мертвых и нападет на вас.
