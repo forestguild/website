@@ -12,6 +12,9 @@ top:
   - title: Логи
     url: https://www.warcraftlogs.com/guild/id/374677
     external: true
+  - title: Аудит
+    url: https://forestguild.club/audit
+    external: true
   - title: Лица
     url: https://photos.app.goo.gl/CTRCcerKGbZpvPmB8
     external: true
