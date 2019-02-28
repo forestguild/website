@@ -50,6 +50,9 @@ assets:
   - url: /assets/js/wowheadtooltips.js
     async: true
     type: js
+  - url: https://instant.page/1.2.1
+    integrity: sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn
+    type: js-module
 collections:
   - authors
 markdown: kramdown

@@ -226,13 +226,13 @@ div.home-affixes-line {
 }
 
 div.home-affixes-line img.note {
-    position: absolute; 
-    width: 20px !important; 
-    height: 20px !important; 
-    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8); 
-    border: 1px solid #c77e19; 
-    border-radius: 30px; 
-    left: 40%; 
+    position: absolute;
+    width: 20px !important;
+    height: 20px !important;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+    border: 1px solid #c77e19;
+    border-radius: 30px;
+    left: 40%;
     top: 5px;
 }
 
@@ -282,29 +282,33 @@ div.home-affixes .footer {
 }
 
 div.home-today {
-    height: 480px;
     color: #ebdec2;
     text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+    background-size: cover;
     font-size: 1.1rem;
 }
+@media only screen and (min-width: 1024px) {
+    div.home-today, div.home-connect {
+        height: 480px;
+    }
+}
 .no-webp div.home-today {
-    background: url(/assets/img/design/bg.today.jpg) no-repeat;
+    background: url(/assets/img/design/bg.today.jpg) repeat-y;
 }
 .webp div.home-today {
-    background: url(/assets/img/design/bg.today.webp) no-repeat;
+    background: url(/assets/img/design/bg.today.webp) repeat-y;
 }
 
 div.home-connect {
-    height: 480px;
     color: #ebdec2;
     text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
     font-size: 1.2rem;
 }
 .no-webp div.home-connect {
-    background: url(/assets/img/design/bg.connect.jpg) no-repeat;
+    background: url(/assets/img/design/bg.connect.jpg) repeat-y;
 }
 .webp div.home-connect {
-    background: url(/assets/img/design/bg.connect.webp) no-repeat;
+    background: url(/assets/img/design/bg.connect.webp) repeat-y;
 }
 /*********** END HOME ************/
 

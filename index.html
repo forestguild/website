@@ -3,13 +3,14 @@ layout: core/page
 ---
 <div class="home-affixes mt-2">
     <div class="row">
-        <div class="card bg-transparent col-lg-6 offset-lg-6">
+        <div class="card bg-transparent col-xl-6 offset-xl-6">
             <div class="card-body">
-                <h1 class="header text-right">Мифик+ аффиксы</h1>
+                <h1 class="header text-right d-none d-md-block">Мифик+ аффиксы</h1>
+                <h1 class="header d-md-none" style="font-size: 1.5rem;">Мифик+ аффиксы</h1>
                 <div class="home-affixes-line">
                     {% include affixes.html %}
                 </div>
-                <div class="d-none d-lg-block">
+                <div class="d-none d-xl-block">
                     <span class="card-title"style="font-size: 1.2rem !important">следующая неделя</span>
                     <div class="home-affixes-line">
                         {% include affixes.html when="next" %}
@@ -25,7 +26,7 @@ layout: core/page
 <div class="home-divider"></div>
 <div class="home-today">
     <div class="row">
-        <div class="card bg-transparent col-lg-10">
+        <div class="card bg-transparent col-xl-10">
             <div class="card-body">
                 {% assign data = site.data.wowdaily %}
                 {% assign emissares = data.emissares | sort: "fraction" | reverse %}
@@ -64,20 +65,20 @@ layout: core/page
     </div>
 </div>
 <div class="home-divider d-none d-lg-block"></div>
-<div class="home-connect  d-none d-lg-block">
+<div class="home-connect">
     <div class="row">
-        <div class="card bg-transparent col-lg-3">
+        <div class="card bg-transparent col-xl-3 col-lg-6 col-sm-6">
             <div class="card-body text-right">
                 <iframe src="https://discordapp.com/widget?id=252328604443082753&theme=dark" allowtransparency="true" frameborder="0" height="400px" class="col-lg-12"></iframe>
             </div>
         </div>
 
-        <div class="card bg-transparent col-lg-5 offset-lg-4">
+        <div class="card bg-transparent col-xl-5 col-lg-6 col-sm-6 offset-xl-4 offset-lg-0">
             <div class="card-body text-center">
                 <h1 class="header">Ты нужен Ясному Лесу</h1>
                 <p>Один в поле не воин, даже Старый Солдат это подтвердил. Присоединяйся к Ясному Лесу и воткни горящий Тельдрассил Андуину в зад.
                 <i class="text-muted">Ну или Джайне. Не в зад</i></p>
-                <svg height="250px" title="{{ site.title }}" alt="{{ site.title }}"><use xlink:href="#logo" /></svg>
+                <svg height="250px" class="d-none d-xl-inline" title="{{ site.title }}" alt="{{ site.title }}"><use xlink:href="#logo" /></svg>
             </div>
         </div>
     </div>
