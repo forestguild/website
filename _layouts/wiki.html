@@ -3,58 +3,60 @@ layout: core/page
 ---
 <nav class="bg-img-red d-none d-lg-block">
     {% include menu.html view="horizontal" %}
+    <h1 class="header text-center">{{ page.title }}</h1>
 </nav>
 <div class="divider"></div>
 <main class="container-fluid">
-<div class="row">
-    <button class="btn btn-outline-warning btn-lg btn-block d-lg-none mx-auto" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="menu">МЕНЮ</button>
-    <div class="col-md-12 mt-4 ml-2  d-lg-none collapse pt-0" id="menu">
-        {% include menu.html view="vertical" %}
-    </div>
+    <div class="row">
+        <button class="btn btn-outline-warning btn-lg btn-block d-lg-none mx-auto" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="menu">МЕНЮ</button>
+        <div class="col-md-12 mt-4 ml-2  d-lg-none collapse pt-0" id="menu">
+            {% include menu.html view="vertical" %}
+        </div>
 
-    <div itemscope itemtype="http://schema.org/Article" class="jumbotron wiki col-lg-12 mb-0 pt-2">
-        <!--schema.org article tags-->
-        <span itemprop="name" class="d-none">{{ page.title }}</span>
-        <span itemprop="headline" class="d-none">{{ page.title }}</span>
-        <img itemprop="image" style="display: none !important" src="{{ site.url }}/assets/img/logo.png"/>
-        <p itemscope itemprop="author" class="d-none" itemtype="http://schema.org/Person">
-        <span itemprop="name">{% if page.author %}{{ page.author }}{% else %}{{ site.name }}{% endif %}</span>
-        {% if page.author %}
-        {% assign author = site.authors | where: "name", page.author | first %}
-        <a href="https://worldofwarcraft.com/ru-ru/character/{{ author.realm | default: site.realm }}/{{ author.char }}" target="_blank" rel="nofollow" itemprop="url">{{ author.name | default: author.char }}</a>
-        {% endif %}
-        </p>
-        <span itemprop="publisher" itemtype="http://schema.org/Organization" class="d-none">
-            <span itemprop="name">{{ site.title }}</span>
-        </span>
-        <span itemprop="genre" class="d-none">Гайд</span>
-        <span itemprop="datePublished" class="d-none">{{ site.time }}</span>
-        <span itemprop="description" class="d-none">{{ page.description }}</span>
-        <!--end schema.org-->
-        <h1 class="header">{{ page.title }} <small class="text-muted" style="font-size: 50%">{{ page.metatitle }}</small></h1>
-        {{ content }}
-        <!-- Yandex.RTB {{ site.ads.page.bottom }} -->
-        <div id="yandex_rtb_{{ site.ads.page.bottom }}"></div>
-        {% include actualbanner.html %}
+        <div itemscope itemtype="http://schema.org/Article" class="jumbotron wiki col-lg-12 mb-0 pt-2">
+            <!--schema.org article tags-->
+            <span itemprop="name" class="d-none">{{ page.title }}</span>
+            <span itemprop="headline" class="d-none">{{ page.title }}</span>
+            <img itemprop="image" style="display: none !important" src="{{ site.url }}/assets/img/logo.png"/>
+            <p itemscope itemprop="author" class="d-none" itemtype="http://schema.org/Person">
+            <span itemprop="name">{% if page.author %}{{ page.author }}{% else %}{{ site.name }}{% endif %}</span>
+            {% if page.author %}
+            {% assign author = site.authors | where: "name", page.author | first %}
+            <a href="https://worldofwarcraft.com/ru-ru/character/{{ author.realm | default: site.realm }}/{{ author.char }}" target="_blank" rel="nofollow" itemprop="url">{{ author.name | default: author.char }}</a>
+            {% endif %}
+            </p>
+            <span itemprop="publisher" itemtype="http://schema.org/Organization" class="d-none">
+                <span itemprop="name">{{ site.title }}</span>
+            </span>
+            <span itemprop="genre" class="d-none">Гайд</span>
+            <span itemprop="datePublished" class="d-none">{{ site.time }}</span>
+            <span itemprop="description" class="d-none">{{ page.description }}</span>
+            <!--end schema.org-->
+            <h1 class="header text-center d-lg-none">{{ page.title }}</h1>
+            <h3 class="text-muted">{{ page.metatitle }}</h3>
+            {{ content }}
+            <!-- Yandex.RTB {{ site.ads.page.bottom }} -->
+            <div id="yandex_rtb_{{ site.ads.page.bottom }}"></div>
+            {% include actualbanner.html %}
+        </div>
+        <hr class="lg" style="width: 100%;">
+        <div class="col-lg-10 offset-lg-1" id="disqus_thread"></div>
     </div>
-    <hr class="lg" style="width: 100%;">
-    <div class="col-lg-10 offset-lg-1" id="disqus_thread"></div>
-</div>
-<script type="text/javascript">
-(function(w, d, n, s, t) {
-    w[n] = w[n] || [];
-    w[n].push(function() {
-    Ya.Context.AdvManager.render({
-    blockId: "{{ site.ads.page.bottom }}",
-        renderTo: "yandex_rtb_{{ site.ads.page.bottom }}",
-        async: true
-});
-});
-    t = d.getElementsByTagName("script")[0];
-    s = d.createElement("script");
-    s.type = "text/javascript";
-    s.src = "//an.yandex.ru/system/context.js";
-    s.async = true;
-    t.parentNode.insertBefore(s, t);
-})(this, this.document, "yandexContextAsyncCallbacks");
-</script>
+    <script type="text/javascript">
+        (function(w, d, n, s, t) {
+            w[n] = w[n] || [];
+            w[n].push(function() {
+                Ya.Context.AdvManager.render({
+                    blockId: "{{ site.ads.page.bottom }}",
+                    renderTo: "yandex_rtb_{{ site.ads.page.bottom }}",
+                    async: true
+                });
+            });
+            t = d.getElementsByTagName("script")[0];
+            s = d.createElement("script");
+            s.type = "text/javascript";
+            s.src = "//an.yandex.ru/system/context.js";
+            s.async = true;
+            t.parentNode.insertBefore(s, t);
+        })(this, this.document, "yandexContextAsyncCallbacks");
+    </script>

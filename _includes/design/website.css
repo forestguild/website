@@ -65,12 +65,12 @@ a:hover, a:focus {
 
 .no-webp .bg-img-red {
     background: url("/assets/img/design/bg.red.jpg") no-repeat top left #120d0a;
-    height: 335px;
+    /*height: 335px;*/
 }
 
 .webp .bg-img-red {
     background: url("/assets/img/design/bg.red.webp") no-repeat top left #120d0a;
-    height: 335px;
+    /*height: 335px;*/
 }
 
 /*********** NAVBAR ************/
