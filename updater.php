@@ -10,13 +10,12 @@ class updater
     /**
      * Init.
      *
-     * @param string $region     WoW region, default: eu
-     * @param string $realm      WoW Realm (server) name (english, lowercase
-     * @param int    $realm_id   Raider.IO Realm ID
-     * @param string $guild      Guild name
-     * @param array  $cloudflare CloudFlare config ['zone_id' => '', 'email' => '', 'key' => '']. Default: null
+     * @param string $region   WoW region, default: eu
+     * @param string $realm    WoW Realm (server) name (english, lowercase
+     * @param int    $realm_id Raider.IO Realm ID
+     * @param string $guild    Guild name
      */
-    public function __construct(string $region, string $realm, int $realm_id, string $guild, array $cloudflare = null)
+    public function __construct(string $region, string $realm, int $realm_id, string $guild)
     {
         $this->wowprogress = 'https://wowprogress.com/update_progress/guild/'.$region.'/'.$realm.'/'.\str_replace(' ', '+', $guild);
         $this->raiderio = [
@@ -26,29 +25,6 @@ class updater
             'guild' => $guild,
             'numMembers' => 0, //amout of members to update. 0 = all
         ];
-        if ($cloudflare) {
-            $this->cloudflare = [
-                'url' => 'https://api.cloudflare.com/client/v4/zones/'.$cloudflare['zone_id'].'/purge_cache',
-                'headers' => [
-                    'Content-Type: application/json',
-                    'X-Auth-Email: '.$cloudflare['email'],
-                    'X-Auth-Key: '.$cloudflare['key'],
-                ],
-            ];
-        }
-    }
-
-    /**
-     * Purge website cache.
-     */
-    public function purgeCache(): void
-    {
-        if ($this->cloudflare) {
-            $data = \json_decode($this->send($this->cloudflare['url'], \json_encode(['purge_everything' => true]), $this->cloudflare['headers']), true);
-            $this->log('CloudFlare.purgeCache', ($data['success'] ?? false) ? 'success' : 'fail');
-        } else {
-            $this->log('CloudFlare.purgeCache', 'fail. No API credentials provided');
-        }
     }
 
     /**
@@ -153,15 +129,6 @@ class updater
     }
 }
 
-$updater = new Updater('eu', 'galakrond', 607, 'Ясный Лес', [
-    'zone_id' => \getenv('CF_ZONE_ID'),
-    'email' => \getenv('CF_API_EMAIL'),
-    'key' => \getenv('CF_API_KEY'),
-]);
-
-if (($argv[1] ?? false) === 'update') {
-    $updater->runWowProgress();
-    $updater->runRaiderIO();
-} elseif (($argv[1] ?? false) === 'cache') {
-    $updater->purgeCache();
-}
+$updater = new Updater('eu', 'galakrond', 607, 'Ясный Лес');
+$updater->runWowProgress();
+$updater->runRaiderIO();

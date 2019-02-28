@@ -3,7 +3,6 @@ variables:
 stages:
   - build
   - deploy
-  - cleanup
 
 update progess:
   image: php:alpine
@@ -58,17 +57,5 @@ deploy:
     - git add --all
     - git commit -a -q -m Update
     - git push --no-thin --force origin HEAD:gh-pages
-  tags:
-    - docker
-
-cleanup:
-  stage: cleanup
-  image: php:alpine
-  only:
-    - master
-  except:
-    - schedules
-  script:
-    - php updater.php cache
   tags:
     - docker
