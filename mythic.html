@@ -1,0 +1,490 @@
+---
+layout: core/page
+metatitle: Мифик+ - полный гайд с таблицей лута, различиями и подробностями для WoW BfA
+title: Мифик+
+description: Гайд по мифик+ (эпохальным+) в WoW 8.1. Таблицы лута, различия, уровни наград и другие нюансы простым языком.
+author: Rakshazi
+related: false
+---
+<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top mythic">
+    <a class="navbar-brand d-lg-none" href="/">{{ page.title }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapseMythic" aria-controls="navbarCollapseMythic" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapseMythic">
+        <a class="navbar-brand rounded" href="/"><img src="/assets/img/affixes/117.jpg" style="width:50px"/></a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="#diff"><span>Отличия</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#addons"><span>Аддоны</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#faq"><span>F.A.Q</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#affixes"><span>Афиксы</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#loot"><span>Награды и лут</span></a></li>
+        </ul>
+        <ul class="navbar-nav mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/"><span>Ясный Лес</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="mythic-overview mt-2">
+    <div class="row">
+        <div class="card bg-transparent col-xl-5">
+            <div class="card-body">
+                <h1 class="header text-left">Что это?</h1>
+                Названий много: мифик+, ключи, эпохалки, м+...<br />
+                Суть одна: бьют - больно, мата - много, проходить - быстро, без дискорда - никак.
+                <strong>Мифик+</strong> - одна из сложностей подземелий в WoW. <br />
+                Основные отличия Эпохального+ (мифик+, мифик+, ключ) поздемелья от эпохального (мифик, м) в том, что в мифик+ игра на время (обычно 30-40 минут на проход),
+                все противники сильнее (чем больше ключ - тем сильнее мобы и боссы), а лут получаешь только за проход всего подземелья.
+            </div>
+        </div>
+        <div class="card bg-transparent col-xl-5 offset-xl-2">
+            <div class="card-body overflow-x">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Сложность</th>
+                            <th>Уровень</th>
+                            <th>Требуемый уровень вещей (ilvl)</th>
+                            <th>ilvl наград</th>
+                            <th>Заметка</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for lvl in site.data.keystones.difficulties %}
+                        <tr>
+                            <td>{{ lvl.difficulty }}</td>
+                            <td>{{ lvl.level }}</td>
+                            <td>{{ lvl.requiredIlvl }}</td>
+                            <td>{{ lvl.givenIlvl }}</td>
+                            <td>{{ lvl.note }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="diff" class="home-divider"></div>
+<div class="mythic-diff">
+    <div class="row">
+        <div class="card bg-transparent col-xl-10 offset-xl-1">
+            <div class="card-body overflow-x">
+                <div class="text-center">
+                    <h1 class="header">Различия</h1>
+                    Вот полная табличка различий между мифик+ и эпохальными подземельями
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Различие</th>
+                            <th>Эпохальный</th>
+                            <th>Эпохальный+</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for lvl in site.data.keystones.diff %}
+                        <tr>
+                            <td>{{ lvl.name }}</td>
+                            <td>{{ lvl.m }}</td>
+                            <td>{{ lvl.key }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="addons" class="home-divider d-none d-lg-block"></div>
+<div class="mythic-addons">
+    <h5 class="header text-center">Аддоны</h5>
+    <div class="row text-justify">
+        <div class="card bg-transparent col-xl-4 col-lg-6 col-sm-6">
+            <div class="card-body pt-0 pb-0">
+                <a href="https://www.curseforge.com/wow/addons/deadly-boss-mods" style="color: #ebdec2;" rel="nofollow" target="_blank">
+                    <h1 class="header text-center">Deadly Boss Mods</h1>
+                    Самый главный аддон, он знает все про скиллы треша и босов, будет подсказывать когда отбегать, прерывать касты, диспеллить, прыгать, танцевать и т.д.
+                    Состоит из основного аддона DBM и кучи плагинов к нему.
+                    Советую ставить все разом (они загружаются по требованию, так что лагать не будет).
+                    Дополнительной настройки не требует
+                </a>
+            </div>
+        </div>
+
+        <div class="card bg-transparent col-xl-4 col-lg-6 col-sm-6">
+            <div class="card-body pt-0 pb-0">
+                <a href="https://www.curseforge.com/wow/addons/angry-keystones" style="color: #ebdec2;" rel="nofollow" target="_blank">
+                    <h1 class="header text-center">Angry Keystones</h1>
+                    Сам вставляет ключ в чашу (не нужно искать его в сумках), показывает процент, который дадут за того или иного моба,
+                    показывет дополнительные таймеры (для улучшения на +2 и +3) и т.д.
+                    Очень полезный утилитарный аддон
+                </a>
+                <p class="text-right"><a href="/wiki/addons" class="btn btn-outline-warning">Больше аддонов &rarr;</a></p>
+            </div>
+        </div>
+        <div class="card bg-transparent col-xl-4 col-lg-6 col-sm-6">
+            <div class="card-body pt-0 pb-0">
+                <a href="https://www.curseforge.com/wow/addons/gtfo" style="color: #ebdec2;" rel="nofollow" target="_blank">
+                    <h1 class="header text-center">GTFO</h1>
+                    Кричит, когда ты стоишь в луже.
+                    Дешево и сердито, спас огромное количество жизней.
+                    Настройки не требует
+                </a>
+                <div class="home-divider"></div>
+                <a href="https://www.curseforge.com/wow/addons/raiderio" style="color: #ebdec2;" rel="nofollow" target="_blank">
+                    <span class="header text-center">RaiderIO</span>
+                    Показывает рейтинг и прогресс мифик+ любых игроков (лучшие закрытые ключи, максимальный пройденый ключ и т.д.).
+                    Полезен для подбора пати на ключ, настройки не требует.
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="faq" class="home-divider"></div>
+<div class="mythic-faq-1">
+    <h1 class="header text-center">F.A.Q или разбор отличий</h1>
+    <div class="row">
+        <div class="card bg-transparent col-xl-5 col-lg-6">
+            <div class="card-body">
+                <h3 class="header">Эпохальный ключ</h3>
+                <p><strong>Что за ключ?</strong> После прохождения подемелья эпохальной сложности, в луте с последнего босса
+                ты найдешь вот такой <a href="https://ru.wowhead.com/item=158923">Эпохальный ключ</a>, который будет называться (пример) “Эпохальный ключ: Подгнилье (+2)”.
+                Имея этот ключ, ты можешь зайти в Подгнилье эпохального уровня сложности и возле входа (внутри инста) увидеть чашу (такой столбик с шариком на нем).</p>
+
+                <p>Тыкаешь в чашу и в открывшееся окно вставляешь свой ключ, тебе сразу же будет показано,
+                насколько сильнее станут <b>все</b> противники и модификаторы (в зависимости от ключа).
+                Тыкаешь большую красную кнопку и все, ты - труп. Как правило, много раз труп. И не ты один :)</p>
+
+                <p>То есть, чтобы попасть в мифик+ тебе нужен ключ.
+                Не важно - свой или чужой (если ты пошел с пати в мифик+ без ключа, то в конце ты получишь свой ключ).
+                Ключ работает только на то подземелье, которое указано у него в названии.
+                Подземелье для ключа выбирается рандомно, заранее предугадать невозможно.</p>
+            </div>
+        </div>
+        <div class="card bg-transparent col-xl-5 col-lg-6 offset-xl-2 offset-lg-0">
+            <div class="card-body">
+                <h3 class="header">Как меняется уровень ключа?</h3>
+                <p>Если у тебя нет ключа, то после прохождения любого эпохального подземелья ты его получешь с уровнем <b>+2</b>, это самый базовый уровень ключа.<br>
+                Если ты пошел в мифик+ и успел вовремя, то твой ключ будет улучшен на уровень от <b>1</b> до <b>3</b>, в зависимости от скорости прохождения.<br>
+                Если ты пошел в мифик+ и не успел (время стало красным), то твой ключ станет на уровень ниже в другой (рандомный) инст.
+                Пример: ты пошел в мифик+5, прошел его, но не успел вовремя. Твой ключ станет +4 (но сменится инст).
+                </p>
+                <h3 class="header">Как происходит выбор подземелья для ключа?</h3>
+                <p>Рандомно. Да, тебе может выпасть ключ в тот же инст, который ты только что прошел. Да, несколько раз подряд, смирись.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-divider"></div>
+<div class="mythic-faq-2">
+    <div class="row">
+        <div class="card bg-transparent col-xl-5 col-lg-6">
+            <div class="card-body">
+                <h3 class="header">Ограничение по времени</h3>
+                <p>В мифик+ у тебя всегда будет ограничено время на прохождение, обычно - 30-40 минут.
+                Если успел - апнешь ключ, получишь добычу.
+                Если не успел - не апнешь ключ (или сломаешь, см. выше), получишь добычу.</p>
+                <h3 class="header">Ограничение на смену шмоток, талантов, специализаций</h3>
+                <p>“Спасибо, Blizzard”. Просто смирись с таким фактом - внутри мифик+ нельзя переодеваться, менять специализацию и т.д.
+                <b>НО!</b> Можно выйти (или телепортнуться камнем) из инста, а потом зайти назад</p>
+            </div>
+        </div>
+        <div class="card bg-transparent col-xl-5 col-lg-6 offset-xl-2 offset-lg-0">
+            <div class="card-body  pb-5 overflow-x" style="padding-top: 5rem !important;">
+                <h3 class="header">Таблица времени для всех инстов</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Подземелье</th>
+                            <th>Время (улучшение +1)</th>
+                            <th>Улучшение +2</th>
+                            <th>Улучшение +3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for timer in site.data.keystones.timers %}
+                        <tr>
+                            <td>{{ timer.name }}</td>
+                            <td>{{ timer.up }}</td>
+                            <td>{{ timer.up2 }}</td>
+                            <td>{{ timer.up3 }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-divider"></div>
+<div class="mythic-faq-3">
+    <div class="row">
+        <div class="card bg-dark-opacity col-xl-5 col-lg-6">
+            <div class="card-body">
+                <h3 class="header">КД</h3>
+                <p>В любом уровне сложности (кроме мифик+) у тебя будет КД на подземелье.
+                Прошел - значит следующий раз можешь зайти через 13 часов (“старый кд” - действует на все инсты и рейды до Осады Оргриммара),
+                либо можешь зайти еще раз, но лута не будет (“новый кд” - действует на все с Осады Оргриммара).
+                В мифик+ такого ограничения нет, вообще<br />
+                То есть: ты прошел подгнилье +2, кому-то из пати выпал такой же ключ, заходишь еще раз, проходишь, получаешь лут, никаких ограничений.</p>
+
+                <h3 class="header">Пропуск мобов</h3>
+                <p>В мифик+ одним из условий прохождения ключа являются <strong>Войска противника</strong>, то есть любые мобы (даже не агрессивные) внутри инста.
+                Нужно заполнить шкалу “войск”, это делается при помощи убийства треша.
+                Соответственно, хочешь пройти ключ = не пропускаешь мобов, за исключением ситуаций, когда есть тактика заполнения этой шкалы.
+                В таких случаях некоторый треш можно пропустить.<br />
+                Если шкала заполнена - можно смело пропускать мобов, они больше не нужны вам (да и лута с них нет).</p>
+            </div>
+        </div>
+        <div class="card bg-dark-opacity col-xl-5 col-lg-6 offset-xl-2 offset-lg-0">
+            <div class="card-body">
+                <h3 class="header">Добыча в ключе</h3>
+                <p>В любом уровне сложности (кроме мифик+) ты можешь получить добычу с мобов и точно получишь ее с каждого босса (мы не про качество добычи, а про сам факт).
+                В мифик+ добычу ты получаешь за прохождение всего ключа. Не за последнего босса, а именноxза прохождение ключа.
+                Не прошел весь ключ - не получил добычу.
+                Уровни наград с мифик+ в таблице лута ниже.</p>
+
+                <h3 class="header">Уровень добычи</h3>
+                <p>За прохождение каждого ключа тебя будет ждать награда, уровень предметов в этой награде определяется уровнем ключа
+                (плюс, она может прокнуть и вместо 400 шмотки получишь 425, но это уже рандом).
+                В сундуке за ключ <b>нет</b> азеритовых вещей.
+                В сундуке всегда будет лежать сила азерита (это такое дополнение к островным экспедициям)<br />
+
+                <b>ProTip!</b> пати получит минимум 2 шмотки в сундуке за ключ. Если ключ завершен вовремя - 3.
+                За прохождение 10+ ключей вовремя есть 40% шанс получить 4 шмотки в сундуке.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-divider"></div>
+<div class="mythic-faq-4">
+    <div class="row">
+        <div class="card bg-transparent col-xl-5 col-lg-6">
+            <div class="card-body">
+                <h3 class="header">Сложность</h3>
+                <p>В зависимости от уровня ключа, сложность мифик+ будет меняться.
+                Изменения: все противники (включая боссов) получают на n% больше здоровья и наносят на n% больше урона.
+                Чем выше ключ, тем больше награда, тем сложнее. А еще есть аффиксы, смотри ниже
+                Таблица увеличения здоровья и урона противников, в зависимости от ключа:</p>
+
+                <h3 class="header">Модификаторы (аффиксы)</h3>
+                <p>Это различные усиления, которые делают прохождение подземелий сложнее.
+                Они меняются каждую неделю и разделены на 4 группы, каждая из которых открывается на определенном уровне эпохального+ подземелья - 2, 4, 7 и 10.
+                То есть, при прохождении подземелья с ключом 3 уровня вы столкнетесь лишь с одним модификатором, а при прохождении подземелья с ключом 11 уровня - с четыремя.
+                Каждую неделю добавляется несколько модификаторов, в зависимости от уровня ключа.</p>
+            </div>
+        </div>
+        <div class="card bg-transparent col-xl-5 col-lg-6 offset-xl-2 offset-lg-0">
+            <div class="card-body overflow-x">
+                <h3 class="header">Таблица увеличения сложности</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Уровень ключа</th>
+                            <th>Увелиечение здоровья И урона</th>
+                            <th>Количество аффиксов</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for diff in site.data.keystones.keydiff %}
+                        <tr>
+                            <td>{{ diff.key }}</td>
+                            <td>+{{ diff.mod }}%</td>
+                            <td>{{ diff.affixes }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="affixes" class="home-divider"></div>
+<div class="mythic-affixes-1">
+    <div class="row">
+        <div class="card bg-transparent col-xl-5 col-lg-6">
+            <div class="card-body">
+                <h3 class="header">Список аффиксов</h3>
+                <div class="col-lg-12">
+                    <span class="card-title" style="font-size: 1.2rem !important">сейчас</span>
+                    <div class="home-affixes-line bg-dark">
+                        {% include affixes.html when="now" %}
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <span class="card-title" style="font-size: 1.2rem !important">следующая неделя</span>
+                    <div class="home-affixes-line bg-dark">
+                        {% include affixes.html when="next" %}
+                    </div>
+                </div>
+                <h3 class="header">+2</h3>
+                {% assign items = site.data.affixes.list | where: 'level', 2 %}
+                {% for item in items -%}
+                {% if item.note.role %}<img src="/assets/img/roles/{{ item.note.role }}.jpg" title="{{ item.note.text }}" />{% endif %}
+                <strong><a href="https://ru.wowhead.com/affix={{ item.id }}"></a></strong> - {{ item.description }}<br />
+                {% endfor %}
+            </div>
+        </div>
+        <div class="card bg-transparent col-xl-5 col-lg-6 offset-xl-2 offset-lg-0">
+            <div class="card-body">
+                <h3 class="header">+4</h3>
+                {% assign items = site.data.affixes.list | where: 'level', 4 %}
+                {% for item in items -%}
+                {% if item.note.role %}<img src="/assets/img/roles/{{ item.note.role }}.jpg" title="{{ item.note.text }}" />{% endif %}
+                <strong><a href="https://ru.wowhead.com/affix={{ item.id }}"></a></strong> - {{ item.description }}<br />
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="card bg-dark-opacity col-xl-5 col-lg-6">
+                <div class="card-body">
+                    <h3 class="header">+7</h3>
+                    {% assign items = site.data.affixes.list | where: 'level', 7 %}
+                    {% for item in items -%}
+                    {% if item.note.role %}<img src="/assets/img/roles/{{ item.note.role }}.jpg" title="{{ item.note.text }}" />{% endif %}
+                    <strong><a href="https://ru.wowhead.com/affix={{ item.id }}"></a></strong> - {{ item.description }}<br />
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="card bg-dark-opacity col-xl-5 col-lg-6 offset-xl-2 offset-lg-0">
+                <div class="card-body">
+                    <h3 class="header">10+ (сезонные)</h3>
+                    {% assign items = site.data.affixes.list | where: 'level', 10 %}
+                    {% for item in items -%}
+                    {% if item.note.role %}<img src="/assets/img/roles/{{ item.note.role }}.jpg" title="{{ item.note.text }}" />{% endif %}
+                    <strong><a href="https://ru.wowhead.com/affix={{ item.id }}"></a></strong> - {{ item.description }}<br />
+                    {% endfor %}
+                    Почаще смотрите на шкалу "Войска противника", ведь на 20%, 40%, 60%, 80% и 100% <i>весь</i> убитый в этот промежуток треш восстанет из мертвых и нападет на вас.<br>
+                    Звучит очень страшно, на деле же не все настолько плохо, потому что:<br />
+                    <ul>
+                        <li>Воскресает лишь треш, убитый в текущей арке (от 0 до 20%, убили? Больше он не воскреснет)</li>
+                        <li>Все воскрешенные мобы становятся душами 3 типов (<a href="https://ru.wowhead.com/npc=148716/">Восставшая душа</a>, <a href="https://ru.wowhead.com/npc=148893/">Замученная душа</a> и <a href="https://ru.wowhead.com/npc=148894/">Заблудшая душа</a>, у каждого типа душ всего 1-2 скила и особенности, плюс они достаточно ослаблены</li>
+                        <li>Вы можете контроллировать место и момент воскрешения.</li>
+                    </ul>
+
+                    Самой простой тактикой является следующая:
+                    <ul>
+                        <li>Примерно за 0.2-1% до начала волны найдите какой-нибудь коридор, желательно с углами, т.к. чем меньше будет места - тем проще</li>
+                        <li>Дайте своим сейвам откатиться, а хилам отпиться - будет очень больно и очень много треша</li>
+                        <li>Спульте одного моба (который даст недостающий процент) в свой уголок, завалите его и сожмите булки</li>
+                        <li>Примерно через 3-5 секунд треш дойдет до вас и начнется вакханалия - жмите сейвы, массовые щиты и массовый отхил</li>
+                        <li>Сдавайте массовые станы, либо немоту, чтобы <a href="https://ru.wowhead.com/npc=148893/">Замученная душа</a> не скастовала <a href="https://ru.wowhead.com/spell=288693/">Могильную стрелу</a></li>
+                        <li>Хилы - сдавайте массовый сейв примерно через 5 секунд после первых душ (к этому моменту пати уже будет сильно просаживаться по здоровью)</li>
+                    </ul>
+
+                    В целом, такую волну вполне можно пережить без потерь, т.к. у душ очень мало хп и они уничтожаются чуть ли не пачками за бурст.
+
+                    <p><b>ProTip!</b> Вместе с аффиксом <u>Кишащий</u> каждая волна может убить всю пати, т.к. вы убиваете гораздо больше треша для набора процентов,
+                    то и воскресает его тоже гораздо больше.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="loot" class="home-divider"></div>
+<div class="mythic-loot">
+    <div class="row">
+        <div class="card bg-transparent col-xl-4">
+            <div class="card-body text-center overflow-x">
+                <h3 class="header">Вещи, за прохождение ключа</h3>
+                <table class="mb-0 mt-0 mx-auto">
+                    <thead>
+                        <tr>
+                            <th>Уровень ключа</th>
+                            <th>Уровень предметов</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for loot in site.data.keystones.loot.key %}
+                        <tr>
+                            <td>{{ loot.key }}</td>
+                            <td>{{ loot.item }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card bg-transparent col-xl-8">
+            <div class="card-body text-center">
+                <div class="row">
+                    <div class="col-xl-6 overflow-x">
+                        <h3 class="header">Вещи, за недельный сундук</h3>
+                        <table class="mb-0 mt-0 mx-auto">
+                            <thead>
+                                <tr>
+                                    <th>Уровень ключа</th>
+                                    <th>Уровень предметов</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for loot in site.data.keystones.loot.week.items %}
+                                <tr>
+                                    <td>{{ loot.key }}</td>
+                                    <td>{{ loot.item }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-xl-6 overflow-x">
+                        <h3 class="header">Пыль титанов, за недельный сундук</h3>
+                        <table class="mb-0 mt-0 mx-auto">
+                            <thead>
+                                <tr>
+                                    <th>Уровень ключа</th>
+                                    <th>Количество пыли</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for loot in site.data.keystones.loot.week.residuum %}
+                                <tr>
+                                    <td>{{ loot.key }}</td>
+                                    <td>{{ loot.res }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card bg-dark-opacity col-xl-6  mb-0 mt-0 mx-auto">
+            <h3 class="header text-center">Недельная награда</h3>
+            <p>Все ключи, которые ты пройдешь за неделю, будут записаны у тебя во вкладке “Эпохальные подземелья” (Кнопка I, вкладка снизу).
+            Чем выше максимальный уровень пройденого ключа - тем лучше награда, уточнения:
+            <ul>
+                <li>Не важно, проходил ли ты ключи вовремя, или чисто “на лут”</li>
+                <li>Не важно, сколько ключей и в каком порядке ты прошел, для недельной награды будет использован самый большой ключ за эту неделю.</li>
+            </ul>
+            Пример: на этой неделе ты прошел +5 (на лут), +2 (на время), +4 (на лут). Недельная награда будет за +5</p>
+        </div>
+    </div>
+</div>
+<!-- Yandex.RTB {{ site.ads.page.bottom }} -->
+<div id="yandex_rtb_{{ site.ads.page.bottom }}"></div>
+{% include actualbanner.html %}
+<div class="col-lg-10 offset-lg-1" id="disqus_thread"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "{{ site.ads.page.bottom }}",
+                renderTo: "yandex_rtb_{{ site.ads.page.bottom }}",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>

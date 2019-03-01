@@ -24,11 +24,30 @@ a:hover, a:focus {
     text-decoration: none;
 }
 
+.card {
+    border: 0;
+}
+
+.overflow-x {
+    overflow-x: scroll !important;
+}
+.overflow-x::-webkit-scrollbar {
+    display: none;
+}
+
 .bg-dark {
     border: 1px solid #c77e19;
     border-radius: 3px;
     background: rgba(0,0,0,.4);
     color: #f7b10a;
+    -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+}
+
+.bg-dark-opacity {
+    border: 1px solid #c77e19;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.5);
     -webkit-transition: background .2s,color .2s;
     transition: background .2s,color .2s;
 }
@@ -312,6 +331,138 @@ div.home-connect {
 }
 /*********** END HOME ************/
 
+/*********** MYTHIC ************/
+{% if page.path == 'mythic.html' %}
+nav.global {display: none;}
+main { font-size: 1.1rem; overflow-x: hidden; }
+div.mythic-overview {
+    color: #ebdec2;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+}
+.no-webp div.mythic-overview {
+    background: url(/assets/img/dungeons/ataldazar.jpg) top no-repeat;
+    background-size: cover;
+}
+.webp div.mythic-overview {
+    background: url(/assets/img/dungeons/ataldazar.webp) top no-repeat;
+    background-size: cover;
+}
+div.mythic-diff {
+    color: #ebdec2;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+}
+.no-webp div.mythic-diff {
+    background: url(/assets/img/dungeons/ataldazar.jpg) center no-repeat;
+    background-size: cover;
+}
+.webp div.mythic-diff {
+    background: url(/assets/img/dungeons/ataldazar.webp) center no-repeat;
+    background-size: cover;
+}
+div.mythic-addons {
+    color: #ebdec2;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+}
+.no-webp div.mythic-addons {
+    background: url(/assets/img/dungeons/ataldazar.jpg) bottom no-repeat;
+    background-size: cover;
+}
+.webp div.mythic-addons {
+    background: url(/assets/img/dungeons/ataldazar.webp) bottom no-repeat;
+    background-size: cover;
+}
+div.mythic-faq-1 {
+    color: #ebdec2;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+}
+.no-webp div.mythic-faq-1 {
+    background: url(/assets/img/dungeons/freehold.jpg) top no-repeat;
+    background-size: cover;
+}
+.webp div.mythic-faq-1 {
+    background: url(/assets/img/dungeons/freehold.webp) top no-repeat;
+    background-size: cover;
+}
+div.mythic-faq-2 {
+    color: #ebdec2;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+}
+.no-webp div.mythic-faq-2 {
+    background: url(/assets/img/dungeons/freehold.jpg) bottom no-repeat;
+    background-size: cover;
+}
+.webp div.mythic-faq-2 {
+    background: url(/assets/img/dungeons/freehold.webp) bottom no-repeat;
+    background-size: cover;
+}
+div.mythic-faq-3 {
+    color: #ebdec2;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+}
+.no-webp div.mythic-faq-3 {
+    background: url(/assets/img/design/bg.affixes.jpg) left no-repeat;
+    background-size: cover;
+}
+.webp div.mythic-faq-3 {
+    background: url(/assets/img/design/bg.affixes.webp) left no-repeat;
+    background-size: cover;
+}
+div.mythic-faq-4 {
+    color: #ebdec2;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+}
+.no-webp div.mythic-faq-4 {
+    background: url(/assets/img/design/bg.connect.jpg) left no-repeat;
+    background-size: cover;
+}
+.webp div.mythic-faq-4 {
+    background: url(/assets/img/design/bg.connect.webp) left no-repeat;
+    background-size: cover;
+}
+div.mythic-affixes-1 {
+    color: #ebdec2;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+}
+.no-webp div.mythic-affixes-1 {
+    background: url(/assets/img/dungeons/ataldazar.rezan.jpg) center no-repeat;
+    background-size: cover;
+}
+.webp div.mythic-affixes-1 {
+    background: url(/assets/img/dungeons/ataldazar.rezan.webp) center no-repeat;
+    background-size: cover;
+}
+div.mythic-loot {
+    color: #ebdec2;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0,0,0,.8);
+    background: url(/assets/img/dungeons/freehold.last.jpg) center no-repeat;
+}
+.no-webp div.mythic-loot {
+    background: url(/assets/img/dungeons/freehold.last.jpg) center no-repeat;
+    background-size: cover;
+}
+.webp div.mythic-loot {
+    background: url(/assets/img/dungeons/freehold.last.webp) center no-repeat;
+    background-size: cover;
+}
+table {
+    border: 1px solid #c77e19;
+    border-radius: 3px;
+    -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+}
+.no-webp  table {
+    background: #211510 url(/assets/img/design/navbar.jpg) repeat-x 80px 0 !important;
+}
+.webp  table {
+    background: #211510 url(/assets/img/design/navbar.webp) repeat-x 80px 0 !important;
+}
+
+table tr:hover {
+    background: #495057 !important;
+}
+{% endif %}
+
+/*********** END MYTHIC ************/
 
 /*********** WIKI ************/
 div.jumbotron.wiki {

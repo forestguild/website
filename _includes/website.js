@@ -1,3 +1,4 @@
+{% if page.path != 'mythic.html' %}
 $(function () {
     $('table').tablesorter({
         theme: "dark",
@@ -5,6 +6,7 @@ $(function () {
         widgets: ["filter"],
     })
 });
+{% endif %}
 
 {% if page.path == 'index.html' %}
 $(function () {
@@ -19,7 +21,7 @@ $(function () {
 });
 {% endif %}
 
-{% if page.layout == 'wiki' %}
+{% if page.layout == 'wiki' or page.path == 'mythic.html' %}
 var disqus_config = function () {
     this.page.url = "{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}";
     this.page.identifier = "{{ page.url | replace:'index.html','' | replace:'.html','' }}";

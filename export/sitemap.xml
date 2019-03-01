@@ -21,7 +21,7 @@ layout: core/compress
     </url>
   {% endfor %}
   {% for page in site.pages %}
-  {% if page.metatitle and page.layout != "amp" and page.layout != "core/redirect" %}
+  {% if page.metatitle and page.layout != "amp" %}
       <url>
         <loc>{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}</loc>
         <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
