@@ -189,17 +189,17 @@ loot:
       res: 897
     - key: 18
       res: 928
-    - key: 19
-      res: 959
-    - key: 20
-      res: 990
-    - key: 21
-      res: 1010
-    - key: 22
-      res: 1030
-    - key: 23
-      res: 1050
-    - key: 24
-      res: 1070
-    - key: 25
-      res: 1090
+    #- key: 19
+      #res: 959
+    #- key: 20
+      #res: 990
+    #- key: 21
+      #res: 1010
+    #- key: 22
+      #res: 1030
+    #- key: 23
+      #res: 1050
+    #- key: 24
+      #res: 1070
+    #- key: 25
+      #res: 1090

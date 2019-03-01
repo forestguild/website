@@ -33,7 +33,7 @@ layout: core/compress
         </item>
         {% endfor %}
         {% for page in site.pages %}
-        {% if page.metatitle and page.layout != "amp" and page.layout != "core/redirect" %}
+        {% if page.metatitle and page.layout != "amp" %}
         <item>
             <title><![CDATA[{{ page.metatitle | strip_html | remove:"&nbsp;" }}]]></title>
             {% if page.author %}

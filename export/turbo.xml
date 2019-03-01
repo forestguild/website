@@ -19,7 +19,7 @@ layout: core/compress
         <atom:link href="{{ site.url }}/{{ page.path }}" rel="self" type="application/rss+xml" />
         <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
         {% for page in site.pages %}
-        {% if page.metatitle and page.layout != "amp" and page.layout != "core/redirect" %}
+        {% if page.metatitle and page.layout != "amp" %}
         <item turbo="true">
             <title><![CDATA[{{ page.metatitle | strip_html | remove:"&nbsp;" }}]]></title>
             {% if page.author %}
