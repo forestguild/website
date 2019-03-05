@@ -72,6 +72,7 @@ layout: amp
             </header>
             {% if site.ads.amp.top %}<amp-ad width="300" height="250" type="yandex" data-block-id="{{ site.ads.amp.top }}" data-html-access-allowed="true"></amp-ad>{% endif %}
             {{ content | markdownify | amp_images | amp_tables | autonofollow }}
+            <p><a class="nav-link" href="https://www.patreon.com/bePatron?u=4218488"><amp-img src="/assets/img/patreon.jpg" width="434" height="102" layout="fixed" class="my0 mx-auto "/></a></p>
             {% if site.ads.amp.bottom %}<amp-ad width="300" height="250" type="yandex" data-block-id="{{ site.ads.amp.bottom }}" data-html-access-allowed="true"></amp-ad>{% endif %}
         </article>
         </main>
