@@ -29,7 +29,7 @@ layout: core/compress
             <turbo:source>{{ page.url | canonical }}</turbo:source>
             <turbo:topic><![CDATA[{{ page.metatitle | strip_html | remove:"&nbsp;" }}]]></turbo:topic>
             <turbo:content><![CDATA[
-                {{ page.content |  markdownify | remove:"&nbsp;" | removeToc }}
+                {{ page.content |  markdownify | remove:"&nbsp;" | toYandexTurboContent }}
                 <div data-block="share"></div>
                 ]]></turbo:content>
             <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>

@@ -24,12 +24,17 @@ module Jekyll
         end
 
         # Special for Yandex.Turbo, because their parsers raise warnings
-        def removeToc(input)
+        def toYandexTurboContent(input)
             input.gsub(/(<!-- vim-markdown-toc.*<!-- vim-markdown-toc -->\n)/m, '')
             content = Nokogiri::HTML.fragment(input)
+            # Remove anchor linking (like a href=#topic)
             content.css("a").each do |a|
                 next unless a.get_attribute("href").start_with?('#')
                 a.replace(a.content)
+            end
+            # Remove navbar (for custom pages, like mythic+)
+            content.css("nav").each do |nav|
+                nav.remove
             end
             content.to_s
         end

@@ -7,8 +7,7 @@ run:
 
 build:
 	mkdir -p _data
-	php updater.php update
-	php updater.php collect
+	php updater.php
 	bundler exec jekyll build -q
 	cp CNAME _site/CNAME
 
