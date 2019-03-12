@@ -8,7 +8,7 @@ run:
 build:
 	mkdir -p _data
 	php updater.php
-	bundler exec jekyll build -q
+	bundler exec jekyll build
 	cp CNAME _site/CNAME
 
 .ONESHELL:
