@@ -6,7 +6,7 @@ baseurl: ''
 url: https://forestguild.club
 timezone: Europe/Paris
 github: rakshazi/forestguild.club
-defaultActualAddon: 8.1
+defaultActualAddon: 8.1.5
 realm: galakrond
 disqus: forestguild
 verification:
@@ -14,19 +14,14 @@ verification:
   google: HyXyjl__ZWM8pD-mJqSaPIR2wVBFXVr25u0zwJkENfY
 analytics:
   yandex: 50342920
-search: 2334078
 ads:
   page:
     bottom: R-A-332491-4
   amp:
     top: R-A-332491-2
     bottom: R-A-332491-3
-  search:
-    premium: P-A-332492-1
-    direct: D-A-332492-2
-video:
-  streams: #twitch users
-    - akulenokwow
+streamers: #twitch users
+  - akulenokwow
 
 # Assets
 assets:

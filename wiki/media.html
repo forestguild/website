@@ -1,0 +1,23 @@
+---
+title: Медиа
+metatitle: Фото, видео, стримы игроков из Ясного Леса
+layout: wiki
+related: false
+actual:
+- ВСЕГДА
+---
+<div class="row text-center">
+    {% for user in site.streamers %}
+    <div class="col-xl-4">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://player.twitch.tv/?channel={{ user }}" class="embed-responsive-item img-thumbnail" allowfullscreen></iframe>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="col-xl-4">
+        <a href="https://photos.app.goo.gl/CTRCcerKGbZpvPmB8" target="_blank" title="Лица Ясного Леса"><img src="/assets/img/pages/media/album-faces.jpg" class="img-thumbnail"></a>
+    </div>
+    <div class="col-xl-4">
+        <a href="https://photos.app.goo.gl/YCoJgMwhkJ7pcA1WA" target="_blank" title="Достижения"><img src="/assets/img/pages/media/album-achievements.jpg" class="img-thumbnail"></a>
+    </div>
+</div>

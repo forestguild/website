@@ -12,11 +12,8 @@ top:
   - title: Warcraft Logs
     url: https://www.warcraftlogs.com/guild/id/374677
     external: true
-  - title: Лица
-    url: https://photos.app.goo.gl/CTRCcerKGbZpvPmB8
-    external: true
-  - title: Ачивы
-    url: https://photos.app.goo.gl/YCoJgMwhkJ7pcA1WA
+  - title: Медиа
+    url: /wiki/media
 
 # Wiki menu
 wiki:
