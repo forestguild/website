@@ -1,4 +1,9 @@
 PATH
+  remote: _plugins/updater
+  specs:
+    updater (0.0.1)
+
+PATH
   remote: _plugins/wowdaily
   specs:
     wowdaily (0.0.1)
@@ -71,6 +76,7 @@ DEPENDENCIES
   fastimage
   jekyll
   nokogiri
+  updater!
   wowdaily!
 
 BUNDLED WITH

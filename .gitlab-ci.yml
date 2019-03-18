@@ -4,16 +4,6 @@ stages:
   - build
   - deploy
 
-update progess:
-  image: php:alpine
-  stage: build
-  only:
-    - schedules
-  script:
-    - php updater.php update
-  tags:
-    - docker
-
 build website:
   image: jekyll/jekyll
   stage: build
@@ -22,6 +12,7 @@ build website:
   before_script:
     - bundle update
   script:
+    - bundle exec jekyll updateprogress --region eu --realm галакронд --realm-id 607 --guild "Ясный Лес"
     - bundle exec jekyll wowdaily
     - bundle exec jekyll build
     - bundle exec jekyll build #to avoid amp images bug

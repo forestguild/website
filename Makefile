@@ -7,7 +7,8 @@ run:
 
 build:
 	mkdir -p _data
-	php updater.php
+	bundler exec jekyll wowdaily
+	bundler exec jekyll updateprogress --region eu --realm галакронд --realm-id 607 --guild "Ясный Лес"
 	bundler exec jekyll build
 	cp CNAME _site/CNAME
 
