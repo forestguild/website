@@ -3,63 +3,89 @@ title: Attendance tracker
 layout: core/page
 related: false
 ---
+<div class="container">
 <h1 class="header text-center">Attendance tracker</h1>
-<h2 class="header">Основной РТ</h2>
-<table class="table bg-dark-opacity text-white" data-sortlist="[[1,1]]">
-    <thead>
-    <tr>
-        <th>Имя</th>
-        <th>%</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% assign rawreport = site.data.attendance_main[0] %}
-    {% assign report = "" | split: ',' %}
-    {% for item in rawreport %}
-    {% assign report = report | push: item[1] %}
-    {% endfor %}
+<div class="row text-center">
+    <ul class="nav nav-pills ml-0 mt-o mx-auto bg-dark-opacity text-white" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="pills-main-tab" data-toggle="pill" href="#pills-main" role="tab" aria-controls="pills-home" aria-selected="true">Основной РТ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-static-tab" data-toggle="pill" href="#pills-static" role="tab" aria-controls="pills-profile" aria-selected="false">Статик</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" rel="nofollow" href="https://www.warcraftlogs.com/guild/id/374677" aria-selected="false">Warcraft Logs</a>
+        </li>
+    </ul>
+</div>
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-main" role="tabpanel" aria-labelledby="pills-main-tab">
+        <table class="table bg-dark-opacity text-white" data-sortlist="[[1,1]]">
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>%</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign rawreport = site.data.attendance_main[0] %}
+                {% assign report = "" | split: ',' %}
+                {% for item in rawreport %}
+                {% assign report = report | push: item[1] %}
+                {% endfor %}
 
-    {% assign sorted = report | sort: 'att' %}
-    {% for person in sorted %}
-    {% assign att = person.att | plus: 0 %}
-    {% if att > 10 %}
-        <tr>
-            <td>{{ person.name }}</td>
-            <td>{{ person.att }}</td>
-            {% for pitem in person.items %}
-            <td class='text-{% if pitem[1] == 1 %}success{% else %}danger{% endif %}'>{% if pitem[1] == 1 %}Y{% else %}N{% endif %}</td>
-            {% endfor %}
-        </tr>
-    {% endif %}
-    {% endfor %}
-    </tbody>
-</table>
-<hr>
+                {% assign sorted = report | sort: 'att' %}
+                {% for person in sorted %}
+                {% assign att = person.att | plus: 0 %}
+                {% if att > 10 %}
+                {% if att < 20 %}{% assign att = 20 %}{% endif %}
+                <tr>
+                    <td class="quality-{{ att | slice: 0 }}" width="150px">{{ person.name }}</td>
+                    <td class="quality-{{ att | slice: 0 }}" width="150px">{{ person.att }}</td>
+                    {% for pitem in person.items %}
+                    <td class='text-{% if pitem[1] == 1 %}success{% else %}danger{% endif %}'>{% if pitem[1] == 1 %}Y{% else %}N{% endif %}</td>
+                    {% endfor %}
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="tab-pane fade" id="pills-static" role="tabpanel" aria-labelledby="pills-static-tab">
+        <table class="table bg-dark-opacity text-white" data-sortlist="[[1,1]]">
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>%</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign rawreport = site.data.attendance_static[0] %}
+                {% assign report = "" | split: ',' %}
+                {% for item in rawreport %}
+                {% assign report = report | push: item[1] %}
+                {% endfor %}
 
-<h2 class="header">Статик</h2>
-<table class="table bg-dark-opacity text-white" data-sortlist="[[1,1]]">
-    <thead>
-    <tr>
-        <th>Имя</th>
-        <th>%</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% assign rawreport = site.data.attendance_static[0] %}
-    {% assign report = "" | split: ',' %}
-    {% for item in rawreport %}
-    {% assign report = report | push: item[1] %}
-    {% endfor %}
+                {% assign sorted = report | sort: 'att' %}
+                {% for person in sorted %}
+                {% assign att = person.att | plus: 0 %}
+                {% if att > 10 %}
+                {% if att < 20 %}{% assign att = 20 %}{% endif %}
+                <tr>
+                    <td class="quality-{{ att | slice: 0 }}" width="150px">{{ person.name }}</td>
+                    <td class="quality-{{ att | slice: 0 }}" width="150px">{{ person.att }}</td>
+                    {% for pitem in person.items %}
+                    <td class='text-{% if pitem[1] == 1 %}success{% else %}danger{% endif %}'>{% if pitem[1] == 1 %}Y{% else %}N{% endif %}</td>
+                    {% endfor %}
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 
-    {% assign sorted = report | sort: 'att' %}
-    {% for person in sorted %}
-        <tr>
-            <td>{{ person.name }}</td>
-            <td>{{ person.att }}</td>
-            {% for pitem in person.items %}
-            <td class='text-{% if pitem[1] == 1 %}success{% else %}danger{% endif %}'>{% if pitem[1] == 1 %}Y{% else %}N{% endif %}</td>
-            {% endfor %}
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+<style>
+.tablesorter-filter-row {display: none !important;}
+table tr:hover {background: #495057 !important;}
+</style>

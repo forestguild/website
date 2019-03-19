@@ -24,6 +24,14 @@ a:hover, a:focus {
     text-decoration: none;
 }
 
+.quality-1 {color: #e6cc80 !important;font-weight: bold !important;}
+.quality-9 {color: #ff8000 !important;font-weight: bold !important;}
+.quality-8 {color: #a335ee !important;font-weight: bold !important;}
+.quality-7 {color: #0070dd !important;}
+.quality-6 {color: #1eff00 !important;}
+.quality-5, .quality-4 {color: #ffffff !important;}
+.quality-3, .quality-2 {color: #9d9d9d !important;}
+
 .card {
     border: 0;
 }
@@ -58,6 +66,22 @@ a:hover, a:focus {
     color: #f7b10a;
     text-transform: uppercase;
     -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+}
+.nav-pills .nav-link {
+    font-size: 1.5rem;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    -webkit-transition: background .2s,color .2s !important;
+    background-color: #2b374c;
+    border: 1px solid #c77e19;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5em;
+    text-shadow: 0 0 1px transparent, 0 0 5px rgba(0,0,0,.8);
+    text-transform: uppercase;
     transition: background .2s,color .2s;
 }
 
