@@ -1,4 +1,9 @@
 PATH
+  remote: _plugins/attendance
+  specs:
+    attendance (0.0.1)
+
+PATH
   remote: _plugins/updater
   specs:
     updater (0.0.1)
@@ -72,6 +77,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  attendance!
   chronic
   fastimage
   jekyll

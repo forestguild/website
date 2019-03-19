@@ -1,0 +1,65 @@
+---
+title: Attendance tracker
+layout: core/page
+related: false
+---
+<h1 class="header text-center">Attendance tracker</h1>
+<h2 class="header">Основной РТ</h2>
+<table class="table bg-dark-opacity text-white" data-sortlist="[[1,1]]">
+    <thead>
+    <tr>
+        <th>Имя</th>
+        <th>%</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% assign rawreport = site.data.attendance_main[0] %}
+    {% assign report = "" | split: ',' %}
+    {% for item in rawreport %}
+    {% assign report = report | push: item[1] %}
+    {% endfor %}
+
+    {% assign sorted = report | sort: 'att' %}
+    {% for person in sorted %}
+    {% assign att = person.att | plus: 0 %}
+    {% if att > 10 %}
+        <tr>
+            <td>{{ person.name }}</td>
+            <td>{{ person.att }}</td>
+            {% for pitem in person.items %}
+            <td class='text-{% if pitem[1] == 1 %}success{% else %}danger{% endif %}'>{% if pitem[1] == 1 %}Y{% else %}N{% endif %}</td>
+            {% endfor %}
+        </tr>
+    {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+<hr>
+
+<h2 class="header">Статик</h2>
+<table class="table bg-dark-opacity text-white" data-sortlist="[[1,1]]">
+    <thead>
+    <tr>
+        <th>Имя</th>
+        <th>%</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% assign rawreport = site.data.attendance_static[0] %}
+    {% assign report = "" | split: ',' %}
+    {% for item in rawreport %}
+    {% assign report = report | push: item[1] %}
+    {% endfor %}
+
+    {% assign sorted = report | sort: 'att' %}
+    {% for person in sorted %}
+        <tr>
+            <td>{{ person.name }}</td>
+            <td>{{ person.att }}</td>
+            {% for pitem in person.items %}
+            <td class='text-{% if pitem[1] == 1 %}success{% else %}danger{% endif %}'>{% if pitem[1] == 1 %}Y{% else %}N{% endif %}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
