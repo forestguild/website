@@ -1,0 +1,50 @@
+{% assign rt_count = 0 | plus: 0 %}
+{% assign rawreport = include.report[0] %}
+{% assign fights = include.report[1] %}
+{% assign report = "" | split: ',' %}
+
+{% for item in rawreport %}
+{% assign report = report | push: item[1] %}
+{% endfor %}
+{% assign sorted = report | sort: 'att' %}
+{% for person in sorted %}
+{% assign rt_count = person.items | size %}
+{% break %}
+{% endfor %}
+<table class="table bg-dark-opacity text-white" data-sortlist="[[1,1]]">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Участие, %</th>
+            <th colspan="{{ rt_count }}">Список последних РТ. <a href="https://www.warcraftlogs.com/guild/team-calendar/15620" target="_blank">Календарь</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for person in sorted %}
+        {% assign att = person.att | plus: 0 %}
+        {% if att > 10 %}
+        {% if att < 20 %}{% assign att = 20 %}{% endif %}
+        <tr>
+            <td class="quality-{{ att | slice: 0 }}" width="150px">{{ person.name }}</td>
+            <td class="quality-{{ att | slice: 0 }}" width="150px">{{ person.att }}</td>
+            {% for pitem in person.items %}
+            {% assign num = pitem[0] %}
+            {% capture tooltip %}
+            {% for fight in fights[num] %}
+            <b class="text-{% if fight[1].kill %}success{% else %}danger{% endif %}">{{ fight[1].name }}</b> x{{ fight[1].pulls }}
+            {% if forloop.last == false %}<br />{% endif %}
+            {% endfor %}
+            {% endcapture %}
+            <td
+                data-toggle="tooltip" data-html="true"
+                                      class='text-center text-{% if pitem[1] == 1 %}success bg-success{% else %}danger bg-danger{% endif %}'
+                                      style='background-clip: content-box;'
+                                      title='{{ tooltip }}'>
+                {% if pitem[1] == 1 %}Y{% else %}N{% endif %}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+</table>

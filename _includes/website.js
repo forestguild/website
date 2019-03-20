@@ -4,20 +4,8 @@ $(function () {
         theme: "dark",
         widthFixed: true,
         widgets: ["filter"],
-    })
-});
-{% endif %}
-
-{% if page.path == 'index.html' %}
-$(function () {
-    $('#armory-calendar').tooltip();
-    {% if site.rt.setup.modifiable %}$('#raid-setup').tooltip();{% endif %}
-    $('#raidform').on('click', function(e){
-        $('#navbarCollapse').collapse('hide')
     });
-    $.each($('iframe'), function(key, iframe) {
-        $(iframe).attr('src',$(iframe).data('src'));
-    });
+    $('[data-toggle="tooltip"]').tooltip();
 });
 {% endif %}
 

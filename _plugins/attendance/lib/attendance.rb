@@ -1,6 +1,6 @@
 require "nokogiri"
 require "open-uri"
-require "yaml"
+require "json"
 
 class Attendance < Jekyll::Command
     @@twinks = {}
@@ -19,14 +19,23 @@ class Attendance < Jekyll::Command
                 c.syntax "attendance [options]"
                 c.description "Guild RT attendance"
                 c.option "guild", "--guild ID", "Warcraft Logs guild id, eg: 374677"
-                c.option "team", "--team ID", "Warcraft Logs team id, eg: 15620 (main), 15829 (static)"
-                c.option "name", "--name NAME", "Report name, eg: main, static"
+                c.option "team", "--team ID", "Warcraft Logs team id, eg: 15620 (main), 15829 (static), 0 (all)"
+                c.option "name", "--name NAME", "Report name, eg: main, static, all"
                 c.action do |args, options|
                     # Grab data
                     url = 'https://www.warcraftlogs.com/guild/attendance-table/' + options['guild'] + '/' + options['team'] + '/0?page=1'
                     puts 'Grabbing data... for guild #' + options['guild'] + ' (team #' + options['team'] + ' - ' + options['name'] + ')'
+                    puts url
                     data = {}
+                    fightLinks = []
                     doc = Nokogiri::HTML(open(url), nil, Encoding::UTF_8.to_s).css("#attendance-table")
+                    puts "Found following reports:"
+                    doc.css('a').each do |a|
+                        link = a.get_attribute('href').gsub('/reports/','https://www.warcraftlogs.com/reports/fights-and-participants/') + '0'
+                        puts link
+                        fightLinks.push(link)
+                    end
+                    fights = getProgress(fightLinks)
                     person = nil
                     doc.search('tr').each do |row|
                         i = 1
@@ -57,7 +66,7 @@ class Attendance < Jekyll::Command
                         end
                     end
                     data = calcAttendance(data)
-                    File.write('./_data/attendance_' + options['name'] + '.json', [data].to_json)
+                    File.write('./_data/attendance_' + options['name'] + '.json', [data, fights].to_json)
                 end
             end
         end
@@ -76,6 +85,38 @@ class Attendance < Jekyll::Command
                 end
             end
             data
+        end
+
+        def getProgress(links)
+            i = 3 # Because we use 1 and 2 for name and att% in report, so first fight will have increment = 3
+            fights = {}
+            puts "Processign reports..."
+            links.each do |link|
+                fights[i] = {}
+                puts link
+                open(link) do |rawreport|
+                    report = JSON.parse(rawreport.read)
+                    report['fights'].each do |data|
+                        if data['boss'] > 0
+                            if (fights[i].key? data['name']) === false
+                                fight = {}
+                                fight['name'] = data['name']
+                                fight['kill'] = data['kill']
+                                fight['pulls'] = 1
+                            else
+                                fight = fights[i][data['name']]
+                                fight['pulls']+=1
+                                if fight['kill'] === false
+                                    fight['kill'] = data['kill']
+                                end
+                            end
+                            fights[i][fight['name']] = fight
+                        end
+                    end
+                end
+                i+=1
+            end
+            fights
         end
     end
 end
