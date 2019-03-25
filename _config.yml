@@ -24,6 +24,23 @@ streamers: #twitch users
   - akulenokwow
   - hitrayapopa
 
+# Attendance tracker
+attendance:
+  guild: 374677
+  team: 15620
+  name: main
+  twinks:
+    Адептус: ['Адептуська', 'Адептукусь']
+    Андрей: ['Оракин', 'Имрелихон', 'Минаскира', 'Яжматьепт', 'Ватгернн', 'Стикстень']
+    Барсик: ['Бейбарсиков', 'Рансенваль']
+    Витя: ['Сумваера', 'Эсксель']
+    Дима-Вритм: ['Вездепых', 'Вритм']
+    Димасик: ['Вайзище', 'Вайзё']
+    Макс: ['Ыгхан', 'Капуцын']
+    Саша: ['Назири', 'Коррос']
+    Тетрис: ['Саргерка', 'Ишамухале', 'Купожка']
+    Эмиль: ['Вглазури', 'Хрер', 'Фуфия']
+
 # Assets
 assets:
   head:
@@ -51,6 +68,8 @@ assets:
     type: js-module
 collections:
   - authors
+plugins:
+  - jekyll-wowattendance
 markdown: kramdown
 compress_html:
   clippings: all

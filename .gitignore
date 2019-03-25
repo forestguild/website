@@ -4,3 +4,5 @@ _data/*.json
 .jekyll-metadata
 .php_cs.cache
 .bundle
+_plugins/*/*.gem
+_plugins/attendance

@@ -6,8 +6,9 @@ gem "chronic"
 # amp-jekyll deps
 gem "fastimage"
 gem "nokogiri"
+
 group :jekyll_plugins do
+    gem 'jekyll-wowattendance'
     gem 'wowdaily', :path => "./_plugins/wowdaily"
     gem 'updater', :path => "./_plugins/updater"
-    gem 'attendance', :path => "./_plugins/attendance"
 end
