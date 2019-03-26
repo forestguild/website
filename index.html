@@ -28,7 +28,7 @@ layout: core/page
     <div class="row">
         <div class="card bg-transparent col-xl-10">
             <div class="card-body">
-                {% assign data = site.data.wowdaily %}
+                {% assign data = site.data.wowdaily_ru_eu %}
                 {% assign emissares = data.emissares | sort: "fraction" | reverse %}
                 {% assign holidaysCount = data.holidays|size %}
                 <h1 class="header text-left">Прямо сейчас</h1>

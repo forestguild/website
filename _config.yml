@@ -31,11 +31,14 @@ wowupdater: #--region eu --realm галакронд --realm-id 607 --guild "Яс
   realm-id: 607
   guild: "Ясный Лес"
 
+# WoW daily data from wowhead.com
+wowdaily:
+  region: eu
+  lang: ru
+
 # Attendance tracker
 attendance:
   guild: 374677
-  team: 15620
-  name: main
   twinks:
     Адептус: ['Адептуська', 'Адептукусь']
     Андрей: ['Оракин', 'Имрелихон', 'Минаскира', 'Яжматьепт', 'Ватгернн', 'Стикстень']

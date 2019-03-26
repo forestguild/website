@@ -12,9 +12,9 @@ build website:
   before_script:
     - bundle update
   script:
-    - bundle exec jekyll updateprogress --region eu --realm галакронд --realm-id 607 --guild "Ясный Лес"
-    - bundle exec jekyll attendance --guild 374677 --team 15620 --name main
-    - bundle exec jekyll attendance --guild 374677 --team 15829 --name static
+    - bundle exec jekyll updateprogress
+    - bundle exec jekyll attendance --team 15620 --name main
+    - bundle exec jekyll attendance --team 15829 --name static
     - bundle exec jekyll wowdaily
     - bundle exec jekyll build
     - bundle exec jekyll build #to avoid amp images bug

@@ -1,8 +1,3 @@
-PATH
-  remote: _plugins/wowdaily
-  specs:
-    wowdaily (0.0.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,6 +36,9 @@ GEM
     jekyll-wowattendance (1.0.4)
       jekyll (~> 3.8.5, >= 3.0.0)
       nokogiri (~> 1.10.1, >= 1.0.0)
+    jekyll-wowdaily (1.0.0)
+      jekyll (~> 3.8.5, >= 3.0.0)
+      nokogiri (~> 1.10.1, >= 1.0.0)
     jekyll-wowupdater (1.0.0)
       jekyll (~> 3.8.5, >= 3.0.0)
       nokogiri (~> 1.10.1, >= 1.0.0)
@@ -77,9 +75,9 @@ DEPENDENCIES
   fastimage
   jekyll
   jekyll-wowattendance
+  jekyll-wowdaily
   jekyll-wowupdater
   nokogiri
-  wowdaily!
 
 BUNDLED WITH
    2.0.1

@@ -9,6 +9,6 @@ gem "nokogiri"
 
 group :jekyll_plugins do
     gem 'jekyll-wowattendance'
-    gem 'wowdaily', :path => "./_plugins/wowdaily"
+    gem 'jekyll-wowdaily'
     gem 'jekyll-wowupdater'
 end
