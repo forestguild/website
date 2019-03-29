@@ -2,7 +2,7 @@
 layout: core/page
 ---
 <nav class="bg-img-red d-none d-lg-block">
-    {% include menu.html view="horizontal" %}
+    {% include elements/menu.html view="horizontal" %}
     <h1 class="header text-center">{{ page.title }}</h1>
 </nav>
 <div class="divider"></div>
@@ -10,7 +10,7 @@ layout: core/page
     <div class="row">
         <button class="btn btn-outline-warning btn-lg btn-block d-lg-none mx-auto" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="menu">МЕНЮ</button>
         <div class="col-md-12 mt-4 ml-2  d-lg-none collapse pt-0" id="menu">
-            {% include menu.html view="vertical" %}
+            {% include elements/menu.html view="vertical" %}
         </div>
 
         <div itemscope itemtype="http://schema.org/Article" class="jumbotron wiki col-lg-12 mb-0 pt-2">
@@ -42,7 +42,7 @@ layout: core/page
                 У тебя включен адблок, если не хочешь видеть рекламу - <a href="https://www.patreon.com/bePatron?u=4218488" target="_blank">стань нашим патроном</a>.<br />
                 Не хочешь заморачиваться? Просто отключи адблок, здесь всего один рекламный блок.
             </div>
-            {% include actualbanner.html %}
+            {% include elements/actualbanner.html %}
         </div>
         <hr class="lg" style="width: 100%;">
         <div class="col-lg-10 offset-lg-1" id="disqus_thread"></div>

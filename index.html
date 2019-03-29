@@ -8,12 +8,12 @@ layout: core/page
                 <h1 class="header text-right d-none d-md-block">Мифик+ аффиксы</h1>
                 <h1 class="header d-md-none" style="font-size: 1.5rem;">Мифик+ аффиксы</h1>
                 <div class="home-affixes-line">
-                    {% include affixes.html %}
+                    {% include game/affixes.html %}
                 </div>
                 <div class="d-none d-xl-block">
                     <span class="card-title"style="font-size: 1.2rem !important">следующая неделя</span>
                     <div class="home-affixes-line">
-                        {% include affixes.html when="next" %}
+                        {% include game/affixes.html when="next" %}
                     </div>
                 </div>
                 <div class="footer">
@@ -85,5 +85,5 @@ layout: core/page
 </div>
 <div class="home-divider"></div>
 <nav class="bg-img-red d-none d-lg-block">
-    {% include menu.html view="horizontal" %}
+    {% include elements/menu.html view="horizontal" %}
 </nav>

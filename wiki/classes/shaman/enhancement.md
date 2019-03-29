@@ -97,7 +97,7 @@ actual:
 * [Развеивание магии](https://ru.wowhead.com/spell=370)
 * [Жажда крови](https://ru.wowhead.com/spell=2825)
 
-{% include related.html type="specs" %}
+{% include elements/related.html type="specs" %}
 
 <hr>
 

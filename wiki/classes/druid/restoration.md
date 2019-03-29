@@ -102,7 +102,7 @@ description: Базовый гайд для Друида Исцеления (х�
 
 В талантах, базовые скилы не имеют бурстов.
 
-{% include related.html type="specs" %}
+{% include elements/related.html type="specs" %}
 
 <hr>
 

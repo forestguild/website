@@ -5,7 +5,6 @@ description: Гильдия Ясный Лес, World of Warcraft, EU Галак�
 baseurl: ''
 url: https://forestguild.club
 timezone: Europe/Paris
-github: rakshazi/forestguild.club
 defaultActualAddon: 8.1.5
 realm: galakrond
 disqus: forestguild
@@ -22,6 +21,7 @@ ads:
     bottom: R-A-332491-3
 streamers: #twitch users
   - akulenokwow
+  - etke
   - hitrayapopa
 
 # Guild progress updater

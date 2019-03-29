@@ -14,13 +14,12 @@
         <div class="col text-center">
             &raquo;{{ page.title }}&laquo;
             {% unless page.related == false %}
-            {% include related.html type=related %}
+            {% include elements/related.html type=related %}
             {% endunless %}
-            <a href="https://github.com/{{ site.github }}/tree/master/{{ page.path }}" class="alert-link d-none" rel="nofollow" target="_blank">Предложить изменение</a>
         </div>
         {% if page.author %}
         <div class="col text-right">
-            {% include author.html %}
+            {% include elements/author.html %}
         </div>
         {% endif %}
     </div>

@@ -6,11 +6,11 @@ layout: core/page
     <h1>Ой-ёй! А такого у нас нет. Зато есть много других интересных гайдов:</h1>
     <nav class="bg-img-red d-none d-lg-block">
         <hr class="lg" style="top:-40px">
-        {% include menu.html view="horizontal" %}
+        {% include elements/menu.html view="horizontal" %}
         <hr class="lg" style="transform: scaleY(-1);bottom:-20px">
     </nav>
     <button class="btn btn-danger btn-lg btn-block d-lg-none mx-auto" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="menu">МЕНЮ</button>
     <div class="col-md-12 mt-4 ml-2  d-lg-none collapse pt-0" id="menu">
-        {% include menu.html view="vertical" %}
+        {% include elements/menu.html view="vertical" %}
     </div>
 </div>

@@ -105,7 +105,7 @@ actual:
 * [Очищение духа](https://ru.wowhead.com/spell=51886)
 
 
-{% include related.html type="specs" %}
+{% include elements/related.html type="specs" %}
 
 <hr >
 

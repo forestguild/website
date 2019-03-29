@@ -77,7 +77,7 @@ description: Описание гайда
 
 * [Скилл со ссылкой на wowhead](https://ru.wowhead.com/spell=77758/) - Небольшое описание в 1 предложение, либо пометка
 
-{% include related.html type="specs" %}
+{% include elements/related.html type="specs" %}
 
 <hr>
 

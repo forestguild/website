@@ -314,13 +314,13 @@ related: false
                 <div class="col-lg-12">
                     <span class="card-title" style="font-size: 1.2rem !important">сейчас</span>
                     <div class="home-affixes-line bg-dark">
-                        {% include affixes.html when="now" %}
+                        {% include game/affixes.html when="now" %}
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <span class="card-title" style="font-size: 1.2rem !important">следующая неделя</span>
                     <div class="home-affixes-line bg-dark">
-                        {% include affixes.html when="next" %}
+                        {% include game/affixes.html when="next" %}
                     </div>
                 </div>
                 <h3 class="header">+2</h3>
@@ -476,7 +476,7 @@ related: false
     У тебя включен адблок, если не хочешь видеть рекламу - <a href="https://www.patreon.com/bePatron?u=4218488" target="_blank">стань нашим патроном</a>.<br />
     Не хочешь заморачиваться? Просто отключи адблок, здесь всего один рекламный блок.
 </div>
-{% include actualbanner.html %}
+{% include elements/actualbanner.html %}
 <div class="col-lg-10 offset-lg-1" id="disqus_thread"></div>
 <script type="text/javascript">
     (function(w, d, n, s, t) {

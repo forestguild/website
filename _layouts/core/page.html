@@ -10,8 +10,8 @@ layout: core/default
 /* WebP check */
 (function(window){var html=document.documentElement,isSupported=null;function checkSupport(fn){var WebP=new Image;WebP.onload=WebP.onerror=function(){isSupported=WebP.height===2;if(isSupported){if(html.className.indexOf("no-webp")>=0)html.className=html.className.replace(/\bno-webp\b/,"webp");else html.className+=" webp"}};WebP.src="data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA"}checkSupport()})(window);
     </script>
-    {% include assets.html block="head" %}
-    <style>{% include design/website.css %}</style>
+    {% include assets/loader.html block="head" %}
+    <style>{% include assets/website.css %}</style>
     {% comment %}SEO and verification stuff{% endcomment %}
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
     <meta property="og:type" content="{% if page.layout == 'wiki' or page.path == 'mythic.html' %}article{% else %}website{% endif %}" />
@@ -68,8 +68,8 @@ layout: core/default
     {% endif %}
     {{ content }}
     </main>
-    {% include logo.svg %}
-    {% include assets.html block="footer" %}
-    <script>{% include website.js %}</script>
+    {% include assets/logo.svg %}
+    {% include assets/loader.html block="footer" %}
+    <script>{% include assets/website.js %}</script>
     <noindex class="text-muted">Images by <a href="http://worldofwarcraft.com" target="_blank" rel="nofollow">Blizzard</a></noindex>
 </body>

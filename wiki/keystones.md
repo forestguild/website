@@ -263,13 +263,13 @@ actual:
 <div class="col-lg-12">
 <span class="card-title" style="font-size: 1.2rem !important">сейчас</span>
 <div class="home-affixes-line bg-dark">
-{% include affixes.html when="now" %}
+{% include game/affixes.html when="now" %}
 </div>
 </div>
 <div class="col-lg-12">
 <span class="card-title" style="font-size: 1.2rem !important">следующая неделя</span>
 <div class="home-affixes-line bg-dark">
-{% include affixes.html when="next" %}
+{% include game/affixes.html when="next" %}
 </div>
 </div>
 

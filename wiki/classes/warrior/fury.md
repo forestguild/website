@@ -88,7 +88,7 @@ _В конце концов это вар, вары крутые_
 * [Устрашающий крик](https://ru.wowhead.com/spell=5246) - заставляет бояться до 5 противников в радиусе 8 метров
 * [Ярость берсерка](https://ru.wowhead.com/spell=18499) - скидывает с себя страх, ошеломление и паралич
 
-<!--{% include related.html type="specs" %}-->
+<!--{% include elements/related.html type="specs" %}-->
 
 <hr>
 

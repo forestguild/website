@@ -95,7 +95,7 @@ description: Базовый гайд для Друида Баланс (сова,
 * [Умиротворение](https://ru.wowhead.com/spell=2908/) - снимает исступление с мобов ("диспелл" мобов), очень полезная штука в [ключах](/wiki/keystones) и [рейде](/wiki/raid).
 
 
-{% include related.html type="specs" %}
+{% include elements/related.html type="specs" %}
 
 <hr>
 
