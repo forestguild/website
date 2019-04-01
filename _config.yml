@@ -39,7 +39,7 @@ wowdaily:
 # Attendance tracker
 attendance:
   guild: 374677
-  max: 9
+  max: 10
   twinks:
     Адептус: ['Адептуська', 'Адептукусь']
     Андрей: ['Оракин', 'Имрелихон', 'Минаскира', 'Яжматьепт', 'Ватгернн', 'Стикстень']
@@ -71,11 +71,11 @@ assets:
   - url: "/assets/js/tablesorter.filter.min.js"
     defer: true
     type: js
-  - url: /assets/js/wowheadtooltips.js
+  - url: https://wow.zamimg.com/widgets/power.js
     async: true
     type: js
-  - url: https://instant.page/1.2.1
-    integrity: sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn
+  - url: https://instant.page/1.2.2
+    integrity: sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU
     type: js-module
 collections:
   - authors
