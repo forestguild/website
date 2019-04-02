@@ -6,6 +6,16 @@ $(function () {
         widgets: ["filter"],
     });
     $('[data-toggle="tooltip"]').tooltip();
+    $.ajax('https://api.twitch.tv/helix/streams?user_login={{ site.streamers | join: '&user_login=' }}', {
+        cache: true,
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader('Client-ID', '{{ site.stream_api }}');
+        }
+    }).done(function(data){
+        if(data.data.length > 0) {
+            $('.streaming_now').html(data.data.length);
+        }
+    });
 });
 {% endif %}
 
@@ -33,4 +43,4 @@ var whTooltips = {
 };
 
 /* Yandex.Metrics goals */
-setTimeout('yaCounter{{ site.analytics.yandex }}.reachGoal("1min_pageview");', 60000); //Stay on page for 1 min
+setTimeout('yaCounter{{ site.analytics.yandex }}.reachGoal("1min_pageview");', 60000);
