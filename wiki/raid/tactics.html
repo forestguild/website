@@ -1,0 +1,36 @@
+---
+metatitle: Тактика на Горнило Штормов, Битву за Дазар'алор, Ульдир (гер, нормал) WoW BfA
+title: Тактика
+author: Rakshazi
+title: Тактика
+layout: wiki
+---
+<div class="row text-center mt-5 mb-5">
+    <ul class="nav nav-pills ml-0 mt-0 mx-auto bg-dark-opacity text-white text-center" id="pills-tab" role="tablist">
+        {% for raid in site.data.raids %}
+        <li class="nav-item">
+            <a class="nav-link {% if raid.actual %}active{% endif %}" id="pills-{{ raid.patch | remove: '.' }}-tab" data-toggle="pill" href="#pills-{{ raid.patch | remove: '.' }}" role="tab" aria-controls="pills-{{ raid.patch | remove: '.' }}" aria-selected="true">{{ raid.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="tab-content" id="pills-tabContent">
+    {% for raid in site.data.raids %}
+    <div class="tab-pane fade {% if raid.actual %}show active{% endif %}" id="pills-{{ raid.patch | remove: '.' }}" role="tabpanel" aria-labelledby="pills-{{ raid.patch | remove: '.' }}-tab">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/videoseries?list={{ raid.video }}" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h1 {% if raid.actual == false %}class="text-muted"{% endif %}>{{ raid.name }}</h1>
+                <p>Рейд патча {{ raid.patch }}, {% if raid.actual %}актуален{% else %}ныне не актуален{% endif %}.</p>
+                <p><b><a href="{{ raid.text }}" rel="nofollow" target="_blank">Текстовая тактика</a></b> <i>советую держать под рукой во время РТ</i></p>
+                <hr>
+                <p><i>{{ raid.description }}</i></p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
