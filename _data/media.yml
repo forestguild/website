@@ -1,0 +1,17 @@
+stream:
+  id: uqvg5c0n36n6x881919a64txdijzt4
+  kit: https://drive.google.com/drive/folders/1iKVZIuju49w08EDnEfRIfvzg4ouVqGpF
+  users:
+    - akulenokwow
+    - etke
+    - hitrayapopa
+albums:
+  - name: Лица Ясного Леса
+    url: https://photos.app.goo.gl/CTRCcerKGbZpvPmB8
+    cover: /assets/img/pages/media/album-faces.jpg
+  - name: Встречи
+    url: https://photos.app.goo.gl/VBeFsirg1X1cWU2r8
+    cover: /assets/img/pages/media/album-meetings.jpg
+  - name: Достижения
+    url: https://photos.app.goo.gl/YCoJgMwhkJ7pcA1WA
+    cover: /assets/img/pages/media/album-achievements.jpg

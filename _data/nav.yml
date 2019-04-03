@@ -12,7 +12,7 @@ top:
   - title: Warcraft Logs
     url: https://www.warcraftlogs.com/guild/id/374677
     external: true
-  - title: Медиа
+  - title: "Медиа <i class='streaming_now'></i>"
     url: /wiki/media
 
 # Wiki menu

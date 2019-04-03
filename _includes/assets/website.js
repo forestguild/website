@@ -6,14 +6,14 @@ $(function () {
         widgets: ["filter"],
     });
     $('[data-toggle="tooltip"]').tooltip();
-    $.ajax('https://api.twitch.tv/helix/streams?user_login={{ site.streamers | join: '&user_login=' }}', {
+    $.ajax('https://api.twitch.tv/helix/streams?user_login={{ site.data.media.stream.users | join: '&user_login=' }}', {
         cache: true,
         beforeSend: function(xhr) {
-            xhr.setRequestHeader('Client-ID', '{{ site.stream_api }}');
+            xhr.setRequestHeader('Client-ID', '{{ site.data.media.stream.id }}');
         }
     }).done(function(data){
         if(data.data.length > 0) {
-            $('.streaming_now').html(data.data.length);
+            $('.streaming_now').html(data.data.length + '*');
         }
     });
 });

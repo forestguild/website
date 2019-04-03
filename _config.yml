@@ -19,11 +19,6 @@ ads:
   amp:
     top: R-A-332491-2
     bottom: R-A-332491-3
-stream_api: uqvg5c0n36n6x881919a64txdijzt4
-streamers: #twitch users
-  - akulenokwow
-  - etke
-  - hitrayapopa
 
 # Guild progress updater
 wowupdater: #--region eu --realm галакронд --realm-id 607 --guild "Ясный Лес"
