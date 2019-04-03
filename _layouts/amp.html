@@ -29,6 +29,7 @@ layout: amp
 
 
         <script async="" src="https://cdn.ampproject.org/v0.js"></script>
+        <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
         <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
         <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
         <style amp-boilerplate>{% include assets/amp/boilerplate.css %}</style>
@@ -59,22 +60,23 @@ layout: amp
         <!-- End Sidebar -->
         <!-- End Navbar -->
         <main id="content" role="main" class="">
-        <article class="recipe-article">
-            <header>
-                {% if page.author %}<a href="https://worldofwarcraft.com/ru-ru/character/{{ site.realm }}/{{ page.author }}" class="ampstart-subtitle block px3 pt2 mb2">{{ page.author }}</a>{% endif %}
-                <h1 class="mb1 px3"><!--{{ page.menu | replace: "&nbsp;","" }}--></h1>
+            <article class="recipe-article">
+                <header>
+                    {% if page.author %}<a href="https://worldofwarcraft.com/ru-ru/character/{{ site.realm }}/{{ page.author }}" class="ampstart-subtitle block px3 pt2 mb2">{{ page.author }}</a>{% endif %}
+                    <h1 class="mb1 px3"><!--{{ page.menu | replace: "&nbsp;","" }}--></h1>
 
-                <!-- Start byline -->
-                <address class="ampstart-byline clearfix mb4 px3 h5">
-                    <time class="ampstart-byline-pubdate block bold my1" datetime="2016-12-13">{{ page.metatitle }}</time>
-                </address>
-                <!-- End byline -->
-            </header>
-            {% if site.ads.amp.top %}<amp-ad width="300" height="250" type="yandex" data-block-id="{{ site.ads.amp.top }}" data-html-access-allowed="true"></amp-ad>{% endif %}
-            {{ content | markdownify | amp_images | amp_tables | autonofollow }}
-            <p><a class="nav-link" href="https://www.patreon.com/bePatron?u=4218488"><amp-img src="/assets/img/patreon.jpg" width="434" height="102" layout="fixed" class="my0 mx-auto "/></a></p>
-            {% if site.ads.amp.bottom %}<amp-ad width="300" height="250" type="yandex" data-block-id="{{ site.ads.amp.bottom }}" data-html-access-allowed="true"></amp-ad>{% endif %}
-        </article>
+                    <!-- Start byline -->
+                    <address class="ampstart-byline clearfix mb4 px3 h5">
+                        <time class="ampstart-byline-pubdate block bold my1" datetime="2016-12-13">{{ page.metatitle }}</time>
+                    </address>
+                    <!-- End byline -->
+                </header>
+                {% if site.ads.amp.top %}<amp-ad width="300" height="250" type="yandex" data-block-id="{{ site.ads.amp.top }}" data-html-access-allowed="true"></amp-ad>{% endif %}
+                {{ content | markdownify | amp_images | amp_tables | autonofollow }}
+                <p><a class="nav-link" href="https://www.patreon.com/bePatron?u=4218488"><amp-img src="/assets/img/patreon.jpg" width="434" height="102" layout="fixed" class="my0 mx-auto "/></a></p>
+                {% if site.ads.amp.bottom %}<amp-ad width="300" height="250" type="yandex" data-block-id="{{ site.ads.amp.bottom }}" data-html-access-allowed="true"></amp-ad>{% endif %}
+            </article>
         </main>
+        <amp-analytics type="metrika"><script type="application/json">{"vars": {"counterId": "{{ site.analytics.yandex }}"},"triggers": {"notBounce": {"on": "timer","timerSpec": {"immediate": false,"interval": 15,"maxTimerLength": 16},"request": "notBounce"}}}</script></amp-analytics>
     </body>
 </html>
