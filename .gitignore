@@ -2,7 +2,6 @@ _site
 _data/*.json
 .sass-cache
 .jekyll-metadata
-.php_cs.cache
 .bundle
 _plugins/*/*.gem
 _plugins/attendance
