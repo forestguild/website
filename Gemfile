@@ -7,6 +7,8 @@ gem "chronic"
 gem "fastimage"
 gem "nokogiri"
 
+gem "jekyll-theme-wow", :git => "https://github.com/forestguild/theme.git"
+
 group :jekyll_plugins do
     gem 'jekyll-wowattendance'
     gem 'jekyll-wowdaily'

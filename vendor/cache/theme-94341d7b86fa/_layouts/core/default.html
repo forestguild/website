@@ -1,0 +1,79 @@
+---
+layout: core/compress
+---
+
+<!doctype html>
+<html lang="ru" class="no-webp">
+    <head prefix="og: http://ogp.me/ns# {% if page.layout =='wiki' %}article: http://ogp.me/ns/article#{% endif %}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% if page.metatitle %}{{ page.metatitle }} - {% endif %}{{ site.title }}</title>
+        <script data-cfasync="false">
+            /* WebP check */
+            (function(window){var html=document.documentElement,isSupported=null;function checkSupport(fn){var WebP=new Image;WebP.onload=WebP.onerror=function(){isSupported=WebP.height===2;if(isSupported){if(html.className.indexOf("no-webp")>=0)html.className=html.className.replace(/\bno-webp\b/,"webp");else html.className+=" webp"}};WebP.src="data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA"}checkSupport()})(window);
+        </script>
+        {% include assets/loader.html block="head" %}
+        <style>{% include assets/website.css %}</style>
+        {% comment %}SEO and verification stuff{% endcomment %}
+        <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+        <meta property="og:type" content="{% if page.layout == 'wiki' or page.path == 'mythic.html' %}article{% else %}website{% endif %}" />
+        <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | replace:'.html','' }}" />
+        <meta property="og:image" content="{{ site.url }}/assets/img/logo.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:site_name" content="{{ site.title }}" />
+        <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+        {% if page.layout == 'wiki' or page.path == 'mythic.html' %}
+        <meta property="article:author" content="{% if page.author %}{{ page.author }}{% else %}{{ site.name }}{% endif %}" />
+        <meta property="article:section" content="Гайд" />
+        <meta property="article:tag" content="Гайд" />
+        <meta property="article:tag" content="WoW" />
+        <meta property="article:tag" content="World of Warcraft" />
+        {% if page.layout == 'wiki' %}
+        <link rel="amphtml" href="{{ page.url | canonical: 'amp' }}">
+        {% endif %}
+        {% endif %}
+        <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+        <meta name="yandex-verification" content="{{ site.verification.yandex }}" />
+        <meta name="google-site-verification" content="{{ site.verification.google }}" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/export/rss.xml" />
+        <link rel="canonical" href="{{ page.url | canonical }}">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" type="image/png" href="{{ site.url }}/assets/img/logo.png" />
+        <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter{{ site.analytics.yandex }} = new Ya.Metrika2({ id:{{ site.analytics.yandex }}, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/{{ site.analytics.yandex }}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top global">
+            <a class="navbar-brand d-lg-none" href="/">{{ site.name }}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <a class="navbar-brand" href="/"><img src="/assets/img/logo.png" style="width:50px"/></a>
+                <ul class="navbar-nav mr-auto">
+                    {% for item in site.data.nav.top %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ item.url }}" {% if item.external %}rel="nofollow" target="_blank"{% endif %}><span>{{ item.title }}</span></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/wiki"><span>Вики</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h1>TESTING GEM</h1>
+        {% if page.layout != 'wiki' %}
+        <main class="container-fluid">
+            {% endif %}
+            {{ content | webp_images | autonofollow }}
+        </main>
+        {% include assets/logo.svg %}
+        {% include assets/loader.html block="footer" %}
+        <script>{% include assets/website.js %}</script>
+        <noindex class="text-muted">Images by <a href="http://worldofwarcraft.com" target="_blank" rel="nofollow">Blizzard</a></noindex>
+    </body>
+</html>

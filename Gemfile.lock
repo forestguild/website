@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/forestguild/theme.git
+  revision: 94341d7b86fa9272b17f962dcbe5bc607902b54e
+  specs:
+    jekyll-theme-wow (0.0.1)
+      jekyll (~> 3.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -61,7 +68,7 @@ GEM
     rouge (3.3.0)
     ruby_dep (1.5.0)
     safe_yaml (1.0.5)
-    sass (3.7.3)
+    sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -74,6 +81,7 @@ DEPENDENCIES
   chronic
   fastimage
   jekyll
+  jekyll-theme-wow!
   jekyll-wowattendance
   jekyll-wowdaily
   jekyll-wowupdater

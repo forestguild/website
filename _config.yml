@@ -8,6 +8,7 @@ timezone: Europe/Paris
 defaultActualAddon: 8.1.5
 realm: galakrond
 disqus: forestguild
+theme: jekyll-theme-wow
 verification:
   yandex: 0e76a0023e630508
   google: HyXyjl__ZWM8pD-mJqSaPIR2wVBFXVr25u0zwJkENfY
@@ -95,6 +96,7 @@ exclude:
 - .github
 - .gitignore
 - .gitlab-ci.yml
+- vendor
 - Gemfile
 - Gemfile.lock
 - Makefile
