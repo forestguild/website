@@ -68,7 +68,7 @@ layout: core/compress
         {% if page.layout != 'wiki' %}
         <main class="container-fluid">
             {% endif %}
-            {{ content | webp_images | autonofollow }}
+            {{ content | forcewebp | autonofollow }}
         </main>
         {% include assets/logo.svg %}
         {% include assets/loader.html block="footer" %}

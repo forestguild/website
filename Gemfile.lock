@@ -1,9 +1,11 @@
 GIT
   remote: https://github.com/forestguild/theme.git
-  revision: 9e2c5a02787468047cdaf7de9dd29df23fb218bb
+  revision: 4716da3a650a294c750acbcb26cce70a5194c879
   specs:
     jekyll-theme-wow (0.0.1)
       jekyll (~> 3.5)
+      jekyll-forcewebp (~> 1.0.0, >= 1.0.0)
+      jekyll-wowdaily (~> 1.0.0, >= 1.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -40,6 +42,10 @@ GEM
       fastimage (~> 2.1.5, >= 2.0.0)
       jekyll (~> 3.8.5, >= 3.0.0)
       nokogiri (~> 1.10.1, >= 1.0.0)
+    jekyll-forcewebp (1.0.0)
+      jekyll (~> 3.8.5, >= 3.0.0)
+      mime-types (~> 3.2.2, >= 3.0.0)
+      nokogiri (~> 1.10.1, >= 1.0.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-watch (2.2.1)
@@ -60,6 +66,9 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
     mercenary (0.3.6)
+    mime-types (3.2.2)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2019.0331)
     mini_portile2 (2.4.0)
     nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
@@ -85,6 +94,7 @@ DEPENDENCIES
   chronic
   jekyll
   jekyll-amptools
+  jekyll-forcewebp
   jekyll-theme-wow!
   jekyll-wowattendance
   jekyll-wowdaily
