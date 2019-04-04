@@ -82,7 +82,7 @@ wiki:
             url: /wiki/raid/tactics
       - title: Мифик+
         class: text-wow
-        url: /wiki/keystones
+        url: /mythic
   - title: Инструментарий
     items:
       - title: Аддоны
@@ -91,6 +91,9 @@ wiki:
       - title: Discord
         class: text-wow
         url: /wiki/discord
+      - title: Посещаемость РТ
+        class: text-wow
+        url: /attendance
       - title: Помощь сайту
         class: text-wow
         url: /wiki/contributions

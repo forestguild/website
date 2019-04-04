@@ -3,5 +3,3 @@ _data/*.json
 .sass-cache
 .jekyll-metadata
 .bundle
-_plugins/*/*.gem
-_plugins/attendance

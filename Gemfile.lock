@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/forestguild/theme.git
-  revision: 7e4dc6025e0dd832688593fb93dc79ba9c3667d2
+  revision: cff43ed5348b8e12570552bab306c40fafb94d80
   specs:
     jekyll-theme-wow (0.0.1)
       jekyll (~> 3.5)
