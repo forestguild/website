@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/forestguild/theme.git
-  revision: 4716da3a650a294c750acbcb26cce70a5194c879
+  revision: 7e4dc6025e0dd832688593fb93dc79ba9c3667d2
   specs:
     jekyll-theme-wow (0.0.1)
       jekyll (~> 3.5)
@@ -50,6 +50,9 @@ GEM
       sass (~> 3.4)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    jekyll-wowaffixes (1.0.0)
+      chronic (~> 0.10.2, >= 0.10.0)
+      jekyll (~> 3.8.5, >= 3.0.0)
     jekyll-wowattendance (1.0.6)
       jekyll (~> 3.8.5, >= 3.0.0)
       nokogiri (~> 1.10.1, >= 1.0.0)
@@ -91,11 +94,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  chronic
   jekyll
   jekyll-amptools
   jekyll-forcewebp
   jekyll-theme-wow!
+  jekyll-wowaffixes
   jekyll-wowattendance
   jekyll-wowdaily
   jekyll-wowupdater

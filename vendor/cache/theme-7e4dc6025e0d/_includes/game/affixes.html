@@ -1,7 +1,7 @@
 {% if include.when %}
-{% assign affixes = include.when | mythicAffixes %}
+{% assign affixes = site.data.affixes_eu[include.when] %}
 {% else %}
-{% assign affixes = "now | mythicAffixes %}
+{% assign affixes = site.data.affixes_eu['current'] %}
 {% endif %}
 
 <div class="row text-center">

@@ -39,7 +39,7 @@ layout: core/compress
             {% if page.author %}
             <dc:creator>{{ page.author | xml_escape }}</dc:creator>
             {% endif %}
-            <description><![CDATA[{{ page.content |  markdownify | remove:"&nbsp;" | tocAbsoluteUrls: page.url }}]]></description>
+            <description><![CDATA[{{ page.content |  markdownify | remove:"&nbsp;" | toAbsoluteUrls: page.url }}]]></description>
             <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
             <link>{{ page.url | canonical }}</link>
             <guid isPermaLink="true">{{ page.url | canonical }}</guid>

@@ -14,7 +14,8 @@ module Jekyll
             content.to_s
         end
 
-        def tocAbsoluteUrls(input, page_url)
+        #RSS
+        def toAbsoluteUrls(input, page_url)
             content = Nokogiri::HTML.fragment(input)
             content.css("a").each do |a|
                 next unless a.get_attribute('href').start_with?('#')
