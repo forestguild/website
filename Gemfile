@@ -9,6 +9,5 @@ group :jekyll_plugins do
     gem 'jekyll-wowdaily'
     gem 'jekyll-wowupdater'
     gem 'jekyll-amptools'
-    gem 'jekyll-forcewebp'
     gem 'jekyll-wowaffixes'
 end

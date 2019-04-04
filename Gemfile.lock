@@ -96,7 +96,6 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   jekyll-amptools
-  jekyll-forcewebp
   jekyll-theme-wow!
   jekyll-wowaffixes
   jekyll-wowattendance
