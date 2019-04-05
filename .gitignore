@@ -3,3 +3,4 @@ _data/*.json
 .sass-cache
 .jekyll-metadata
 .bundle
+Gemfile.local*

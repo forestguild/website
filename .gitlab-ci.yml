@@ -17,7 +17,7 @@ build website:
     - bundle exec jekyll attendance --team 15829 --name static
     - bundle exec jekyll wowaffixes --region eu
     - bundle exec jekyll wowdaily
-    - bundle exec jekyll build #to avoid amp images bug
+    - bundle exec jekyll build
   after_script:
     - echo "forestguild.club" > _site/CNAME
   artifacts:
