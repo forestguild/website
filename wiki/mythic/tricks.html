@@ -1,0 +1,35 @@
+---
+title: Трюки мифик+
+metatitle: Трюки и секреты мифик+ ключей в WoW BfA
+layout: wiki
+related: false
+author: Rakshazi
+---
+
+<p>Практически в каждом мифик+ инсте есть особые места или действия, при выполнении которых можно сэкономить время либо попросту проигнорировать часть механик босса или треша.
+Ниже мы собрали 100% работающие трюки и секреты, которые помогут тебе закрыть ключ вовремя и не отъехать от особо злостных умений противников.</p>
+
+<p>Важный момент! Даже 2:
+<ol>
+    <li>Гайд находится в постоянной доработке - добавляются новые трюки, удаляются исправленные.</li>
+    <li>Мы добавляем только легальные способы, никаких читов или багоюза. Все секреты ниже - прямое использование игровых механик</li>
+</ol>
+</p>
+
+<div class="row">
+{% for dungeon in site.data.mythictricks %}
+<div class="col-lg-6 bg-dark-opacity pl-5 pt-3">
+        <h1><a href="/wiki/mythic/tricks/{{ dungeon.slug }}">{{ dungeon.name }}</a></h1>
+    <ul>
+        {% for trick in dungeon.tricks %}
+        <li>
+            {{ trick.name }} {% if trick.video %}+видео{% endif %}
+            <a href="/wiki/mythic/tricks/{{ dungeon.slug }}#{{ trick.name| slugify }}" class="btn btn-outline-warning">подробности</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endfor %}
+</div>
+
+<p>PS: Если знаешь еще способы облегчить себе жизнь - скажи нам об этом в <abbr title="Ссылка в меню сверху">дискорде</abbr>

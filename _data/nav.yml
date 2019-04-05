@@ -83,6 +83,10 @@ wiki:
       - title: Мифик+
         class: text-wow
         url: /mythic
+        items:
+          - title: Хитрости
+            class: text-uppercase badge badge-dark
+            url: /wiki/mythic/tricks
   - title: Инструментарий
     items:
       - title: Аддоны
