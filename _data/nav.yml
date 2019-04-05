@@ -49,16 +49,14 @@ wiki:
           - title: Неистовство
             url: /wiki/classes/warrior/fury
             class: badge badge-danger
-  - title: Быстрый старт
-    items:
-      - title: Как одеться
-        class: text-wow
-        url: /wiki/start/gear
   - title: Фарм
     items:
       - title: Золото
         class: text-wow
         url: /wiki/goldfarm
+      - title: Уровень шмота
+        class: text-wow
+        url: /wiki/start/gear
       - title: Репутация
         class: text-wow
         items:
@@ -87,7 +85,7 @@ wiki:
           - title: Хитрости
             class: text-uppercase badge badge-dark
             url: /wiki/mythic/tricks
-  - title: Инструментарий
+  - title: Инструменты
     items:
       - title: Аддоны
         class: text-wow
