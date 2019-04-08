@@ -322,7 +322,7 @@ related: false
                     </div>
                 </div>
                 <h3 class="header">+2</h3>
-                {% assign items = site.data.affixes.list | where: 'level', 2 %}
+                {% assign items = site.data.keystones.affixes | where: 'level', 2 %}
                 {% for item in items -%}
                 {% if item.note.role %}<img src="/assets/img/roles/{{ item.note.role }}.jpg" title="{{ item.note.text }}" />{% endif %}
                 <strong><a href="https://ru.wowhead.com/affix={{ item.id }}"></a></strong> - {{ item.description }}<br />
@@ -332,7 +332,7 @@ related: false
         <div class="card bg-transparent col-xl-5 col-lg-6 offset-xl-2 offset-lg-0">
             <div class="card-body">
                 <h3 class="header">+4</h3>
-                {% assign items = site.data.affixes.list | where: 'level', 4 %}
+                {% assign items = site.data.keystones.affixes | where: 'level', 4 %}
                 {% for item in items -%}
                 {% if item.note.role %}<img src="/assets/img/roles/{{ item.note.role }}.jpg" title="{{ item.note.text }}" />{% endif %}
                 <strong><a href="https://ru.wowhead.com/affix={{ item.id }}"></a></strong> - {{ item.description }}<br />
@@ -343,7 +343,7 @@ related: false
             <div class="card bg-dark-opacity col-xl-5 col-lg-6">
                 <div class="card-body">
                     <h3 class="header">+7</h3>
-                    {% assign items = site.data.affixes.list | where: 'level', 7 %}
+                    {% assign items = site.data.keystones.affixes | where: 'level', 7 %}
                     {% for item in items -%}
                     {% if item.note.role %}<img src="/assets/img/roles/{{ item.note.role }}.jpg" title="{{ item.note.text }}" />{% endif %}
                     <strong><a href="https://ru.wowhead.com/affix={{ item.id }}"></a></strong> - {{ item.description }}<br />
@@ -353,7 +353,7 @@ related: false
             <div class="card bg-dark-opacity col-xl-5 col-lg-6 offset-xl-2 offset-lg-0">
                 <div class="card-body">
                     <h3 class="header">10+ (сезонные)</h3>
-                    {% assign items = site.data.affixes.list | where: 'level', 10 %}
+                    {% assign items = site.data.keystones.affixes | where: 'level', 10 %}
                     {% for item in items -%}
                     {% if item.note.role %}<img src="/assets/img/roles/{{ item.note.role }}.jpg" title="{{ item.note.text }}" />{% endif %}
                     <strong><a href="https://ru.wowhead.com/affix={{ item.id }}"></a></strong> - {{ item.description }}<br />

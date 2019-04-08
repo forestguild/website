@@ -1,0 +1,16 @@
+---
+- difficulty: Нормальный
+  level: 110-120
+  requiredIlvl: "-"
+  givenIlvl: 273-340
+  note: Можно сразу в них ходить через поиск подземелий
+- difficulty: Героический
+  level: 120
+  requiredIlvl: 305
+  givenIlvl: 355
+  note: Уже нужен максимальный уровень и ilvl, тоже через поиск подземелий
+- difficulty: Эпохальный
+  level: 120
+  requiredIlvl: 355+
+  givenIlvl: 370-400
+  note: Попасть только ножками с ключом, лучший лут в игре, прогрессивная сложность

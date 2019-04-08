@@ -277,7 +277,7 @@ actual:
 
 #### 2+
 
-{% assign items = site.data.affixes.list | where: 'level', 2 %}
+{% assign items = site.data.keystones.affixes | where: 'level', 2 %}
 {% for item in items -%}
 * {% if item.note.role %}![{{ item.note.text }}](/assets/img/roles/{{ item.note.role }}.jpg "{{ item.note.text }}"){% endif %}**[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
 {% endfor %}
@@ -287,7 +287,7 @@ actual:
 <div class="col-lg-6 col-md-12" markdown="1">
 #### 4+
 
-{% assign items = site.data.affixes.list | where: 'level', 4 %}
+{% assign items = site.data.keystones.affixes | where: 'level', 4 %}
 {% for item in items -%}
 * {% if item.note.role %}![{{ item.note.text }}](/assets/img/roles/{{ item.note.role }}.jpg "{{ item.note.text }}"){% endif %}**[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
 {% endfor %}
@@ -299,7 +299,7 @@ actual:
 <div class="col-lg-6 col-md-12" markdown="1">
 #### 7+
 
-{% assign items = site.data.affixes.list | where: 'level', 7 %}
+{% assign items = site.data.keystones.affixes | where: 'level', 7 %}
 {% for item in items -%}
 * {% if item.note.role %}![{{ item.note.text }}](/assets/img/roles/{{ item.note.role }}.jpg "{{ item.note.text }}"){% endif %}**[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
 {% endfor %}
@@ -309,7 +309,7 @@ actual:
 <div class="col-lg-6 col-md-12" markdown="1">
 #### 10+
 
-{% assign items = site.data.affixes.list | where: 'level', 10 %}
+{% assign items = site.data.keystones.affixes | where: 'level', 10 %}
 {% for item in items -%}
 * {% if item.note.role %}![{{ item.note.text }}](/assets/img/roles/{{ item.note.role }}.jpg "{{ item.note.text }}"){% endif %}**[{{ item.name }}](https://ru.wowhead.com/affix={{ item.id }})** - {{ item.description }}
 {% endfor %}
