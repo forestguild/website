@@ -1,24 +1,43 @@
 ---
-title: Гильдия Ясный Лес @ EU Галакронд
-name: Ясный Лес
-description: Гильдия Ясный Лес, World of Warcraft, EU Галакронд.
 baseurl: ''
 url: https://forestguild.club
 timezone: Europe/Paris
-defaultActualAddon: 8.1.5
-realm: galakrond
-theme: jekyll-theme-wow
-verification:
-  yandex: 0e76a0023e630508
-  google: HyXyjl__ZWM8pD-mJqSaPIR2wVBFXVr25u0zwJkENfY
-analytics:
-  yandex: 50342920
-ads:
-  page:
-    bottom: R-A-332491-4
-  amp:
-    top: R-A-332491-2
-    bottom: R-A-332491-3
+theme: jekyll-theme-forestguild
+
+# Theme settings
+ui:
+  brand: Ясный Лес #Brand name or short name, example: website name 'Guild "Lala Land" @ EU Galakrond' may use 'Lala Land' as brand name
+  addon: 8.1.5 #Current WoW Addon
+  meta: #Website meta tags
+    lang: ru #Website language code
+    locale: ru_RU #Website locale code, examples: ru_RU, en_GB, en_US
+    title: Гильдия Ясный Лес @ EU Галакронд #Website title
+    description: Гильдия Ясный Лес, World of Warcraft, EU Галакронд. #Website meta description
+    article: #Website articles meta
+      category: Гайд #Articles' category
+      tags: ['Гайд', 'WoW', 'World of Warcraft'] #Articles' tags
+  images: #Website images (logos, etc) relative to site.url
+    logo: #General website logo
+      url: /assets/img/logo.png
+      type: image/png #Image MIME-type
+      has_svg: true #If your logo has SVG symbol variant, place it on /assets/logo.svg
+    favicon:
+      url: /favicon.ico #NOTE: best path is /favicon.ico, because some browsers will ignore that setting and try to load /favicon.ico
+      type: image/x-icon
+  verification: #Website verification HTML meta-tags
+    yandex: 0e76a0023e630508
+    google: HyXyjl__ZWM8pD-mJqSaPIR2wVBFXVr25u0zwJkENfY
+  analytics: # Website analytics. Supported only Yandex.Metrika right now
+    yandex: 50342920
+  ads: # Website ads. Supported only Yandex.Direct/Adfox
+    type: yandex
+    fallback: https://patreon.com/rakshazi #If person uses adblock he will see block under content with offer disable adblock or fund website with patreon or any other way
+    page:
+      bottom: R-A-332491-4
+    amphtml:
+      top: R-A-332491-2 #ONLY 300x250px
+      bottom: R-A-332491-3 #ONLY 300x250px
+
 
 # Guild progress updater
 wowupdater: #--region eu --realm галакронд --realm-id 607 --guild "Ясный Лес"
@@ -48,31 +67,6 @@ attendance:
     Тетрис: ['Саргерка', 'Ишамухале', 'Купожка']
     Эмиль: ['Вглазури', 'Хрер', 'Фуфия']
 
-# Assets
-assets:
-  head:
-  - url: "/assets/css/bootstrap.min.css"
-    type: css
-  footer:
-  - url: "/assets/js/jquery.min.js"
-    type: js
-  - url: "/assets/js/bootstrap.bundle.min.js"
-    defer: true
-    type: js
-  - url: "/assets/css/tablesorter.min.css"
-    type: css
-  - url: "/assets/js/tablesorter.min.js"
-    defer: true
-    type: js
-  - url: "/assets/js/tablesorter.filter.min.js"
-    defer: true
-    type: js
-  - url: https://wow.zamimg.com/widgets/power.js
-    async: true
-    type: js
-  - url: https://instant.page/1.2.2
-    integrity: sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU
-    type: js-module
 collections:
   - authors
 markdown: kramdown

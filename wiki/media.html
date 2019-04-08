@@ -7,7 +7,7 @@ actual:
 - ВСЕГДА
 ---
 <div class="row text-center amp-mt-iframe">
-    {% for user in site.data.media.stream.users %}
+    {% for user in site.data.ui.media.stream.users %}
     <div class="col-xl-4">
         <div class="embed-responsive embed-responsive-16by9">
             <iframe src="https://player.twitch.tv/?channel={{ user }}" class="embed-responsive-item img-thumbnail" allowfullscreen></iframe>
@@ -19,12 +19,12 @@ actual:
     <div class="col-xl-12 text-center">
         <h3>
             Хочешь начать стримить?
-            <a href="{{ site.data.media.stream.kit }}" target="_blank" class="btn btn-lg btn-outline-warning">Гайд и набор стримера</a>
+            <a href="{{ site.data.ui.media.stream.kit }}" target="_blank" class="btn btn-lg btn-outline-warning">Гайд и набор стримера</a>
         </h3>
     </div>
 </div>
 <div class="row text-center">
-    {% for album in site.data.media.albums %}
+    {% for album in site.data.ui.media.albums %}
     <div class="col-xl-4">
         <a href="{{ album.url }}" target="_blank" title="{{ album.name }}"><img src="{{ album.cover }}" class="img-thumbnail"></a>
     </div>

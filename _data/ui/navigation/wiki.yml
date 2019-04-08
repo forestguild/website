@@ -1,0 +1,82 @@
+- title: Классы
+  items:
+    - title: Друид
+      class: text-wow
+      url: /wiki/classes/druid
+      items:
+        - title: Танк
+          class: text-uppercase badge badge-dark
+          url: /wiki/classes/druid/guardian
+        - title: Хил
+          class: text-uppercase badge badge-success
+          url: /wiki/classes/druid/restoration
+        - title: РДД
+          class: text-uppercase badge badge-danger
+          url: /wiki/classes/druid/balance
+    - title: Шаман
+      class: text-wow
+      url: /wiki/classes/shaman
+      items:
+        - title: РДД
+          class: text-uppercase badge badge-danger
+          url: /wiki/classes/shaman/elemental
+        - title: МДД
+          class: text-uppercase badge badge-danger
+          url: /wiki/classes/shaman/enhancement
+    - title: Воин
+      class: text-wow
+      url: /wiki/classes/warrior/fury
+      items:
+        - title: Неистовство
+          url: /wiki/classes/warrior/fury
+          class: badge badge-danger
+- title: Фарм
+  items:
+    - title: Золото
+      class: text-wow
+      url: /wiki/goldfarm
+    - title: Уровень шмота
+      class: text-wow
+      url: /wiki/start/gear
+    - title: Репутация
+      class: text-wow
+      items:
+      - title: BfA
+        url: /wiki/reputation/bfa
+        class: badge color-wow
+      - title: Legion
+        url: /wiki/reputation/legion
+        class: badge badge-success
+- title: EndGame
+  items:
+    - title: Рейд
+      class: text-wow
+      url: /wiki/raid
+      items:
+        - title: Чек-лист
+          class: text-uppercase badge badge-dark
+          url: /wiki/raid/checklist
+        - title: Тактика
+          class: text-uppercase badge badge-dark
+          url: /wiki/raid/tactics
+    - title: Мифик+
+      class: text-wow
+      url: /mythic
+      items:
+        - title: Хитрости
+          class: text-uppercase badge badge-dark
+          url: /wiki/mythic/tricks
+- title: Инструменты
+  items:
+    - title: Аддоны
+      class: text-wow
+      url: /wiki/addons
+    - title: Discord
+      class: text-wow
+      url: /wiki/discord
+    - title: Посещаемость РТ
+      class: text-wow
+      url: /attendance
+    - title: Помощь сайту
+      class: text-wow
+      url: /wiki/contributions
