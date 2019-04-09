@@ -1,5 +1,5 @@
 variables:
-  REMOTE: git@github.com:rakshazi/forestguild.club.git
+  REMOTE: git@github.com:forestguild/website.git
 stages:
   - build
   - deploy
