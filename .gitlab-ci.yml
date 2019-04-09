@@ -3,6 +3,7 @@ variables:
 stages:
   - build
   - deploy
+  - test
 
 build website:
   image: jekyll/jekyll
@@ -50,5 +51,20 @@ deploy:
     - git add --all
     - git commit -a -q -m Update
     - git push --no-thin --force origin HEAD:gh-pages
+  tags:
+    - docker
+
+pagespeed:
+  image: rakshazi/psi
+  stage: test
+  only:
+    - master
+  before_script:
+    - sleep 600 # Wait 10 mins for cache update
+  script:
+    - psi https://forestguild.club
+    - psi https://forestguild.club/mythic
+    - psi https://forestguild.club/wiki/start/gear
+    - psi https://forestguild.club/amp/wiki/start/gear
   tags:
     - docker
