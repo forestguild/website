@@ -1,17 +1,13 @@
-# Сайт гильдии "Ясный Лес" [![Build Status](https://gitlab.com/rakshazi/forestguild/badges/master/build.svg)](https://gitlab.com/rakshazi/forestguild)
+# Guild "Ясный Лес" website [![Build Status](https://gitlab.com/rakshazi/forestguild/badges/master/build.svg)](https://gitlab.com/rakshazi/forestguild/pipelines)
 
-[forestguild.club](https://forestguild.club)
+URL: [forestguild.club](https://forestguild.club)
 
-Написан на [Jekyll](https://jekyllrb.com), [Gitlab CI](https://gitlab.com/rakshazi/forestguild).
+### Image optimization
 
-### Оптимизация изображений
+Requirements: imagemagick, jpegtran
 
-**Требования**
+1. `mogrify -format jpg *.*` - convert all to jpeg (original non-jpeg may be deleted)
+2. `find ./assets/img/ -name "*.jpg" -type f -exec jpegtran -copy none -optimize -progressive -outfile {} {} \;` - optimize jpeg
+3. `mogrify -format webp *.*` - convert to webp
 
-imagemagick, jpegtran
-
-1. `mogrify -format jpg *.*` - конвертировать все изображения в формат jpeg (исходный не-jpeg можно удалять)
-2. `find ./assets/img/ -name "*.jpg" -type f -exec jpegtran -copy none -optimize -progressive -outfile {} {} \;` - оптимизировать jpeg изображения
-3. `mogrify -format webp *.*` - конвертировать все изображения в формат webp
-
-> jpeg = для браузеров, без поддержки webp
+> jpeg is required for browsers without webp support. [Check it here](https://caniuse.com/#feat=webp)
