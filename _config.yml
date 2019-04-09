@@ -18,8 +18,11 @@ ui:
       tags: ['Гайд', 'WoW', 'World of Warcraft'] #Articles' tags
   images: #Website images (logos, etc) relative to site.url
     logo: #General website logo
-      url: /assets/img/logo.png
+    - url: /assets/img/logo.png
       type: image/png #Image MIME-type
+      has_svg: true #If your logo has SVG symbol variant, place it on /assets/logo.svg
+    - url: /assets/img/logo.webp
+      type: image/webp #Image MIME-type
       has_svg: true #If your logo has SVG symbol variant, place it on /assets/logo.svg
     favicon:
       url: /favicon.ico #NOTE: best path is /favicon.ico, because some browsers will ignore that setting and try to load /favicon.ico
