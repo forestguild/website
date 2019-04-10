@@ -55,12 +55,12 @@ deploy:
     - docker
 
 pagespeed:
-  image: rakshazi/psi
+  image: alpine:latest
   stage: test
   only:
     - master
   script:
     - sleep 600 # Wait 10 mins for cache update
-    - psi https://forestguild.club https://forestguild.club/mythic https://forestguild.club/wiki/start/gear https://forestguild.club/amp/wiki/start/gear
+    - docker run -it --rm rakshazi/psi https://forestguild.club https://forestguild.club/mythic https://forestguild.club/wiki/start/gear https://forestguild.club/amp/wiki/start/gear
   tags:
     - docker
