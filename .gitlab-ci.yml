@@ -62,7 +62,7 @@ pagespeed:
   only:
     - master
   script:
-    #- sleep 600 # Wait 10 mins for cache update
+    - sleep 60 # Wait a min for cache update
     - docker run --rm rakshazi/psi https://forestguild.club https://forestguild.club/mythic https://forestguild.club/wiki/start/gear https://forestguild.club/amp/wiki/start/gear
   tags:
     - docker
