@@ -55,7 +55,7 @@ deploy:
     - docker
 
 pagespeed:
-  image: alpine:latest
+  image: docker:stable
   stage: test
   services:
     - docker:dind
