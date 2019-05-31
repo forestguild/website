@@ -1,7 +1,7 @@
 ---
 avatar: /assets/img/avatars/swed.jpg
-char: Джоиказинно
+char: джойказиныч
 description: Шаман-затейник
 name: Swed
-realm: galakrond
+realm: soulflayer
 ---

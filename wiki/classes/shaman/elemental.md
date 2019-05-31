@@ -4,8 +4,6 @@ title: Стихии
 layout: wiki
 author: Swed
 description: Гайд для шамана элема (стихии, рдд) в WoW BfA с ротацией, талантами для рейдов/мифик+, характеристиками и советами.
-actual:
-  - 8.0.1
 ---
 
 > Achtung!!! Этот гайд **НЕ ПРЕДНАЗНАЧЕН** для прожженных самоваров и т.д.
@@ -20,8 +18,11 @@ actual:
         - [Минусы](#минусы)
         - [Скилы](#скилы)
 + [Таланты](#таланты)
-        - [В одну цель](#в-одну-цель)
-        - [AoE](#aoe)
+    * [Соло таргет](#соло-таргет)
+    * [АОЕ](#аое)
++ [Азеритовые таланты и экипировка](#азеритовые-таланты-и-экипировка)
++ [БИС экипировка](#бис-экипировка)
++ [Аксессуары](#аксессуары)
 + [Ротация](#ротация)
         - [Начало](#начало)
         - [Основная часть](#основная-часть)
@@ -40,30 +41,29 @@ actual:
 
 ### Самое базовое
 1. У Троллей хорошие рассовые способности для баланса: [Берсерк](https://ru.wowhead.com/spell=26297/) (+15% к скорости)
-2. Главные скилы: [Выброс лавы](https://ru.wowhead.com/spell=51505), [Огненный шок](https://ru.wowhead.com/spell=188389), [Молния](https://ru.wowhead.com/spell=188196)
+2. Главные скилы: [ Выброс лавы](https://ru.wowhead.com/spell=51505), [Огненный шок](https://ru.wowhead.com/spell=188389), [Молния](https://ru.wowhead.com/spell=188196)
 
 ### Плюсы
 
-1. Довольно мощное АоE
-2. Имеет не плохой соло таргет ( в одну цель) дамаг
+1. Довольно мощное Аое (5+)
+2. Имеет не плохой соло таргет ( в одну цель)
 3. Имеет форму волка
-4. Имеет [Элементаль земли](https://ru.wowhead.com/spell=198103) позволяющий нам/рейду прожить чуть дольше или дать время на рес танка
+4. Имеет [Элементаль земли](https://ru.wowhead.com/spell=198103) позволяющий нам/группе прожить чуть дольше или дать время на рес танка
 5. Имеет [Тотем-конденсации](https://ru.wowhead.com/spell=192058) это по моему единственный рендж стан в игре
-6. Выбор талантов имеет отличную гибкость и разнообразные игровых стилей.
-7. Имеет способность [Сглаз](https://ru.wowhead.com/spell=51514)
+6. Имеет способность [Сглаз](https://ru.wowhead.com/spell=51514)
 
 ### Минусы
 
 1. Нет быстрого перемещения по типу [порыв](https://ru.wowhead.com/spell=1850) (только у _совершенствование_ )
 2. Низкая выживаемость, при том что у шамана есть родной [Астральный сдвиг](https://ru.wowhead.com/spell=108271) и с талантами [Повелитель изначальных стихий](https://ru.wowhead.com/spell=117013) [Каменный доспех](https://ru.wowhead.com/spell=118337) [Дух волка](https://ru.wowhead.com/spell=260878)
-3. почти бесполезен в некоторых ситуациях т.к имеет уж очень длинный каст и ему постоянно необходимо двигаться
+3. Почти бесполезен в некоторых ситуациях т.к имеет уж очень длинный каст и ему постоянно необходимо двигаться
+4. Низкий урон в 2-4 [цели]
 
 ### Скилы
 
 **Нанесение урона** (прямой урон и набор ресурса: _Энегрия водоворота_):
 
-* [Повелитель тотемов](https://ru.wowhead.com/spell=210643) - как бы не было странно, но у шамана умеется Тотем резонанса
-Создает 1 ед. энергии Водоворота раз в 1 сек. ( только с талантом)
+* [Повелитель тотемов](https://ru.wowhead.com/spell=210643) - как бы не было странно, но у шамана умеется Тотем резонанса Создает 1 ед. энергии Водоворота раз в 1 сек. ( только с талантом)
 * [ Выброс лавы](https://ru.wowhead.com/spell=51505)
 * [Молния](https://ru.wowhead.com/spell=188196)
 * [Огненный шок](https://ru.wowhead.com/spell=188389)
@@ -104,46 +104,98 @@ actual:
 * [Астральное возвращение](https://ru.wowhead.com/spell=556)
 * [Очищение духа](https://ru.wowhead.com/spell=51886)
 
-
-{% include elements/related.html type="specs" %}
-
-<hr >
-
 # Таланты
 
-### В одну цель
+## Соло таргет
 
-[![Шаман Стихии - таланты](/assets/img/pages/shaman/elem-singletarget-talents.jpg)](https://ru.wowhead.com/talent-calc/shaman/elemental/cyCc)
+![Шаман Стихии - таланты](/assets/img/pages/shaman/elem-singletarget-talents.jpg)
+
+## АОЕ
+
+![Шаман Стихии - таланты](/assets/img/pages/shaman/elem-aoe-talents.jpg)
+![Шаман Стихии - таланты](/assets/img/pages/shaman/elem-aoe-talents2.jpg)
+
+* **_Если вы не имеете 3 азеритовых таланта [Горючий потенциал](https://ru.wowhead.com/spell=279829/igneous-potential)_**
+
+![Шаман Стихии - таланты](/assets/img/pages/shaman/elem-aoe-talents3.jpg)
+
+# Азеритовые таланты и экипировка
+
+Основным нашим талантом является:
+* [Горючий потенциал](https://ru.wowhead.com/spell=279829/igneous-potential) их нужно собрать в количесте 3 штуки.
+второй по важности идет талант:
+* [Гармония стихий](https://ru.wowhead.com/spell=278697/natural-harmony) по возможности берите 2 штуки.
+И заключительный талант:
+* [Коварное соглашение](https://ru.wowhead.com/spell=288953/treacherous-covenant) (рекомендуется брать не более 1 штуки)
+
+Для мифик+ аналогично только на [Тиранике](https://ru.wowhead.com/affix=9/%D1%82%D0%B8%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9) рекомендуется стакать [Лавовый шок](https://ru.wowhead.com/spell=273448/%D0%BB%D0%B0%D0%B2%D0%BE%D0%B2%D1%8B%D0%B9-%D1%88%D0%BE%D0%BA) (2 штуки вполне достаточно)
 
 
-### AoE
+# БИС экипировка
 
-[![Шаман Стихии - таланты](/assets/img/pages/shaman/elem-aoe-talents.jpg)](https://ru.wowhead.com/talent-calc/shaman/elemental/cxCM)
+Тут будут только азеритки и аксессуары (трини).
+
+Азеритки(рейд):
+* [Шлем примата-берсерка](https://ru.wowhead.com/item=165535/%D1%88%D0%BB%D0%B5%D0%BC-%D0%BF%D1%80%D0%B8%D0%BC%D0%B0%D1%82%D0%B0-%D0%B1%D0%B5%D1%80%D1%81%D0%B5%D1%80%D0%BA%D0%B0&bonus=4822:1507)
+
+* [Наплечье возмездия предков](https://ru.wowhead.com/item=165921/%D0%BD%D0%B0%D0%BF%D0%BB%D0%B5%D1%87%D1%8C%D0%B5-%D0%B2%D0%BE%D0%B7%D0%BC%D0%B5%D0%B7%D0%B4%D0%B8%D1%8F-%D0%BF%D1%80%D0%B5%D0%B4%D0%BA%D0%BE%D0%B2&bonus=4822:1507)
+
+* [Облачение туманов и пламени](https://ru.wowhead.com/item=165540/%D0%BE%D0%B1%D0%BB%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%82%D1%83%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2-%D0%B8-%D0%BF%D0%BB%D0%B0%D0%BC%D0%B5%D0%BD%D0%B8&bonus=4822:1507)
+
+Азеритки(мифик+):
+* [Капюшон темного жнеца](https://ru.wowhead.com/item=159391/%D0%BA%D0%B0%D0%BF%D1%8E%D1%88%D0%BE%D0%BD-%D1%82%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B6%D0%BD%D0%B5%D1%86%D0%B0&bonus=4817:1512&azerite-powers=7)
+
+* [Наплечные щитки зияющей пасти](https://ru.wowhead.com/item=159352/%D0%BD%D0%B0%D0%BF%D0%BB%D0%B5%D1%87%D0%BD%D1%8B%D0%B5-%D1%89%D0%B8%D1%82%D0%BA%D0%B8-%D0%B7%D0%B8%D1%8F%D1%8E%D1%89%D0%B5%D0%B9-%D0%BF%D0%B0%D1%81%D1%82%D0%B8&bonus=4817:1512)
+
+* [Благословленный лоа нагрудник](https://ru.wowhead.com/item=158355/%D0%B1%D0%BB%D0%B0%D0%B3%D0%BE%D1%81%D0%BB%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BB%D0%BE%D0%B0-%D0%BD%D0%B0%D0%B3%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA&bonus=4817:1512)
+
+# Аксессуары
+
+* [Гребень Па'ку](https://ru.wowhead.com/item=165581/%D0%B3%D1%80%D0%B5%D0%B1%D0%B5%D0%BD%D1%8C-%D0%BF%D0%B0%D0%BA%D1%83&bonus=4798:1507)
+
+* [Сияющий осколок](https://ru.wowhead.com/item=165571/%D1%81%D0%B8%D1%8F%D1%8E%D1%89%D0%B8%D0%B9-%D0%BE%D1%81%D0%BA%D0%BE%D0%BB%D0%BE%D0%BA&bonus=4798:1507)
+
+* [Непостижимая воля глашатая](https://ru.wowhead.com/item=167867/%D0%BD%D0%B5%D0%BF%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B8%D0%BC%D0%B0%D1%8F-%D0%B2%D0%BE%D0%BB%D1%8F-%D0%B3%D0%BB%D0%B0%D1%88%D0%B0%D1%82%D0%B0%D1%8F&bonus=4798:1517)
+
+* [Раковина темного шепота](https://ru.wowhead.com/item=159620/%D1%80%D0%B0%D0%BA%D0%BE%D0%B2%D0%B8%D0%BD%D0%B0-%D1%82%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE-%D1%88%D0%B5%D0%BF%D0%BE%D1%82%D0%B0&bonus=4777:1512)
+
+* [Запал мага-поджигателя](https://ru.wowhead.com/item=159615/%D0%B7%D0%B0%D0%BF%D0%B0%D0%BB-%D0%BC%D0%B0%D0%B3%D0%B0-%D0%BF%D0%BE%D0%B4%D0%B6%D0%B8%D0%B3%D0%B0%D1%82%D0%B5%D0%BB%D1%8F&bonus=4777:1512)
+
+* [Вечный алхимический камень](https://ru.wowhead.com/item=165928/%D0%B2%D0%B5%D1%87%D0%BD%D1%8B%D0%B9-%D0%B0%D0%BB%D1%85%D0%B8%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C)
+
+Лучшие комбинации:
+
+[Вечный алхимический камень](https://ru.wowhead.com/item=165928/%D0%B2%D0%B5%D1%87%D0%BD%D1%8B%D0%B9-%D0%B0%D0%BB%D1%85%D0%B8%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C) + [Гребень Па'ку](https://ru.wowhead.com/item=165581/%D0%B3%D1%80%D0%B5%D0%B1%D0%B5%D0%BD%D1%8C-%D0%BF%D0%B0%D0%BA%D1%83&bonus=4798:1507)
+
+[Гребень Па'ку](https://ru.wowhead.com/item=165581/%D0%B3%D1%80%D0%B5%D0%B1%D0%B5%D0%BD%D1%8C-%D0%BF%D0%B0%D0%BA%D1%83&bonus=4798:1507) + [Сияющий осколок](https://ru.wowhead.com/item=165571/%D1%81%D0%B8%D1%8F%D1%8E%D1%89%D0%B8%D0%B9-%D0%BE%D1%81%D0%BA%D0%BE%D0%BB%D0%BE%D0%BA&bonus=4798:1507)
+
+[Сияющий осколок](https://ru.wowhead.com/item=165571/%D1%81%D0%B8%D1%8F%D1%8E%D1%89%D0%B8%D0%B9-%D0%BE%D1%81%D0%BA%D0%BE%D0%BB%D0%BE%D0%BA&bonus=4798:1507) + [Раковина темного шепота](https://ru.wowhead.com/item=159620/%D1%80%D0%B0%D0%BA%D0%BE%D0%B2%D0%B8%D0%BD%D0%B0-%D1%82%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE-%D1%88%D0%B5%D0%BF%D0%BE%D1%82%D0%B0&bonus=4777:1512)
+
+[Запал мага-поджигателя](https://ru.wowhead.com/item=159615/%D0%B7%D0%B0%D0%BF%D0%B0%D0%BB-%D0%BC%D0%B0%D0%B3%D0%B0-%D0%BF%D0%BE%D0%B4%D0%B6%D0%B8%D0%B3%D0%B0%D1%82%D0%B5%D0%BB%D1%8F&bonus=4777:1512) + [Раковина темного шепота](https://ru.wowhead.com/item=159620/%D1%80%D0%B0%D0%BA%D0%BE%D0%B2%D0%B8%D0%BD%D0%B0-%D1%82%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE-%D1%88%D0%B5%D0%BF%D0%BE%D1%82%D0%B0&bonus=4777:1512)
+
+[Запал мага-поджигателя](https://ru.wowhead.com/item=159615/%D0%B7%D0%B0%D0%BF%D0%B0%D0%BB-%D0%BC%D0%B0%D0%B3%D0%B0-%D0%BF%D0%BE%D0%B4%D0%B6%D0%B8%D0%B3%D0%B0%D1%82%D0%B5%D0%BB%D1%8F&bonus=4777:1512) + [Сияющий осколок](https://ru.wowhead.com/item=165571/%D1%81%D0%B8%D1%8F%D1%8E%D1%89%D0%B8%D0%B9-%D0%BE%D1%81%D0%BA%D0%BE%D0%BB%D0%BE%D0%BA&bonus=4798:1507)
+
 
 <hr>
 
 # Ротация
 
-### Начало
+###   Начало
 
 1. Ставим [Повелитель тотемов](https://ru.wowhead.com/spell=210643); используем аксессуары и [Боевое зелье интеллекта](https://ru.wowhead.com/item=163222)
-2. Используем [Огненный шок](https://ru.wowhead.com/spell=188389)
-3. Призываем [Элементаль огня](https://ru.wowhead.com/spell=198067)
-4. Используем [Перерождение](https://ru.wowhead.com/spell=114050)
+2. Используем [Хранитель бурь](https://ru.wowhead.com/spell=191634/%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C-%D0%B1%D1%83%D1%80%D1%8C)
+3. Используем [Огненный шок](https://ru.wowhead.com/spell=188389)
+4. Призываем [Элементаль огня](https://ru.wowhead.com/spell=198067)
 5. Используем [Жажда крови](https://ru.wowhead.com/spell=2825)
-6. Без остановки используем [ Выброс лавы](https://ru.wowhead.com/spell=51505): при накоплении от 60 ед. _Энергии водоворота_ используте [Земной шок](https://ru.wowhead.com/spell=8042)
+6. Используем [ Выброс лавы](https://ru.wowhead.com/spell=51505) затем [Молния](https://ru.wowhead.com/spell=188196) при достяжении 60 ед. _Энергии водоворота_ используте [Земной шок](https://ru.wowhead.com/spell=8042) (при наличии бафа [Властелин стихий](https://ru.wowhead.com/spell=16166/%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D0%BB%D0%B8%D0%BD-%D1%81%D1%82%D0%B8%D1%85%D0%B8%D0%B9)
 
 ### Основная часть
 
-> основная часть начинает как закончится [Перерождение](https://ru.wowhead.com/spell=114050) НЕ [Жажда крови](https://ru.wowhead.com/spell=2825)
-
-1. Обновляем [Повелитель тотемов](https://ru.wowhead.com/spell=210643); [Огненный шок](https://ru.wowhead.com/spell=188389)
-2. Используем по откату  [ Выброс лавы](https://ru.wowhead.com/spell=51505)
-3. Так же используем по проку [ Выброс лавы](https://ru.wowhead.com/spell=51505)
-4. [Молния](https://ru.wowhead.com/spell=188196) ипользуем как филлер - до отката [ Выброс лавы](https://ru.wowhead.com/spell=51505)
-5. При накоплении от 60 ед. _Водоворота_ используем [Земной шок](https://ru.wowhead.com/spell=8042) что бы получить баф [Связь со стихиями](https://ru.wowhead.com/spell=260694); не стоит использовать [Земной шок](https://ru.wowhead.com/spell=8042) когда вы имеете [Связь со стихиями](https://ru.wowhead.com/spell=260694)
-6. При активном [Связь со стихиями](https://ru.wowhead.com/spell=260694) используем  [Молния](https://ru.wowhead.com/spell=188196)
-7. [Ледяной шок](https://ru.wowhead.com/spell=196840) использовать только при перебежках
+Она является самой простой среди всех классов
+1.  Обновляем по кд [Огненный шок](https://ru.wowhead.com/spell=188389)
+2. Используем [Хранитель бурь](https://ru.wowhead.com/spell=191634/%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C-%D0%B1%D1%83%D1%80%D1%8C) по дк или можно придержать 5-10 сек до отката  [Элементаль огня](https://ru.wowhead.com/spell=198067)
+3. чередуем  [ Выброс лавы](https://ru.wowhead.com/spell=51505) затем [Молния](https://ru.wowhead.com/spell=188196), если получилось так что у вас 60 ед. энергии и у вас нет бафа [Властелин стихий](https://ru.wowhead.com/spell=16166/%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D0%BB%D0%B8%D0%BD-%D1%81%D1%82%D0%B8%D1%85%D0%B8%D0%B9), тога спамими  [Молния](https://ru.wowhead.com/spell=188196) до отката или прока [ Выброс лавы](https://ru.wowhead.com/spell=51505)
+4. [Элементаль огня](https://ru.wowhead.com/spell=198067) по кд
 
 <hr>
 
@@ -153,18 +205,18 @@ actual:
 
 1. Интеллект
 2. Скорость
-3. Универсальность
-4. Крит. удар
+3. Крит. удар
+4. Универсальность
 5. Искусность
 
 ### Улучшения
 
-* Оружие - [Быстрая навигация](https://ru.wowhead.com/item=159786/)
+* Оружие [Чары для оружия - вихрь стихий](https://ru.wowhead.com/item=153479/%D1%87%D0%B0%D1%80%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%BE%D1%80%D1%83%D0%B6%D0%B8%D1%8F-%D0%B2%D0%B8%D1%85%D1%80%D1%8C-%D1%81%D1%82%D0%B8%D1%85%D0%B8%D0%B9)
 * Кольца - [Печать ускорения](https://ru.wowhead.com/item=153443/)
 
 ### Камни
 
-* [Кракенов глаз интеллекта](https://ru.wowhead.com/item=153709/) - только один (он "уникальный" - больше 1 глаза использовать нельзя)
+* [Смертоносный огненный янтарь](https://ru.wowhead.com/spell=256696/%D1%81%D0%BC%D0%B5%D1%80%D1%82%D0%BE%D0%BD%D0%BE%D1%81%D0%BD%D1%8B%D0%B9-%D0%BE%D0%B3%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D1%8F%D0%BD%D1%82%D0%B0%D1%80%D1%8C)
 * [Совиный глаз стремительности](https://ru.wowhead.com/item=154127/) - во все остальные сокеты
 
 ### Химия
